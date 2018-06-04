@@ -1,9 +1,10 @@
 --Create empty dcp_zoning_taxlot table
-DROP TABLE IF EXISTS dcp_zoning_taxlot CASCADE;
-CREATE TABLE dcp_zoning_taxlot (
+DROP TABLE IF EXISTS dcp_zoning_taxlot_edm CASCADE;
+CREATE TABLE dcp_zoning_taxlot_edm (
 	boroughcode text,
 	taxblock text,
 	taxlot text,
+	bbl text,
 	zoningdistrict1 text,
 	zoningdistrict2 text,
 	zoningdistrict3 text,

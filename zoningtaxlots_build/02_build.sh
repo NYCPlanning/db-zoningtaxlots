@@ -15,4 +15,4 @@ psql -U $DBUSER -d $DBNAME -f $REPOLOC/pluto_build/sql/bbl.sql
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/pluto_build/sql/area_zoningdistrict.sql
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/pluto_build/sql/area_commercialoverlay.sql
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/pluto_build/sql/area_specialdistrict.sql
-
+psql -U $DBUSER -d $DBNAME -f $REPOLOC/pluto_build/sql/area_limitedheight.sql

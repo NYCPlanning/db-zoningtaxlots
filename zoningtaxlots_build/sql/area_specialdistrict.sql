@@ -2,7 +2,7 @@ DROP TABLE specialpurposeperorder;
 CREATE TABLE specialpurposeperorder AS (
 WITH 
 specialpurposeper AS (
-SELECT p.bbl, n.overlay
+SELECT p.bbl, n.sdlbl
  , (ST_Area(CASE 
    WHEN ST_CoveredBy(p.geom, n.geom) 
    THEN p.geom 
@@ -14,20 +14,25 @@ SELECT p.bbl, n.overlay
    INNER JOIN dcp_specialpurpose AS n 
     ON ST_Intersects(p.geom, n.geom)
 )
-SELECT bbl, overlay, pergeom, ROW_NUMBER()
+SELECT bbl, sdlbl, pergeom, ROW_NUMBER()
     	OVER (PARTITION BY bbl
       	ORDER BY pergeom DESC) AS row_number
-  		FROM commoverlayper
+  		FROM specialpurposeper
 );
 
 UPDATE dcp_zoning_taxlot_edm a
-SET commercialoverlay1 = overlay
+SET specialdistrict1 = sdlbl
 FROM specialpurposeperorder b
 WHERE a.bbl=b.bbl AND row_number = 1;
 
 UPDATE dcp_zoning_taxlot_edm a
-SET commercialoverlay2 = overlay
+SET specialdistrict2 = sdlbl
 FROM specialpurposeperorder b
 WHERE a.bbl=b.bbl AND row_number = 2;
+
+UPDATE dcp_zoning_taxlot_edm a
+SET specialdistrict3 = sdlbl
+FROM specialpurposeperorder b
+WHERE a.bbl=b.bbl AND row_number = 3;
 
 DROP TABLE specialpurposeperorder;

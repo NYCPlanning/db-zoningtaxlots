@@ -1,7 +1,15 @@
 DROP TABLE lotzoneper;
 DROP TABLE lotzoneperorder;
 CREATE TABLE lotzoneperorder AS (
-WITH lotzoneper AS (
+WITH validdtm AS (
+SELECT a.bbl, a.geom 
+FROM dof_dtm a
+WHERE ST_IsValid(a.geom) = 't'),
+validzones AS (
+SELECT a.zonedist, a.geom 
+FROM dcp_zoningdistricts a
+WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'),
+lotzoneper AS (
 SELECT p.bbl, n.zonedist
  , (ST_Area(CASE 
    WHEN ST_CoveredBy(p.geom, n.geom) 
@@ -10,10 +18,9 @@ SELECT p.bbl, n.zonedist
     ST_Multi(
       ST_Intersection(p.geom,n.geom)
       ) END)/ST_Area(p.geom))*100 as pergeom
- FROM dof_dtm AS p 
-   INNER JOIN dcp_zoningdistricts AS n 
+ FROM validdtm AS p 
+   INNER JOIN validzones AS n 
     ON ST_Intersects(p.geom, n.geom)
-WHERE ST_GeometryType(ST_MakeValid(n.geom)) = 'ST_MultiPolygon'
 )
 SELECT bbl, zonedist, pergeom, ROW_NUMBER()
     	OVER (PARTITION BY bbl
@@ -24,7 +31,7 @@ SELECT bbl, zonedist, pergeom, ROW_NUMBER()
 UPDATE dcp_zoning_taxlot_edm a
 SET zoningdistrict1 = zonedist
 FROM lotzoneperorder b
-WHERE pergeom = 100 AND a.bbl=b.bbl AND row_number = 1;
+WHERE a.bbl=b.bbl AND row_number = 1;
 
 UPDATE dcp_zoning_taxlot_edm a
 SET zoningdistrict2 = zonedist
@@ -40,3 +47,5 @@ UPDATE dcp_zoning_taxlot_edm a
 SET zoningdistrict4 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl AND row_number = 4;
+
+DROP TABLE lotzoneperorder;

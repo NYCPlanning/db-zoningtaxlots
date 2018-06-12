@@ -15,3 +15,4 @@ cd '/prod/data-loading-scripts'
 echo 'Loading open source datasets...'
 node loader.js install dof_dtm
 node loader.js install dcp_zoningfeatures
+node loader.js install dcp_zoningmapindex

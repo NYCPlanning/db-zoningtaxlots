@@ -137,3 +137,21 @@ INNER JOIN dcp_zoning_taxlot b
 ON a.bbl::text=b.boroughcode||lpad(b.taxblock, 5, '0')||lpad(b.taxlot, 4, '0')::text
 WHERE a.zoningmapnumber <> b.zoningmapnumber
 GROUP BY a.zoningmapnumber, b.zoningmapnumber
+
+WITH allcount AS (
+SELECT a.commercialoverlay1, b.commercialoverlay1 AS field, b.commercialoverlay2, COUNT(*)
+FROM dcp_zoning_taxlot_edm a
+INNER JOIN dcp_zoning_taxlot b
+ON a.bbl::text=b.boroughcode||lpad(b.taxblock, 5, '0')||lpad(b.taxlot, 4, '0')::text
+WHERE a.commercialoverlay1 <> b.commercialoverlay1
+	OR a.commercialoverlay1 <> b.commercialoverlay2
+GROUP BY a.commercialoverlay1, b.commercialoverlay1, b.commercialoverlay2
+)
+SELECT SUM(count) FROM allcount
+
+73931
+
+SELECT COUNT(*)
+FROM dcp_zoning_taxlot_edm a
+INNER JOIN dcp_zoning_taxlot b
+ON a.bbl::text=b.boroughcode||lpad(b.taxblock, 5, '0')||lpad(b.taxlot, 4, '0')::text

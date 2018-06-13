@@ -3,9 +3,8 @@ DROP TABLE lotzoneperorder;
 CREATE TABLE lotzoneperorder AS (
 WITH validdtm AS (
   SELECT a.bbl, a.geom 
-  SELECT DISTINCT ST_GeometryType(ST_MakeValid(a.geom))
   FROM dof_dtm a
-  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon',
+  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'),
 validzones AS (
   SELECT a.zonedist, a.geom 
   FROM dcp_zoningdistricts a

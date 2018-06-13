@@ -306,18 +306,18 @@ WHERE a.zoningmapcode IS NULL AND b.zoningmapcode IS NOT NULL
 GROUP BY a.zoningmapcode, b.zoningmapcode
 );
 
-\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict1) TO '/prod/db-pluto/pluto_build/output/qc_versioncomparison_zoningdistrict1.csv';
-\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict2) TO '/prod/db-pluto/pluto_build/output/qc_versioncomparison_zoningdistrict2.csv';
-\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict3) TO '/prod/db-pluto/pluto_build/output/qc_versioncomparison_zoningdistrict3.csv';
-\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict4) TO '/prod/db-pluto/pluto_build/output/qc_versioncomparison_zoningdistrict4.csv';
-\copy (SELECT * FROM ztl_qc_versioncomparison_commercialoverlay1) TO '/prod/db-pluto/pluto_build/output/qc_versioncomparison_commercialoverlay1.csv';
-\copy (SELECT * FROM ztl_qc_versioncomparison_commercialoverlay2) TO '/prod/db-pluto/pluto_build/output/qc_versioncomparison_commercialoverlay2.csv';
-\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict1) TO '/prod/db-pluto/pluto_build/output/qc_versioncomparison_specialdistrict1.csv';
-\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict2) TO '/prod/db-pluto/pluto_build/output/qc_versioncomparison_specialdistrict2.csv';
-\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict3) TO '/prod/db-pluto/pluto_build/output/qc_versioncomparison_specialdistrict3.csv';
-\copy (SELECT * FROM ztl_qc_versioncomparison_limitedheightdistrict) TO '/prod/db-pluto/pluto_build/output/qc_versioncomparison_limitedheightdistrict.csv';
-\copy (SELECT * FROM ztl_qc_versioncomparison_zoningmapnumber) TO '/prod/db-pluto/pluto_build/output/qc_versioncomparison_zoningmapnumber.csv';
-\copy (SELECT * FROM ztl_qc_versioncomparison_zoningmapcode) TO '/prod/db-pluto/pluto_build/output/qc_versioncomparison_zoningmapcode.csv';
+\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict1) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict1.csv';
+\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict2) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict2.csv';
+\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict3) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict3.csv';
+\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict4) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict4.csv';
+\copy (SELECT * FROM ztl_qc_versioncomparison_commercialoverlay1) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_commercialoverlay1.csv';
+\copy (SELECT * FROM ztl_qc_versioncomparison_commercialoverlay2) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_commercialoverlay2.csv';
+\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict1) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_specialdistrict1.csv';
+\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict2) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_specialdistrict2.csv';
+\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict3) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_specialdistrict3.csv';
+\copy (SELECT * FROM ztl_qc_versioncomparison_limitedheightdistrict) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_limitedheightdistrict.csv';
+\copy (SELECT * FROM ztl_qc_versioncomparison_zoningmapnumber) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningmapnumber.csv';
+\copy (SELECT * FROM ztl_qc_versioncomparison_zoningmapcode) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningmapcode.csv';
 
 
 

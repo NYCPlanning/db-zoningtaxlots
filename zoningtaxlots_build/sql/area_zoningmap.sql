@@ -9,25 +9,29 @@ SELECT p.bbl, n.sectionalm
    ELSE 
     ST_Multi(
       ST_Intersection(p.geom,n.geom)
-      ) END)/ST_Area(p.geom))*100 as pergeom
+      ) END)) as seggeom,
+    ST_Area(p.geom) as allgeom
  FROM dof_dtm AS p 
    INNER JOIN dcp_zoningmapindex AS n 
     ON ST_Intersects(p.geom, n.geom)
 )
-SELECT bbl, sectionalm, pergeom, ROW_NUMBER()
+SELECT bbl, sectionalm, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
     	OVER (PARTITION BY bbl
-      	ORDER BY pergeom DESC) AS row_number
+      	ORDER BY seggeom DESC) AS row_number
   		FROM zoningmapper
 );
 
 UPDATE dcp_zoning_taxlot_edm a
 SET zoningmapnumber = sectionalm
 FROM zoningmapperorder b
-WHERE a.bbl=b.bbl AND row_number = 1;
+WHERE a.bbl=b.bbl
+AND row_number = 1
+AND (pergeom >= 10 OR seggeom > 000000002);
 
 UPDATE dcp_zoning_taxlot_edm a
 SET zoningmapcode = 'Y'
 FROM zoningmapperorder b
-WHERE a.bbl=b.bbl AND row_number = 2;
+WHERE a.bbl=b.bbl 
+AND row_number = 2;
 
 DROP TABLE zoningmapperorder;

@@ -262,4 +262,4 @@ GROUP BY field
 ORDER BY percent DESC
 );
 
-\copy (SELECT * FROM ztl_qc_versioncomparisoncount) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison.csv';
+\copy (SELECT * FROM ztl_qc_versioncomparisoncount) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison.csv' DELIMITER ',' CSV HEADER;

@@ -1,31 +1,30 @@
-\N	MX-16	EC-5	 	1
-\N	MID	\N	 	1
-\N	HP	\N	 	2
-\N	DB	\N	 	9
-\N	SHP	\N	 	1
-\N	HS	\N	 	17
-\N	GC	\N	 	1
-125th	\N	\N	\N	1
-\N	MX-15	\N	 	1
-\N	LM	\N	 	2
-\N	MX-8	\N	 	9
-\N	DJ	\N	 	3
-\N	NA-1	\N	 	12
-\N	HY	\N	 	5
-\N	SV-1	\N	 	2
-\N	OP	\N	 	3
-SRD	\N	\N	\N	5
-\N	MX-1	\N	 	1
-\N	\N	\N	 	986
-\N	MX-4	\N	 	1
-\N	CD	\N	 	1
-\N	SRD	\N	 	388
-\N	BR	\N	 	12
-\N	CP	\N	 	2
-\N	TMU	\N	 	3
-\N	HRP	\N	 	1
-\N	MX-16	EC-5	EC-6	1
-\N	MX-6	\N	 	4
-SRD	NA-1	\N	\N	4
-\N	LIC	\N	 	3
-\N	CI	\N	 	9
+specialdistrict3edm,specialdistrict1,specialdistrict2,specialdistrict3,count
+,MX-16,EC-5, ,1
+,MID,, ,1
+,HP,, ,2
+,DB,, ,9
+,SHP,, ,1
+,HS,, ,17
+,GC,, ,1
+SRD,,,,4
+,MX-15,, ,1
+,LM,, ,2
+,MX-8,, ,9
+,DJ,, ,3
+,NA-1,, ,12
+,HY,, ,5
+,SV-1,, ,2
+,OP,, ,3
+,MX-1,, ,1
+,,, ,986
+,MX-4,, ,1
+,CD,, ,1
+,SRD,, ,388
+,BR,, ,12
+,CP,, ,2
+,TMU,, ,3
+,HRP,, ,1
+,MX-16,EC-5,EC-6,1
+,MX-6,, ,4
+,LIC,, ,3
+,CI,, ,9

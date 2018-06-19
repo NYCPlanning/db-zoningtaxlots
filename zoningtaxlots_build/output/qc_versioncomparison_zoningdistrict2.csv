@@ -1,1772 +1,1773 @@
-\N	M1-1	C8-3	\N	\N	2
-\N	R6A	M1-4/R6A	\N	\N	2
-\N	R6	R5	R7A	\N	1
-\N	R7X	R7-2	\N	\N	2
-\N	C8-2	R7-1	R5	\N	1
-\N	C6-5	C6-7T	\N	\N	2
-\N	M1-2	M1-2/R6B	\N	\N	1
-\N	M1-2/R6A	M1-2	\N	\N	5
-\N	C3A	R4A	\N	\N	1
-\N	C5-2.5	R10H	\N	\N	1
-\N	M1-2	R5	\N	\N	2
-\N	C4-2A	C4-3	\N	\N	5
-\N	R4A	R3-1	\N	\N	14
-\N	C3	M2-1	\N	\N	3
-\N	R6B	R3X	\N	\N	25
-\N	R7-1	R5A	\N	\N	25
-\N	C6-4	C6-2A	R8B	\N	1
-\N	R7D	R7A	R7B	\N	1
-\N	R4A	R4-1	R5B	\N	1
-\N	C6-1	C6-1G	\N	\N	2
-\N	M3-1	R3A	\N	\N	3
-\N	M1-1	R6B	C4-5D	\N	1
-\N	M2-1	C3	\N	\N	2
-\N	R7D	R5D	R5B	\N	1
-\N	C4-4	R6	\N	\N	7
-\N	M1-1	R8	\N	\N	3
-\N	C1-9A	R6B	\N	\N	1
-\N	C6-3	M1-4	\N	\N	3
-\N	C8-1	R3-2	R3-1	\N	2
-\N	R5D	R7A	\N	\N	7
-\N	C2-6	R6	\N	\N	29
-\N	M1-2	M3-1	C4-2	\N	1
-\N	R7-2	C4-4	\N	\N	10
-\N	M1-4D	M1-4	\N	\N	2
-\N	M1-2/R5B	R5	\N	\N	2
-\N	M1-1	R3A	\N	\N	5
-\N	C1-8X	R10A	\N	\N	1
-\N	R4-1	R6	R2	\N	1
-\N	R6	C5-2A	\N	\N	3
-\N	R3-1	C3	\N	\N	2
-\N	R6A	R7D	R6B	\N	1
-\N	R7A	R5B	C4-4A	\N	1
-\N	R5A	C8-1	\N	\N	15
-\N	R8B	R7A	\N	\N	64
-\N	C5-2	R8B	\N	\N	3
-\N	C1-7	C6-2	\N	\N	1
-\N	M1-2/R5B	M1-2/R5D	\N	\N	5
-\N	R8B	C1-8X	\N	\N	40
-\N	R10A	C1-9	\N	\N	6
-\N	R7B	R7A	R6B	\N	1
-\N	C6-4A	C6-4	M1-5M	\N	1
-\N	C6-1	C6-4M	\N	\N	1
-R1-1	PARK	\N	\N	\N	1
-\N	R9A	R8A	R7B	\N	1
-\N	M1-6	R6	\N	\N	1
-\N	R3-1	R4	R7-1	R7B	1
-\N	R6A	R2	\N	\N	20
-\N	C5-2.5	C5-3	\N	\N	32
-\N	R7-2	C4-4	C8-3	\N	1
-\N	R2	R2A	\N	\N	25
-\N	C4-4D	R8A	\N	\N	1
-\N	R3A	R6A	\N	\N	4
-\N	R5D	R3-2	\N	\N	16
-\N	C4-6A	R9	\N	\N	1
-\N	R4B	R8B	\N	\N	2
-\N	R5D	R4B	\N	\N	13
-\N	R3X	R2	\N	\N	52
-\N	R5	R6B	\N	\N	187
-\N	C6-4A	R9A	\N	\N	3
-\N	C6-6	C6-4	\N	\N	4
-\N	C6-2A	C6-2M	\N	\N	3
-\N	C4-5X	C6-2	\N	\N	7
-C4-1	R3-2	\N	\N	\N	7
-\N	C5-3	C6-4	\N	\N	3
-\N	M1-1	M1-4	\N	\N	3
-\N	R5	R2A	\N	\N	1
-\N	R2	R4	R5	\N	1
-\N	R5B	R4B	\N	\N	31
-\N	R5B	R4-1	\N	\N	297
-\N	R7A	C8-1	\N	\N	2
-\N	R4	R1-2	\N	\N	8
-\N	R5B	R7D	\N	\N	19
-\N	M2-1	C4-4	\N	\N	2
-\N	M2-1	C8-1	M1-1	\N	1
-\N	C8-1	M1-1	R5	\N	1
-\N	C4-2	M1-1	\N	\N	1
-\N	C4-3A	R5B	\N	\N	1
-\N	R10	R10A	\N	\N	3
-\N	R2X	R6A	\N	\N	4
-\N	M1-1	R2A	R3-2	\N	1
-R3-2	R3A	\N	\N	\N	35
-\N	R6	C6-4	\N	\N	3
-\N	C3	R5D	\N	\N	1
-\N	R3-1	M1-1	R5	\N	1
-\N	R8A	R6B	\N	\N	62
-\N	C1-9A	R8B	\N	\N	7
-\N	R5B	R4-1	R6A	\N	1
-\N	C6-3	C4-7	\N	\N	1
-\N	C3	R5	\N	\N	1
-\N	C2-8A	R8B	C2-8	\N	1
-\N	M1-2	M3-1	\N	\N	9
-\N	R6A	R7D	\N	\N	9
-\N	C8-2	R5B	R5	\N	1
-R3-2	C3A	\N	\N	\N	1
-\N	R7-1	C4-4	R8	\N	1
-\N	C5-2	C6-4A	\N	\N	2
-\N	C2-8A	C1-9A	\N	\N	1
-\N	R7A	R4	\N	\N	25
-\N	R6	R3-1	\N	\N	5
-\N	C6-2	C1-7	R6	\N	1
-\N	C5-3	C6-1	\N	\N	1
-\N	R4A	R4	\N	\N	87
-\N	M1-6	C5-3	\N	\N	8
-PARK	M3-1	\N	\N	\N	1
-\N	R4-1	M1-4D	\N	\N	1
-\N	C4-4	R5	\N	\N	1
-\N	R6B	R5D	\N	\N	9
-\N	R10	R8B	\N	\N	158
-\N	R3A	C8-1	\N	\N	18
-\N	R1-1	R1-2	\N	\N	21
-\N	C6-4	C6-6	\N	\N	9
-\N	R5D	R2A	\N	\N	8
-\N	R6	M1-6	\N	\N	4
-R3-1	R3A	\N	\N	\N	2
-\N	C4-2	C4-3	\N	\N	15
-M1-1	PARK	\N	\N	\N	2
-\N	C6-3A	C6-2A	\N	\N	9
-\N	C5-2	C6-6	\N	\N	2
-\N	C4-3	R7-1	\N	\N	6
-\N	R3X	R4B	\N	\N	18
-\N	R8B	C1-9	R9X	\N	1
-\N	M1-4	R10	\N	\N	1
-\N	R7B	R8B	\N	\N	13
-\N	C8-4	R8	\N	\N	3
-\N	R7-1	R6	\N	\N	98
-\N	C6-2A	R8A	R8B	\N	1
-\N	C4-4A	R6	\N	\N	5
-\N	R6A	R3-1	R3X	\N	1
-\N	R4A	R4	R2	\N	1
-R3-1	R3X	\N	\N	\N	35
-\N	R7-2	C3	R8	\N	1
-\N	C5-2.5	C6-6	\N	\N	1
-\N	M1-2/R8	M1-2/R8A	\N	\N	1
-\N	C4-2	C8-2	\N	\N	3
-\N	R8B	C6-2A	\N	\N	21
-\N	R2	R4-1	\N	\N	10
-\N	R4	R7A	\N	\N	31
-\N	C5-2	C5-2.5	\N	\N	2
-\N	C1-8A	R7B	\N	\N	1
-M1-1	M3-1	\N	\N	\N	1
-\N	C6-1	R7-2	\N	\N	1
-\N	M1-2	M1-2/R6A	\N	\N	1
-\N	R7-2	R6	\N	\N	25
-\N	R7A	R7B	\N	\N	75
-\N	R6A	C4-4A	\N	\N	19
-\N	C6-7T	C6-5	\N	\N	6
-\N	R2	R3-1	\N	\N	26
-\N	R4A	R5	\N	\N	29
-\N	R8B	R6A	\N	\N	1
-\N	C1-9A	R8A	R9A	R8B	1
-\N	R7-3	C4-3	\N	\N	3
-\N	R3-1	R3A	\N	\N	68
-\N	R8B	R6	\N	\N	1
-\N	C1-7	C1-6A	\N	\N	3
-\N	R4A	R5D	\N	\N	34
-\N	R7B	R8X	\N	\N	3
-\N	M1-2/R5D	M1-2/R6A	\N	\N	3
-\N	R2A	M1-1	\N	\N	1
-\N	R7X	M1-1	\N	\N	1
-\N	R4-1	R6A	\N	\N	77
-\N	R6A	R5	\N	\N	352
-\N	C8-1	R5B	\N	\N	4
-\N	R6A	C4-4L	\N	\N	3
-\N	R3-2	R3-1	R2A	\N	1
-\N	C1-9A	R9A	\N	\N	1
-\N	R8X	R7B	\N	\N	6
-\N	R4A	R4-1	\N	\N	63
-\N	C6-1	C6-2	\N	\N	15
-\N	M1-6D	M1-6	\N	\N	2
-\N	R8	C6-4	R7-1	\N	1
-\N	M1-4/R6B	M3-2	\N	\N	1
-\N	C1-9	C1-9A	R8	\N	1
-\N	M1-4/R8A	M1-4/R7A	\N	\N	1
-\N	R8A	C1-8	\N	\N	1
-\N	C6-2M	C6-2A	\N	\N	1
-\N	R3-2	R3A	R6	\N	1
-\N	R5D	R4-1	R4A	\N	1
-\N	R10	R8	C2-8	\N	1
-\N	R4B	M1-2	\N	\N	2
-\N	R6	C6-2	\N	\N	4
-R3-1	R3-2	\N	\N	\N	15
-\N	C6-2A	M1-6D	\N	\N	2
-\N	M1-4D	R6B	\N	\N	2
-\N	R7B	R5B	\N	\N	54
-\N	R8B	R10A	C1-9	\N	1
-\N	M1-1	C4-2	C4-2A	\N	2
-\N	C6-4A	M1-5M	C6-4	\N	1
-M2-1	M3-1	\N	\N	\N	3
-\N	R5B	C4-3	\N	\N	1
-\N	R5D	R6B	\N	\N	8
-\N	M1-1	C8-1	C4-2	\N	1
-\N	R3-2	R4A	\N	\N	40
-\N	C6-2A	C5-4	\N	\N	2
-\N	R7A	R2	R4	\N	1
-\N	C8-3	C4-4	\N	\N	1
-\N	C1-7A	R8A	\N	\N	4
-\N	R5	M1-4	\N	\N	1
-\N	R6	C2-6	C1-6	\N	1
-\N	R6A	R7X	\N	\N	13
-\N	C4-2	R7-1	\N	\N	2
-\N	R5D	R5	\N	\N	66
-\N	C2-6	R7-2	\N	\N	4
-\N	R6B	M3-1	\N	\N	2
-\N	R5B	R8A	\N	\N	14
-\N	R8	R9	\N	\N	1
-\N	R2	R3-1	R3-2	\N	1
-\N	R5	R3A	\N	\N	8
-\N	R6	C4-4	\N	\N	5
-C3	C4-2	C8-1	\N	\N	1
-\N	R3-1	R4	\N	\N	6
-\N	C2-7A	R8B	\N	\N	9
-\N	R2	R3X	\N	\N	57
-\N	R6	R7B	\N	\N	3
-\N	R8B	C1-9A	\N	\N	2
-\N	R7B	R7-2	\N	\N	11
-\N	R5A	R7A	\N	\N	9
-\N	M1-2/R6A	R6B	\N	\N	20
-R5	R3-1	\N	\N	\N	3
-\N	C5-P	C6-6	\N	\N	3
-\N	C4-4A	R7A	R6B	\N	1
-\N	R1-2	R3A	\N	\N	1
-\N	C8-1	M1-1	R5B	\N	1
-\N	C6-3A	C6-2	\N	\N	1
-\N	R8B	R4B	\N	\N	1
-\N	R6A	C4-3A	\N	\N	5
-\N	R3-1	R2	R3X	\N	2
-\N	M1-2/R6B	M1-1	\N	\N	2
-\N	R7B	C6-4A	\N	\N	6
-C3A	R3-2	\N	\N	\N	3
-R3-2	R1-2	\N	\N	\N	5
-\N	M1-4	R6A	\N	\N	115
-R2	C4-1	R3-1	\N	\N	1
-\N	R7A	C4-4A	\N	\N	26
-R3A	C4-2	\N	\N	\N	4
-\N	C1-6	C2-6	\N	\N	3
-\N	M1-4/R6A	M1-4/R6B	\N	\N	1
-\N	R6	M1-5	\N	\N	1
-\N	M1-1	R7-2	\N	\N	2
-\N	R4A	C4-4	\N	\N	1
-\N	C7	R6	\N	\N	3
-\N	R6A	R5D	\N	\N	15
-\N	R8	R6A	\N	\N	4
-\N	C8-1	R7-1	\N	\N	48
-\N	M1-4/R7A	R5	R6A	\N	1
-\N	C4-2A	R6B	\N	\N	21
-R5	R3X	\N	\N	\N	18
-\N	R7X	R7A	\N	\N	8
-\N	R6B	C4-3	\N	\N	120
-\N	M1-2/R6B	M1-2/R6A	\N	\N	9
-R1-2	R2	\N	\N	\N	6
-\N	R6B	M1-2	\N	\N	8
-\N	R7-2	C1-6A	\N	\N	1
-\N	C6-2	M1-1	R7-1	\N	1
-R3-1	R2	\N	\N	\N	32
-\N	R4	R6B	R5	\N	1
-\N	R8	R8A	\N	\N	1
-\N	C5-5	C6-4	\N	\N	3
-\N	C8-3	R8	\N	\N	6
-\N	M1-1	R3-2	\N	\N	33
-\N	R6B	M1-4	R7A	\N	3
-\N	C4-5D	M1-1	\N	\N	2
-\N	M3-1	C4-2	\N	\N	2
-\N	C4-2	R5	\N	\N	36
-\N	M3-1	M1-4/R8A	\N	\N	1
-\N	R3-1	C3A	\N	\N	9
-\N	R4A	R6A	\N	\N	75
-\N	R8B	R10A	\N	\N	34
-\N	R8	R10A	\N	\N	13
-\N	C1-6A	C1-7A	\N	\N	3
-\N	R4-1	R2	\N	\N	13
-\N	R6B	C4-2A	\N	\N	4
-\N	R1-2	R4-1	\N	\N	1
-\N	R8B	R5B	\N	\N	6
-\N	C2-8	R7B	\N	\N	2
-\N	C6-4	C5-3	\N	\N	2
-\N	R4B	R4-1	\N	\N	41
-R2	R3-1	\N	\N	\N	20
-\N	M1-4/R7X	M1-2	\N	\N	1
-\N	C6-3D	R8	\N	\N	5
-\N	M1-2/R6A	M1-2/R6	\N	\N	6
-\N	R6	M1-2/R6	\N	\N	2
-\N	R3A	R2	\N	\N	13
-\N	C4-4A	C6-2A	\N	\N	7
-\N	R7B	R9A	R7-2	\N	1
-\N	R3A	R4	R7A	\N	1
-\N	R5D	R6A	R5B	\N	1
-\N	R5B	R5	\N	\N	13
-\N	R4B	M1-1	\N	\N	29
-\N	C5-2.5	C5-2	\N	\N	4
-\N	C6-2A	C6-2	\N	\N	1
-\N	M1-1/R7-2	M1-1	\N	\N	11
-\N	R4	R4B	\N	\N	28
-\N	C6-2	C1-7	\N	\N	1
-\N	R7B	R6A	\N	\N	3
-\N	R4	R6	\N	\N	58
-\N	C8-1	M1-1	\N	\N	6
-\N	R6	C6-2A	\N	\N	3
-\N	R8	C8-2	\N	\N	5
-\N	C2-6	R6	C1-6	\N	1
-\N	R7B	R4-1	\N	\N	33
-\N	R2A	R2	\N	\N	55
-\N	R5A	R5B	\N	\N	12
-\N	R4-1	R5D	\N	\N	104
-\N	C4-2A	R5B	\N	\N	19
-\N	C6-4M	M1-6	\N	\N	2
-\N	R5	R2X	\N	\N	15
-\N	C4-4A	M1-5	\N	\N	1
-\N	C6-4M	C6-4A	\N	\N	14
-\N	C4-6A	R8B	\N	\N	19
-\N	R5	R3-2	\N	\N	18
-\N	R7X	R5B	\N	\N	7
-\N	M1-2/R6A	M1-2/R6B	\N	\N	18
-R3A	C8-1	\N	\N	\N	2
-\N	R2A	R1-2A	\N	\N	2
-\N	R10A	R10	\N	\N	2
-\N	C4-4A	R7A	R5B	\N	1
-M1-1	PARKNYS	\N	\N	\N	10
-M3-1	R3X	\N	\N	\N	2
-\N	R7A	R4-1	R5B	\N	1
-\N	C5-3	C5-P	\N	\N	3
-\N	R5D	R6	R6B	\N	1
-\N	R6	C7	\N	\N	1
-\N	R1-2	R3X	R2	R4-1	1
-\N	M1-5B	M1-5A	\N	\N	7
-\N	M3-1	M1-2/R6	\N	\N	4
-\N	R10	C6-1	\N	\N	2
-\N	R6	M1-2	\N	\N	13
-\N	C1-9	R10A	\N	\N	4
-\N	C5-2	C5-3	\N	\N	6
-\N	C8-3	M1-1	C4-5X	\N	1
-\N	R4	R3-2	\N	\N	35
-\N	M1-4	M1-4D	\N	\N	1
-\N	R5D	R4A	\N	\N	27
-\N	R10	R7-2	\N	\N	6
-\N	C6-2A	R8B	\N	\N	37
-\N	R7A	R6	\N	\N	20
-\N	R7B	R5	R7A	\N	1
-\N	C2-8A	C2-8	\N	\N	1
-\N	R6A	M1-1	\N	\N	18
-PARK	R3-2	\N	\N	\N	3
-\N	R6	R2	\N	\N	1
-\N	R5B	R6A	R5D	\N	1
-\N	M1-4/R7A	M1-5/R8A	\N	\N	1
-\N	R8	C6-2	\N	\N	7
-\N	R6A	M1-2/R6A	\N	\N	7
-\N	R1-1	R3X	\N	\N	1
-\N	M1-6	C6-3X	\N	\N	1
-\N	C4-5X	R6A	\N	\N	10
-\N	C6-3A	C6-1G	\N	\N	3
-\N	R3-2	R1-2	\N	\N	6
-\N	R8B	R4-1	\N	\N	6
-\N	R8	R9A	\N	\N	2
-\N	C8-1	R5D	\N	\N	1
-\N	R1-2A	R5B	\N	\N	6
-\N	R6	C5-2	\N	\N	5
-\N	M1-2/R6	R6A	\N	\N	2
-\N	R2	R7A	\N	\N	9
-R3X	M1-1	\N	\N	\N	1
-\N	C5-1A	R10	\N	\N	2
-\N	R4A	R3-2	\N	\N	15
-\N	R7B	R6	\N	\N	5
-\N	M2-1	M1-1	\N	\N	13
-\N	C4-2	M1-2	\N	\N	1
-\N	R3-2	M3-1	\N	\N	1
-\N	R6A	R2X	\N	\N	4
-\N	C1-9	R10	R8B	\N	1
-\N	R10	C1-9	\N	\N	1
-\N	R7A	R6B	\N	\N	272
-\N	R7A	R8	\N	\N	6
-\N	C6-4	C6-4M	C6-1	\N	1
-\N	C6-2A	R8A	\N	\N	3
-\N	C4-4	R2	\N	\N	1
-\N	C6-4M	C6-2A	\N	\N	4
-\N	R5	C8-1	R7-1	\N	1
-\N	R3-2	R2	\N	\N	87
-\N	M1-2/R6A	M1-2/R5D	M1-2/R5B	\N	2
-\N	C4-5D	R7-1	\N	\N	1
-R3X	R3-2	\N	\N	\N	27
-\N	R7A	R5B	R6B	\N	1
-\N	R10A	C4-6A	\N	\N	5
-R3-2	R5	\N	\N	\N	2
-\N	C4-4A	C4-3	R6B	\N	1
-\N	R4	R2A	\N	\N	50
-\N	R10H	C5-2.5	\N	\N	1
-\N	R2A	R3-1	\N	\N	48
-\N	M1-1	C4-2	\N	\N	2
-\N	R4A	R7B	\N	\N	1
-\N	R6A	R7A	R6B	\N	1
-\N	M1-1	C4-4	\N	\N	4
-\N	R7-2	R7X	\N	\N	1
-\N	R6A	R4-1	\N	\N	225
-\N	R7-1	C4-5X	\N	\N	2
-\N	R6A	C4-4A	R7A	\N	1
-R3X	PARK	\N	\N	\N	27
-\N	C6-7T	C6-5.5	\N	\N	5
-\N	M3-1	M1-2	\N	\N	15
-M1-1	R3X	\N	\N	\N	5
-\N	R4-1	R4A	\N	\N	131
-\N	R3X	R4	\N	\N	26
-\N	C6-3X	R8	\N	\N	1
-\N	M1-5	C6-4	\N	\N	3
-\N	R7X	R7-1	\N	\N	5
-\N	R5A	R5	\N	\N	15
-\N	R8	C6-6	\N	\N	1
-\N	C6-2	C6-3	\N	\N	10
-\N	R8A	R7D	R7A	\N	1
-\N	C6-7	C6-6	\N	\N	3
-\N	R8X	R7A	\N	\N	5
-\N	R7B	R7X	\N	\N	9
-\N	R4B	R4A	\N	\N	23
-\N	R4	R5D	R6A	\N	1
-\N	R10A	C4-7	\N	\N	2
-\N	M1-1	R4A	\N	\N	14
-\N	R4-1	C8-2	\N	\N	2
-\N	R7-2	C6-2	\N	\N	3
-\N	C6-3A	C6-1	\N	\N	12
-\N	R4	C4-4A	\N	\N	2
-\N	R7-2	M1-5B	\N	\N	1
-\N	C1-7	C6-1	R7-2	\N	1
-\N	C1-9	C2-8	R7-2	\N	1
-\N	R7-2	C8-4	\N	\N	2
-\N	M1-1	M1-1	\N	\N	1
-\N	M1-2	C4-4	\N	\N	1
-\N	M1-4/R7X	M1-4/R7A	\N	\N	8
-\N	C6-4A	C6-2A	\N	\N	10
-\N	R3X	C4-2	\N	\N	1
-\N	R9A	C6-4A	\N	\N	1
-\N	R7A	R5A	R7B	\N	1
-\N	C3A	R3-1	\N	\N	12
-\N	R9A	R8A	\N	\N	1
-\N	C4-4L	R6A	\N	\N	2
-\N	R6A	R5B	R5D	\N	1
-\N	C6-7T	C6-6.5	\N	\N	1
-\N	R3-2	R6B	\N	\N	8
-\N	R8B	C4-6A	\N	\N	10
-\N	R5	R7B	R6B	\N	1
-\N	C6-4	C2-8	\N	\N	1
-\N	R6A	M1-5	\N	\N	1
-\N	R1-1	R3-2	\N	\N	1
-\N	R8	R7-2	\N	\N	34
-\N	C6-2A	C6-4A	\N	\N	7
-\N	R3X	C4-1	\N	\N	16
-\N	R5A	R6B	\N	\N	12
-\N	R4A	R4B	\N	\N	20
-\N	R6B	R2	\N	\N	6
-\N	M1-4/R7X	M1-4	\N	\N	5
-\N	R6A	R1-2	\N	\N	5
-\N	M1-6/R10	M1-5/R7-3	\N	\N	1
-\N	R4	C3	\N	\N	8
-\N	R3X	R6A	R5	\N	1
-\N	C6-2	C6-2A	\N	\N	1
-\N	R6A	C4-2A	\N	\N	3
-\N	R2A	R1-2	\N	\N	31
-\N	R6B	C8-2	\N	\N	2
-\N	R5	C4-2	\N	\N	35
-\N	M1-5A	R7-2	\N	\N	5
-\N	C6-4	C6-2	\N	\N	10
-R3X	C4-1	\N	\N	\N	2
-\N	C8-1	R3-2	R4	\N	1
-\N	C4-7	R6A	\N	\N	1
-R3A	C4-1	\N	\N	\N	9
-\N	R5D	C8-1	R4-1	\N	1
-\N	C4-2	R3X	\N	\N	1
-\N	C4-2A	R6A	\N	\N	5
-\N	R7A	R6	R4-1	\N	1
-\N	C8-1	R4	\N	\N	40
-\N	R5D	R5A	\N	\N	5
-\N	C4-2A	R6B	R4-1	\N	1
-\N	R4	R4-1	\N	\N	220
-\N	R8B	R9X	\N	\N	4
-\N	R4-1	R4B	\N	\N	60
-\N	R6	R6A	\N	\N	18
-\N	R8	R6	M1-2	\N	1
-\N	R6B	C4-5D	M1-1	\N	1
-\N	M3-2	R10	\N	\N	1
-\N	C6-4	R8	\N	\N	1
-\N	R9X	R10A	\N	\N	1
-\N	R5B	R3-1	\N	\N	1
-\N	M1-4/R6B	R6A	\N	\N	1
-\N	C2-8	R8B	\N	\N	46
-\N	R3-1	R4-1	M1-1	C8-1	1
-\N	M2-1	M3-1	\N	\N	15
-\N	M1-4/R6B	R7X	\N	\N	12
-\N	M2-1	R5	\N	\N	4
-\N	R3X	C3	\N	\N	2
-R3-1	R1-2	\N	\N	\N	4
-\N	R4-1	R1-2	\N	\N	1
-\N	C6-2M	C6-4A	\N	\N	1
-\N	R7-1	C8-3	\N	\N	30
-\N	R6	R3-2	\N	\N	9
-\N	C4-2	C4-1	M1-1	\N	1
-\N	R8B	R7A	R8A	\N	1
-\N	C3	C4-2	\N	\N	1
-M1-1	R3-2	\N	\N	\N	9
-\N	C4-2A	R4B	\N	\N	2
-\N	R6B	R6A	R7A	M1-4	1
-\N	R6	M1-4/R7A	\N	\N	7
-\N	R2	C3A	\N	\N	2
-\N	R4B	R3X	\N	\N	7
-\N	C5-1	R10H	\N	\N	5
-\N	R3-1	R4A	\N	\N	2
-\N	M1-4/R7A	R6	\N	\N	4
-\N	R5D	R3-2	R4	\N	1
-\N	R2	R1-1	\N	\N	3
-\N	R5B	C4-4D	\N	\N	4
-\N	M1-2/R6A	R5	\N	\N	1
-\N	R7A	C8-2	\N	\N	2
-\N	R4	R3A	\N	\N	57
-\N	R8A	C2-8A	\N	\N	1
-\N	R8B	C2-7A	\N	\N	6
-\N	C2-8A	R8A	\N	\N	2
-\N	R4	M2-1	\N	\N	4
-\N	M1-2/R6	R6B	\N	\N	1
-\N	R7A	M1-2	\N	\N	1
-\N	R7A	M1-4	R6A	\N	1
-\N	R6	C4-2	R7A	\N	1
-\N	R6B	R4A	\N	\N	97
-\N	R6B	C8-1	\N	\N	5
-\N	R8A	R7B	\N	\N	8
-\N	C6-4A	C2-8A	\N	\N	1
-\N	R9	C4-6A	\N	\N	1
-\N	R9A	C2-8A	\N	\N	1
-\N	C5-3	C5-2.5	R8B	\N	1
-\N	R4-1	R3A	\N	\N	13
-\N	C4-2	C4-4A	R6A	\N	1
-\N	C4-4A	R7A	\N	\N	61
-\N	C4-5X	R7A	\N	\N	4
-\N	R5	R3-1	\N	\N	23
-\N	R2	C8-1	\N	\N	4
-\N	R3A	R5B	R6B	\N	1
-\N	C2-6	C1-6	\N	\N	6
-\N	R6B	C4-2A	C4-3	\N	1
-\N	R4B	R3-2	\N	\N	7
-\N	R5A	R6	\N	\N	59
-\N	M1-2/R8A	M1-2/R8	\N	\N	2
-\N	R7B	C1-8A	\N	\N	1
-M3-1	R4	\N	\N	\N	1
-\N	C8-1	M1-2	\N	\N	2
-\N	M1-4	R6A	R8A	\N	1
-\N	M1-4/R7A	C4-5X	\N	\N	2
-\N	R4	R5	R6B	\N	1
-\N	C6-3X	C6-4X	\N	\N	1
-\N	C6-6	C6-5.5	\N	\N	4
-M1-1	M2-1	\N	\N	\N	2
-\N	R6A	C1-6A	\N	\N	2
-\N	R3X	R6A	R4	\N	1
-\N	R3A	R4	C8-1	\N	1
-\N	R3A	R3-2	M1-1	\N	1
-\N	R3X	R7A	\N	\N	6
-\N	C1-6A	R6A	\N	\N	1
-\N	R8	R8B	R9A	\N	1
-\N	R5B	R4A	\N	\N	70
-\N	C5-2.5	C5-3	C6-6	\N	3
-\N	C4-2	R3-2	\N	\N	1
-\N	C6-2A	C6-4	\N	\N	3
-\N	M1-4/R7A	M1-4/R7X	\N	\N	2
-\N	R4	R2	\N	\N	17
-\N	C6-1	R8X	\N	\N	2
-\N	R7-2	R7B	\N	\N	1
-\N	R7D	R6B	\N	\N	55
-\N	R6B	R8A	\N	\N	25
-\N	R9A	C2-8A	C6-4A	\N	1
-\N	R5	R3-1	R6A	\N	1
-\N	R7A	R6A	R4-1	\N	1
-\N	R6A	R6B	R7A	\N	1
-\N	C6-4	R6B	\N	\N	1
-\N	R6	M1-3	\N	\N	7
-\N	R8B	R4	\N	\N	1
-\N	R8A	C6-3A	\N	\N	3
-\N	R6	R8A	\N	\N	2
-\N	C5-1	R10	R8B	\N	1
-\N	C8-2	R5B	\N	\N	3
-\N	C4-1	R3-2	\N	\N	3
-\N	C6-4.5	C6-1	\N	\N	1
-\N	C5-1	R8B	\N	\N	34
-\N	C4-4A	C4-2A	R6B	\N	1
-\N	R4	C3A	\N	\N	1
-R3-2	R2	\N	\N	\N	23
-\N	C5-3	C6-6.5	\N	\N	1
-\N	R7A	R8B	\N	\N	74
-\N	R6B	R7B	\N	\N	28
-\N	R7D	C4-5D	\N	\N	1
-\N	C6-1	C6-4	\N	\N	3
-\N	C4-4A	R6A	M1-4/R7A	R5	1
-\N	R5	C4-4A	\N	\N	19
-\N	C6-4A	C4-5A	\N	\N	5
-\N	R7A	R7D	R7B	\N	1
-\N	C6-4	C6-2A	\N	\N	9
-\N	C8-1	R7A	\N	\N	2
-\N	R3-1	R7A	\N	\N	2
-\N	M1-2/R6A	R6A	\N	\N	7
-\N	R3-1	M1-1	\N	\N	3
-R1-2	R3-2	\N	\N	\N	13
-\N	R5	M1-4	R4-1	\N	1
-\N	C4-5X	C4-4A	\N	\N	3
-\N	C2-8A	R8B	\N	\N	5
-\N	R8	R8B	\N	\N	33
-\N	R5B	C4-2A	\N	\N	15
-\N	M1-5	M1-6	\N	\N	1
-\N	M1-2/R6A	R6	\N	\N	3
-\N	M3-2	M1-2	\N	\N	1
-\N	R4-1	R4	M1-1	M3-1	1
-R3A	R5	\N	\N	\N	2
-\N	C4-4A	C4-2	\N	\N	1
-\N	C4-2	R6	\N	\N	20
-\N	R7-2	R10A	\N	\N	5
-\N	R6	C4-5X	\N	\N	1
-\N	R10A	R8	\N	\N	25
-\N	R7-2	C3	\N	\N	1
-\N	R5	M1-1	R6B	\N	1
-\N	R3A	R4B	\N	\N	8
-\N	R6	C4-5	\N	\N	9
-R3A	R1-2	\N	\N	\N	3
-\N	M3-1	C4-4	\N	\N	1
-M3-1	M1-1	\N	\N	\N	4
-\N	R6	R5A	R5	\N	1
-\N	R6A	R7-2	\N	\N	1
-\N	C4-5X	M1-4/R7A	\N	\N	4
-\N	C5-3	C6-6	C5-2.5	\N	1
-\N	M1-6	C5-2	\N	\N	4
-\N	R6A	R4B	\N	\N	6
-\N	R4	M1-1	\N	\N	58
-\N	R7A	R7-1	\N	\N	5
-\N	R7-2	R6A	\N	\N	1
-\N	M1-3/R7X	M1-2/R6A	\N	\N	4
-\N	C6-2G	C6-1	\N	\N	8
-\N	C6-2	C4-5X	\N	\N	5
-\N	C6-2	R8	\N	\N	7
-\N	C6-1G	C6-1	\N	\N	5
-\N	R8B	C6-2A	C6-1	\N	1
-\N	R6A	M1-4	\N	\N	1
-\N	M1-2	M2-1	\N	\N	4
-\N	C6-6	C1-9	\N	\N	1
-\N	C6-6	C6-6.5	\N	\N	6
-\N	C1-6A	R6	\N	\N	8
-\N	M3-1	C3	\N	\N	1
-\N	R5A	R6A	\N	\N	17
-\N	C2-8	M1-4	\N	\N	1
-\N	R5D	R5B	R4-1	\N	1
-\N	C6-4.5	C5-3	\N	\N	5
-\N	C5-2	M1-6	\N	\N	12
-C4-2A	M1-1	\N	\N	\N	1
-\N	R6B	R6A	C4-3A	\N	1
-\N	R4A	C3A	\N	\N	1
-\N	C6-4	C6-4A	\N	\N	2
-\N	R1-2	R3X	\N	\N	26
-\N	M1-4/R7A	R7-1	\N	\N	2
-\N	C4-2	C4-2A	\N	\N	1
-R1-2	R3X	\N	\N	\N	9
-\N	C1-9	C6-1	\N	\N	1
-\N	C5-3	C5-2	\N	\N	6
-\N	C6-2	C4-7	\N	\N	1
-\N	R6	C8-2	\N	\N	73
-\N	C6-2G	C6-1G	\N	\N	6
-\N	C1-9	R7-2	\N	\N	10
-\N	R3-2	M1-1	\N	\N	22
-\N	R6B	R7-2	\N	\N	13
-\N	R3-2	R4B	\N	\N	5
-\N	C6-2	C8-3	\N	\N	2
-\N	C1-9	C1-9A	\N	\N	1
-\N	R6B	R4-1	\N	\N	317
-\N	R1-1	R1-2	R6	R6A	1
-\N	R7B	R5A	\N	\N	6
-\N	C4-1	R3X	\N	\N	3
-\N	C4-4D	R6B	\N	\N	6
-\N	R2	M3-1	\N	\N	1
-\N	R10A	C1-9	R8B	\N	1
-\N	C8-3	R7-1	\N	\N	23
-\N	C4-2A	M1-1	\N	\N	6
-\N	C2-8A	R9A	\N	\N	1
-\N	R7A	R8B	R8A	\N	1
-\N	C5-2A	R7-1	\N	\N	1
-\N	R3-2	R4B	R3X	\N	1
-\N	C1-7	C1-8X	\N	\N	1
-\N	R3-2	C3	\N	\N	2
-\N	R3X	R1-2	R6A	\N	1
-\N	R1-1	R2	\N	\N	13
-\N	C4-5X	R6A	R7X	\N	1
-\N	R8B	C2-8	\N	\N	18
-\N	C4-4	R8	\N	\N	15
-\N	R4A	R6B	\N	\N	95
-\N	R8B	C1-8A	\N	\N	5
-\N	C2-6A	R7B	\N	\N	4
-\N	C8-2	R5	\N	\N	63
-\N	R2	R6	\N	\N	6
-\N	C8-2	R6B	\N	\N	2
-\N	C5-2	C6-3	C2-8	\N	1
-\N	C4-5X	R6	\N	\N	1
-\N	R3-2	C4-1	\N	\N	2
-\N	C5-3	R10	C6-6	\N	1
-\N	C6-2	M1-1	\N	\N	1
-\N	C6-1	C1-7	\N	\N	3
-\N	C4-3A	R6A	\N	\N	2
-\N	R7-1	R2	\N	\N	5
-\N	C6-3X	M1-6	\N	\N	4
-\N	R5B	R5D	\N	\N	85
-\N	R9	R8B	\N	\N	1
-\N	R7-2	C1-8X	\N	\N	3
-\N	R5B	R3X	\N	\N	58
-\N	R4	C8-1	\N	\N	43
-\N	C4-4A	R6B	\N	\N	14
-\N	R3-1	R1-2	\N	\N	9
-\N	R5D	C4-3	\N	\N	6
-\N	R5	R4	R6B	\N	1
-\N	C1-8	R8	\N	\N	2
-\N	R6B	R4B	\N	\N	20
-\N	C4-4D	R7B	\N	\N	1
-\N	M1-1	M1-2	\N	\N	12
-\N	R6	R5A	\N	\N	30
-\N	C4-4A	C4-7	\N	\N	2
-\N	R2A	R4	R3A	\N	1
-\N	R6B	R6A	\N	\N	348
-\N	R8B	R4-1	R4	\N	1
-\N	R8B	C2-8A	\N	\N	4
-\N	R5B	R4	R2	\N	1
-\N	R7-1	R7A	\N	\N	4
-\N	M3-1	M1-1	\N	\N	25
-\N	R4	R1-2A	\N	\N	2
-\N	R2	M1-1	\N	\N	3
-\N	R1-2	R3-1	\N	\N	3
-C4-2	R3X	\N	\N	\N	2
-\N	R6B	R6A	R7A	\N	1
-\N	C8-1	R2	\N	\N	4
-\N	R8B	C6-4A	\N	\N	1
-\N	C6-3X	C1-9A	\N	\N	1
-\N	C4-4	C8-2	R7D	\N	1
-\N	R9	R7-2	\N	\N	5
-\N	C4-3	R5B	\N	\N	3
-\N	R3-2	C4-2	\N	\N	11
-\N	R5B	C4-2A	C4-3	\N	1
-\N	C6-9	C5-5	\N	\N	1
-\N	C8-1	R4-1	\N	\N	8
-\N	M1-1	R6A	\N	\N	21
-\N	R7A	R7D	R8A	\N	1
-R3-2	R3X	R3-1	\N	\N	2
-\N	R4	C4-2	\N	\N	5
-R3-2	R4	\N	\N	\N	1
-\N	R7A	R8X	\N	\N	10
-R3-2	R3-1	\N	\N	\N	46
-\N	R6B	R4	R5	\N	3
-\N	C6-1	M1-1	C4-4A	R7A	1
-\N	R4-1	R3-1	\N	\N	1
-\N	R4	M1-2	\N	\N	1
-\N	R7A	R1-2	\N	\N	10
-\N	C8-2	M1-1	\N	\N	1
-\N	C6-2	C6-4	\N	\N	4
-\N	C1-7A	C6-3	\N	\N	1
-\N	R3X	R5D	\N	\N	8
-\N	C4-6A	R8	\N	\N	13
-\N	C6-4A	C5-2	\N	\N	1
-\N	C4-5A	C6-2A	\N	\N	2
-\N	R8	M1-2	\N	\N	4
-\N	C4-5D	R6B	\N	\N	11
-\N	M1-5	M1-5/R7X	\N	\N	1
-\N	R7D	C4-4	\N	\N	1
-\N	R6B	R5B	\N	\N	347
-\N	R6	R5B	\N	\N	20
-\N	C6-3	C4-4D	\N	\N	11
-\N	R4-1	C3	\N	\N	8
-M3-1	R3-2	\N	\N	\N	6
-R3-2	C8-1	\N	\N	\N	3
-R3-2	R3X	\N	\N	\N	50
-\N	C6-6	C6-4.5	\N	\N	14
-\N	R6A	R3A	\N	\N	15
-\N	C6-5	C6-4	\N	\N	6
-\N	M1-4/R8A	M1-4/R6A	\N	\N	1
-\N	R6B	R5	\N	\N	243
-\N	M3-1	M1-2/R6B	\N	\N	1
-\N	M1-4/R7A	M1-4	\N	\N	5
-\N	C4-4A	R5	\N	\N	4
-\N	C8-4	C2-8	\N	\N	3
-\N	R5	R6	\N	\N	149
-\N	R6B	R3-2	\N	\N	15
-\N	R4A	R4A	\N	\N	1
-\N	R2A	R4B	\N	\N	14
-\N	R3X	R3-2	\N	\N	149
-\N	C4-3	C4-3	\N	\N	1
-\N	R7B	R5B	R7D	\N	1
-\N	R7A	R5A	\N	\N	12
-\N	R7-1	M1-5	\N	\N	23
-\N	C6-4	C6-6	C6-5	\N	1
-\N	C4-4A	R6A	\N	\N	16
-R3-1	C8-1	\N	\N	\N	1
-\N	C5-2	C5-3	C5-2.5	\N	1
-\N	R7B	R3X	\N	\N	6
-\N	R2A	R3A	\N	\N	17
-\N	R7-1	C8-1	\N	\N	3
-\N	C3A	R3-2	\N	\N	1
-\N	C4-7	R8	\N	\N	3
-\N	R6A	R3A	R3-1	\N	1
-\N	R7A	R3-2	\N	\N	64
-\N	R7-2	M1-5A	\N	\N	9
-\N	M1-2	R4	\N	\N	1
-\N	R6	R5	\N	\N	133
-\N	R7-1	C4-3	\N	\N	4
-\N	R3-2	R5D	\N	\N	8
-\N	R3A	R3-2	R6	\N	1
-\N	C3A	R3A	\N	\N	30
-\N	R5B	M1-1	\N	\N	52
-\N	R7A	R2	\N	\N	50
-\N	M1-5	C2-8	\N	\N	4
-\N	R4B	R6A	\N	\N	3
-\N	R7-1	R1-2	\N	\N	1
-\N	R6	R3A	\N	\N	15
-\N	R8X	C6-2A	\N	\N	2
-\N	R6	C4-3	\N	\N	57
-\N	M1-5	C2-7	\N	\N	1
-\N	R4	R5B	\N	\N	26
-\N	C4-1	R5	\N	\N	1
-\N	M1-2	R7-1	\N	\N	3
-\N	C5-2	C6-4	\N	\N	2
-\N	M1-2/R5D	M1-2/R5B	\N	\N	14
-\N	R5D	R4-1	\N	\N	201
-\N	R4B	R3A	\N	\N	10
-\N	R5B	R6A	\N	\N	94
-\N	C1-6A	C1-7	\N	\N	1
-\N	C4-7	C6-2	\N	\N	2
-\N	R7-2	C4-5	\N	\N	1
-\N	C2-8A	C1-9A	R8B	C1-8A	1
-\N	R8	C4-4	\N	\N	21
-\N	R1-2A	R2A	\N	\N	2
-\N	R8	C6-3D	\N	\N	6
-\N	R7-1	M1-1	\N	\N	11
-\N	R5D	R4-1	C8-1	\N	1
-\N	R5D	C8-1	\N	\N	1
-\N	R6	C8-1	\N	\N	52
-\N	C6-7	C6-6.5	\N	\N	4
-\N	C6-3A	C2-6	\N	\N	2
-\N	C4-2	C8-1	\N	\N	2
-\N	R8	C4-5	\N	\N	1
-\N	R4-1	R5B	\N	\N	231
-\N	C4-4A	R6A	R6B	\N	1
-\N	M1-4/R7A	M1-2	\N	\N	1
-\N	M1-6D	C6-2A	\N	\N	1
-R3A	R3-1	\N	\N	\N	6
-\N	C6-4A	C6-3A	\N	\N	2
-\N	M1-2	R8	\N	\N	3
-\N	C5-3	R8B	\N	\N	2
-\N	C6-2	R7-2	\N	\N	2
-\N	C5-3	C6-6	\N	\N	5
-\N	R4A	C8-1	\N	\N	6
-R1-1	R1-2	\N	\N	\N	4
-\N	R5	R5A	\N	\N	29
-\N	M1-2/R6A	M1-2/R5B	\N	\N	10
-\N	M2-1	R4-1	\N	\N	1
-\N	C8-1	C4-2	\N	\N	1
-\N	C1-9A	C2-8A	R8B	R8A	1
-\N	C3	M1-1	\N	\N	5
-\N	C6-6.5	C6-7	\N	\N	3
-\N	R9X	R8B	\N	\N	9
-R1-1	R3-2	\N	\N	\N	4
-\N	R1-2	R2	\N	\N	19
-\N	R9A	R8B	C1-9A	\N	1
-\N	C6-2A	C6-3A	C6-3X	\N	1
-\N	C1-9	C2-8	\N	\N	1
-\N	R8B	C6-6	\N	\N	1
-R4	R3A	\N	\N	\N	2
-\N	C4-2	R6A	\N	\N	1
-\N	R2	R3A	\N	\N	14
-\N	C6-4	R8A	\N	\N	3
-M1-1	R3-2	R2	\N	\N	1
-\N	M1-4	R8A	\N	\N	11
-\N	R7B	R8	\N	\N	8
-\N	R8B	C6-1	\N	\N	6
-\N	M2-1	M1-2	\N	\N	5
-\N	R3X	R6A	\N	\N	56
-\N	R9A	C1-9A	\N	\N	2
-\N	R3X	R3A	\N	\N	38
-\N	R4-1	R6	M1-1	\N	1
-\N	C4-3A	R6B	\N	\N	31
-\N	R6	C1-6	\N	\N	53
-\N	C1-9	R10A	R8B	\N	3
-R6	R3-2	\N	\N	\N	1
-\N	R4B	R5B	\N	\N	11
-\N	R6	R8B	\N	\N	2
-\N	C5-3	R10	\N	\N	2
-\N	R5D	C3	\N	\N	2
-\N	C6-2M	C6-2	\N	\N	2
-\N	R5	C8-1	R7X	\N	1
-\N	M1-2	R6B	\N	\N	5
-\N	C6-4M	C6-2M	\N	\N	5
-\N	R1-2	M1-1	R6	\N	1
-\N	R3A	R2A	\N	\N	8
-\N	R10A	R8	C4-7	\N	1
-\N	M1-2	R6	\N	\N	23
-\N	M1-4/R7A	R5	\N	\N	8
-\N	R6	R6B	\N	\N	30
-M3-1	R3A	\N	\N	\N	2
-\N	M1-5/R7X	M3-1	\N	\N	1
-\N	R5A	R5D	\N	\N	2
-\N	C4-6A	R10A	\N	\N	12
-\N	R5B	R6	\N	\N	16
-\N	R5B	R5A	\N	\N	16
-\N	M1-4/R7A	R6A	\N	\N	7
-\N	R2A	R3X	\N	\N	13
-\N	M1-1	R5	\N	\N	92
-\N	R7-1	R5	\N	\N	67
-\N	R5	R7-1	\N	\N	29
-\N	R6A	C4-2	\N	\N	9
-\N	R5	M1-1	R4A	\N	1
-\N	M1-1	M3-1	\N	\N	14
-\N	R8A	R6A	R6B	\N	1
-\N	R4-1	R7X	\N	\N	2
-\N	R3A	R5D	\N	\N	86
-\N	R2	R6B	\N	\N	6
-PARK	R1-2	\N	\N	\N	1
-\N	M1-1	C4-4	M3-1	\N	1
-\N	R7B	R4A	\N	\N	10
-\N	M1-5/R7-2	R7A	\N	\N	5
-\N	C6-1	M1-5B	\N	\N	1
-\N	M1-4	M3-2	\N	\N	2
-\N	C6-4X	M1-6	\N	\N	17
-\N	M1-1/R7D	R6B	\N	\N	1
-\N	C8-1	R3-2	\N	\N	20
-M2-1	R3-2	\N	\N	\N	23
-\N	C4-4A	R5B	\N	\N	9
-\N	M1-1	R3A	R5B	R6B	1
-\N	R2	C4-2	\N	\N	6
-\N	C2-8A	C5-1A	\N	\N	1
-\N	R6B	R7-1	\N	\N	1
-\N	M1-4	R8A	R6A	\N	1
-\N	M1-5	C6-3	\N	\N	4
-\N	C1-6A	R8B	\N	\N	2
-\N	R3-1	R6A	\N	\N	78
-\N	R5	R4	\N	\N	108
-\N	R7D	R6A	\N	\N	22
-\N	C6-3X	C6-2A	C1-9A	\N	1
-\N	R6B	C4-3A	\N	\N	43
-\N	R3-2	R1-2	R2	\N	1
-\N	R4	R5D	\N	\N	58
-\N	R6A	R8A	\N	\N	10
-\N	R8A	C1-6A	\N	\N	3
-C8-1	R3X	\N	\N	\N	5
-\N	C4-5D	R6	\N	\N	11
-\N	R8	C4-7	\N	\N	2
-\N	R4A	C3	\N	\N	5
-\N	R5	R7A	R7B	\N	1
-\N	C3	R4-1	\N	\N	6
-\N	M1-4	R6A	R5B	\N	1
-\N	R7A	R3-2	R6A	\N	1
-\N	R6	R8	\N	\N	9
-\N	R2A	R2A	\N	\N	1
-\N	R3X	R3-1	\N	\N	170
-\N	M1-1	R4-1	\N	\N	15
-\N	R5B	C4-4A	\N	\N	10
-\N	R7B	R7A	\N	\N	38
-\N	R3A	R5B	\N	\N	74
-\N	R3A	R3-1	\N	\N	65
-\N	R7B	C4-4	R4A	\N	1
-\N	R8A	R6A	\N	\N	9
-\N	M1-4	M1-1	\N	\N	3
-\N	R6	R3X	\N	\N	1
-\N	C1-7	R6	\N	\N	10
-\N	R4A	M1-1	\N	\N	13
-R4	R2	\N	\N	\N	7
-\N	R10	C5-2	\N	\N	3
-\N	M1-1	R7A	\N	\N	2
-\N	C4-4A	R7-1	\N	\N	9
-R3A	R2	\N	\N	\N	1
-\N	R3-2	R4	M1-1	\N	1
-\N	R6B	R8B	\N	\N	5
-\N	R8B	R6B	\N	\N	4
-\N	C4-6	R7-1	\N	\N	1
-\N	R5	R7D	\N	\N	1
-\N	R8B	C5-3	\N	\N	2
-\N	R5	R4A	R4	R2	1
-\N	C8-2	C4-2A	\N	\N	3
-\N	C6-3A	R8A	\N	\N	1
-\N	C6-7	C5-2.5	\N	\N	1
-\N	R6	M1-4	\N	\N	6
-\N	R6A	R5B	R4-1	\N	2
-\N	R5D	R7D	\N	\N	1
-\N	M1-5	R6	\N	\N	1
-\N	R7A	R5	R6A	\N	2
-\N	M1-2/R5B	M1-2/R5D	M1-2/R6A	\N	1
-\N	R3-2	C8-1	\N	\N	30
-\N	R5D	M1-4	\N	\N	2
-\N	M1-5B	R7-2	\N	\N	1
-\N	C4-4	M1-4/R6A	\N	\N	1
-\N	C6-4	M1-5	\N	\N	5
-\N	R10	R9X	\N	\N	3
-\N	C4-3	R6B	\N	\N	25
-\N	R5B	R7B	R6B	\N	1
-\N	M3-1	C4-3	\N	\N	2
-\N	C4-3	R5	\N	\N	1
-\N	R3-2	C3A	R3-1	\N	1
-\N	M1-4D	R4-1	\N	\N	1
-\N	R3-2	R2A	\N	\N	83
-\N	M1-3	R6	\N	\N	2
-M2-1	PARK	\N	\N	\N	3
-\N	R7-2	M1-2	\N	\N	2
-\N	R7-1	C4-4	\N	\N	9
-\N	R5B	R7X	\N	\N	3
-\N	R6B	C4-5D	\N	\N	13
-\N	R6B	M1-1/R7D	\N	\N	1
-M2-1	PARKNYS	\N	\N	\N	10
-\N	C8-2	C4-4A	\N	\N	1
-\N	R6B	R5A	R5	\N	1
-\N	R7-1	R7B	\N	\N	6
-\N	R4-1	R5B	R4A	\N	1
-\N	R6B	R2A	\N	\N	1
-R3-1	PARK	\N	\N	\N	5
-\N	R3X	R4-1	\N	\N	26
-\N	R2	R4B	\N	\N	1
-\N	R7A	R4A	\N	\N	13
-\N	R8	C1-8	\N	\N	2
-\N	R6B	R3A	\N	\N	41
-\N	R6	R4A	\N	\N	12
-\N	M1-2	M1-1	\N	\N	13
-\N	C4-3A	M1-4D	\N	\N	1
-\N	R2X	R6A	R5	\N	1
-\N	C4-2A	R5	\N	\N	13
-\N	R8A	C8-2	\N	\N	1
-\N	R4-1	R6B	\N	\N	187
-\N	R3A	R3X	\N	\N	13
-\N	R8B	C6-2A	C1-9	\N	1
-\N	C1-9	R8B	\N	\N	102
-\N	M1-2/R6	M1-2/R6B	\N	\N	1
-\N	R8	C6-3	\N	\N	3
-\N	R7A	M1-5	\N	\N	1
-\N	R8A	M1-2	\N	\N	2
-\N	R3-2	R3X	\N	\N	197
-\N	R7B	R5	\N	\N	26
-\N	R4-1	R6	\N	\N	17
-\N	R4B	C4-2A	\N	\N	4
-\N	C4-5X	M1-4/R7X	M1-4/R7A	\N	1
-\N	R6B	M1-1	\N	\N	40
-\N	R3-2	R4-1	\N	\N	3
-\N	R7A	R6A	\N	\N	90
-\N	R6B	C4-2A	R5B	\N	1
-\N	C5-1	C5-3	\N	\N	1
-\N	R3A	R6	\N	\N	22
-\N	R7A	R5B	\N	\N	115
-\N	C8-2	R8	\N	\N	4
-\N	C4-4	R7A	\N	\N	4
-\N	R10A	R8B	\N	\N	71
-\N	R3-1	R5	\N	\N	5
-\N	R3-1	R3X	\N	\N	110
-\N	C5-P	C5-2.5	\N	\N	1
-\N	C4-2	R3A	\N	\N	1
-\N	C1-6	C4-5	R6	\N	1
-\N	R6A	R5D	R4	\N	1
-\N	C3	C8-1	\N	\N	5
-\N	M1-2	R4B	\N	\N	2
-\N	M1-4	M1-4/R7A	\N	\N	2
-\N	C2-8	C6-3A	\N	\N	2
-\N	R3-2	R5B	\N	\N	5
-\N	R5B	R8B	\N	\N	2
-\N	R7A	M1-2/R6A	\N	\N	3
-\N	R4A	R7A	\N	\N	17
-\N	R5D	R2A	R4	\N	1
-\N	M1-3/R7X	M1-2/R5D	\N	\N	1
-\N	M1-1	R5B	\N	\N	20
-\N	C1-9	C8-4	\N	\N	2
-\N	C4-1	R4	\N	\N	1
-\N	M1-1	C6-2	\N	\N	1
-\N	R10A	R8B	R9X	\N	1
-\N	C1-9	C6-6	\N	\N	1
-\N	M1-1	R3-1	\N	\N	9
-\N	R4B	R3-1	\N	\N	11
-\N	M1-1	R7-1	\N	\N	20
-\N	C4-5X	M1-4/R7A	R6A	\N	1
-\N	R5	R4-1	\N	\N	76
-\N	C5-3	C1-9	\N	\N	1
-\N	C4-4A	C4-2A	\N	\N	1
-\N	C4-7	R10A	\N	\N	1
-\N	C1-9A	R8A	\N	\N	1
-\N	C4-3	C4-2	\N	\N	10
-\N	R3-1	C8-1	\N	\N	2
-\N	R7A	M1-5/R7-2	\N	\N	4
-\N	R6B	M1-2/R6A	\N	\N	6
-\N	R5D	M1-1	\N	\N	1
-\N	R7-1	C8-2	\N	\N	1
-\N	R10	C2-8	\N	\N	1
-\N	C6-4	M1-5M	\N	\N	6
-\N	R4-1	R4-1	\N	\N	1
-PARK	C4-1	\N	\N	\N	1
-\N	M1-2D	M1-2	\N	\N	4
-C4-2A	C4-2	M2-1	\N	\N	2
-\N	R9	R10A	\N	\N	1
-\N	C4-5X	R7-1	\N	\N	1
-\N	R10	M1-4	\N	\N	4
-\N	R3X	R6A	R3A	\N	1
-\N	M1-2/R6A	M1-1	\N	\N	1
-\N	R2A	R4A	\N	\N	3
-\N	C6-2	C6-1	\N	\N	21
-\N	R5B	C8-1	\N	\N	10
-\N	M1-4	R7D	\N	\N	3
-\N	R6B	R6B	\N	\N	1
-\N	R3X	R5	\N	\N	17
-\N	M1-1	R6	\N	\N	53
-\N	C2-8	R7-2	\N	\N	6
-\N	C6-4	C5-2	\N	\N	1
-\N	M1-4/R6B	M1-4/R7A	\N	\N	2
-R3-2	R3-1	R3X	\N	\N	1
-\N	R6B	C4-4A	\N	\N	12
-\N	M1-4/R6B	R7X	R6A	\N	1
-\N	C1-7	R7-2	\N	\N	7
-\N	C4-4	R7-2	\N	\N	16
-\N	R6	R7-2	\N	\N	13
-\N	C4-2	R2	\N	\N	12
-\N	R3A	R1-2	\N	\N	13
-\N	R7A	R7-2	\N	\N	12
-\N	M1-4/R6A	M1-4/R7A	\N	\N	1
-\N	C8-2	R7-1	\N	\N	4
-\N	R1-2	R3-2	\N	\N	12
-R3A	R4	\N	\N	\N	2
-\N	R8	C6-4	\N	\N	9
-\N	R4	R3-1	\N	\N	5
-\N	R4	C8-1	R4B	\N	1
-\N	C6-2A	C6-3A	\N	\N	9
-\N	R7-2	R8B	\N	\N	2
-\N	C3A	R4A	R4	\N	1
-\N	M1-4/R7A	C4-5X	R7-1	\N	1
-\N	R7-1	C6-2	\N	\N	1
-\N	C3	R4A	\N	\N	4
-R3-2	C4-1	\N	\N	\N	1
-\N	R5B	R2	\N	\N	54
-\N	R7A	R7B	R6A	\N	1
-\N	C1-6	C6-2A	\N	\N	1
-M1-1	R3A	\N	\N	\N	2
-\N	C6-3	M1-5	\N	\N	4
-\N	M1-6	C6-7	\N	\N	1
-\N	C8-1	R4A	\N	\N	4
-\N	R8B	C5-2	\N	\N	2
-\N	C6-3X	R7D	\N	\N	1
-\N	R10A	C1-8A	\N	\N	2
-\N	R3-2	R4	\N	\N	15
-\N	R1-2	R5	\N	\N	6
-\N	R8B	R9A	\N	\N	11
-\N	R7A	R4-1	R6A	R5	1
-\N	R8B	C5-1	\N	\N	26
-\N	R4-1	R1-2A	\N	\N	1
-\N	R6B	R5	C8-1	\N	1
-\N	C2-8	C6-4	\N	\N	1
-\N	C6-3A	R8B	\N	\N	1
-R3A	R3-2	\N	\N	\N	64
-\N	R3A	R6B	\N	\N	19
-\N	C6-2A	R7A	\N	\N	1
-\N	R8	C2-7	\N	\N	1
-\N	M1-4	R7A	\N	\N	7
-\N	R1-2A	R3-2	\N	\N	2
-R3-2	M3-1	\N	\N	\N	3
-\N	R8	C2-8	\N	\N	4
-\N	C4-3A	R6B	R6A	\N	1
-\N	C6-6.5	C6-6	\N	\N	5
-\N	C6-4	M1-6	C6-4M	\N	1
-\N	R7-2	C1-7	\N	\N	6
-\N	M1-1	M1-3	\N	\N	3
-\N	R9	C1-9	\N	\N	3
-\N	R6B	M1-4D	\N	\N	3
-\N	C5-2A	R6	\N	\N	1
-\N	R6A	R3X	R3-1	\N	1
-\N	M1-1	C8-1	\N	\N	4
-\N	R7A	C6-1	\N	\N	1
-\N	M1-1	C4-2A	\N	\N	6
-\N	C8-1	R4B	\N	\N	1
-\N	R10	C5-1	\N	\N	5
-\N	C8-1	R6	\N	\N	28
-\N	C6-6	M1-6	\N	\N	1
-\N	R1-1	R6	\N	\N	5
-C4-1	R3A	\N	\N	\N	5
-\N	R6B	R3-1	\N	\N	6
-\N	R7D	R7A	\N	\N	2
-\N	C1-8A	R8B	\N	\N	18
-\N	R7A	R7X	\N	\N	9
-\N	M1-1	M1-4/R7A	\N	\N	5
-\N	R7B	R5	R4	\N	1
-\N	R10	C5-1A	\N	\N	2
-\N	C4-3	C4-4A	\N	\N	1
-\N	C3A	M1-1	\N	\N	2
-\N	M1-2	M1-2/R5D	\N	\N	1
-\N	R10	C5-3	\N	\N	3
-\N	C4-5D	R7D	\N	\N	1
-\N	C6-4A	M1-5M	\N	\N	1
-\N	R4A	R6	\N	\N	27
-R3-1	M3-1	\N	\N	\N	1
-\N	C6-6	C5-2.5	\N	\N	3
-\N	R6B	C6-1	\N	\N	54
-\N	R5	M1-1	\N	\N	96
-\N	R6B	M1-4	R6A	\N	2
-\N	R7-1	C4-6	\N	\N	1
-\N	R3-1	R4	R2	\N	1
-\N	R6	M2-1	\N	\N	1
-\N	C2-8	R8A	\N	\N	4
-\N	C6-7	C6-5.5	\N	\N	1
-\N	R7B	R6B	\N	\N	24
-\N	R3-2	R5	\N	\N	9
-C4-1	R3X	\N	\N	\N	1
-\N	R3-1	R2A	\N	\N	30
-\N	M1-2	C8-1	\N	\N	1
-\N	M1-2/R6	R6	\N	\N	1
-\N	C4-2A	C8-2	\N	\N	2
-\N	R6	R5	R6A	\N	1
-R3-2	C4-2A	\N	\N	\N	1
-\N	C4-4	R7B	\N	\N	1
-\N	R7A	R3-1	\N	\N	3
-\N	C6-4A	C6-4M	\N	\N	1
-\N	R6A	R4	\N	\N	128
-\N	R4-1	R5B	R4B	\N	1
-\N	M1-4/R8A	M3-1	\N	\N	1
-\N	M3-1	M2-1	\N	\N	17
-\N	R2A	C8-1	\N	\N	10
-\N	R6A	R7B	\N	\N	8
-\N	R5	R1-2	\N	\N	4
-\N	R3X	R5B	\N	\N	27
-\N	C6-1	R8B	\N	\N	8
-\N	R5D	R6A	\N	\N	11
-\N	C4-2	R4	\N	\N	2
-\N	C4-5D	R5B	\N	\N	2
-\N	R8B	R10	\N	\N	81
-\N	R8	M3-1	\N	\N	1
-\N	R5B	M1-4D	\N	\N	2
-\N	C4-4	M2-1	\N	\N	1
-\N	M3-1	R4	\N	\N	3
-\N	M1-5A	M1-5B	\N	\N	5
-\N	R2	R4	\N	\N	25
-\N	C6-5.5	C6-7T	\N	\N	5
-\N	R6A	R5A	\N	\N	75
-\N	C6-4M	M1-5M	C6-2A	\N	1
-\N	R8	C8-4	\N	\N	1
-\N	R2	R1-2	\N	\N	28
-\N	C6-2	R6	\N	\N	3
-\N	R5	C4-3	\N	\N	1
-\N	R3-1	C8-1	R3X	\N	1
-\N	R7D	R6A	R6B	\N	1
-\N	R5B	R3-2	\N	\N	9
-\N	R8B	C1-6A	\N	\N	6
-R3A	M1-1	\N	\N	\N	6
-R1-2	R3-2	R1-1	\N	\N	1
-\N	R2X	R5	\N	\N	4
-\N	R3-1	C4-1	\N	\N	1
-\N	R10A	R9	\N	\N	1
-\N	R6A	M1-2/R6	\N	\N	1
-\N	R7-1	R6B	\N	\N	1
-\N	C5-2	R10	\N	\N	1
-\N	M1-4/R6A	M1-4	\N	\N	2
-\N	C5-1	R10	\N	\N	4
-\N	R7A	R6	R5A	\N	1
-\N	C6-4.5	C6-6	\N	\N	15
-\N	C1-9	R9	\N	\N	1
-\N	C6-4A	R8B	\N	\N	5
-\N	R7B	C1-9	\N	\N	1
-\N	C1-9A	R7B	R7-2	\N	1
-\N	R4A	R5B	\N	\N	31
-\N	R4	R6B	\N	\N	54
-\N	C8-3	R5	\N	\N	1
-\N	C6-2	R5	\N	\N	1
-\N	C6-5	C6-7	\N	\N	7
-\N	M1-1	C4-5X	\N	\N	8
-\N	R8B	R10	C1-8X	\N	1
-\N	C6-4	R6	\N	\N	1
-\N	C4-2A	R4-1	\N	\N	7
-\N	R6	C1-6A	\N	\N	4
-\N	R7-1	R7X	\N	\N	2
-\N	C3	R4	\N	\N	10
-\N	R9A	R8	\N	\N	1
-R3-2	M1-1	\N	\N	\N	3
-\N	C6-1	R6B	\N	\N	3
-\N	R3-2	R6	\N	\N	4
-\N	R3-1	R4-1	R6B	\N	1
-\N	M1-5/R9	M1-5/R7-3	\N	\N	10
-\N	R2A	R3-2	\N	\N	65
-\N	R9A	R7-2	\N	\N	1
-R3X	M3-1	\N	\N	\N	2
-\N	R4B	R2A	\N	\N	34
-\N	R7A	M1-1	\N	\N	9
-\N	C2-7	R8	\N	\N	1
-\N	C2-7A	C6-3X	\N	\N	1
-\N	M1-1	R5	R6B	\N	2
-\N	M3-1	M1-2	M1-4	R6B	1
-\N	C6-2M	C6-3A	C6-2A	\N	1
-\N	R5B	R7A	R6A	\N	1
-\N	R8	C4-6A	\N	\N	2
-\N	R4A	R3A	\N	\N	4
-\N	R8B	C6-3X	\N	\N	2
-\N	C3A	R4	\N	\N	3
-\N	R7-1	C4-4A	\N	\N	4
-\N	C6-4	C6-1	\N	\N	5
-\N	M1-4/R6A	M3-1	\N	\N	2
-\N	R1-2	R6A	\N	\N	4
-\N	R4-1	R2A	\N	\N	15
-\N	R2	R4A	\N	\N	10
-\N	R5	R2X	R6A	\N	1
-\N	M1-4	C4-3	\N	\N	3
-\N	R7-2	R9	\N	\N	5
-\N	R7X	R6A	\N	\N	16
-\N	R7X	R4	\N	\N	2
-\N	R6	R6	\N	\N	1
-\N	R7-2	R7A	\N	\N	7
-\N	R7-1	R4A	\N	\N	7
-\N	R5	R6B	R5A	\N	1
-\N	R8A	R9A	\N	\N	1
-\N	R1-2	R4	\N	\N	19
-\N	C1-8X	R8B	\N	\N	38
-\N	R8	R7A	\N	\N	7
-\N	C6-2	C6-3A	\N	\N	1
-\N	R3X	M1-1	\N	\N	8
-\N	R6A	R4A	\N	\N	70
-\N	R3-2	R3-1	\N	\N	68
-\N	C6-1G	C6-2G	\N	\N	6
-\N	R8	R6	\N	\N	22
-\N	C6-1	C6-2G	\N	\N	4
-\N	C8-1	R3A	\N	\N	9
-\N	R5D	R6	\N	\N	33
-\N	C6-3	C6-4	M1-5	\N	1
-\N	R8B	R8A	\N	\N	24
-\N	R7-2	R6B	\N	\N	1
-\N	R7A	R5	R4A	\N	1
-\N	R5B	R6B	\N	\N	212
-\N	C2-6	C1-6	R6	\N	1
-\N	C6-2A	R6	\N	\N	11
-\N	R5B	R6B	R7X	\N	1
-\N	C4-5X	C6-3	\N	\N	5
-\N	M1-1	R7X	\N	\N	2
-\N	R1-1	R6A	\N	\N	3
-\N	C4-4D	C6-3	\N	\N	3
-\N	C1-9A	R8	C1-9	\N	1
-\N	M1-2/R6A	R7A	\N	\N	1
-\N	C6-4	C5-2A	\N	\N	1
-\N	R7A	R5	\N	\N	154
-\N	R9X	R10	\N	\N	1
-\N	R5D	R2	\N	\N	16
-\N	R5	M1-2/R6A	\N	\N	4
-\N	R2A	R4-1	\N	\N	28
-M2-1	M1-1	\N	\N	\N	1
-\N	R8B	C6-3A	\N	\N	1
-\N	R4-1	R4	\N	\N	196
-\N	R9	C2-8	\N	\N	1
-\N	C6-1	R7A	\N	\N	1
-\N	R5B	R6B	M1-4D	\N	1
-\N	R4	R5	\N	\N	110
-\N	R3X	R1-2	\N	\N	33
-\N	R2	R6A	\N	\N	8
-\N	R3-2	R3A	\N	\N	216
-\N	C4-2A	C4-2	\N	\N	3
-\N	R6	M1-1	\N	\N	54
-\N	M1-1	R4B	\N	\N	9
-\N	R4B	R4	\N	\N	28
-\N	M1-5B	R7-2	M1-5A	\N	1
-R1-1	R2	\N	\N	\N	5
-\N	R6A	R8	\N	\N	2
-\N	R6A	R5D	R6B	\N	1
-\N	C6-1	C1-9	\N	\N	1
-\N	C6-4M	C6-3A	\N	\N	1
-\N	C5-2	C1-9	\N	\N	1
-\N	R4	R3X	\N	\N	30
-\N	C1-9A	C1-9	\N	\N	1
-\N	R8A	R7A	\N	\N	24
-\N	R6A	R6	\N	\N	31
-\N	R3-1	R4B	\N	\N	12
-\N	R4A	R7-1	\N	\N	8
-R3X	R1-2	\N	\N	\N	4
-\N	R7A	R4-1	\N	\N	94
-\N	M1-4/R6B	M1-4/R6A	R6A	\N	1
-\N	R3A	R5	\N	\N	8
-\N	C2-8	C8-4	R8B	\N	1
-\N	C6-2A	C6-1	\N	\N	2
-\N	C8-3	R7-2	\N	\N	21
-\N	R5	R7A	\N	\N	54
-\N	M3-1	R6	\N	\N	2
-\N	R5	C4-3A	\N	\N	1
-\N	R7A	R8A	\N	\N	46
-\N	R9	R8	\N	\N	1
-\N	C1-6	R6	\N	\N	48
-\N	R4-1	R5	\N	\N	78
-\N	R2	R5D	\N	\N	9
-\N	M1-4D	R5B	\N	\N	10
-\N	R6	R5D	\N	\N	42
-\N	R3-2	R3A	C8-1	\N	2
-\N	M3-1	M1-5/R8A	\N	\N	2
-\N	R9A	R7B	\N	\N	2
-\N	C2-8	C8-4	\N	\N	2
-\N	R1-2	R1-1	\N	\N	10
-R3A	M3-1	\N	\N	\N	3
-\N	R7-1	R4	\N	\N	9
-\N	C6-3	C2-8	\N	\N	1
-\N	C6-2A	R8X	\N	\N	1
-\N	R8A	R8	\N	\N	4
-\N	R5A	R7-1	\N	\N	27
-\N	C6-6	C5-2	\N	\N	2
-\N	R2	R7-1	\N	\N	2
-\N	R8	R10	\N	\N	6
-\N	C6-2A	C4-4A	\N	\N	7
-\N	R7-1	R7B	R4	\N	1
-\N	C6-3X	R6A	\N	\N	1
-\N	R10	C4-7	\N	\N	2
-\N	R7-2	C1-9	\N	\N	7
-\N	R7-1	M1-2	\N	\N	6
-\N	C4-4D	R5B	\N	\N	11
-\N	R6A	C4-3	\N	\N	15
-\N	R10	R7-2	C1-7	\N	1
-\N	R10	R9	\N	\N	2
-\N	C1-7	C1-6	\N	\N	1
-C4-2	M3-1	\N	\N	\N	3
-\N	C1-8X	R7-2	\N	\N	2
-\N	C8-1	R3X	\N	\N	12
-\N	R9A	R8B	\N	\N	24
-\N	R2	R5B	\N	\N	34
-\N	R6B	C4-3	C4-4A	\N	1
-\N	R4	R7-1	\N	\N	8
-\N	R3-2	R6A	\N	\N	1
-\N	C4-3	R5D	\N	\N	11
-\N	M1-4	C2-8	\N	\N	1
-\N	C6-4	C6-3	\N	\N	1
-\N	C4-4D	R6A	\N	\N	3
-\N	C6-2A	M1-4/R6A	\N	\N	1
-\N	M1-2/R6A	M1-2/R5D	\N	\N	3
-\N	C6-6	C5-P	\N	\N	2
-\N	R7-2	C8-3	\N	\N	11
-\N	C6-3X	C6-4	\N	\N	1
-\N	C8-3	C6-2	\N	\N	1
-\N	R5D	R7B	R6B	R5	1
-\N	M1-1	R2	\N	\N	1
-\N	R6	C2-6	\N	\N	31
-\N	R6A	R6B	\N	\N	544
-C4-1	R3-1	\N	\N	\N	20
-\N	R5D	C4-2A	\N	\N	1
-R4	M3-1	\N	\N	\N	1
-\N	R3-1	R3-2	\N	\N	77
-C4-2	R5	\N	\N	\N	1
-\N	R4A	R2A	\N	\N	1
-\N	C6-4	C6-5	\N	\N	4
-\N	R4-1	R3X	\N	\N	27
-\N	M1-1	R3X	\N	\N	7
-\N	R5	R2	\N	\N	5
-\N	C1-9	R8	\N	\N	6
-\N	R7B	R7D	\N	\N	14
-\N	R7A	R6A	R6B	\N	1
-\N	R4	R4-1	M1-1	\N	1
-\N	R3A	C4-2	\N	\N	10
-\N	R3-2	R1-2A	\N	\N	16
-\N	R8	C8-3	\N	\N	11
-\N	R4A	R2	\N	\N	12
-\N	R5D	R3A	\N	\N	202
-\N	C4-4L	R6B	\N	\N	2
-\N	C5-2.5	C5-2	C6-6	\N	1
-\N	R6	R7A	\N	\N	14
-\N	C5-3	C5-2.5	\N	\N	75
-R3X	R3-1	\N	\N	\N	28
-\N	R5A	R7D	\N	\N	1
-\N	M1-2	R7A	\N	\N	3
-\N	R4	R7B	\N	\N	17
-\N	M1-2	R8A	\N	\N	2
-\N	C4-2F	C4-7	R10	\N	2
-\N	C6-3A	M1-6	C6-4X	\N	1
-\N	R7X	R5	\N	\N	8
-\N	R4B	R5D	\N	\N	3
-\N	C1-9	R10	\N	\N	4
-\N	R2A	R5D	\N	\N	8
-\N	C4-2A	R5D	\N	\N	2
-\N	R2A	R3-1	R3-2	\N	1
-\N	M1-5B	C6-1	\N	\N	1
-\N	M1-4D	R5B	R4-1	\N	1
-\N	R7-1	R4B	\N	\N	5
-\N	C1-6A	C6-2A	\N	\N	3
-\N	R4B	R2	\N	\N	2
-\N	R6B	R6	\N	\N	56
-\N	C4-5A	C6-4A	\N	\N	4
-\N	C8-2	R6A	R6B	\N	1
-\N	R7A	R6B	R6	\N	1
-\N	R7A	C4-3	\N	\N	2
-\N	C6-2A	C5-2	\N	\N	1
-\N	M1-2/R8A	R7-1	\N	\N	1
-\N	M1-4/R7A	R6B	\N	\N	1
-\N	R4	R4A	\N	\N	150
-\N	R8A	C6-2A	\N	\N	3
-\N	C4-5X	M1-1	\N	\N	6
-\N	C5-1	R8B	R10	\N	1
-\N	R5D	R4	\N	\N	121
-\N	R9	R10	\N	\N	3
-\N	R7X	R7B	\N	\N	5
-M3-1	PARK	\N	\N	\N	4
-\N	R6A	R7A	\N	\N	84
-\N	R5	R6A	R6	\N	1
-\N	C4-4	R7D	\N	\N	1
-\N	R8A	R8B	\N	\N	9
-\N	R3-1	R2A	R1-2	\N	1
-\N	R3X	R4A	\N	\N	11
-\N	R7A	R3X	\N	\N	17
-\N	R3A	R4	\N	\N	44
-R3-1	R3X	R2	\N	\N	1
-\N	C4-2A	C4-4A	\N	\N	7
-\N	C5-3	M1-6	\N	\N	3
-\N	R5	R4	R2	\N	1
-\N	R7A	R7B	R6B	\N	1
-\N	M1-1	R6A	R4	\N	1
-\N	R5	R5B	\N	\N	9
-R3X	PARKNYS	\N	\N	\N	2
-\N	R4-1	R7X	R5B	\N	1
-\N	R7X	R6	\N	\N	3
-\N	R7A	R5D	\N	\N	4
-\N	C8-1	R2A	\N	\N	5
-\N	C4-5	R6	\N	\N	19
-\N	R7D	R6	\N	\N	3
-\N	M1-4D	C4-3A	\N	\N	2
-C4-2	M1-1	\N	\N	\N	3
-\N	R1-2	R7A	\N	\N	11
-\N	C5-3	C5-1	\N	\N	4
-\N	R5	R7B	\N	\N	21
-\N	C6-3	C6-4	\N	\N	2
-\N	C6-4M	M1-5M	\N	\N	10
-\N	R8B	R8	\N	\N	14
-\N	R7A	R5	R2	\N	1
-\N	R7-1	C4-2	\N	\N	4
-\N	R5B	R2A	\N	\N	12
-\N	R8	C1-9	\N	\N	5
-\N	C6-6	C5-3	\N	\N	5
-\N	R2A	R6B	\N	\N	10
-\N	R3-2	R7A	\N	\N	11
-\N	M1-1	R6B	\N	\N	32
-\N	R7B	R5B	R5A	\N	1
-R3-1	R4	\N	\N	\N	1
-\N	C6-4	M1-4	\N	\N	2
-\N	C5-2.5	C5-3	C5-2	\N	1
-\N	M1-1/R7-2	R6	\N	\N	6
-\N	R6B	R5A	\N	\N	5
-\N	R7A	R9	\N	\N	2
-\N	M1-1	M1-1/R7-2	\N	\N	6
-\N	C4-1	C8-1	\N	\N	2
-\N	R6	C8-3	\N	\N	3
-\N	R10A	R7-2	\N	\N	9
-\N	R10	C2-8	R8	\N	1
-\N	C8-2	R7A	\N	\N	2
-\N	R6B	R7X	\N	\N	6
-\N	R3X	C8-1	\N	\N	2
-\N	R5	R4	C8-1	\N	1
-\N	R2	R5	\N	\N	24
-\N	C5-3	C6-4.5	\N	\N	11
-\N	M1-6	C6-6	\N	\N	3
-\N	C8-1	R3A	R3-2	\N	1
-\N	R3A	C3	\N	\N	5
-\N	R7-2	C2-6	\N	\N	2
-\N	M3-1	M1-2	R6B	\N	1
-\N	R5B	R6A	R7A	\N	2
-C4-1	R2	\N	\N	\N	1
-\N	R4-1	C8-1	\N	\N	19
-\N	R5B	R3A	\N	\N	99
-\N	M1-5M	C6-4	\N	\N	5
-R3X	R2	\N	\N	\N	1
-\N	R4-1	R7B	\N	\N	3
-\N	M3-1	R2	\N	\N	1
-\N	C4-3	M1-4	\N	\N	1
-\N	R1-1	R4	\N	\N	2
-\N	M1-2	C4-2	\N	\N	1
-\N	R10	R6	\N	\N	6
-\N	R3X	R2A	\N	\N	17
-\N	R6	R4-1	\N	\N	27
-\N	C6-4A	C4-5A	C6-2A	\N	1
-\N	C6-1A	C6-4	\N	\N	1
-\N	R5A	R7B	\N	\N	4
-\N	R7A	R7D	R6A	\N	1
-\N	R6A	R3-2	\N	\N	11
-\N	R8	C2-6	\N	\N	2
-\N	C8-1	R6B	R3X	\N	1
-\N	C1-7	C6-1	\N	\N	5
-\N	R2	C3A	R3-1	\N	1
-\N	C8-1	R4-1	R4	\N	1
-\N	R6B	R5	R7B	\N	1
-\N	C6-2	C2-7	\N	\N	1
-\N	M1-1/R7-2	R7-2	\N	\N	1
-R3-2	PARK	\N	\N	\N	12
-\N	M1-5	R7-1	\N	\N	2
-\N	R10H	C5-1	\N	\N	5
-\N	R5B	R4	\N	\N	36
-\N	R6B	R6A	R8A	\N	2
-\N	C8-2	C8-4	\N	\N	1
-\N	R6B	R3-2	R3X	\N	1
-\N	M1-4	R6	\N	\N	5
-\N	R6	R7-1	\N	\N	61
-\N	R6B	R6	R4	\N	1
-C4-2A	R3-2	R4	\N	\N	1
-\N	M3-1	M1-1	R6B	\N	1
-\N	C2-8	R9	\N	\N	1
-\N	R2A	R5B	\N	\N	4
-\N	M1-5M	C6-4M	\N	\N	4
-\N	R7-1	R8	\N	\N	10
-\N	C8-1	R6A	\N	\N	4
-\N	R4-1	C4-2A	\N	\N	3
-\N	C1-9	R7B	\N	\N	1
-\N	C6-4	R8B	\N	\N	1
-\N	R3A	M1-1	\N	\N	17
-\N	R5B	R7A	\N	\N	65
-\N	M1-6	C6-6.5	\N	\N	1
-\N	R6B	R7A	R5B	\N	1
-\N	R7A	R5B	M1-4	R6A	1
-\N	R3A	R4-1	\N	\N	4
-\N	R6B	R7D	\N	\N	50
-\N	R6	C4-2	\N	\N	23
-\N	C6-6	R8B	\N	\N	6
-\N	C6-2	R7-1	\N	\N	1
-\N	R7B	C4-4	\N	\N	4
-\N	R5	R3X	\N	\N	19
-\N	R5	R4A	R4-1	\N	1
-R4	C4-2	M1-1	\N	\N	1
-\N	R6A	M1-2	\N	\N	1
-\N	R6B	C4-4L	\N	\N	2
-\N	C6-7	C6-5	\N	\N	1
-\N	C8-1	R3A	R4	\N	1
-R3A	PARK	\N	\N	\N	1
-\N	R3A	R6A	R4	\N	1
-\N	C6-2A	C1-6	\N	\N	1
-\N	M1-1	C8-1	M2-1	\N	1
-\N	R5D	R5B	\N	\N	72
-\N	C2-8	R8	\N	\N	3
-\N	R6A	C8-2	\N	\N	2
-\N	C8-1	R6B	\N	\N	2
-\N	C6-3X	C6-2A	\N	\N	1
-\N	R5B	R7B	\N	\N	26
-\N	R3-1	R6B	\N	\N	2
-\N	R8B	R7-2	\N	\N	1
-\N	C6-3	C6-2	\N	\N	4
-R2	R3-2	\N	\N	\N	3
-\N	R7D	R7B	\N	\N	2
-\N	R6	C4-3A	\N	\N	4
-\N	C4-2	R5B	R5D	\N	1
-\N	R7A	R6A	R5	\N	1
-\N	C8-1	R5	\N	\N	53
-\N	M3-2	M1-4	\N	\N	1
-R4	C4-2	\N	\N	\N	1
-\N	R6A	R5B	\N	\N	103
-PARK	R3X	\N	\N	\N	4
-\N	R8	R5A	\N	\N	3
-\N	M1-1	R5D	\N	\N	1
-\N	R4-1	M1-1	\N	\N	17
-\N	R7B	R4	\N	\N	19
-\N	R7B	C1-6A	\N	\N	1
-\N	R4B	R4	R5D	\N	1
-\N	R5	R7X	\N	\N	12
-\N	M1-1/R7-2	R7-1	\N	\N	1
-\N	R7-2	R8	\N	\N	48
-\N	M1-4	R5D	\N	\N	1
-\N	R8A	C6-3X	\N	\N	2
-\N	R6A	R3-1	\N	\N	186
-\N	R7X	M1-4/R6B	\N	\N	4
-\N	C1-8	R8A	\N	\N	2
-\N	C4-3	M1-1	\N	\N	3
-\N	R6A	C4-4D	\N	\N	15
-\N	R3-1	R6	\N	\N	4
-\N	M1-5/R7X	M1-5	\N	\N	1
-\N	R4	R6A	\N	\N	80
-\N	R7A	R6B	R8A	\N	1
-\N	R6A	R7-1	\N	\N	3
-\N	R8B	C8-4	\N	\N	1
-\N	R3A	R3-2	\N	\N	137
-\N	R6A	M1-4/R6B	\N	\N	3
-\N	M1-1	M2-1	\N	\N	7
-\N	R6B	M1-1	R5	\N	1
-\N	R6A	C4-5X	\N	\N	5
-\N	R4	R8B	\N	\N	2
-\N	M3-2	M1-4/R6B	\N	\N	1
-\N	R6	R4	C4-3	\N	1
-\N	R4-1	C8-1	M1-1	\N	1
-R3X	M2-1	\N	\N	\N	1
-\N	R5	C8-1	\N	\N	93
-\N	C6-3	C6-3A	\N	\N	1
-\N	C6-2	C6-2M	\N	\N	3
-\N	R6	R10	\N	\N	1
-\N	R5	C8-2	\N	\N	30
-R5	R3A	\N	\N	\N	2
-R4	R1-2	\N	\N	\N	3
-\N	C4-3	R6	\N	\N	42
-\N	C2-7A	R8A	\N	\N	1
-R3A	C8-1	R3-2	\N	\N	1
-\N	C1-9A	R7B	\N	\N	1
-\N	M1-1	R3-1	R3-2	\N	1
-\N	R5A	R4	\N	\N	1
-\N	R6	R4	\N	\N	58
-\N	M1-4	C6-4	\N	\N	3
-\N	C5-P	C5-3	\N	\N	1
-\N	C6-3A	C5-3	\N	\N	1
-\N	R7B	C4-4D	\N	\N	1
-\N	C4-4	R4A	\N	\N	1
-\N	R5D	R3X	\N	\N	20
-\N	M1-5/R8A	M1-4/R7A	\N	\N	1
-\N	C8-2	C4-2	\N	\N	1
-\N	R5	R4A	\N	\N	52
-\N	C4-6A	R8B	R10A	\N	1
-\N	R7B	R5	R6B	\N	1
-\N	R7A	R5B	R7X	\N	1
-\N	R7B	R8A	\N	\N	8
-\N	R4	C4-3	\N	\N	2
-\N	R8	C1-9A	\N	\N	1
-\N	R4-1	R3-2	\N	\N	3
-\N	R4B	R6B	\N	\N	30
-\N	C4-2	M2-1	\N	\N	2
-\N	C3	R3A	\N	\N	3
-\N	R8B	R10	R9X	\N	2
-\N	C8-2	R6	\N	\N	45
-\N	M1-2/R6	M1-2/R6A	\N	\N	4
-\N	R8A	R5B	\N	\N	38
-\N	R3-1	R2	\N	\N	45
-\N	R6A	C8-1	\N	\N	9
-\N	R7X	R6B	\N	\N	4
-\N	C4-7	C4-2F	R10	\N	1
-\N	C6-6.5	C5-3	\N	\N	2
-\N	R7A	R7D	\N	\N	2
-\N	C4-4	R7-1	\N	\N	3
-\N	R7-2	C6-1	\N	\N	1
-\N	C4-2	C4-4A	\N	\N	1
-C8-1	R3A	\N	\N	\N	4
-\N	R7X	R4-1	\N	\N	4
-\N	C1-9	C5-3	\N	\N	1
-\N	R2A	R4	\N	\N	43
-\N	R5B	C8-2	\N	\N	4
-\N	C4-4A	R4	\N	\N	1
-\N	C6-4	R7-1	\N	\N	3
-\N	C6-2A	C4-5A	\N	\N	3
-\N	R7A	C4-4D	\N	\N	2
-\N	R3A	R4A	\N	\N	9
-\N	C4-4A	C4-5X	\N	\N	5
-\N	M1-1	C4-5X	C8-3	\N	1
-\N	M1-1	C3	\N	\N	3
-\N	R6B	R4	\N	\N	109
-\N	C4-3A	R6	\N	\N	1
-\N	R3A	C3A	\N	\N	39
-\N	C1-7A	C1-6A	\N	\N	2
-\N	C6-3	C4-5X	\N	\N	10
-\N	R5	R5D	\N	\N	46
-\N	R5A	R8	\N	\N	3
-\N	M1-1	R5B	R4-1	\N	1
-\N	R4-1	R7A	\N	\N	43
-\N	C6-5.5	C6-6	\N	\N	5
-\N	R7-2	C6-1G	\N	\N	16
-\N	R5	R6A	\N	\N	120
-\N	R7B	R7-1	\N	\N	2
-M3-1	M2-1	\N	\N	\N	1
-\N	C6-6	C5-2	C1-9	\N	1
-\N	R6B	R7A	\N	\N	287
-\N	R5B	R1-2A	\N	\N	4
-\N	R6A	R1-1	\N	\N	1
-\N	R3-2	R3-2	\N	\N	1
-\N	R8B	C1-9	\N	\N	55
-\N	M1-5/R7-3	M1-5/R9	\N	\N	3
-\N	R3X	R6B	\N	\N	9
-\N	R1-2	R2A	\N	\N	13
-\N	R2	R3-2	\N	\N	130
-\N	R8B	R10	C5-1	\N	1
-\N	C6-4	C6-2A	C6-1	\N	1
-\N	C6-2	R6B	\N	\N	1
-\N	M1-6	C6-4M	\N	\N	8
-\N	M1-1	M1-2/R6A	\N	\N	2
-\N	R8	R7B	\N	\N	3
-\N	R8B	R7-2	R7A	\N	1
-\N	R6A	R3X	\N	\N	124
-\N	M1-2/R5B	M1-2/R6A	\N	\N	17
-\N	R4A	R3X	\N	\N	17
-R3A	R3X	\N	\N	\N	1
-R2	R1-2	\N	\N	\N	5
-\N	C6-3A	C2-8A	\N	\N	1
-R1-2	R1-1	\N	\N	\N	7
-\N	M2-1	R7-2	\N	\N	2
-\N	C4-6	C2-8	\N	\N	1
-\N	C8-1	R3-1	\N	\N	4
-\N	R6	M3-1	\N	\N	3
-\N	R8	R7-1	\N	\N	10
-\N	R10	R8	\N	\N	8
-\N	R5	C4-2A	\N	\N	19
-\N	C6-3A	M1-5	\N	\N	2
-\N	M2-3	M1-5	\N	\N	2
-\N	R10	R8	R9	\N	1
-\N	M1-1	R4	\N	\N	50
+zoningdistrict2edm,zoningdistrict1,zoningdistrict2,zoningdistrict3,zoningdistrict4,count
+,M1-1,C8-3,,,2
+,R6A,M1-4/R6A,,,2
+,R6,R5,R7A,,1
+,R7X,R7-2,,,2
+,C8-2,R7-1,R5,,1
+,C6-5,C6-7T,,,2
+,M1-2,M1-2/R6B,,,1
+,M1-2/R6A,M1-2,,,5
+,C3A,R4A,,,1
+,C5-2.5,R10H,,,1
+,M1-2,R5,,,2
+,C4-2A,C4-3,,,5
+,R4A,R3-1,,,14
+,C3,M2-1,,,3
+,R6B,R3X,,,25
+,R7-1,R5A,,,25
+,C6-4,C6-2A,R8B,,1
+,R7D,R7A,R7B,,1
+,R4A,R4-1,R5B,,1
+,C6-1,C6-1G,,,2
+,M3-1,R3A,,,3
+,M1-1,R6B,C4-5D,,1
+,M2-1,C3,,,2
+,R7D,R5D,R5B,,1
+,C4-4,R6,,,7
+,M1-1,R8,,,3
+,C1-9A,R6B,,,1
+,C6-3,M1-4,,,3
+,C8-1,R3-2,R3-1,,2
+,R5D,R7A,,,7
+,C2-6,R6,,,29
+,M1-2,M3-1,C4-2,,1
+,R7-2,C4-4,,,10
+,M1-4D,M1-4,,,2
+,M1-2/R5B,R5,,,2
+,M1-1,R3A,,,5
+,C1-8X,R10A,,,1
+,R4-1,R6,R2,,1
+,R6,C5-2A,,,3
+,R3-1,C3,,,2
+,R6A,R7D,R6B,,1
+,R7A,R5B,C4-4A,,1
+,R5A,C8-1,,,15
+,R8B,R7A,,,64
+,C5-2,R8B,,,3
+,C1-7,C6-2,,,1
+,M1-2/R5B,M1-2/R5D,,,5
+,R8B,C1-8X,,,40
+,R10A,C1-9,,,6
+,R7B,R7A,R6B,,1
+,C6-4A,C6-4,M1-5M,,1
+,C6-1,C6-4M,,,1
+R1-1,PARK,,,,1
+,R9A,R8A,R7B,,1
+,M1-6,R6,,,1
+,R3-1,R4,R7-1,R7B,1
+,R6A,R2,,,20
+,C5-2.5,C5-3,,,32
+,R7-2,C4-4,C8-3,,1
+,R2,R2A,,,25
+,C4-4D,R8A,,,1
+,R3A,R6A,,,4
+,R5D,R3-2,,,16
+,C4-6A,R9,,,1
+,R4B,R8B,,,2
+,R5D,R4B,,,13
+,R3X,R2,,,52
+,R5,R6B,,,187
+,C6-4A,R9A,,,3
+,C6-6,C6-4,,,4
+,C6-2A,C6-2M,,,3
+,C4-5X,C6-2,,,7
+C4-1,R3-2,,,,7
+,C5-3,C6-4,,,3
+,M1-1,M1-4,,,3
+,R5,R2A,,,1
+,R2,R4,R5,,1
+,R5B,R4B,,,31
+,R5B,R4-1,,,297
+,R7A,C8-1,,,2
+,R4,R1-2,,,8
+,R5B,R7D,,,19
+,M2-1,C4-4,,,2
+,M2-1,C8-1,M1-1,,1
+,C8-1,M1-1,R5,,1
+,C4-2,M1-1,,,1
+,C4-3A,R5B,,,1
+,R10,R10A,,,3
+,R2X,R6A,,,4
+,M1-1,R2A,R3-2,,1
+R3-2,R3A,,,,35
+,R6,C6-4,,,3
+,C3,R5D,,,1
+,R3-1,M1-1,R5,,1
+,R8A,R6B,,,62
+,C1-9A,R8B,,,7
+,R5B,R4-1,R6A,,1
+,C6-3,C4-7,,,1
+,C3,R5,,,1
+,C2-8A,R8B,C2-8,,1
+,M1-2,M3-1,,,9
+,R6A,R7D,,,9
+,C8-2,R5B,R5,,1
+R3-2,C3A,,,,1
+,R7-1,C4-4,R8,,1
+,C5-2,C6-4A,,,2
+,C2-8A,C1-9A,,,1
+,R7A,R4,,,25
+,R6,R3-1,,,5
+,C6-2,C1-7,R6,,1
+,C5-3,C6-1,,,1
+,R4A,R4,,,87
+,M1-6,C5-3,,,8
+PARK,M3-1,,,,1
+,R4-1,M1-4D,,,1
+,C4-4,R5,,,1
+,R6B,R5D,,,9
+,R10,R8B,,,158
+,R3A,C8-1,,,18
+,R1-1,R1-2,,,21
+,C6-4,C6-6,,,9
+,R5D,R2A,,,8
+,R6,M1-6,,,4
+R3-1,R3A,,,,2
+,C4-2,C4-3,,,15
+M1-1,PARK,,,,2
+,C6-3A,C6-2A,,,9
+,C5-2,C6-6,,,2
+,C4-3,R7-1,,,6
+,R3X,R4B,,,18
+,R8B,C1-9,R9X,,1
+,M1-4,R10,,,1
+,R7B,R8B,,,13
+,C8-4,R8,,,3
+,R7-1,R6,,,98
+,C6-2A,R8A,R8B,,1
+,C4-4A,R6,,,5
+,R6A,R3-1,R3X,,1
+,R4A,R4,R2,,1
+R3-1,R3X,,,,35
+,R7-2,C3,R8,,1
+,C5-2.5,C6-6,,,1
+,M1-2/R8,M1-2/R8A,,,1
+,C4-2,C8-2,,,3
+,R8B,C6-2A,,,21
+,R2,R4-1,,,10
+,R4,R7A,,,31
+,C5-2,C5-2.5,,,2
+,C1-8A,R7B,,,1
+M1-1,M3-1,,,,1
+,C6-1,R7-2,,,1
+,M1-2,M1-2/R6A,,,1
+,R7-2,R6,,,25
+,R7A,R7B,,,75
+,R6A,C4-4A,,,19
+,C6-7T,C6-5,,,6
+,R2,R3-1,,,26
+,R4A,R5,,,29
+,R8B,R6A,,,1
+,C1-9A,R8A,R9A,R8B,1
+,R7-3,C4-3,,,3
+,R3-1,R3A,,,68
+,R8B,R6,,,1
+,C1-7,C1-6A,,,3
+,R4A,R5D,,,34
+,R7B,R8X,,,3
+,M1-2/R5D,M1-2/R6A,,,3
+,R2A,M1-1,,,1
+,R7X,M1-1,,,1
+,R4-1,R6A,,,77
+,R6A,R5,,,352
+,C8-1,R5B,,,4
+,R6A,C4-4L,,,3
+,R3-2,R3-1,R2A,,1
+,C1-9A,R9A,,,1
+,R8X,R7B,,,6
+,R4A,R4-1,,,63
+,C6-1,C6-2,,,15
+,M1-6D,M1-6,,,2
+,R8,C6-4,R7-1,,1
+,M1-4/R6B,M3-2,,,1
+,C1-9,C1-9A,R8,,1
+,M1-4/R8A,M1-4/R7A,,,1
+,R8A,C1-8,,,1
+,C6-2M,C6-2A,,,1
+,R3-2,R3A,R6,,1
+,R5D,R4-1,R4A,,1
+,R10,R8,C2-8,,1
+,R4B,M1-2,,,2
+,R6,C6-2,,,4
+R3-1,R3-2,,,,15
+,C6-2A,M1-6D,,,2
+,M1-4D,R6B,,,2
+,R7B,R5B,,,54
+,R8B,R10A,C1-9,,1
+,M1-1,C4-2,C4-2A,,2
+,C6-4A,M1-5M,C6-4,,1
+M2-1,M3-1,,,,3
+,R5B,C4-3,,,1
+,R5D,R6B,,,8
+,M1-1,C8-1,C4-2,,1
+,R3-2,R4A,,,40
+,C6-2A,C5-4,,,2
+,R7A,R2,R4,,1
+,C8-3,C4-4,,,1
+,C1-7A,R8A,,,4
+,R5,M1-4,,,1
+,R6,C2-6,C1-6,,1
+,R6A,R7X,,,13
+,C4-2,R7-1,,,2
+,R5D,R5,,,66
+,C2-6,R7-2,,,4
+,R6B,M3-1,,,2
+,R5B,R8A,,,14
+,R8,R9,,,1
+,R2,R3-1,R3-2,,1
+,R5,R3A,,,8
+,R6,C4-4,,,5
+C3,C4-2,C8-1,,,1
+,R3-1,R4,,,6
+,C2-7A,R8B,,,9
+,R2,R3X,,,57
+,R6,R7B,,,3
+,R8B,C1-9A,,,2
+,R7B,R7-2,,,11
+,R5A,R7A,,,9
+,M1-2/R6A,R6B,,,20
+R5,R3-1,,,,3
+,C5-P,C6-6,,,3
+,C4-4A,R7A,R6B,,1
+,R1-2,R3A,,,1
+,C8-1,M1-1,R5B,,1
+,C6-3A,C6-2,,,1
+,R8B,R4B,,,1
+,R6A,C4-3A,,,5
+,R3-1,R2,R3X,,2
+,M1-2/R6B,M1-1,,,2
+,R7B,C6-4A,,,6
+C3A,R3-2,,,,3
+R3-2,R1-2,,,,5
+,M1-4,R6A,,,115
+R2,C4-1,R3-1,,,1
+,R7A,C4-4A,,,26
+R3A,C4-2,,,,4
+,C1-6,C2-6,,,3
+,M1-4/R6A,M1-4/R6B,,,1
+,R6,M1-5,,,1
+,M1-1,R7-2,,,2
+,R4A,C4-4,,,1
+,C7,R6,,,3
+,R6A,R5D,,,15
+,R8,R6A,,,4
+,C8-1,R7-1,,,48
+,M1-4/R7A,R5,R6A,,1
+,C4-2A,R6B,,,21
+R5,R3X,,,,18
+,R7X,R7A,,,8
+,R6B,C4-3,,,120
+,M1-2/R6B,M1-2/R6A,,,9
+R1-2,R2,,,,6
+,R6B,M1-2,,,8
+,R7-2,C1-6A,,,1
+,C6-2,M1-1,R7-1,,1
+R3-1,R2,,,,32
+,R4,R6B,R5,,1
+,R8,R8A,,,1
+,C5-5,C6-4,,,3
+,C8-3,R8,,,6
+,M1-1,R3-2,,,33
+,R6B,M1-4,R7A,,3
+,C4-5D,M1-1,,,2
+,M3-1,C4-2,,,2
+,C4-2,R5,,,36
+,M3-1,M1-4/R8A,,,1
+,R3-1,C3A,,,9
+,R4A,R6A,,,75
+,R8B,R10A,,,34
+,R8,R10A,,,13
+,C1-6A,C1-7A,,,3
+,R4-1,R2,,,13
+,R6B,C4-2A,,,4
+,R1-2,R4-1,,,1
+,R8B,R5B,,,6
+,C2-8,R7B,,,2
+,C6-4,C5-3,,,2
+,R4B,R4-1,,,41
+R2,R3-1,,,,20
+,M1-4/R7X,M1-2,,,1
+,C6-3D,R8,,,5
+,M1-2/R6A,M1-2/R6,,,6
+,R6,M1-2/R6,,,2
+,R3A,R2,,,13
+,C4-4A,C6-2A,,,7
+,R7B,R9A,R7-2,,1
+,R3A,R4,R7A,,1
+,R5D,R6A,R5B,,1
+,R5B,R5,,,13
+,R4B,M1-1,,,29
+,C5-2.5,C5-2,,,4
+,C6-2A,C6-2,,,1
+,M1-1/R7-2,M1-1,,,11
+,R4,R4B,,,28
+,C6-2,C1-7,,,1
+,R7B,R6A,,,3
+,R4,R6,,,58
+,C8-1,M1-1,,,6
+,R6,C6-2A,,,3
+,R8,C8-2,,,5
+,C2-6,R6,C1-6,,1
+,R7B,R4-1,,,33
+,R2A,R2,,,55
+,R5A,R5B,,,12
+,R4-1,R5D,,,104
+,C4-2A,R5B,,,19
+,C6-4M,M1-6,,,2
+,R5,R2X,,,15
+,C4-4A,M1-5,,,1
+,C6-4M,C6-4A,,,14
+,C4-6A,R8B,,,19
+,R5,R3-2,,,18
+,R7X,R5B,,,7
+,M1-2/R6A,M1-2/R6B,,,18
+R3A,C8-1,,,,2
+,R2A,R1-2A,,,2
+,R10A,R10,,,2
+,C4-4A,R7A,R5B,,1
+M1-1,PARKNYS,,,,10
+M3-1,R3X,,,,2
+,R7A,R4-1,R5B,,1
+,C5-3,C5-P,,,3
+,R5D,R6,R6B,,1
+,R6,C7,,,1
+,R1-2,R3X,R2,R4-1,1
+,M1-5B,M1-5A,,,7
+,M3-1,M1-2/R6,,,4
+,R10,C6-1,,,2
+,R6,M1-2,,,13
+,C1-9,R10A,,,4
+,C5-2,C5-3,,,6
+,C8-3,M1-1,C4-5X,,1
+,R4,R3-2,,,35
+,M1-4,M1-4D,,,1
+,R5D,R4A,,,27
+,R10,R7-2,,,6
+,C6-2A,R8B,,,37
+,R7A,R6,,,20
+,R7B,R5,R7A,,1
+,C2-8A,C2-8,,,1
+,R6A,M1-1,,,18
+PARK,R3-2,,,,3
+,R6,R2,,,1
+,R5B,R6A,R5D,,1
+,M1-4/R7A,M1-5/R8A,,,1
+,R8,C6-2,,,7
+,R6A,M1-2/R6A,,,7
+,R1-1,R3X,,,1
+,M1-6,C6-3X,,,1
+,C4-5X,R6A,,,10
+,C6-3A,C6-1G,,,3
+,R3-2,R1-2,,,6
+,R8B,R4-1,,,6
+,R8,R9A,,,2
+,C8-1,R5D,,,1
+,R1-2A,R5B,,,6
+,R6,C5-2,,,5
+,M1-2/R6,R6A,,,2
+,R2,R7A,,,9
+R3X,M1-1,,,,1
+,C5-1A,R10,,,2
+,R4A,R3-2,,,15
+,R7B,R6,,,5
+,M2-1,M1-1,,,13
+,C4-2,M1-2,,,1
+,R3-2,M3-1,,,1
+,R6A,R2X,,,4
+,C1-9,R10,R8B,,1
+,R10,C1-9,,,1
+,R7A,R6B,,,272
+,R7A,R8,,,6
+,C6-4,C6-4M,C6-1,,1
+,C6-2A,R8A,,,3
+,C4-4,R2,,,1
+,C6-4M,C6-2A,,,4
+,R5,C8-1,R7-1,,1
+,R3-2,R2,,,87
+,M1-2/R6A,M1-2/R5D,M1-2/R5B,,2
+,C4-5D,R7-1,,,1
+R3X,R3-2,,,,27
+,R7A,R5B,R6B,,1
+,R10A,C4-6A,,,5
+R3-2,R5,,,,2
+,C4-4A,C4-3,R6B,,1
+,R4,R2A,,,50
+,R10H,C5-2.5,,,1
+,R2A,R3-1,,,48
+,M1-1,C4-2,,,2
+,R4A,R7B,,,1
+,R6A,R7A,R6B,,1
+,M1-1,C4-4,,,4
+,R7-2,R7X,,,1
+,R6A,R4-1,,,225
+,R7-1,C4-5X,,,2
+,R6A,C4-4A,R7A,,1
+R3X,PARK,,,,27
+,C6-7T,C6-5.5,,,5
+,M3-1,M1-2,,,15
+M1-1,R3X,,,,5
+,R4-1,R4A,,,131
+,R3X,R4,,,26
+,C6-3X,R8,,,1
+,M1-5,C6-4,,,3
+,R7X,R7-1,,,5
+,R5A,R5,,,15
+,R8,C6-6,,,1
+,C6-2,C6-3,,,10
+,R8A,R7D,R7A,,1
+,C6-7,C6-6,,,3
+,R8X,R7A,,,5
+,R7B,R7X,,,9
+,R4B,R4A,,,23
+,R4,R5D,R6A,,1
+,R10A,C4-7,,,2
+,M1-1,R4A,,,14
+,R4-1,C8-2,,,2
+,R7-2,C6-2,,,3
+,C6-3A,C6-1,,,12
+,R4,C4-4A,,,2
+,R7-2,M1-5B,,,1
+,C1-7,C6-1,R7-2,,1
+,C1-9,C2-8,R7-2,,1
+,R7-2,C8-4,,,2
+,M1-1,M1-1,,,1
+,M1-2,C4-4,,,1
+,M1-4/R7X,M1-4/R7A,,,8
+,C6-4A,C6-2A,,,10
+,R3X,C4-2,,,1
+,R9A,C6-4A,,,1
+,R7A,R5A,R7B,,1
+,C3A,R3-1,,,12
+,R9A,R8A,,,1
+,C4-4L,R6A,,,2
+,R6A,R5B,R5D,,1
+,C6-7T,C6-6.5,,,1
+,R3-2,R6B,,,8
+,R8B,C4-6A,,,10
+,R5,R7B,R6B,,1
+,C6-4,C2-8,,,1
+,R6A,M1-5,,,1
+,R1-1,R3-2,,,1
+,R8,R7-2,,,34
+,C6-2A,C6-4A,,,7
+,R3X,C4-1,,,16
+,R5A,R6B,,,12
+,R4A,R4B,,,20
+,R6B,R2,,,6
+,M1-4/R7X,M1-4,,,5
+,R6A,R1-2,,,5
+,M1-6/R10,M1-5/R7-3,,,1
+,R4,C3,,,8
+,R3X,R6A,R5,,1
+,C6-2,C6-2A,,,1
+,R6A,C4-2A,,,3
+,R2A,R1-2,,,31
+,R6B,C8-2,,,2
+,R5,C4-2,,,35
+,M1-5A,R7-2,,,5
+,C6-4,C6-2,,,10
+R3X,C4-1,,,,2
+,C8-1,R3-2,R4,,1
+,C4-7,R6A,,,1
+R3A,C4-1,,,,9
+,R5D,C8-1,R4-1,,1
+,C4-2,R3X,,,1
+,C4-2A,R6A,,,5
+,R7A,R6,R4-1,,1
+,C8-1,R4,,,40
+,R5D,R5A,,,5
+,C4-2A,R6B,R4-1,,1
+,R4,R4-1,,,220
+,R8B,R9X,,,4
+,R4-1,R4B,,,60
+,R6,R6A,,,18
+,R8,R6,M1-2,,1
+,R6B,C4-5D,M1-1,,1
+,M3-2,R10,,,1
+,C6-4,R8,,,1
+,R9X,R10A,,,1
+,R5B,R3-1,,,1
+,M1-4/R6B,R6A,,,1
+,C2-8,R8B,,,46
+,R3-1,R4-1,M1-1,C8-1,1
+,M2-1,M3-1,,,15
+,M1-4/R6B,R7X,,,12
+,M2-1,R5,,,4
+,R3X,C3,,,2
+R3-1,R1-2,,,,4
+,R4-1,R1-2,,,1
+,C6-2M,C6-4A,,,1
+,R7-1,C8-3,,,30
+,R6,R3-2,,,9
+,C4-2,C4-1,M1-1,,1
+,R8B,R7A,R8A,,1
+,C3,C4-2,,,1
+M1-1,R3-2,,,,9
+,C4-2A,R4B,,,2
+,R6B,R6A,R7A,M1-4,1
+,R6,M1-4/R7A,,,7
+,R2,C3A,,,2
+,R4B,R3X,,,7
+,C5-1,R10H,,,5
+,R3-1,R4A,,,2
+,M1-4/R7A,R6,,,4
+,R5D,R3-2,R4,,1
+,R2,R1-1,,,3
+,R5B,C4-4D,,,4
+,M1-2/R6A,R5,,,1
+,R7A,C8-2,,,2
+,R4,R3A,,,57
+,R8A,C2-8A,,,1
+,R8B,C2-7A,,,6
+,C2-8A,R8A,,,2
+,R4,M2-1,,,4
+,M1-2/R6,R6B,,,1
+,R7A,M1-2,,,1
+,R7A,M1-4,R6A,,1
+,R6,C4-2,R7A,,1
+,R6B,R4A,,,97
+,R6B,C8-1,,,5
+,R8A,R7B,,,8
+,C6-4A,C2-8A,,,1
+,R9,C4-6A,,,1
+,R9A,C2-8A,,,1
+,C5-3,C5-2.5,R8B,,1
+,R4-1,R3A,,,13
+,C4-2,C4-4A,R6A,,1
+,C4-4A,R7A,,,61
+,C4-5X,R7A,,,4
+,R5,R3-1,,,23
+,R2,C8-1,,,4
+,R3A,R5B,R6B,,1
+,C2-6,C1-6,,,6
+,R6B,C4-2A,C4-3,,1
+,R4B,R3-2,,,7
+,R5A,R6,,,59
+,M1-2/R8A,M1-2/R8,,,2
+,R7B,C1-8A,,,1
+M3-1,R4,,,,1
+,C8-1,M1-2,,,2
+,M1-4,R6A,R8A,,1
+,M1-4/R7A,C4-5X,,,2
+,R4,R5,R6B,,1
+,C6-3X,C6-4X,,,1
+,C6-6,C6-5.5,,,4
+M1-1,M2-1,,,,2
+,R6A,C1-6A,,,2
+,R3X,R6A,R4,,1
+,R3A,R4,C8-1,,1
+,R3A,R3-2,M1-1,,1
+,R3X,R7A,,,6
+,C1-6A,R6A,,,1
+,R8,R8B,R9A,,1
+,R5B,R4A,,,70
+,C5-2.5,C5-3,C6-6,,3
+,C4-2,R3-2,,,1
+,C6-2A,C6-4,,,3
+,M1-4/R7A,M1-4/R7X,,,2
+,R4,R2,,,17
+,C6-1,R8X,,,2
+,R7-2,R7B,,,1
+,R7D,R6B,,,55
+,R6B,R8A,,,25
+,R9A,C2-8A,C6-4A,,1
+,R5,R3-1,R6A,,1
+,R7A,R6A,R4-1,,1
+,R6A,R6B,R7A,,1
+,C6-4,R6B,,,1
+,R6,M1-3,,,7
+,R8B,R4,,,1
+,R8A,C6-3A,,,3
+,R6,R8A,,,2
+,C5-1,R10,R8B,,1
+,C8-2,R5B,,,3
+,C4-1,R3-2,,,3
+,C6-4.5,C6-1,,,1
+,C5-1,R8B,,,34
+,C4-4A,C4-2A,R6B,,1
+,R4,C3A,,,1
+R3-2,R2,,,,23
+,C5-3,C6-6.5,,,1
+,R7A,R8B,,,74
+,R6B,R7B,,,28
+,R7D,C4-5D,,,1
+,C6-1,C6-4,,,3
+,C4-4A,R6A,M1-4/R7A,R5,1
+,R5,C4-4A,,,19
+,C6-4A,C4-5A,,,5
+,R7A,R7D,R7B,,1
+,C6-4,C6-2A,,,9
+,C8-1,R7A,,,2
+,R3-1,R7A,,,2
+,M1-2/R6A,R6A,,,7
+,R3-1,M1-1,,,3
+R1-2,R3-2,,,,13
+,R5,M1-4,R4-1,,1
+,C4-5X,C4-4A,,,3
+,C2-8A,R8B,,,5
+,R8,R8B,,,33
+,R5B,C4-2A,,,15
+,M1-5,M1-6,,,1
+,M1-2/R6A,R6,,,3
+,M3-2,M1-2,,,1
+,R4-1,R4,M1-1,M3-1,1
+R3A,R5,,,,2
+,C4-4A,C4-2,,,1
+,C4-2,R6,,,20
+,R7-2,R10A,,,5
+,R6,C4-5X,,,1
+,R10A,R8,,,25
+,R7-2,C3,,,1
+,R5,M1-1,R6B,,1
+,R3A,R4B,,,8
+,R6,C4-5,,,9
+R3A,R1-2,,,,3
+,M3-1,C4-4,,,1
+M3-1,M1-1,,,,4
+,R6,R5A,R5,,1
+,R6A,R7-2,,,1
+,C4-5X,M1-4/R7A,,,4
+,C5-3,C6-6,C5-2.5,,1
+,M1-6,C5-2,,,4
+,R6A,R4B,,,6
+,R4,M1-1,,,58
+,R7A,R7-1,,,5
+,R7-2,R6A,,,1
+,M1-3/R7X,M1-2/R6A,,,4
+,C6-2G,C6-1,,,8
+,C6-2,C4-5X,,,5
+,C6-2,R8,,,7
+,C6-1G,C6-1,,,5
+,R8B,C6-2A,C6-1,,1
+,R6A,M1-4,,,1
+,M1-2,M2-1,,,4
+,C6-6,C1-9,,,1
+,C6-6,C6-6.5,,,6
+,C1-6A,R6,,,8
+,M3-1,C3,,,1
+,R5A,R6A,,,17
+,C2-8,M1-4,,,1
+,R5D,R5B,R4-1,,1
+,C6-4.5,C5-3,,,5
+,C5-2,M1-6,,,12
+C4-2A,M1-1,,,,1
+,R6B,R6A,C4-3A,,1
+,R4A,C3A,,,1
+,C6-4,C6-4A,,,2
+,R1-2,R3X,,,26
+,M1-4/R7A,R7-1,,,2
+,C4-2,C4-2A,,,1
+R1-2,R3X,,,,9
+,C1-9,C6-1,,,1
+,C5-3,C5-2,,,6
+,C6-2,C4-7,,,1
+,R6,C8-2,,,73
+,C6-2G,C6-1G,,,6
+,C1-9,R7-2,,,10
+,R3-2,M1-1,,,22
+,R6B,R7-2,,,13
+,R3-2,R4B,,,5
+,C6-2,C8-3,,,2
+,C1-9,C1-9A,,,1
+,R6B,R4-1,,,317
+,R1-1,R1-2,R6,R6A,1
+,R7B,R5A,,,6
+,C4-1,R3X,,,3
+,C4-4D,R6B,,,6
+,R2,M3-1,,,1
+,R10A,C1-9,R8B,,1
+,C8-3,R7-1,,,23
+,C4-2A,M1-1,,,6
+,C2-8A,R9A,,,1
+,R7A,R8B,R8A,,1
+,C5-2A,R7-1,,,1
+,R3-2,R4B,R3X,,1
+,C1-7,C1-8X,,,1
+,R3-2,C3,,,2
+,R3X,R1-2,R6A,,1
+,R1-1,R2,,,13
+,C4-5X,R6A,R7X,,1
+,R8B,C2-8,,,18
+,C4-4,R8,,,15
+,R4A,R6B,,,95
+,R8B,C1-8A,,,5
+,C2-6A,R7B,,,4
+,C8-2,R5,,,63
+,R2,R6,,,6
+,C8-2,R6B,,,2
+,C5-2,C6-3,C2-8,,1
+,C4-5X,R6,,,1
+,R3-2,C4-1,,,2
+,C5-3,R10,C6-6,,1
+,C6-2,M1-1,,,1
+,C6-1,C1-7,,,3
+,C4-3A,R6A,,,2
+,R7-1,R2,,,5
+,C6-3X,M1-6,,,4
+,R5B,R5D,,,85
+,R9,R8B,,,1
+,R7-2,C1-8X,,,3
+,R5B,R3X,,,58
+,R4,C8-1,,,43
+,C4-4A,R6B,,,14
+,R3-1,R1-2,,,9
+,R5D,C4-3,,,6
+,R5,R4,R6B,,1
+,C1-8,R8,,,2
+,R6B,R4B,,,20
+,C4-4D,R7B,,,1
+,M1-1,M1-2,,,12
+,R6,R5A,,,30
+,C4-4A,C4-7,,,2
+,R2A,R4,R3A,,1
+,R6B,R6A,,,348
+,R8B,R4-1,R4,,1
+,R8B,C2-8A,,,4
+,R5B,R4,R2,,1
+,R7-1,R7A,,,4
+,M3-1,M1-1,,,25
+,R4,R1-2A,,,2
+,R2,M1-1,,,3
+,R1-2,R3-1,,,3
+C4-2,R3X,,,,2
+,R6B,R6A,R7A,,1
+,C8-1,R2,,,4
+,R8B,C6-4A,,,1
+,C6-3X,C1-9A,,,1
+,C4-4,C8-2,R7D,,1
+,R9,R7-2,,,5
+,C4-3,R5B,,,3
+,R3-2,C4-2,,,11
+,R5B,C4-2A,C4-3,,1
+,C6-9,C5-5,,,1
+,C8-1,R4-1,,,8
+,M1-1,R6A,,,21
+,R7A,R7D,R8A,,1
+R3-2,R3X,R3-1,,,2
+,R4,C4-2,,,5
+R3-2,R4,,,,1
+,R7A,R8X,,,10
+R3-2,R3-1,,,,46
+,R6B,R4,R5,,3
+,C6-1,M1-1,C4-4A,R7A,1
+,R4-1,R3-1,,,1
+,R4,M1-2,,,1
+,R7A,R1-2,,,10
+,C8-2,M1-1,,,1
+,C6-2,C6-4,,,4
+,C1-7A,C6-3,,,1
+,R3X,R5D,,,8
+,C4-6A,R8,,,13
+,C6-4A,C5-2,,,1
+,C4-5A,C6-2A,,,2
+,R8,M1-2,,,4
+,C4-5D,R6B,,,11
+,M1-5,M1-5/R7X,,,1
+,R7D,C4-4,,,1
+,R6B,R5B,,,347
+,R6,R5B,,,20
+,C6-3,C4-4D,,,11
+,R4-1,C3,,,8
+M3-1,R3-2,,,,6
+R3-2,C8-1,,,,3
+R3-2,R3X,,,,50
+,C6-6,C6-4.5,,,14
+,R6A,R3A,,,15
+,C6-5,C6-4,,,6
+,M1-4/R8A,M1-4/R6A,,,1
+,R6B,R5,,,243
+,M3-1,M1-2/R6B,,,1
+,M1-4/R7A,M1-4,,,5
+,C4-4A,R5,,,4
+,C8-4,C2-8,,,3
+,R5,R6,,,149
+,R6B,R3-2,,,15
+,R4A,R4A,,,1
+,R2A,R4B,,,14
+,R3X,R3-2,,,149
+,C4-3,C4-3,,,1
+,R7B,R5B,R7D,,1
+,R7A,R5A,,,12
+,R7-1,M1-5,,,23
+,C6-4,C6-6,C6-5,,1
+,C4-4A,R6A,,,16
+R3-1,C8-1,,,,1
+,C5-2,C5-3,C5-2.5,,1
+,R7B,R3X,,,6
+,R2A,R3A,,,17
+,R7-1,C8-1,,,3
+,C3A,R3-2,,,1
+,C4-7,R8,,,3
+,R6A,R3A,R3-1,,1
+,R7A,R3-2,,,64
+,R7-2,M1-5A,,,9
+,M1-2,R4,,,1
+,R6,R5,,,133
+,R7-1,C4-3,,,4
+,R3-2,R5D,,,8
+,R3A,R3-2,R6,,1
+,C3A,R3A,,,30
+,R5B,M1-1,,,52
+,R7A,R2,,,50
+,M1-5,C2-8,,,4
+,R4B,R6A,,,3
+,R7-1,R1-2,,,1
+,R6,R3A,,,15
+,R8X,C6-2A,,,2
+,R6,C4-3,,,57
+,M1-5,C2-7,,,1
+,R4,R5B,,,26
+,C4-1,R5,,,1
+,M1-2,R7-1,,,3
+,C5-2,C6-4,,,2
+,M1-2/R5D,M1-2/R5B,,,14
+,R5D,R4-1,,,201
+,R4B,R3A,,,10
+,R5B,R6A,,,94
+,C1-6A,C1-7,,,1
+,C4-7,C6-2,,,2
+,R7-2,C4-5,,,1
+,C2-8A,C1-9A,R8B,C1-8A,1
+,R8,C4-4,,,21
+,R1-2A,R2A,,,2
+,R8,C6-3D,,,6
+,R7-1,M1-1,,,11
+,R5D,R4-1,C8-1,,1
+,R5D,C8-1,,,1
+,R6,C8-1,,,52
+,C6-7,C6-6.5,,,4
+,C6-3A,C2-6,,,2
+,C4-2,C8-1,,,2
+,R8,C4-5,,,1
+,R4-1,R5B,,,231
+,C4-4A,R6A,R6B,,1
+,M1-4/R7A,M1-2,,,1
+,M1-6D,C6-2A,,,1
+R3A,R3-1,,,,6
+,C6-4A,C6-3A,,,2
+,M1-2,R8,,,3
+,C5-3,R8B,,,2
+,C6-2,R7-2,,,2
+,C5-3,C6-6,,,5
+,R4A,C8-1,,,6
+R1-1,R1-2,,,,4
+,R5,R5A,,,29
+,M1-2/R6A,M1-2/R5B,,,10
+,M2-1,R4-1,,,1
+,C8-1,C4-2,,,1
+,C1-9A,C2-8A,R8B,R8A,1
+,C3,M1-1,,,5
+,C6-6.5,C6-7,,,3
+,R9X,R8B,,,9
+R1-1,R3-2,,,,4
+,R1-2,R2,,,19
+,R9A,R8B,C1-9A,,1
+,C6-2A,C6-3A,C6-3X,,1
+,C1-9,C2-8,,,1
+,R8B,C6-6,,,1
+R4,R3A,,,,2
+,C4-2,R6A,,,1
+,R2,R3A,,,14
+,C6-4,R8A,,,3
+M1-1,R3-2,R2,,,1
+,M1-4,R8A,,,11
+,R7B,R8,,,8
+,R8B,C6-1,,,6
+,M2-1,M1-2,,,5
+,R3X,R6A,,,56
+,R9A,C1-9A,,,2
+,R3X,R3A,,,38
+,R4-1,R6,M1-1,,1
+,C4-3A,R6B,,,31
+,R6,C1-6,,,53
+,C1-9,R10A,R8B,,3
+R6,R3-2,,,,1
+,R4B,R5B,,,11
+,R6,R8B,,,2
+,C5-3,R10,,,2
+,R5D,C3,,,2
+,C6-2M,C6-2,,,2
+,R5,C8-1,R7X,,1
+,M1-2,R6B,,,5
+,C6-4M,C6-2M,,,5
+,R1-2,M1-1,R6,,1
+,R3A,R2A,,,8
+,R10A,R8,C4-7,,1
+,M1-2,R6,,,23
+,M1-4/R7A,R5,,,8
+,R6,R6B,,,30
+M3-1,R3A,,,,2
+,M1-5/R7X,M3-1,,,1
+,R5A,R5D,,,2
+,C4-6A,R10A,,,12
+,R5B,R6,,,16
+,R5B,R5A,,,16
+,M1-4/R7A,R6A,,,7
+,R2A,R3X,,,13
+,M1-1,R5,,,92
+,R7-1,R5,,,67
+,R5,R7-1,,,29
+,R6A,C4-2,,,9
+,R5,M1-1,R4A,,1
+,M1-1,M3-1,,,14
+,R8A,R6A,R6B,,1
+,R4-1,R7X,,,2
+,R3A,R5D,,,86
+,R2,R6B,,,6
+PARK,R1-2,,,,1
+,M1-1,C4-4,M3-1,,1
+,R7B,R4A,,,10
+,M1-5/R7-2,R7A,,,5
+,C6-1,M1-5B,,,1
+,M1-4,M3-2,,,2
+,C6-4X,M1-6,,,17
+,M1-1/R7D,R6B,,,1
+,C8-1,R3-2,,,20
+M2-1,R3-2,,,,23
+,C4-4A,R5B,,,9
+,M1-1,R3A,R5B,R6B,1
+,R2,C4-2,,,6
+,C2-8A,C5-1A,,,1
+,R6B,R7-1,,,1
+,M1-4,R8A,R6A,,1
+,M1-5,C6-3,,,4
+,C1-6A,R8B,,,2
+,R3-1,R6A,,,78
+,R5,R4,,,108
+,R7D,R6A,,,22
+,C6-3X,C6-2A,C1-9A,,1
+,R6B,C4-3A,,,43
+,R3-2,R1-2,R2,,1
+,R4,R5D,,,58
+,R6A,R8A,,,10
+,R8A,C1-6A,,,3
+C8-1,R3X,,,,5
+,C4-5D,R6,,,11
+,R8,C4-7,,,2
+,R4A,C3,,,5
+,R5,R7A,R7B,,1
+,C3,R4-1,,,6
+,M1-4,R6A,R5B,,1
+,R7A,R3-2,R6A,,1
+,R6,R8,,,9
+,R2A,R2A,,,1
+,R3X,R3-1,,,170
+,M1-1,R4-1,,,15
+,R5B,C4-4A,,,10
+,R7B,R7A,,,38
+,R3A,R5B,,,74
+,R3A,R3-1,,,65
+,R7B,C4-4,R4A,,1
+,R8A,R6A,,,9
+,M1-4,M1-1,,,3
+,R6,R3X,,,1
+,C1-7,R6,,,10
+,R4A,M1-1,,,13
+R4,R2,,,,7
+,R10,C5-2,,,3
+,M1-1,R7A,,,2
+,C4-4A,R7-1,,,9
+R3A,R2,,,,1
+,R3-2,R4,M1-1,,1
+,R6B,R8B,,,5
+,R8B,R6B,,,4
+,C4-6,R7-1,,,1
+,R5,R7D,,,1
+,R8B,C5-3,,,2
+,R5,R4A,R4,R2,1
+,C8-2,C4-2A,,,3
+,C6-3A,R8A,,,1
+,C6-7,C5-2.5,,,1
+,R6,M1-4,,,6
+,R6A,R5B,R4-1,,2
+,R5D,R7D,,,1
+,M1-5,R6,,,1
+,R7A,R5,R6A,,2
+,M1-2/R5B,M1-2/R5D,M1-2/R6A,,1
+,R3-2,C8-1,,,30
+,R5D,M1-4,,,2
+,M1-5B,R7-2,,,1
+,C4-4,M1-4/R6A,,,1
+,C6-4,M1-5,,,5
+,R10,R9X,,,3
+,C4-3,R6B,,,25
+,R5B,R7B,R6B,,1
+,M3-1,C4-3,,,2
+,C4-3,R5,,,1
+,R3-2,C3A,R3-1,,1
+,M1-4D,R4-1,,,1
+,R3-2,R2A,,,83
+,M1-3,R6,,,2
+M2-1,PARK,,,,3
+,R7-2,M1-2,,,2
+,R7-1,C4-4,,,9
+,R5B,R7X,,,3
+,R6B,C4-5D,,,13
+,R6B,M1-1/R7D,,,1
+M2-1,PARKNYS,,,,10
+,C8-2,C4-4A,,,1
+,R6B,R5A,R5,,1
+,R7-1,R7B,,,6
+,R4-1,R5B,R4A,,1
+,R6B,R2A,,,1
+R3-1,PARK,,,,5
+,R3X,R4-1,,,26
+,R2,R4B,,,1
+,R7A,R4A,,,13
+,R8,C1-8,,,2
+,R6B,R3A,,,41
+,R6,R4A,,,12
+,M1-2,M1-1,,,13
+,C4-3A,M1-4D,,,1
+,R2X,R6A,R5,,1
+,C4-2A,R5,,,13
+,R8A,C8-2,,,1
+,R4-1,R6B,,,187
+,R3A,R3X,,,13
+,R8B,C6-2A,C1-9,,1
+,C1-9,R8B,,,102
+,M1-2/R6,M1-2/R6B,,,1
+,R8,C6-3,,,3
+,R7A,M1-5,,,1
+,R8A,M1-2,,,2
+,R3-2,R3X,,,197
+,R7B,R5,,,26
+,R4-1,R6,,,17
+,R4B,C4-2A,,,4
+,C4-5X,M1-4/R7X,M1-4/R7A,,1
+,R6B,M1-1,,,40
+,R3-2,R4-1,,,3
+,R7A,R6A,,,90
+,R6B,C4-2A,R5B,,1
+,C5-1,C5-3,,,1
+,R3A,R6,,,22
+,R7A,R5B,,,115
+,C8-2,R8,,,4
+,C4-4,R7A,,,4
+,R10A,R8B,,,71
+,R3-1,R5,,,5
+,R3-1,R3X,,,110
+,C5-P,C5-2.5,,,1
+,C4-2,R3A,,,1
+,C1-6,C4-5,R6,,1
+,R6A,R5D,R4,,1
+,C3,C8-1,,,5
+,M1-2,R4B,,,2
+,M1-4,M1-4/R7A,,,2
+,C2-8,C6-3A,,,2
+,R3-2,R5B,,,5
+,R5B,R8B,,,2
+,R7A,M1-2/R6A,,,3
+,R4A,R7A,,,17
+,R5D,R2A,R4,,1
+,M1-3/R7X,M1-2/R5D,,,1
+,M1-1,R5B,,,20
+,C1-9,C8-4,,,2
+,C4-1,R4,,,1
+,M1-1,C6-2,,,1
+,R10A,R8B,R9X,,1
+,C1-9,C6-6,,,1
+,M1-1,R3-1,,,9
+,R4B,R3-1,,,11
+,M1-1,R7-1,,,20
+,C4-5X,M1-4/R7A,R6A,,1
+,R5,R4-1,,,76
+,C5-3,C1-9,,,1
+,C4-4A,C4-2A,,,1
+,C4-7,R10A,,,1
+,C1-9A,R8A,,,1
+,C4-3,C4-2,,,10
+,R3-1,C8-1,,,2
+,R7A,M1-5/R7-2,,,4
+,R6B,M1-2/R6A,,,6
+,R5D,M1-1,,,1
+,R7-1,C8-2,,,1
+,R10,C2-8,,,1
+,C6-4,M1-5M,,,6
+,R4-1,R4-1,,,1
+PARK,C4-1,,,,1
+,M1-2D,M1-2,,,4
+C4-2A,C4-2,M2-1,,,2
+,R9,R10A,,,1
+,C4-5X,R7-1,,,1
+,R10,M1-4,,,4
+,R3X,R6A,R3A,,1
+,M1-2/R6A,M1-1,,,1
+,R2A,R4A,,,3
+,C6-2,C6-1,,,21
+,R5B,C8-1,,,10
+,M1-4,R7D,,,3
+,R6B,R6B,,,1
+,R3X,R5,,,17
+,M1-1,R6,,,53
+,C2-8,R7-2,,,6
+,C6-4,C5-2,,,1
+,M1-4/R6B,M1-4/R7A,,,2
+R3-2,R3-1,R3X,,,1
+,R6B,C4-4A,,,12
+,M1-4/R6B,R7X,R6A,,1
+,C1-7,R7-2,,,7
+,C4-4,R7-2,,,16
+,R6,R7-2,,,13
+,C4-2,R2,,,12
+,R3A,R1-2,,,13
+,R7A,R7-2,,,12
+,M1-4/R6A,M1-4/R7A,,,1
+,C8-2,R7-1,,,4
+,R1-2,R3-2,,,12
+R3A,R4,,,,2
+,R8,C6-4,,,9
+,R4,R3-1,,,5
+,R4,C8-1,R4B,,1
+,C6-2A,C6-3A,,,9
+,R7-2,R8B,,,2
+,C3A,R4A,R4,,1
+,M1-4/R7A,C4-5X,R7-1,,1
+,R7-1,C6-2,,,1
+,C3,R4A,,,4
+R3-2,C4-1,,,,1
+,R5B,R2,,,54
+,R7A,R7B,R6A,,1
+,C1-6,C6-2A,,,1
+M1-1,R3A,,,,2
+,C6-3,M1-5,,,4
+,M1-6,C6-7,,,1
+,C8-1,R4A,,,4
+,R8B,C5-2,,,2
+,C6-3X,R7D,,,1
+,R10A,C1-8A,,,2
+,R3-2,R4,,,15
+,R1-2,R5,,,6
+,R8B,R9A,,,11
+,R7A,R4-1,R6A,R5,1
+,R8B,C5-1,,,26
+,R4-1,R1-2A,,,1
+,R6B,R5,C8-1,,1
+,C2-8,C6-4,,,1
+,C6-3A,R8B,,,1
+R3A,R3-2,,,,64
+,R3A,R6B,,,19
+,C6-2A,R7A,,,1
+,R8,C2-7,,,1
+,M1-4,R7A,,,7
+,R1-2A,R3-2,,,2
+R3-2,M3-1,,,,3
+,R8,C2-8,,,4
+,C4-3A,R6B,R6A,,1
+,C6-6.5,C6-6,,,5
+,C6-4,M1-6,C6-4M,,1
+,R7-2,C1-7,,,6
+,M1-1,M1-3,,,3
+,R9,C1-9,,,3
+,R6B,M1-4D,,,3
+,C5-2A,R6,,,1
+,R6A,R3X,R3-1,,1
+,M1-1,C8-1,,,4
+,R7A,C6-1,,,1
+,M1-1,C4-2A,,,6
+,C8-1,R4B,,,1
+,R10,C5-1,,,5
+,C8-1,R6,,,28
+,C6-6,M1-6,,,1
+,R1-1,R6,,,5
+C4-1,R3A,,,,5
+,R6B,R3-1,,,6
+,R7D,R7A,,,2
+,C1-8A,R8B,,,18
+,R7A,R7X,,,9
+,M1-1,M1-4/R7A,,,5
+,R7B,R5,R4,,1
+,R10,C5-1A,,,2
+,C4-3,C4-4A,,,1
+,C3A,M1-1,,,2
+,M1-2,M1-2/R5D,,,1
+,R10,C5-3,,,3
+,C4-5D,R7D,,,1
+,C6-4A,M1-5M,,,1
+,R4A,R6,,,27
+R3-1,M3-1,,,,1
+,C6-6,C5-2.5,,,3
+,R6B,C6-1,,,54
+,R5,M1-1,,,96
+,R6B,M1-4,R6A,,2
+,R7-1,C4-6,,,1
+,R3-1,R4,R2,,1
+,R6,M2-1,,,1
+,C2-8,R8A,,,4
+,C6-7,C6-5.5,,,1
+,R7B,R6B,,,24
+,R3-2,R5,,,9
+C4-1,R3X,,,,1
+,R3-1,R2A,,,30
+,M1-2,C8-1,,,1
+,M1-2/R6,R6,,,1
+,C4-2A,C8-2,,,2
+,R6,R5,R6A,,1
+R3-2,C4-2A,,,,1
+,C4-4,R7B,,,1
+,R7A,R3-1,,,3
+,C6-4A,C6-4M,,,1
+,R6A,R4,,,128
+,R4-1,R5B,R4B,,1
+,M1-4/R8A,M3-1,,,1
+,M3-1,M2-1,,,17
+,R2A,C8-1,,,10
+,R6A,R7B,,,8
+,R5,R1-2,,,4
+,R3X,R5B,,,27
+,C6-1,R8B,,,8
+,R5D,R6A,,,11
+,C4-2,R4,,,2
+,C4-5D,R5B,,,2
+,R8B,R10,,,81
+,R8,M3-1,,,1
+,R5B,M1-4D,,,2
+,C4-4,M2-1,,,1
+,M3-1,R4,,,3
+,M1-5A,M1-5B,,,5
+,R2,R4,,,25
+,C6-5.5,C6-7T,,,5
+,R6A,R5A,,,75
+,C6-4M,M1-5M,C6-2A,,1
+,R8,C8-4,,,1
+,R2,R1-2,,,28
+,C6-2,R6,,,3
+,R5,C4-3,,,1
+,R3-1,C8-1,R3X,,1
+,R7D,R6A,R6B,,1
+,R5B,R3-2,,,9
+,R8B,C1-6A,,,6
+R3A,M1-1,,,,6
+R1-2,R3-2,R1-1,,,1
+,R2X,R5,,,4
+,R3-1,C4-1,,,1
+,R10A,R9,,,1
+,R6A,M1-2/R6,,,1
+,R7-1,R6B,,,1
+,C5-2,R10,,,1
+,M1-4/R6A,M1-4,,,2
+,C5-1,R10,,,4
+,R7A,R6,R5A,,1
+,C6-4.5,C6-6,,,15
+,C1-9,R9,,,1
+,C6-4A,R8B,,,5
+,R7B,C1-9,,,1
+,C1-9A,R7B,R7-2,,1
+,R4A,R5B,,,31
+,R4,R6B,,,54
+,C8-3,R5,,,1
+,C6-2,R5,,,1
+,C6-5,C6-7,,,7
+,M1-1,C4-5X,,,8
+,R8B,R10,C1-8X,,1
+,C6-4,R6,,,1
+,C4-2A,R4-1,,,7
+,R6,C1-6A,,,4
+,R7-1,R7X,,,2
+,C3,R4,,,10
+,R9A,R8,,,1
+R3-2,M1-1,,,,3
+,C6-1,R6B,,,3
+,R3-2,R6,,,4
+,R3-1,R4-1,R6B,,1
+,M1-5/R9,M1-5/R7-3,,,10
+,R2A,R3-2,,,65
+,R9A,R7-2,,,1
+R3X,M3-1,,,,2
+,R4B,R2A,,,34
+,R7A,M1-1,,,9
+,C2-7,R8,,,1
+,C2-7A,C6-3X,,,1
+,M1-1,R5,R6B,,2
+,M3-1,M1-2,M1-4,R6B,1
+,C6-2M,C6-3A,C6-2A,,1
+,R5B,R7A,R6A,,1
+,R8,C4-6A,,,2
+,R4A,R3A,,,4
+,R8B,C6-3X,,,2
+,C3A,R4,,,3
+,R7-1,C4-4A,,,4
+,C6-4,C6-1,,,5
+,M1-4/R6A,M3-1,,,2
+,R1-2,R6A,,,4
+,R4-1,R2A,,,15
+,R2,R4A,,,10
+,R5,R2X,R6A,,1
+,M1-4,C4-3,,,3
+,R7-2,R9,,,5
+,R7X,R6A,,,16
+,R7X,R4,,,2
+,R6,R6,,,1
+,R7-2,R7A,,,7
+,R7-1,R4A,,,7
+,R5,R6B,R5A,,1
+,R8A,R9A,,,1
+,R1-2,R4,,,19
+,C1-8X,R8B,,,38
+,R8,R7A,,,7
+,C6-2,C6-3A,,,1
+,R3X,M1-1,,,8
+,R6A,R4A,,,70
+,R3-2,R3-1,,,68
+,C6-1G,C6-2G,,,6
+,R8,R6,,,22
+,C6-1,C6-2G,,,4
+,C8-1,R3A,,,9
+,R5D,R6,,,33
+,C6-3,C6-4,M1-5,,1
+,R8B,R8A,,,24
+,R7-2,R6B,,,1
+,R7A,R5,R4A,,1
+,R5B,R6B,,,212
+,C2-6,C1-6,R6,,1
+,C6-2A,R6,,,11
+,R5B,R6B,R7X,,1
+,C4-5X,C6-3,,,5
+,M1-1,R7X,,,2
+,R1-1,R6A,,,3
+,C4-4D,C6-3,,,3
+,C1-9A,R8,C1-9,,1
+,M1-2/R6A,R7A,,,1
+,C6-4,C5-2A,,,1
+,R7A,R5,,,154
+,R9X,R10,,,1
+,R5D,R2,,,16
+,R5,M1-2/R6A,,,4
+,R2A,R4-1,,,28
+M2-1,M1-1,,,,1
+,R8B,C6-3A,,,1
+,R4-1,R4,,,196
+,R9,C2-8,,,1
+,C6-1,R7A,,,1
+,R5B,R6B,M1-4D,,1
+,R4,R5,,,110
+,R3X,R1-2,,,33
+,R2,R6A,,,8
+,R3-2,R3A,,,216
+,C4-2A,C4-2,,,3
+,R6,M1-1,,,54
+,M1-1,R4B,,,9
+,R4B,R4,,,28
+,M1-5B,R7-2,M1-5A,,1
+R1-1,R2,,,,5
+,R6A,R8,,,2
+,R6A,R5D,R6B,,1
+,C6-1,C1-9,,,1
+,C6-4M,C6-3A,,,1
+,C5-2,C1-9,,,1
+,R4,R3X,,,30
+,C1-9A,C1-9,,,1
+,R8A,R7A,,,24
+,R6A,R6,,,31
+,R3-1,R4B,,,12
+,R4A,R7-1,,,8
+R3X,R1-2,,,,4
+,R7A,R4-1,,,94
+,M1-4/R6B,M1-4/R6A,R6A,,1
+,R3A,R5,,,8
+,C2-8,C8-4,R8B,,1
+,C6-2A,C6-1,,,2
+,C8-3,R7-2,,,21
+,R5,R7A,,,54
+,M3-1,R6,,,2
+,R5,C4-3A,,,1
+,R7A,R8A,,,46
+,R9,R8,,,1
+,C1-6,R6,,,48
+,R4-1,R5,,,78
+,R2,R5D,,,9
+,M1-4D,R5B,,,10
+,R6,R5D,,,42
+,R3-2,R3A,C8-1,,2
+,M3-1,M1-5/R8A,,,2
+,R9A,R7B,,,2
+,C2-8,C8-4,,,2
+,R1-2,R1-1,,,10
+R3A,M3-1,,,,3
+,R7-1,R4,,,9
+,C6-3,C2-8,,,1
+,C6-2A,R8X,,,1
+,R8A,R8,,,4
+,R5A,R7-1,,,27
+,C6-6,C5-2,,,2
+,R2,R7-1,,,2
+,R8,R10,,,6
+,C6-2A,C4-4A,,,7
+,R7-1,R7B,R4,,1
+,C6-3X,R6A,,,1
+,R10,C4-7,,,2
+,R7-2,C1-9,,,7
+,R7-1,M1-2,,,6
+,C4-4D,R5B,,,11
+,R6A,C4-3,,,15
+,R10,R7-2,C1-7,,1
+,R10,R9,,,2
+,C1-7,C1-6,,,1
+C4-2,M3-1,,,,3
+,C1-8X,R7-2,,,2
+,C8-1,R3X,,,12
+,R9A,R8B,,,24
+,R2,R5B,,,34
+,R6B,C4-3,C4-4A,,1
+,R4,R7-1,,,8
+,R3-2,R6A,,,1
+,C4-3,R5D,,,11
+,M1-4,C2-8,,,1
+,C6-4,C6-3,,,1
+,C4-4D,R6A,,,3
+,C6-2A,M1-4/R6A,,,1
+,M1-2/R6A,M1-2/R5D,,,3
+,C6-6,C5-P,,,2
+,R7-2,C8-3,,,11
+,C6-3X,C6-4,,,1
+,C8-3,C6-2,,,1
+,R5D,R7B,R6B,R5,1
+,M1-1,R2,,,1
+,R6,C2-6,,,31
+,R6A,R6B,,,544
+C4-1,R3-1,,,,20
+,R5D,C4-2A,,,1
+R4,M3-1,,,,1
+,R3-1,R3-2,,,77
+C4-2,R5,,,,1
+,R4A,R2A,,,1
+,C6-4,C6-5,,,4
+,R4-1,R3X,,,27
+,M1-1,R3X,,,7
+,R5,R2,,,5
+,C1-9,R8,,,6
+,R7B,R7D,,,14
+,R7A,R6A,R6B,,1
+,R4,R4-1,M1-1,,1
+,R3A,C4-2,,,10
+,R3-2,R1-2A,,,16
+,R8,C8-3,,,11
+,R4A,R2,,,12
+,R5D,R3A,,,202
+,C4-4L,R6B,,,2
+,C5-2.5,C5-2,C6-6,,1
+,R6,R7A,,,14
+,C5-3,C5-2.5,,,75
+R3X,R3-1,,,,28
+,R5A,R7D,,,1
+,M1-2,R7A,,,3
+,R4,R7B,,,17
+,M1-2,R8A,,,2
+,C4-2F,C4-7,R10,,2
+,C6-3A,M1-6,C6-4X,,1
+,R7X,R5,,,8
+,R4B,R5D,,,3
+,C1-9,R10,,,4
+,R2A,R5D,,,8
+,C4-2A,R5D,,,2
+,R2A,R3-1,R3-2,,1
+,M1-5B,C6-1,,,1
+,M1-4D,R5B,R4-1,,1
+,R7-1,R4B,,,5
+,C1-6A,C6-2A,,,3
+,R4B,R2,,,2
+,R6B,R6,,,56
+,C4-5A,C6-4A,,,4
+,C8-2,R6A,R6B,,1
+,R7A,R6B,R6,,1
+,R7A,C4-3,,,2
+,C6-2A,C5-2,,,1
+,M1-2/R8A,R7-1,,,1
+,M1-4/R7A,R6B,,,1
+,R4,R4A,,,150
+,R8A,C6-2A,,,3
+,C4-5X,M1-1,,,6
+,C5-1,R8B,R10,,1
+,R5D,R4,,,121
+,R9,R10,,,3
+,R7X,R7B,,,5
+M3-1,PARK,,,,4
+,R6A,R7A,,,84
+,R5,R6A,R6,,1
+,C4-4,R7D,,,1
+,R8A,R8B,,,9
+,R3-1,R2A,R1-2,,1
+,R3X,R4A,,,11
+,R7A,R3X,,,17
+,R3A,R4,,,44
+R3-1,R3X,R2,,,1
+,C4-2A,C4-4A,,,7
+,C5-3,M1-6,,,3
+,R5,R4,R2,,1
+,R7A,R7B,R6B,,1
+,M1-1,R6A,R4,,1
+,R5,R5B,,,9
+R3X,PARKNYS,,,,2
+,R4-1,R7X,R5B,,1
+,R7X,R6,,,3
+,R7A,R5D,,,4
+,C8-1,R2A,,,5
+,C4-5,R6,,,19
+,R7D,R6,,,3
+,M1-4D,C4-3A,,,2
+C4-2,M1-1,,,,3
+,R1-2,R7A,,,11
+,C5-3,C5-1,,,4
+,R5,R7B,,,21
+,C6-3,C6-4,,,2
+,C6-4M,M1-5M,,,10
+,R8B,R8,,,14
+,R7A,R5,R2,,1
+,R7-1,C4-2,,,4
+,R5B,R2A,,,12
+,R8,C1-9,,,5
+,C6-6,C5-3,,,5
+,R2A,R6B,,,10
+,R3-2,R7A,,,11
+,M1-1,R6B,,,32
+,R7B,R5B,R5A,,1
+R3-1,R4,,,,1
+,C6-4,M1-4,,,2
+,C5-2.5,C5-3,C5-2,,1
+,M1-1/R7-2,R6,,,6
+,R6B,R5A,,,5
+,R7A,R9,,,2
+,M1-1,M1-1/R7-2,,,6
+,C4-1,C8-1,,,2
+,R6,C8-3,,,3
+,R10A,R7-2,,,9
+,R10,C2-8,R8,,1
+,C8-2,R7A,,,2
+,R6B,R7X,,,6
+,R3X,C8-1,,,2
+,R5,R4,C8-1,,1
+,R2,R5,,,24
+,C5-3,C6-4.5,,,11
+,M1-6,C6-6,,,3
+,C8-1,R3A,R3-2,,1
+,R3A,C3,,,5
+,R7-2,C2-6,,,2
+,M3-1,M1-2,R6B,,1
+,R5B,R6A,R7A,,2
+C4-1,R2,,,,1
+,R4-1,C8-1,,,19
+,R5B,R3A,,,99
+,M1-5M,C6-4,,,5
+R3X,R2,,,,1
+,R4-1,R7B,,,3
+,M3-1,R2,,,1
+,C4-3,M1-4,,,1
+,R1-1,R4,,,2
+,M1-2,C4-2,,,1
+,R10,R6,,,6
+,R3X,R2A,,,17
+,R6,R4-1,,,27
+,C6-4A,C4-5A,C6-2A,,1
+,C6-1A,C6-4,,,1
+,R5A,R7B,,,4
+,R7A,R7D,R6A,,1
+,R6A,R3-2,,,11
+,R8,C2-6,,,2
+,C8-1,R6B,R3X,,1
+,C1-7,C6-1,,,5
+,R2,C3A,R3-1,,1
+,C8-1,R4-1,R4,,1
+,R6B,R5,R7B,,1
+,C6-2,C2-7,,,1
+,M1-1/R7-2,R7-2,,,1
+R3-2,PARK,,,,12
+,M1-5,R7-1,,,2
+,R10H,C5-1,,,5
+,R5B,R4,,,36
+,R6B,R6A,R8A,,2
+,C8-2,C8-4,,,1
+,R6B,R3-2,R3X,,1
+,M1-4,R6,,,5
+,R6,R7-1,,,61
+,R6B,R6,R4,,1
+C4-2A,R3-2,R4,,,1
+,M3-1,M1-1,R6B,,1
+,C2-8,R9,,,1
+,R2A,R5B,,,4
+,M1-5M,C6-4M,,,4
+,R7-1,R8,,,10
+,C8-1,R6A,,,4
+,R4-1,C4-2A,,,3
+,C1-9,R7B,,,1
+,C6-4,R8B,,,1
+,R3A,M1-1,,,17
+,R5B,R7A,,,65
+,M1-6,C6-6.5,,,1
+,R6B,R7A,R5B,,1
+,R7A,R5B,M1-4,R6A,1
+,R3A,R4-1,,,4
+,R6B,R7D,,,50
+,R6,C4-2,,,23
+,C6-6,R8B,,,6
+,C6-2,R7-1,,,1
+,R7B,C4-4,,,4
+,R5,R3X,,,19
+,R5,R4A,R4-1,,1
+R4,C4-2,M1-1,,,1
+,R6A,M1-2,,,1
+,R6B,C4-4L,,,2
+,C6-7,C6-5,,,1
+,C8-1,R3A,R4,,1
+R3A,PARK,,,,1
+,R3A,R6A,R4,,1
+,C6-2A,C1-6,,,1
+,M1-1,C8-1,M2-1,,1
+,R5D,R5B,,,72
+,C2-8,R8,,,3
+,R6A,C8-2,,,2
+,C8-1,R6B,,,2
+,C6-3X,C6-2A,,,1
+,R5B,R7B,,,26
+,R3-1,R6B,,,2
+,R8B,R7-2,,,1
+,C6-3,C6-2,,,4
+R2,R3-2,,,,3
+,R7D,R7B,,,2
+,R6,C4-3A,,,4
+,C4-2,R5B,R5D,,1
+,R7A,R6A,R5,,1
+,C8-1,R5,,,53
+,M3-2,M1-4,,,1
+R4,C4-2,,,,1
+,R6A,R5B,,,103
+PARK,R3X,,,,4
+,R8,R5A,,,3
+,M1-1,R5D,,,1
+,R4-1,M1-1,,,17
+,R7B,R4,,,19
+,R7B,C1-6A,,,1
+,R4B,R4,R5D,,1
+,R5,R7X,,,12
+,M1-1/R7-2,R7-1,,,1
+,R7-2,R8,,,48
+,M1-4,R5D,,,1
+,R8A,C6-3X,,,2
+,R6A,R3-1,,,186
+,R7X,M1-4/R6B,,,4
+,C1-8,R8A,,,2
+,C4-3,M1-1,,,3
+,R6A,C4-4D,,,15
+,R3-1,R6,,,4
+,M1-5/R7X,M1-5,,,1
+,R4,R6A,,,80
+,R7A,R6B,R8A,,1
+,R6A,R7-1,,,3
+,R8B,C8-4,,,1
+,R3A,R3-2,,,137
+,R6A,M1-4/R6B,,,3
+,M1-1,M2-1,,,7
+,R6B,M1-1,R5,,1
+,R6A,C4-5X,,,5
+,R4,R8B,,,2
+,M3-2,M1-4/R6B,,,1
+,R6,R4,C4-3,,1
+,R4-1,C8-1,M1-1,,1
+R3X,M2-1,,,,1
+,R5,C8-1,,,93
+,C6-3,C6-3A,,,1
+,C6-2,C6-2M,,,3
+,R6,R10,,,1
+,R5,C8-2,,,30
+R5,R3A,,,,2
+R4,R1-2,,,,3
+,C4-3,R6,,,42
+,C2-7A,R8A,,,1
+R3A,C8-1,R3-2,,,1
+,C1-9A,R7B,,,1
+,M1-1,R3-1,R3-2,,1
+,R5A,R4,,,1
+,R6,R4,,,58
+,M1-4,C6-4,,,3
+,C5-P,C5-3,,,1
+,C6-3A,C5-3,,,1
+,R7B,C4-4D,,,1
+,C4-4,R4A,,,1
+,R5D,R3X,,,20
+,M1-5/R8A,M1-4/R7A,,,1
+,C8-2,C4-2,,,1
+,R5,R4A,,,52
+,C4-6A,R8B,R10A,,1
+,R7B,R5,R6B,,1
+,R7A,R5B,R7X,,1
+,R7B,R8A,,,8
+,R4,C4-3,,,2
+,R8,C1-9A,,,1
+,R4-1,R3-2,,,3
+,R4B,R6B,,,30
+,C4-2,M2-1,,,2
+,C3,R3A,,,3
+,R8B,R10,R9X,,2
+,C8-2,R6,,,45
+,M1-2/R6,M1-2/R6A,,,4
+,R8A,R5B,,,38
+,R3-1,R2,,,45
+,R6A,C8-1,,,9
+,R7X,R6B,,,4
+,C4-7,C4-2F,R10,,1
+,C6-6.5,C5-3,,,2
+,R7A,R7D,,,2
+,C4-4,R7-1,,,3
+,R7-2,C6-1,,,1
+,C4-2,C4-4A,,,1
+C8-1,R3A,,,,4
+,R7X,R4-1,,,4
+,C1-9,C5-3,,,1
+,R2A,R4,,,43
+,R5B,C8-2,,,4
+,C4-4A,R4,,,1
+,C6-4,R7-1,,,3
+,C6-2A,C4-5A,,,3
+,R7A,C4-4D,,,2
+,R3A,R4A,,,9
+,C4-4A,C4-5X,,,5
+,M1-1,C4-5X,C8-3,,1
+,M1-1,C3,,,3
+,R6B,R4,,,109
+,C4-3A,R6,,,1
+,R3A,C3A,,,39
+,C1-7A,C1-6A,,,2
+,C6-3,C4-5X,,,10
+,R5,R5D,,,46
+,R5A,R8,,,3
+,M1-1,R5B,R4-1,,1
+,R4-1,R7A,,,43
+,C6-5.5,C6-6,,,5
+,R7-2,C6-1G,,,16
+,R5,R6A,,,120
+,R7B,R7-1,,,2
+M3-1,M2-1,,,,1
+,C6-6,C5-2,C1-9,,1
+,R6B,R7A,,,287
+,R5B,R1-2A,,,4
+,R6A,R1-1,,,1
+,R3-2,R3-2,,,1
+,R8B,C1-9,,,55
+,M1-5/R7-3,M1-5/R9,,,3
+,R3X,R6B,,,9
+,R1-2,R2A,,,13
+,R2,R3-2,,,130
+,R8B,R10,C5-1,,1
+,C6-4,C6-2A,C6-1,,1
+,C6-2,R6B,,,1
+,M1-6,C6-4M,,,8
+,M1-1,M1-2/R6A,,,2
+,R8,R7B,,,3
+,R8B,R7-2,R7A,,1
+,R6A,R3X,,,124
+,M1-2/R5B,M1-2/R6A,,,17
+,R4A,R3X,,,17
+R3A,R3X,,,,1
+R2,R1-2,,,,5
+,C6-3A,C2-8A,,,1
+R1-2,R1-1,,,,7
+,M2-1,R7-2,,,2
+,C4-6,C2-8,,,1
+,C8-1,R3-1,,,4
+,R6,M3-1,,,3
+,R8,R7-1,,,10
+,R10,R8,,,8
+,R5,C4-2A,,,19
+,C6-3A,M1-5,,,2
+,M2-3,M1-5,,,2
+,R10,R8,R9,,1
+,M1-1,R4,,,50

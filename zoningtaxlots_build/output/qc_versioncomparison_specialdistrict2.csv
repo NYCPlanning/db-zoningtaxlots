@@ -1,15 +1,16 @@
-EC-1	DB	\N	\N	1
-\N	MID	HY	\N	1
-125th	\N	\N	\N	3
-GC	HY	\N	\N	1
-J	C	\N	\N	4
-\N	MP	PI	\N	1
-SRD	NA-1	\N	\N	2
-\N	PI	MID	\N	1
-EHC/TA	\N	\N	\N	2
-EC-5	EC-6	\N	\N	1
-SRD	\N	\N	\N	1361
-HY	GC	\N	\N	1
-TA	\N	\N	\N	1
-125th	MX-15	125	\N	1
-125th/TA	\N	\N	\N	1
+specialdistrict2edm,specialdistrict1,specialdistrict2,specialdistrict3,count
+EC-1,DB,,,1
+,MID,HY,,1
+125th,,,,3
+GC,HY,,,1
+J,C,,,4
+,MP,PI,,1
+SRD,NA-1,,,2
+,PI,MID,,1
+EHC/TA,,,,2
+EC-5,EC-6,,,1
+SRD,,,,1361
+HY,GC,,,1
+TA,,,,1
+125th,MX-15,125,,1
+125th/TA,,,,1

@@ -1,3 +1,9 @@
+-- calculate how much (total area and percentage) of each lot is covered by a limited height district
+-- assign the limited height district to each tax lot
+-- the order limited height districts are assigned is based on which district covers the majority of the lot
+-- a district is only assigned if more than 10% of the district covers the lot
+-- OR more than a specified area of the lot if covered by the district
+
 DROP TABLE limitedheightperorder;
 CREATE TABLE limitedheightperorder AS (
 WITH 

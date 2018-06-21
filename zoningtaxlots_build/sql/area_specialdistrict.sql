@@ -1,3 +1,9 @@
+-- calculate how much (total area and percentage) of each lot is covered by a special purpose district
+-- assign the special purpose district(s) to each tax lot
+-- the order special purpose districts are assigned is based on which district covers the majority of the lot
+-- a district is only assigned if more than 10% of the district covers the lot
+-- OR more than a specified area of the lot if covered by the district
+
 DROP TABLE specialpurposeperorder;
 CREATE TABLE specialpurposeperorder AS (
 WITH 
@@ -26,20 +32,20 @@ SET specialdistrict1 = sdlbl
 FROM specialpurposeperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
-AND (pergeom >= 10 OR seggeom > 000000002);
+AND (pergeom >= 10 OR seggeom > 0.000000002);
 
 UPDATE dcp_zoning_taxlot_edm a
 SET specialdistrict2 = sdlbl
 FROM specialpurposeperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 2
-AND (pergeom >= 10 OR seggeom > 000000002);
+AND (pergeom >= 10 OR seggeom > 0.000000002);
 
 UPDATE dcp_zoning_taxlot_edm a
 SET specialdistrict3 = sdlbl
 FROM specialpurposeperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 3
-AND (pergeom >= 10 OR seggeom > 000000002);
+AND (pergeom >= 10 OR seggeom > 0.000000002);
 
 DROP TABLE specialpurposeperorder;

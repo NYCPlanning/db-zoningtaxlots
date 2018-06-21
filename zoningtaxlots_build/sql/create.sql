@@ -1,4 +1,4 @@
---Create empty dcp_zoning_taxlot table
+-- create empty dcp_zoning_taxlot table
 DROP TABLE IF EXISTS dcp_zoning_taxlot_edm CASCADE;
 CREATE TABLE dcp_zoning_taxlot_edm (
 	boroughcode text,

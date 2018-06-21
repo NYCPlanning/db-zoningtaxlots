@@ -1,3 +1,9 @@
+-- calculate how much (total area and percentage) of each lot is covered by a commercial overlay
+-- assign the commercial overlay(s) to each tax lot
+-- the order commercial overlays are assigned is based on which district covers the majority of the lot
+-- a district is only assigned if more than 10% of the district covers the lot
+-- OR more than a specified area of the lot if covered by the district
+
 DROP TABLE commoverlayperorder;
 CREATE TABLE commoverlayperorder AS (
 WITH 

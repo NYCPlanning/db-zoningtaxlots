@@ -1,5 +1,7 @@
+-- 
+
 DROP TABLE IF EXISTS ztl_qc_versioncomparisoncount;
--- input the versions of pluto that you'd like to compare
+-- input the versions of zoning districts that you'd like to compare
 CREATE TABLE ztl_qc_versioncomparisoncount AS (
 WITH differences AS (
 SELECT 'zoningdistrict1' AS field, COUNT(*)

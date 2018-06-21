@@ -103,15 +103,22 @@ SELECT bbl, zonedist, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
 );
 
 DROP TABLE lotzoneperorderqn;
+
+CREATE TABLE dtm_tep AS (
+  SELECT * FROM dof_dtm WHERE ST_IsValid(geom)='t' AND bbl LIKE '4%'
+);
+
 CREATE TABLE lotzoneperorderqn AS (
 WITH validdtm AS (
-  SELECT a.bbl, a.geom 
-  FROM dof_dtm a
-  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '4%'),
+  SELECT a.bbl, ST_ForceRHR(ST_MakeValid(a.geom)) as geom
+  FROM dtm_tep a
+  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '4%'
+  AND ST_IsValid(a.geom)='t'),
 validzones AS (
-  SELECT a.zonedist, a.geom 
+  SELECT a.zonedist, ST_ForceRHR(ST_MakeValid(a.geom)) as geom 
   FROM dcp_zoningdistricts a
-  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'),
+  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'
+  AND ST_IsValid(a.geom)='t'),
 lotzoneper AS (
 SELECT p.bbl, n.zonedist
  , (ST_Area(CASE 
@@ -186,7 +193,7 @@ DROP TABLE lotzoneperordersi;
 -- update each of zoning district fields
 -- only say that a lot is within a zoning district if
 -- more than 10% of the lot is coverd by the zoning district
--- or more than 0.000000002 decimal degrees is covered by the district
+-- or more than a specified area is covered by the district
 UPDATE dcp_zoning_taxlot_edm a
 SET zoningdistrict1 = zonedist
 FROM lotzoneperorder b

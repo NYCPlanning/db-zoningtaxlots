@@ -1,5 +1,8 @@
+-- compares two versions of the zoning tax lot database where bbls are the same
+-- outputs a table reporting each field, the number of records that are differnt, and the percentage of differnt records 
+
 DROP TABLE IF EXISTS ztl_qc_versioncomparisoncount;
--- input the versions of pluto that you'd like to compare
+-- input the versions of zoning districts that you'd like to compare
 CREATE TABLE ztl_qc_versioncomparisoncount AS (
 WITH differences AS (
 SELECT 'zoningdistrict1' AS field, COUNT(*)
@@ -262,4 +265,4 @@ GROUP BY field
 ORDER BY percent DESC
 );
 
-\copy (SELECT * FROM ztl_qc_versioncomparisoncount) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison.csv';
+\copy (SELECT * FROM ztl_qc_versioncomparisoncount) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison.csv' DELIMITER ',' CSV HEADER;

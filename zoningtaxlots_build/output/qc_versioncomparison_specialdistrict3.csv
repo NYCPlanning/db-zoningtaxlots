@@ -1,30 +1,30 @@
 specialdistrict3edm,specialdistrict1,specialdistrict2,specialdistrict3,count
-,MX-16,EC-5, ,1
-,MID,, ,1
-,HP,, ,2
-,DB,, ,9
-,SHP,, ,1
-,HS,, ,17
-,GC,, ,1
-SRD,,,,4
-,MX-15,, ,1
-,LM,, ,2
-,MX-8,, ,9
 ,DJ,, ,3
-,NA-1,, ,12
-,HY,, ,5
 ,SV-1,, ,2
-,OP,, ,3
-,MX-1,, ,1
-,,, ,986
-,MX-4,, ,1
-,CD,, ,1
-,SRD,, ,388
-,BR,, ,12
-,CP,, ,2
-,TMU,, ,3
 ,HRP,, ,1
+,BR,, ,12
 ,MX-16,EC-5,EC-6,1
-,MX-6,, ,4
+,HS,, ,17
+SRD,,,,4
 ,LIC,, ,3
+,CP,, ,2
+,MX-16,EC-5, ,1
+,HP,, ,2
+,OP,, ,3
+,SRD,, ,388
+,NA-1,, ,12
 ,CI,, ,9
+,DB,, ,9
+,CD,, ,1
+,,, ,986
+,HY,, ,5
+,GC,, ,1
+,MID,, ,1
+,MX-15,, ,1
+,MX-1,, ,1
+,LM,, ,2
+,SHP,, ,1
+,MX-6,, ,4
+,TMU,, ,3
+,MX-4,, ,1
+,MX-8,, ,9

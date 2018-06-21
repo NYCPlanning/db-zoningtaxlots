@@ -1,3 +1,6 @@
+-- compares two versions of the zoning tax lot database where bbls are the same
+-- outputs a table for each field reporting each distinct value, the number of records that are differnt, and the percentage of differnt records 
+
 DROP TABLE IF EXISTS ztl_qc_versioncomparison_zoningdistrict1;
 CREATE TABLE ztl_qc_versioncomparison_zoningdistrict1 AS (
 SELECT DISTINCT a.zoningdistrict1 as zoningdistrict1edm, b.zoningdistrict1, b.zoningdistrict2, b.zoningdistrict3, b.zoningdistrict4, COUNT(*)

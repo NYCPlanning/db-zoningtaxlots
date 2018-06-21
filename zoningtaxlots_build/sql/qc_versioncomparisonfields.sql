@@ -1,4 +1,5 @@
--- 
+-- compares two versions of the zoning tax lot database where bbls are the same
+-- outputs a table reporting each field, the number of records that are differnt, and the percentage of differnt records 
 
 DROP TABLE IF EXISTS ztl_qc_versioncomparisoncount;
 -- input the versions of zoning districts that you'd like to compare

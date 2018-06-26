@@ -309,18 +309,18 @@ WHERE a.zoningmapcode IS NULL AND b.zoningmapcode IS NOT NULL
 GROUP BY a.zoningmapcode, b.zoningmapcode
 );
 
-\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict1) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict1.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict2) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict2.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict3) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict3.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict4) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict4.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT * FROM ztl_qc_versioncomparison_commercialoverlay1) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_commercialoverlay1.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT * FROM ztl_qc_versioncomparison_commercialoverlay2) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_commercialoverlay2.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict1) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_specialdistrict1.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict2) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_specialdistrict2.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict3) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_specialdistrict3.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT * FROM ztl_qc_versioncomparison_limitedheightdistrict) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_limitedheightdistrict.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT * FROM ztl_qc_versioncomparison_zoningmapnumber) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningmapnumber.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT * FROM ztl_qc_versioncomparison_zoningmapcode) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningmapcode.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict1 ORDER BY count DESC) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict1.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict2 ORDER BY count DESC) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict2.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict3 ORDER BY count DESC) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict3.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict4 ORDER BY count DESC) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict4.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM ztl_qc_versioncomparison_commercialoverlay1 ORDER BY count DESC) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_commercialoverlay1.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM ztl_qc_versioncomparison_commercialoverlay2 ORDER BY count DESC) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_commercialoverlay2.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict1 ORDER BY count DESC) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_specialdistrict1.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict2 ORDER BY count DESC) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_specialdistrict2.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict3 ORDER BY count DESC) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_specialdistrict3.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM ztl_qc_versioncomparison_limitedheightdistrict ORDER BY count DESC) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_limitedheightdistrict.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM ztl_qc_versioncomparison_zoningmapnumber ORDER BY count DESC) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningmapnumber.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM ztl_qc_versioncomparison_zoningmapcode ORDER BY count DESC) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparison_zoningmapcode.csv' DELIMITER ',' CSV HEADER;
 
 
 

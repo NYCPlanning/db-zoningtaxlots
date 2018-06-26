@@ -1,4 +1,3 @@
-DROP TABLE lotzoneper;
 -- create index on DTM and zoning districts
 DROP INDEX dof_dtm_gix;
 DROP INDEX dcp_zoningdistricts_gix;
@@ -103,22 +102,15 @@ SELECT bbl, zonedist, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
 );
 
 DROP TABLE lotzoneperorderqn;
-
-CREATE TABLE dtm_tep AS (
-  SELECT * FROM dof_dtm WHERE ST_IsValid(geom)='t' AND bbl LIKE '4%'
-);
-
 CREATE TABLE lotzoneperorderqn AS (
 WITH validdtm AS (
   SELECT a.bbl, ST_ForceRHR(ST_MakeValid(a.geom)) as geom
-  FROM dtm_tep a
-  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '4%'
-  AND ST_IsValid(a.geom)='t'),
+  FROM dof_dtm a
+  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '4%'),
 validzones AS (
   SELECT a.zonedist, ST_ForceRHR(ST_MakeValid(a.geom)) as geom 
   FROM dcp_zoningdistricts a
-  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'
-  AND ST_IsValid(a.geom)='t'),
+  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'),
 lotzoneper AS (
 SELECT p.bbl, n.zonedist
  , (ST_Area(CASE 
@@ -189,6 +181,12 @@ DROP TABLE lotzoneperorderbx;
 DROP TABLE lotzoneperorderbk;
 DROP TABLE lotzoneperorderqn;
 DROP TABLE lotzoneperordersi;
+-- null out any existing values
+UPDATE dcp_zoning_taxlot_edm
+SET zoningdistrict1 = NULL, 
+  zoningdistrict2 = NULL, 
+  zoningdistrict3 = NULL, 
+  zoningdistrict4 = NULL;
 
 -- update each of zoning district fields
 -- only say that a lot is within a zoning district if

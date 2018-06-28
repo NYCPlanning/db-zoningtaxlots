@@ -12,7 +12,7 @@ WHERE a.zoningdistrict1 = b.zoningdistrict1
 	OR a.zoningdistrict1 = b.zoningdistrict3
 	OR a.zoningdistrict1 = b.zoningdistrict4
 	)
-AND a.zoningdistrict1 IS NOT NULL AND (a.zoningdistrict1 <> 'PARK' AND a.zoningdistrict1 <> 'PLAYGROUND' OR a.zoningdistrict1 IS NULL) AND b.zoningdistrict1 = 'PARK'
+AND a.zoningdistrict1 IS NOT NULL
 GROUP BY a.bbl, a.zoningdistrict1, b.zoningdistrict1, b.zoningdistrict2, b.zoningdistrict3, b.zoningdistrict4
 UNION 
 SELECT DISTINCT a.bbl, a.zoningdistrict1, b.zoningdistrict1, b.zoningdistrict2, b.zoningdistrict3, b.zoningdistrict4, COUNT(*)

@@ -32,20 +32,20 @@ SET specialdistrict1 = sdlbl
 FROM specialpurposeperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
-AND (pergeom >= 10 OR seggeom > 0.000000002);
+AND pergeom >= 10;
 
 UPDATE dcp_zoning_taxlot_edm a
 SET specialdistrict2 = sdlbl
 FROM specialpurposeperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 2
-AND (pergeom >= 10 OR seggeom > 0.000000002);
+AND pergeom >= 10;
 
 UPDATE dcp_zoning_taxlot_edm a
 SET specialdistrict3 = sdlbl
 FROM specialpurposeperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 3
-AND (pergeom >= 10 OR seggeom > 0.000000002);
+AND pergeom >= 10;
 
 DROP TABLE specialpurposeperorder;

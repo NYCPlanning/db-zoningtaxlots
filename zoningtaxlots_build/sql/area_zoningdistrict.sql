@@ -197,28 +197,28 @@ SET zoningdistrict1 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
-AND (pergeom >= 10);
+AND pergeom >= 10;
 
 UPDATE dcp_zoning_taxlot_edm a
 SET zoningdistrict2 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 2
-AND (pergeom >= 10);
+AND pergeom >= 10;
 
 UPDATE dcp_zoning_taxlot_edm a
 SET zoningdistrict3 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 3
-AND (pergeom >= 10);
+AND pergeom >= 10;
 
 UPDATE dcp_zoning_taxlot_edm a
 SET zoningdistrict4 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 4
-AND (pergeom >= 10);
+AND pergeom >= 10;
 
 -- drop the area table
 DROP TABLE lotzoneperorder;

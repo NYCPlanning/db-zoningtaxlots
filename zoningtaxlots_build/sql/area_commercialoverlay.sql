@@ -33,13 +33,13 @@ SET commercialoverlay1 = overlay
 FROM commoverlayperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
-AND (pergeom >= 10 OR seggeom > 000000002);
+AND pergeom >= 10;
 
 UPDATE dcp_zoning_taxlot_edm a
 SET commercialoverlay2 = overlay
 FROM commoverlayperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 2
-AND (pergeom >= 10 OR seggeom > 000000002);
+AND pergeom >= 10;
 
 DROP TABLE commoverlayperorder;

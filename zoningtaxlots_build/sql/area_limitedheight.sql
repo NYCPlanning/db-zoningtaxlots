@@ -32,6 +32,6 @@ SET limitedheightdistrict = lhlbl
 FROM limitedheightperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
-AND (pergeom >= 10 OR seggeom > 000000002);
+AND pergeom >= 10;
 
 DROP TABLE limitedheightperorder;

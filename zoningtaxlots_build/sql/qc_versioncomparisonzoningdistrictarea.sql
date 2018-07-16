@@ -1,7 +1,7 @@
 -- generate table reporting the amount of area based on the latest PLUTO 
 -- loss or gained by each zoning district, overlays, etc.
 WITH edmarea AS (
-SELECT b.zd, SUM(lotarea::double precision) as areaedm 
+SELECT b.zd, COUNT(*) as areaedm 
 FROM dcp_mappluto a
 LEFT JOIN (
 SELECT DISTINCT a.bbl, a.zoningdistrict1 AS zd
@@ -38,7 +38,7 @@ ON a.bbl::text=b.bbl||'.00'::text
 GROUP BY b.zd
 ),
 dcparea AS (
-SELECT b.zd, SUM(lotarea::double precision) as areadcp 
+SELECT b.zd, COUNT(*) as areadcp 
 FROM dcp_mappluto a
 LEFT JOIN (
 SELECT DISTINCT a.boroughcode||lpad(a.taxblock, 5, '0')||lpad(a.taxlot, 4, '0')::text AS bbl, a.zoningdistrict1 AS zd

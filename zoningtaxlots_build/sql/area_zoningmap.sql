@@ -32,7 +32,7 @@ SET zoningmapnumber = sectionalm
 FROM zoningmapperorder b
 WHERE a.bbl=b.bbl
 AND row_number = 1
-AND (pergeom >= 10 OR seggeom > 000000002);
+AND pergeom >= 10;
 -- set the zoningmapcode to Y where a lot is covered by a second zoning map
 UPDATE dcp_zoning_taxlot_edm a
 SET zoningmapcode = 'Y'

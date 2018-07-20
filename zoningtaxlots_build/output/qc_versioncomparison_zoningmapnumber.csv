@@ -1,12 +1,12 @@
 zoningmapnumberedm,zoningmapnumber,count
-7E,11C,141
-7EB,11C,131
+7EB,11C,221
+7E,11C,51
 9A,,16
 8D,,11
 33C,,5
 38A,30D,5
-22C,22D,4
 22A,22B,4
+22C,22D,4
 18C,,4
 38C,30D,4
 22D,28C,3
@@ -20,9 +20,9 @@ zoningmapnumberedm,zoningmapnumber,count
 27D,27C,3
 13B,17A,3
 33A,32C,3
-14B,18A,2
 6B,,2
 26D,26C,2
+14B,18A,2
 16C,16A,2
 10A,10B,2
 4E,4D,2

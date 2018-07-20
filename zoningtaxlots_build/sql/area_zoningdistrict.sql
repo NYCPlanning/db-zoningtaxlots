@@ -11,7 +11,7 @@ CREATE INDEX dcp_zoningdistricts_gix ON dcp_zoningdistricts USING GIST (geom);
 -- OR more than a specified area of the lot if covered by the district
 -- split and process by borough to improve processing time
 
-DROP TABLE lotzoneperordermn;
+DROP TABLE IF EXISTS lotzoneperordermn;
 CREATE TABLE lotzoneperordermn AS (
 WITH validdtm AS (
   SELECT a.bbl, a.geom 
@@ -41,7 +41,7 @@ SELECT bbl, zonedist, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
       FROM lotzoneper
 );
 
-DROP TABLE lotzoneperorderbx;
+DROP TABLE IF EXISTS lotzoneperorderbx;
 CREATE TABLE lotzoneperorderbx AS (
 WITH validdtm AS (
   SELECT a.bbl, a.geom 
@@ -71,7 +71,7 @@ SELECT bbl, zonedist, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
       FROM lotzoneper
 );
 
-DROP TABLE lotzoneperorderbk;
+DROP TABLE IF EXISTS lotzoneperorderbk;
 CREATE TABLE lotzoneperorderbk AS (
 WITH validdtm AS (
   SELECT a.bbl, a.geom 
@@ -101,7 +101,7 @@ SELECT bbl, zonedist, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
       FROM lotzoneper
 );
 
-DROP TABLE lotzoneperorderqn;
+DROP TABLE IF EXISTS lotzoneperorderqn;
 CREATE TABLE lotzoneperorderqn AS (
 WITH validdtm AS (
   SELECT a.bbl, ST_ForceRHR(ST_MakeValid(a.geom)) as geom
@@ -131,7 +131,7 @@ SELECT bbl, zonedist, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
       FROM lotzoneper
 );
 
-DROP TABLE lotzoneperordersi;
+DROP TABLE IF EXISTS lotzoneperordersi;
 CREATE TABLE lotzoneperordersi AS (
 WITH validdtm AS (
   SELECT a.bbl, a.geom 
@@ -162,7 +162,7 @@ SELECT bbl, zonedist, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
 );
 
 -- join each of the boro tables into one table
-DROP TABLE lotzoneperorder;
+DROP TABLE IF EXISTS lotzoneperorder;
 CREATE TABLE lotzoneperorder AS (
   SELECT * FROM lotzoneperordermn
   UNION

@@ -27,7 +27,7 @@ SELECT bbl, lhlbl, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
   		FROM limitedheightper
 );
 
-UPDATE dcp_zoning_taxlot_edm a
+UPDATE dcp_zoning_taxlot a
 SET limitedheightdistrict = lhlbl
 FROM limitedheightperorder b
 WHERE a.bbl=b.bbl 

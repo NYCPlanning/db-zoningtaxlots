@@ -2,13 +2,13 @@ SELECT SUM(lotarea::double precision)
 FROM dcp_mappluto
 WHERE bbl::text IN (
 SELECT a.bbl::text||'.00' AS bbl
-FROM dcp_zoning_taxlot_edm a
-INNER JOIN dcp_zoning_taxlot b
+FROM dcp_zoning_taxlot a
+INNER JOIN dcp_zoning_taxlot_prev b
 ON a.bbl::text=b.boroughcode||lpad(b.taxblock, 5, '0')||lpad(b.taxlot, 4, '0')::text
 WHERE a.bbl NOT IN (
 SELECT a.bbl
-FROM dcp_zoning_taxlot_edm a
-INNER JOIN dcp_zoning_taxlot b
+FROM dcp_zoning_taxlot a
+INNER JOIN dcp_zoning_taxlot_prev b
 ON a.bbl::text=b.boroughcode||lpad(b.taxblock, 5, '0')||lpad(b.taxlot, 4, '0')::text
 WHERE a.zoningdistrict1 = b.zoningdistrict1
 	OR a.zoningdistrict1 = b.zoningdistrict2

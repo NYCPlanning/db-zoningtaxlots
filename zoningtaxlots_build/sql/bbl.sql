@@ -1,5 +1,5 @@
 -- insert unique bbls into table
-INSERT INTO dcp_zoning_taxlot_edm (
+INSERT INTO dcp_zoning_taxlot (
 	bbl,
 	boroughcode,
 	taxblock,

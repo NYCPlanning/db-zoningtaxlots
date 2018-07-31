@@ -27,14 +27,14 @@ SELECT bbl, sectionalm, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
   		FROM zoningmapper
 );
 
-UPDATE dcp_zoning_taxlot_edm a
+UPDATE dcp_zoning_taxlot a
 SET zoningmapnumber = sectionalm
 FROM zoningmapperorder b
 WHERE a.bbl=b.bbl
 AND row_number = 1
 AND pergeom >= 10;
 -- set the zoningmapcode to Y where a lot is covered by a second zoning map
-UPDATE dcp_zoning_taxlot_edm a
+UPDATE dcp_zoning_taxlot a
 SET zoningmapcode = 'Y'
 FROM zoningmapperorder b
 WHERE a.bbl=b.bbl 

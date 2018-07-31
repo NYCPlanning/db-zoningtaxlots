@@ -27,21 +27,21 @@ SELECT bbl, sdlbl, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
   		FROM specialpurposeper
 );
 
-UPDATE dcp_zoning_taxlot_edm a
+UPDATE dcp_zoning_taxlot a
 SET specialdistrict1 = sdlbl
 FROM specialpurposeperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
 AND pergeom >= 10;
 
-UPDATE dcp_zoning_taxlot_edm a
+UPDATE dcp_zoning_taxlot a
 SET specialdistrict2 = sdlbl
 FROM specialpurposeperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 2
 AND pergeom >= 10;
 
-UPDATE dcp_zoning_taxlot_edm a
+UPDATE dcp_zoning_taxlot a
 SET specialdistrict3 = sdlbl
 FROM specialpurposeperorder b
 WHERE a.bbl=b.bbl 

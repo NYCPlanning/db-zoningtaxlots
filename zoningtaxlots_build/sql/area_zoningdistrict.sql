@@ -182,7 +182,7 @@ DROP TABLE lotzoneperorderbk;
 DROP TABLE lotzoneperorderqn;
 DROP TABLE lotzoneperordersi;
 -- null out any existing values
-UPDATE dcp_zoning_taxlot_edm
+UPDATE dcp_zoning_taxlot
 SET zoningdistrict1 = NULL, 
   zoningdistrict2 = NULL, 
   zoningdistrict3 = NULL, 
@@ -192,28 +192,28 @@ SET zoningdistrict1 = NULL,
 -- only say that a lot is within a zoning district if
 -- more than 10% of the lot is coverd by the zoning district
 -- or more than a specified area is covered by the district
-UPDATE dcp_zoning_taxlot_edm a
+UPDATE dcp_zoning_taxlot a
 SET zoningdistrict1 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
 AND pergeom >= 10;
 
-UPDATE dcp_zoning_taxlot_edm a
+UPDATE dcp_zoning_taxlot a
 SET zoningdistrict2 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 2
 AND pergeom >= 10;
 
-UPDATE dcp_zoning_taxlot_edm a
+UPDATE dcp_zoning_taxlot a
 SET zoningdistrict3 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 3
 AND pergeom >= 10;
 
-UPDATE dcp_zoning_taxlot_edm a
+UPDATE dcp_zoning_taxlot a
 SET zoningdistrict4 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 

@@ -28,14 +28,14 @@ SELECT bbl, overlay, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
   		FROM commoverlayper
 );
 
-UPDATE dcp_zoning_taxlot_edm a
+UPDATE dcp_zoning_taxlot a
 SET commercialoverlay1 = overlay
 FROM commoverlayperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
 AND pergeom >= 10;
 
-UPDATE dcp_zoning_taxlot_edm a
+UPDATE dcp_zoning_taxlot a
 SET commercialoverlay2 = overlay
 FROM commoverlayperorder b
 WHERE a.bbl=b.bbl 

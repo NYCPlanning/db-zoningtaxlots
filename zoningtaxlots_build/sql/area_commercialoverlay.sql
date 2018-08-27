@@ -16,15 +16,23 @@ SELECT p.bbl, n.overlay,
     ST_Multi(
       ST_Intersection(p.geom,n.geom)
       ) 
-    END)) as seggeom,
-  ST_Area(p.geom) as allgeom
+    END)) as segbblgeom,
+  ST_Area(p.geom) as allbblgeom,
+  (ST_Area(CASE 
+    WHEN ST_CoveredBy(n.geom, p.geom) 
+    THEN n.geom 
+    ELSE 
+    ST_Multi(
+      ST_Intersection(n.geom,p.geom)
+      ) 
+    END)) as segzonegeom,
+  ST_Area(n.geom) as allzonegeom
  FROM dof_dtm AS p 
    INNER JOIN dcp_commercialoverlay AS n 
-    ON ST_Intersects(p.geom, n.geom)
-)
-SELECT bbl, overlay, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
+    ON ST_Intersects(p.geom, n.geom))
+SELECT bbl, overlay, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
     	OVER (PARTITION BY bbl
-      	ORDER BY seggeom DESC) AS row_number
+      	ORDER BY segbblgeom DESC, segzonegeom DESC) AS row_number
   		FROM commoverlayper
 );
 
@@ -33,13 +41,15 @@ SET commercialoverlay1 = overlay
 FROM commoverlayperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
-AND pergeom >= 10;
+AND (perbblgeom >= 10
+  OR perzonegeom >= 90);
 
 UPDATE dcp_zoning_taxlot a
 SET commercialoverlay2 = overlay
 FROM commoverlayperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 2
-AND pergeom >= 10;
+AND (perbblgeom >= 10
+  OR perzonegeom >= 90);
 
 DROP TABLE commoverlayperorder;

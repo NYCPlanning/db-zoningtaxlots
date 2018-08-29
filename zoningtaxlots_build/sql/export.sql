@@ -1,3 +1,4 @@
+-- export zoning tax lot database with desired headings
 DROP TABLE IF EXISTS dcp_zoning_taxlot_export;
 CREATE TABLE dcp_zoning_taxlot_export AS(
 	SELECT boroughcode AS "Borough Code",
@@ -21,3 +22,6 @@ FROM dcp_zoning_taxlot);
 \copy (SELECT * FROM dcp_zoning_taxlot_export) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_db.csv' DELIMITER ',' CSV HEADER;
 
 DROP TABLE dcp_zoning_taxlot_export;
+
+-- export special district lookup table
+\copy (SELECT DISTINCT sdlbl, sdname FROM dcp_specialpurpose ORDER BY sdlbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_specialdistricts.csv' DELIMITER ',' CSV HEADER;

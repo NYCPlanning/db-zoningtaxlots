@@ -28,7 +28,7 @@ SELECT p.bbl, n.sdlbl,
     END)) as segzonegeom,
   ST_Area(n.geom) as allzonegeom
  FROM dof_dtm AS p 
-   INNER JOIN dcp_limitedheight AS n 
+   INNER JOIN dcp_specialpurpose AS n 
     ON ST_Intersects(p.geom, n.geom)
 )
 SELECT bbl, sdlbl, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()

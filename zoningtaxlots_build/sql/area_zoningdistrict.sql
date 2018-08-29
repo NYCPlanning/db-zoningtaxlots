@@ -8,7 +8,7 @@ CREATE INDEX dcp_zoningdistricts_gix ON dcp_zoningdistricts USING GIST (geom);
 -- assign the zoning district(s) to each tax lot
 -- the order zoning districts are assigned is based on which district covers the majority of the lot
 -- a district is only assigned if more than 10% of the district covers the lot
--- OR more than a specified area of the lot if covered by the district
+-- OR the majority of the district is within the lot
 -- split and process by borough to improve processing time
 
 DROP TABLE IF EXISTS lotzoneperordermn;
@@ -29,15 +29,23 @@ SELECT p.bbl, n.zonedist
    ELSE 
     ST_Multi(
       ST_Intersection(p.geom,n.geom)
-      ) END)) seggeom,
-     ST_Area(p.geom) as allgeom
+      ) END)) segbblgeom,
+    (ST_Area(CASE 
+   WHEN ST_CoveredBy(n.geom, p.geom) 
+   THEN n.geom 
+   ELSE 
+    ST_Multi(
+      ST_Intersection(n.geom,p.geom)
+      ) END)) segzonegeom,
+     ST_Area(p.geom) as allbblgeom,
+     ST_Area(n.geom) as allzonegeom
  FROM validdtm AS p 
-   INNER JOIN validzones AS n 
+  INNER JOIN validzones AS n 
     ON ST_Intersects(p.geom, n.geom)
 )
-SELECT bbl, zonedist, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
+SELECT bbl, zonedist, segbblgeom, allbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, segzonegeom, allzonegeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
       OVER (PARTITION BY bbl
-        ORDER BY seggeom DESC) AS row_number
+        ORDER BY segbblgeom/allbblgeom DESC, segzonegeom/allzonegeom DESC) AS row_number
       FROM lotzoneper
 );
 
@@ -59,15 +67,23 @@ SELECT p.bbl, n.zonedist
    ELSE 
     ST_Multi(
       ST_Intersection(p.geom,n.geom)
-      ) END)) seggeom,
-     ST_Area(p.geom) as allgeom
+      ) END)) segbblgeom,
+    (ST_Area(CASE 
+   WHEN ST_CoveredBy(n.geom, p.geom) 
+   THEN n.geom 
+   ELSE 
+    ST_Multi(
+      ST_Intersection(n.geom,p.geom)
+      ) END)) segzonegeom,
+     ST_Area(p.geom) as allbblgeom,
+     ST_Area(n.geom) as allzonegeom
  FROM validdtm AS p 
-   INNER JOIN validzones AS n 
+  INNER JOIN validzones AS n 
     ON ST_Intersects(p.geom, n.geom)
 )
-SELECT bbl, zonedist, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
+SELECT bbl, zonedist, segbblgeom, allbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, segzonegeom, allzonegeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
       OVER (PARTITION BY bbl
-        ORDER BY seggeom DESC) AS row_number
+        ORDER BY segbblgeom/allbblgeom DESC, segzonegeom/allzonegeom DESC) AS row_number
       FROM lotzoneper
 );
 
@@ -89,26 +105,34 @@ SELECT p.bbl, n.zonedist
    ELSE 
     ST_Multi(
       ST_Intersection(p.geom,n.geom)
-      ) END)) seggeom,
-     ST_Area(p.geom) as allgeom
+      ) END)) segbblgeom,
+    (ST_Area(CASE 
+   WHEN ST_CoveredBy(n.geom, p.geom) 
+   THEN n.geom 
+   ELSE 
+    ST_Multi(
+      ST_Intersection(n.geom,p.geom)
+      ) END)) segzonegeom,
+     ST_Area(p.geom) as allbblgeom,
+     ST_Area(n.geom) as allzonegeom
  FROM validdtm AS p 
-   INNER JOIN validzones AS n 
+  INNER JOIN validzones AS n 
     ON ST_Intersects(p.geom, n.geom)
 )
-SELECT bbl, zonedist, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
+SELECT bbl, zonedist, segbblgeom, allbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, segzonegeom, allzonegeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
       OVER (PARTITION BY bbl
-        ORDER BY seggeom DESC) AS row_number
+        ORDER BY segbblgeom/allbblgeom DESC, segzonegeom/allzonegeom DESC) AS row_number
       FROM lotzoneper
 );
 
 DROP TABLE IF EXISTS lotzoneperorderqn;
 CREATE TABLE lotzoneperorderqn AS (
 WITH validdtm AS (
-  SELECT a.bbl, ST_ForceRHR(ST_MakeValid(a.geom)) as geom
+  SELECT a.bbl, a.geom 
   FROM dof_dtm a
   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '4%'),
 validzones AS (
-  SELECT a.zonedist, ST_ForceRHR(ST_MakeValid(a.geom)) as geom 
+  SELECT a.zonedist, a.geom 
   FROM dcp_zoningdistricts a
   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'),
 lotzoneper AS (
@@ -119,15 +143,23 @@ SELECT p.bbl, n.zonedist
    ELSE 
     ST_Multi(
       ST_Intersection(p.geom,n.geom)
-      ) END)) seggeom,
-     ST_Area(p.geom) as allgeom
+      ) END)) segbblgeom,
+    (ST_Area(CASE 
+   WHEN ST_CoveredBy(n.geom, p.geom) 
+   THEN n.geom 
+   ELSE 
+    ST_Multi(
+      ST_Intersection(n.geom,p.geom)
+      ) END)) segzonegeom,
+     ST_Area(p.geom) as allbblgeom,
+     ST_Area(n.geom) as allzonegeom
  FROM validdtm AS p 
-   INNER JOIN validzones AS n 
+  INNER JOIN validzones AS n 
     ON ST_Intersects(p.geom, n.geom)
 )
-SELECT bbl, zonedist, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
+SELECT bbl, zonedist, segbblgeom, allbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, segzonegeom, allzonegeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
       OVER (PARTITION BY bbl
-        ORDER BY seggeom DESC) AS row_number
+        ORDER BY segbblgeom/allbblgeom DESC, segzonegeom/allzonegeom DESC) AS row_number
       FROM lotzoneper
 );
 
@@ -149,15 +181,23 @@ SELECT p.bbl, n.zonedist
    ELSE 
     ST_Multi(
       ST_Intersection(p.geom,n.geom)
-      ) END)) seggeom,
-     ST_Area(p.geom) as allgeom
+      ) END)) segbblgeom,
+    (ST_Area(CASE 
+   WHEN ST_CoveredBy(n.geom, p.geom) 
+   THEN n.geom 
+   ELSE 
+    ST_Multi(
+      ST_Intersection(n.geom,p.geom)
+      ) END)) segzonegeom,
+     ST_Area(p.geom) as allbblgeom,
+     ST_Area(n.geom) as allzonegeom
  FROM validdtm AS p 
-   INNER JOIN validzones AS n 
+  INNER JOIN validzones AS n 
     ON ST_Intersects(p.geom, n.geom)
 )
-SELECT bbl, zonedist, seggeom, (seggeom/allgeom)*100 as pergeom, ROW_NUMBER()
+SELECT bbl, zonedist, segbblgeom, allbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, segzonegeom, allzonegeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
       OVER (PARTITION BY bbl
-        ORDER BY seggeom DESC) AS row_number
+        ORDER BY segbblgeom/allbblgeom DESC, segzonegeom/allzonegeom DESC) AS row_number
       FROM lotzoneper
 );
 
@@ -197,28 +237,32 @@ SET zoningdistrict1 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
-AND pergeom >= 10;
+AND (perbblgeom >= 10 
+  OR perzonegeom >= 50);
 
 UPDATE dcp_zoning_taxlot a
 SET zoningdistrict2 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 2
-AND pergeom >= 10;
+AND (perbblgeom >= 10
+  OR perzonegeom >= 50);
 
 UPDATE dcp_zoning_taxlot a
 SET zoningdistrict3 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 3
-AND pergeom >= 10;
+AND (perbblgeom >= 10
+  OR perzonegeom >= 50);
 
 UPDATE dcp_zoning_taxlot a
 SET zoningdistrict4 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 4
-AND pergeom >= 10;
+AND (perbblgeom >= 10
+  OR perzonegeom >= 50);
 
 -- drop the area table
 DROP TABLE lotzoneperorder;

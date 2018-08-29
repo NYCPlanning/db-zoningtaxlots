@@ -42,7 +42,7 @@ FROM commoverlayperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
 AND (perbblgeom >= 10
-  OR perzonegeom >= 90);
+  OR perzonegeom >= 50);
 
 UPDATE dcp_zoning_taxlot a
 SET commercialoverlay2 = overlay
@@ -50,6 +50,6 @@ FROM commoverlayperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 2
 AND (perbblgeom >= 10
-  OR perzonegeom >= 90);
+  OR perzonegeom >= 50);
 
 DROP TABLE commoverlayperorder;

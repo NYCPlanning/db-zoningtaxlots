@@ -238,7 +238,7 @@ FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
 AND (perbblgeom >= 10 
-  OR perzonegeom >= 90);
+  OR perzonegeom >= 50);
 
 UPDATE dcp_zoning_taxlot a
 SET zoningdistrict2 = zonedist
@@ -246,7 +246,7 @@ FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 2
 AND (perbblgeom >= 10
-  OR perzonegeom >= 90);
+  OR perzonegeom >= 50);
 
 UPDATE dcp_zoning_taxlot a
 SET zoningdistrict3 = zonedist
@@ -254,7 +254,7 @@ FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 3
 AND (perbblgeom >= 10
-  OR perzonegeom >= 90);
+  OR perzonegeom >= 50);
 
 UPDATE dcp_zoning_taxlot a
 SET zoningdistrict4 = zonedist
@@ -262,7 +262,7 @@ FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 4
 AND (perbblgeom >= 10
-  OR perzonegeom >= 90);
+  OR perzonegeom >= 50);
 
 -- drop the area table
 DROP TABLE lotzoneperorder;

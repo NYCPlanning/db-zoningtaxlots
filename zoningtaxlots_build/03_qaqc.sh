@@ -14,5 +14,5 @@ psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/qc_versioncompari
 #psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/qc_versioncomparisonvalues.sql
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/qc_bblsaddedandremoved.sql
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/qc_bbldiffs.sql
-pgsql2shp -u $DBUSER -f zoningtaxlots_build/output/qc_bbldiffs $DBNAME "SELECT * FROM bbldiffs WHERE geom IS NOT NULL'"
-psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/qc_freqencycomparison.sql
+pgsql2shp -u $DBUSER -f zoningtaxlots_build/output/qc_bbldiffs $DBNAME "SELECT * FROM bbldiffs WHERE geom IS NOT NULL"
+psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/qc_frequencycomparison.sql

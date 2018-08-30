@@ -128,11 +128,11 @@ SELECT bbl, zonedist, segbblgeom, allbblgeom, (segbblgeom/allbblgeom)*100 as per
 DROP TABLE IF EXISTS lotzoneperorderqn;
 CREATE TABLE lotzoneperorderqn AS (
 WITH validdtm AS (
-  SELECT a.bbl, a.geom 
+  SELECT a.bbl, ST_MakeValid(a.geom) as geom 
   FROM dof_dtm a
   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '4%'),
 validzones AS (
-  SELECT a.zonedist, a.geom 
+  SELECT a.zonedist, ST_MakeValid(a.geom) as geom 
   FROM dcp_zoningdistricts a
   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'),
 lotzoneper AS (

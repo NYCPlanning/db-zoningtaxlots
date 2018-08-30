@@ -3,7 +3,6 @@
 -- the order special purpose districts are assigned is based on which district covers the majority of the lot
 -- a district is only assigned if more than 10% of the district covers the lot
 -- OR more than a specified area of the lot if covered by the district
-
 DROP TABLE specialpurposeperorder;
 CREATE TABLE specialpurposeperorder AS (
 WITH 
@@ -33,7 +32,7 @@ SELECT p.bbl, n.sdlbl,
 )
 SELECT bbl, sdlbl, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
     	OVER (PARTITION BY bbl
-      	ORDER BY seggeom DESC) AS row_number
+      	ORDER BY segbblgeom DESC, segzonegeom DESC) AS row_number
   		FROM specialpurposeper
 );
 

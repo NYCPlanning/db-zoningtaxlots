@@ -33,7 +33,7 @@ SELECT p.bbl, n.lhlbl,
 )
 SELECT bbl, lhlbl, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
     	OVER (PARTITION BY bbl
-      	ORDER BY seggeom DESC) AS row_number
+      	ORDER BY segbblgeom DESC, segzonegeom DESC) AS row_number
   		FROM limitedheightper
 );
 

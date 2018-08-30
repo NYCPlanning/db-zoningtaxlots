@@ -10,20 +10,20 @@ WITH
 zoningmapper AS (
 SELECT p.bbl, n.sectionalm,
   (ST_Area(CASE 
-    WHEN ST_CoveredBy(p.geom, n.geom) 
+    WHEN ST_CoveredBy(ST_MakeValid(p.geom), n.geom) 
     THEN p.geom 
     ELSE 
     ST_Multi(
-      ST_Intersection(p.geom,n.geom)
+      ST_Intersection(ST_MakeValid(p.geom),n.geom)
       ) 
     END)) as segbblgeom,
   ST_Area(p.geom) as allbblgeom,
   (ST_Area(CASE 
-    WHEN ST_CoveredBy(n.geom, p.geom) 
+    WHEN ST_CoveredBy(n.geom, ST_MakeValid(p.geom)) 
     THEN n.geom 
     ELSE 
     ST_Multi(
-      ST_Intersection(n.geom,p.geom)
+      ST_Intersection(n.geom,ST_MakeValid(p.geom))
       ) 
     END)) as segzonegeom,
   ST_Area(n.geom) as allzonegeom
@@ -33,7 +33,7 @@ SELECT p.bbl, n.sectionalm,
 )
 SELECT bbl, sectionalm, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
     	OVER (PARTITION BY bbl
-      	ORDER BY seggeom DESC) AS row_number
+      	ORDER BY segbblgeom DESC, segzonegeom DESC) AS row_number
   		FROM zoningmapper
 );
 

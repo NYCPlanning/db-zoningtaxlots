@@ -2,7 +2,7 @@
 DROP TABLE IF EXISTS dcp_zoning_taxlot_export;
 CREATE TABLE dcp_zoning_taxlot_export AS(
 	SELECT boroughcode AS "Borough Code",
-		taxblock AS "Tax Block",
+		trunc(taxblock::numeric) AS "Tax Block",
 		taxlot AS "Tax Lot",
 		bbl AS "BBL",
 		zoningdistrict1 AS "Zoning District 1",

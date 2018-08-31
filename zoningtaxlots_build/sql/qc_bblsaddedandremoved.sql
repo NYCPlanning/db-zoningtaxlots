@@ -1,5 +1,4 @@
--- report the the number of BBLS removed in the latest zoning taxlot database
--- report the the number of BBLS added in the latest zoning taxlot database
+-- report the the number of BBLS removed from and added to the latest zoning taxlot database
 DROP TABLE IF EXISTS bblcountchange;
 CREATE TABLE bblcountchange AS (
 WITH joinall AS (

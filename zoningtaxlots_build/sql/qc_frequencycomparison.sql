@@ -1,3 +1,5 @@
+-- reports how many records are populated in each field
+-- for the current and previous version of the zoning tax lot database
 DROP TABLE IF EXISTS frequencychanges;
 CREATE TABLE frequencychanges AS(
 WITH newfrequency AS (
@@ -105,3 +107,4 @@ ORDER BY countnew::numeric - countold::numeric DESC
 
 \copy (SELECT * FROM frequencychanges) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_frequencychanges.csv' DELIMITER ',' CSV HEADER;
 DROP TABLE IF EXISTS frequencychanges;
+DROP TABLE IF EXISTS bbldiffs;

@@ -12,7 +12,7 @@ Your config file should look something like this:
 "DBUSER":"databaseuser"
 }
 
-These paramaters are passed through the scripts allowing write access to the database.
+These parameters are passed through the scripts allowing write access to the database.
 
 ### Prepare data-loading-scripts
 
@@ -27,14 +27,14 @@ Run the scripts in zoningtaxlots_build in order:
 Runs the data-loading-scripts scripts to import the datasets needed.
 
 The raw datasets need to build the database are:
-* Departmenet of Finance Digital Tax Map (DOF DTM)
+* Department of Finance Digital Tax Map (DOF DTM)
 * Department of City Planning NYC GIS Zoning Features
 
 #### 02_build.sh
 Creates the zoning tax lot database by:
 1. Populating the empty data table with all the unique BBLs from DOF's DTM
 2. Calculates how much of each tax lot if covered by a zoning feature and vice versa
-3. Assigns zoning districts to each tax lot based on the given paramaters.
+3. Assigns zoning districts to each tax lot based on the given parameters.
 
 Lastly, the final data table and associated lookup tables are outputted into the output folder.
 

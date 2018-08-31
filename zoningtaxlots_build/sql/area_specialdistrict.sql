@@ -32,7 +32,7 @@ SELECT p.bbl, n.sdlbl,
 )
 SELECT bbl, sdlbl, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
     	OVER (PARTITION BY bbl
-      	ORDER BY segbblgeom DESC, segzonegeom DESC) AS row_number
+      	ORDER BY segbblgeom DESC) AS row_number
   		FROM specialpurposeper
 );
 
@@ -41,23 +41,20 @@ SET specialdistrict1 = sdlbl
 FROM specialpurposeperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
-AND (perbblgeom >= 10
-  OR perzonegeom >= 50);
+AND perbblgeom >= 10;
 
 UPDATE dcp_zoning_taxlot a
 SET specialdistrict2 = sdlbl
 FROM specialpurposeperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 2
-AND (perbblgeom >= 10
-  OR perzonegeom >= 50);
+AND perbblgeom >= 10;
 
 UPDATE dcp_zoning_taxlot a
 SET specialdistrict3 = sdlbl
 FROM specialpurposeperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 3
-AND (perbblgeom >= 10
-  OR perzonegeom >= 50);
+AND perbblgeom >= 10;
 
 DROP TABLE specialpurposeperorder;

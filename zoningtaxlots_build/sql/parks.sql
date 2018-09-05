@@ -5,8 +5,22 @@ UPDATE dcp_zoning_taxlot a
 SET zoningdistrict1 = 'PARK'
 WHERE zoningdistrict1 = 'BALL FIELD'
 	OR zoningdistrict1 = 'PLAYGROUND'
-	OR zoningdistrict1 = 'PUBLIC PLACE'
-	OR zoningdistrict1 = 'PARK';
+	OR zoningdistrict1 = 'PUBLIC PLACE';
+UPDATE dcp_zoning_taxlot a
+SET zoningdistrict2 = 'PARK'
+WHERE zoningdistrict2 = 'BALL FIELD'
+	OR zoningdistrict2 = 'PLAYGROUND'
+	OR zoningdistrict2 = 'PUBLIC PLACE';
+UPDATE dcp_zoning_taxlot a
+SET zoningdistrict3 = 'PARK'
+WHERE zoningdistrict3 = 'BALL FIELD'
+	OR zoningdistrict3 = 'PLAYGROUND'
+	OR zoningdistrict3 = 'PUBLIC PLACE';
+UPDATE dcp_zoning_taxlot a
+SET zoningdistrict4 = 'PARK'
+WHERE zoningdistrict4 = 'BALL FIELD'
+	OR zoningdistrict4 = 'PLAYGROUND'
+	OR zoningdistrict4 = 'PUBLIC PLACE';
 -- where zoningdistrict1 = 'PARK' NULL out all other zoning information
 UPDATE dcp_zoning_taxlot a
 SET zoningdistrict2 = NULL,

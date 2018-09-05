@@ -9,4 +9,4 @@ SELECT DISTINCT bbl, boro, block, lot FROM dof_dtm;
 -- populate bbl field if it's NULL
 UPDATE dcp_zoning_taxlot
 SET bbl = boroughcode||lpad(taxblock, 5, '0')||lpad(taxlot, 4, '0')::text
-WHERE bbl IS NULL;
+WHERE bbl IS NULL OR length(bbl) < 10;

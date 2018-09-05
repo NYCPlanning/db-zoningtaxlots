@@ -18,5 +18,6 @@ psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/area_specialdistr
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/area_limitedheight.sql
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/area_zoningmap.sql
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/parks.sql
+psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/correct_duplicatevalues.sql
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/export.sql
 echo "Done!"

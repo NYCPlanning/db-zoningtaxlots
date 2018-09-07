@@ -74,5 +74,5 @@ ON a.bbl=b.bbl
 WHERE a.zoningmapcode IS NULL AND b.zoningmapcode IS NOT NULL
 );
 
-\copy (SELECT * FROM ztl_qc_versioncomparisonnownullcount ORDER BY count DESC) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparisonnownullcount.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM ztl_qc_versioncomparisonnownullcount ORDER BY count DESC) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/DTM_180405/qc_versioncomparisonnownullcount.csv' DELIMITER ',' CSV HEADER;
 DROP TABLE IF EXISTS ztl_qc_versioncomparisonnownullcount;

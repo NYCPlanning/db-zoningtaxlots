@@ -19,9 +19,10 @@ CREATE TABLE dcp_zoning_taxlot_export AS(
 		zoningmapcode AS "Zoning Map Code"
 FROM dcp_zoning_taxlot);
 
-\copy (SELECT * FROM dcp_zoning_taxlot_export) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_db.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM dcp_zoning_taxlot_export) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/DTM_180405/zoningtaxlot_db.csv' DELIMITER ',' CSV HEADER;
 
 DROP TABLE dcp_zoning_taxlot_export;
 
 -- export special district lookup table
+\copy (SELECT DISTINCT sdlbl, sdname FROM dcp_specialpurpose ORDER BY sdlbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_specialdistricts.csv' DELIMITER ',' CSV HEADER;
 \copy (SELECT DISTINCT sdlbl, sdname FROM dcp_specialpurpose ORDER BY sdlbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_specialdistricts.csv' DELIMITER ',' CSV HEADER;

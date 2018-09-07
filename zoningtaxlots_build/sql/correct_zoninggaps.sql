@@ -12,6 +12,10 @@ UPDATE dcp_zoning_taxlot
 SET zoningdistrict3 = zoningdistrict4,
 zoningdistrict4 = NULL
 WHERE zoningdistrict3 IS NULL;
+UPDATE dcp_zoning_taxlot
+SET zoningdistrict1 = zoningdistrict2,
+zoningdistrict2 = NULL
+WHERE zoningdistrict1 IS NULL;
 
 UPDATE dcp_zoning_taxlot
 SET commercialoverlay1 = commercialoverlay2,

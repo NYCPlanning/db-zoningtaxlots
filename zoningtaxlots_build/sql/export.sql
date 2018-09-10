@@ -23,6 +23,8 @@ FROM dcp_zoning_taxlot);
 
 DROP TABLE dcp_zoning_taxlot_export;
 
--- export special district lookup table
-\copy (SELECT DISTINCT sdlbl, sdname FROM dcp_specialpurpose ORDER BY sdlbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_specialdistricts.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT DISTINCT sdlbl, sdname FROM dcp_specialpurpose ORDER BY sdlbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_specialdistricts.csv' DELIMITER ',' CSV HEADER;
+-- export unique value lookup tables
+\copy (SELECT DISTINCT zonedist FROM dcp_zoningdistricts ORDER BY zonedist) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_zonedistricts.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT DISTINCT overlay FROM dcp_commercialoverlay ORDER BY overlay) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_commoverlay.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT DISTINCT sdname, sdlbl FROM dcp_specialpurpose ORDER BY sdname) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_specialdistricts.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT DISTINCT lhname, lhlbl FROM dcp_limitedheight ORDER BY lhname) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_limitedheight.csv' DELIMITER ',' CSV HEADER;

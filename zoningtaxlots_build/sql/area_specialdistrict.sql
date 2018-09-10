@@ -58,3 +58,30 @@ AND row_number = 3
 AND perbblgeom >= 10;
 
 DROP TABLE specialpurposeperorder;
+
+-- set the order of special districts 
+UPDATE dcp_zoning_taxlot
+SET specialdistrict1 = 'CL',
+  specialdistrict2 = 'MiD'
+WHERE specialdistrict1 = 'MiD'
+  AND specialdistrict2 = 'CL';
+UPDATE dcp_zoning_taxlot
+SET specialdistrict1 = 'MiD',
+  specialdistrict2 = 'TA'
+WHERE specialdistrict1 = 'TA'
+  AND specialdistrict2 = 'MiD';
+UPDATE dcp_zoning_taxlot
+SET specialdistrict1 = '125th',
+  specialdistrict2 = 'TA'
+WHERE specialdistrict1 = 'TA'
+  AND specialdistrict2 = '125th';
+UPDATE dcp_zoning_taxlot
+SET specialdistrict1 = 'EC-5',
+  specialdistrict2 = 'MX-16'
+WHERE specialdistrict1 = 'MX-16'
+  AND specialdistrict2 = 'EC-5';
+UPDATE dcp_zoning_taxlot
+SET specialdistrict1 = 'EC-6',
+  specialdistrict2 = 'MX-16'
+WHERE specialdistrict1 = 'MX-16'
+  AND specialdistrict2 = 'EC-6';

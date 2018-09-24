@@ -1,80 +1,80 @@
-sdlbl,sdname
-125th,Special 125th Street District
-125th/TA,Special 125th Street Dist/Transit Land use Dist
-BPC,Special Battery Park City District
-BR,Special Bay Ridge District
-C,Special Grand Concourse Preservation District
-CD,Special City Island District
-CI,Special Coney Island District
-CL,Special Clinton District
-CO,Special Coney Island Mixed Use District
-CP,Special College Point District
-CR,Special Coastal Risk District
-DB,Special Downtown Brooklyn District
-DFR,Special Downtown Far Rockaway District
-DJ,Special Downtown Jamaica District
-EC-1,Special Enhanced Commercial District- 1
-EC-2,Special Enhanced Commercial District- 2
-EC-3,Special Enhanced Commercial District- 3
-EC-4,Special Enhanced Commercial District 4
-EC-5,Special Enhanced Commercial District 5
-EC-6,Special Enhanced Commercial District 6
-EHC,East Harlem Corridors
-EHC/TA,East Harlem Corridors/Transit Land Use District
-FH,Special Forest Hills District
-GC,Special Garment Center District
-GI,Special Governors Island District
-HP,Special Hunts Point District
-HRP,Special Hudson River Park District
-HRW,Special Harlem River Waterfront District
-HS,Special Hillsides Preservation District
-HSQ,Special Hudson Square District
-HY,Special Hudson Yards District
-IN,Special Inwood District
-J,Jerome Corridor District
-L,Special Lincoln Square District
-LC,Special Limited Commercial District
-LI,Special Little Italy District
-LIC,Special Long Island City Mixed Use District
-LM,Special Lower Manhattan District
-MiD,Special Midtown District
-MMU,Special Manhattanville Mixed Use District
-MP,Special Madison Avenue Preservation District
-MX-1,Special Mixed Use District (MX-1)
-MX-10,Special Mixed Use District (MX-10)
-MX-11,Special Mixed Use District (MX-11)
-MX-12,Special Mixed Use District (MX-12)
-MX-13,Special Mixed Use District (MX-13)
-MX-14,Special Mixed Use District (MX-14)
-MX-15,Special Mixed Use District (MX-15)
-MX-16,Special Mixed Use District (MX-16)
-MX-16/EC-5,Mixed Use District/Enhanced Commercial District 5
-MX-16/EC-6,Mixed Use District/Enhanced Commercial District 6
-MX-17,Special Mixed Use District (MX-17)
-MX-2,Special Mixed Use District (MX-2)
-MX-4,Special Mixed Use District (MX-4)
-MX-5,Special Mixed Use District (MX-5)
-MX-6,Special Mixed Use District (MX-6)
-MX-7,Special Mixed Use District (MX-7)
-MX-8,Special Mixed Use District (MX-8)
-MX-9,Special Mixed Use District (MX-9)
-NA-1,Special Natural Area District
-NA-2,Special Natural Area District
-NA-3,Special Natural Area District
-NA-4,Special Fort Totten Natural Area District-4
-OP,Special Ocean Parkway District
-PC,Special Planned Community Preservation District
-PI,Special Park Improvement District
-SB,Special Sheepshead Bay District
-SG,Special St. George District
-SHP,Special Southern Hunters Point District
-SRD,Special South Richmond Development District
-SRI,Special Southern Roosevelt Island District
-SV-1,Special Scenic View District
-SW,Special Stapleton Waterfront District
-TA,Special Transit Land Use District
-TMU,Special Tribeca Mixed Use District
-U,Special United Nations Development District
-US,Special Union Square District
-WCh,Special West Chelsea District
-WP,Special Willets Point District
+sdname,sdlbl
+East Harlem Corridors,EHC
+East Harlem Corridors/Transit Land Use District,EHC/TA
+Jerome Corridor District,J
+Mixed Use District/Enhanced Commercial District 5,MX-16/EC-5
+Mixed Use District/Enhanced Commercial District 6,MX-16/EC-6
+Special 125th Street District,125th
+Special 125th Street Dist/Transit Land use Dist,125th/TA
+Special Battery Park City District,BPC
+Special Bay Ridge District,BR
+Special City Island District,CD
+Special Clinton District,CL
+Special Coastal Risk District,CR
+Special College Point District,CP
+Special Coney Island District,CI
+Special Coney Island Mixed Use District,CO
+Special Downtown Brooklyn District,DB
+Special Downtown Far Rockaway District,DFR
+Special Downtown Jamaica District,DJ
+Special Enhanced Commercial District- 1,EC-1
+Special Enhanced Commercial District- 2,EC-2
+Special Enhanced Commercial District- 3,EC-3
+Special Enhanced Commercial District 4,EC-4
+Special Enhanced Commercial District 5,EC-5
+Special Enhanced Commercial District 6,EC-6
+Special Forest Hills District,FH
+Special Fort Totten Natural Area District-4,NA-4
+Special Garment Center District,GC
+Special Governors Island District,GI
+Special Grand Concourse Preservation District,C
+Special Harlem River Waterfront District,HRW
+Special Hillsides Preservation District,HS
+Special Hudson River Park District,HRP
+Special Hudson Square District,HSQ
+Special Hudson Yards District,HY
+Special Hunts Point District,HP
+Special Inwood District,IN
+Special Limited Commercial District,LC
+Special Lincoln Square District,L
+Special Little Italy District,LI
+Special Long Island City Mixed Use District,LIC
+Special Lower Manhattan District,LM
+Special Madison Avenue Preservation District,MP
+Special Manhattanville Mixed Use District,MMU
+Special Midtown District,MiD
+Special Mixed Use District (MX-1),MX-1
+Special Mixed Use District (MX-10),MX-10
+Special Mixed Use District (MX-11),MX-11
+Special Mixed Use District (MX-12),MX-12
+Special Mixed Use District (MX-13),MX-13
+Special Mixed Use District (MX-14),MX-14
+Special Mixed Use District (MX-15),MX-15
+Special Mixed Use District (MX-16),MX-16
+Special Mixed Use District (MX-17),MX-17
+Special Mixed Use District (MX-2),MX-2
+Special Mixed Use District (MX-4),MX-4
+Special Mixed Use District (MX-5),MX-5
+Special Mixed Use District (MX-6),MX-6
+Special Mixed Use District (MX-7),MX-7
+Special Mixed Use District (MX-8),MX-8
+Special Mixed Use District (MX-9),MX-9
+Special Natural Area District,NA-2
+Special Natural Area District,NA-1
+Special Natural Area District,NA-3
+Special Ocean Parkway District,OP
+Special Park Improvement District,PI
+Special Planned Community Preservation District,PC
+Special Scenic View District,SV-1
+Special Sheepshead Bay District,SB
+Special Southern Hunters Point District,SHP
+Special Southern Roosevelt Island District,SRI
+Special South Richmond Development District,SRD
+Special Stapleton Waterfront District,SW
+Special St. George District,SG
+Special Transit Land Use District,TA
+Special Tribeca Mixed Use District,TMU
+Special Union Square District,US
+Special United Nations Development District,U
+Special West Chelsea District,WCh
+Special Willets Point District,WP

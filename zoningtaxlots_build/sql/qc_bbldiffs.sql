@@ -34,4 +34,4 @@ WHERE a.bbl = b.bbl AND a.bbl=c.bbl
 	OR a.zoningmapcode<>b.zoningmapcode)
 );
 
-\copy (SELECT * FROM bbldiffs) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/DTM_180405/qc_bbldiffs.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM bbldiffs) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_bbldiffs.csv' DELIMITER ',' CSV HEADER;

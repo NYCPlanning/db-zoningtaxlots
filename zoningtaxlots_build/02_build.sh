@@ -10,6 +10,7 @@ DBUSER=$(cat $REPOLOC/ztl.config.json | jq -r '.DBUSER')
 
 start=$(date +'%T')
 echo "Starting to build zoning tax lot database"
+psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/archive.sql
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/create.sql
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/bbl.sql
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/area_zoningdistrict.sql

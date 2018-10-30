@@ -8,6 +8,9 @@ cd $REPOLOC
 DBNAME=$(cat $REPOLOC/ztl.config.json | jq -r '.DBNAME')
 DBUSER=$(cat $REPOLOC/ztl.config.json | jq -r '.DBUSER')
 
+#outputting ztl db shapefile
+pgsql2shp -u $DBUSER -f zoningtaxlots_build/output/zoningtaxlot_db $DBNAME 'SELECT a.*, b.geom FROM dcp_zoning_taxlot_export a, dof_dtm b WHERE a."BBL"=b.bbl AND b.geom IS NOT NULL;'
+
 start=$(date +'%T')
 echo "QC the zoning tax lot database"
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/qc_versioncomparisonfields.sql

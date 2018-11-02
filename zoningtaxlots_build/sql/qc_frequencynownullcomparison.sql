@@ -148,9 +148,9 @@ oldnull AS (
 	WHERE a.zoningmapcode IS NULL AND b.zoningmapcode IS NOT NULL
 )
 SELECT a.field, a.count as newnullcount, b.count as oldnullcount
-FROM newnull
-LEFT JOIN oldnull
-ON a.field=b.filed
+FROM newnull a
+LEFT JOIN oldnull b
+ON a.field=b.field
 ORDER BY newnullcount, oldnullcount DESC);
 
 \copy (SELECT * FROM ztl_qc_versioncomparisonnownullcount) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparisonnownullcount.csv' DELIMITER ',' CSV HEADER;

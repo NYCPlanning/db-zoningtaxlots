@@ -21,8 +21,6 @@ FROM dcp_zoning_taxlot);
 
 \copy (SELECT * FROM dcp_zoning_taxlot_export) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_db.csv' DELIMITER ',' CSV HEADER;
 
-DROP TABLE dcp_zoning_taxlot_export;
-
 -- export unique value lookup tables
 \copy (SELECT DISTINCT zonedist FROM dcp_zoningdistricts ORDER BY zonedist) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_zonedistricts.csv' DELIMITER ',' CSV HEADER;
 \copy (SELECT DISTINCT overlay FROM dcp_commercialoverlay ORDER BY overlay) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_commoverlay.csv' DELIMITER ',' CSV HEADER;

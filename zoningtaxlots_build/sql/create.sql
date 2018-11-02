@@ -16,5 +16,7 @@ CREATE TABLE dcp_zoning_taxlot (
 	specialdistrict3 text,
 	limitedheightdistrict text,
 	zoningmapnumber text,
-	zoningmapcode text
+	zoningmapcode text,
+	area double precision,
+	inzonechange text
 );

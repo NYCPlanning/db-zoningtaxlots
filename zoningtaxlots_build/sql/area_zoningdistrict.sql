@@ -272,3 +272,29 @@ AND perbblgeom >= 10;
 
 -- drop the area table
 DROP TABLE lotzoneperorder;
+
+-- for lots without a zoningdistrict1
+-- assign the zoning district that is 
+-- within 25 feet or 7 meters
+-- DROP TABLE IF EXISTS lotzonedistance;
+-- CREATE TABLE lotzonedistance AS (
+-- WITH validdtm AS (
+--   SELECT a.bbl, a.geom 
+--   FROM dof_dtm a
+--   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' 
+--   AND a.bbl IN (SELECT bbl FROM dcp_zoning_taxlot WHERE zoningdistrict1 IS NULL)),
+-- validzones AS (
+--   SELECT a.zonedist, a.geom 
+--   FROM dcp_zoningdistricts a
+--   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon')
+-- SELECT a.bbl, b.zonedist
+-- FROM validdtm a, validzones b
+-- WHERE ST_DWithin(a.geom::geography, b.geom::geography, 7));
+
+-- UPDATE dcp_zoning_taxlot a
+-- SET zoningdistrict1 = zonedist
+-- FROM lotzonedistance b
+-- WHERE a.bbl=b.bbl 
+-- AND zoningdistrict1 IS NULL;
+
+

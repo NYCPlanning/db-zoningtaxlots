@@ -31,7 +31,29 @@ WHERE a.bbl = b.bbl AND a.bbl=c.bbl
 	OR a.specialdistrict3<>b.specialdistrict3
 	OR a.limitedheightdistrict<>b.limitedheightdistrict
 	OR a.zoningmapnumber<>b.zoningmapnumber
-	OR a.zoningmapcode<>b.zoningmapcode)
+	OR a.zoningmapcode<>b.zoningmapcode
+	OR a.zoningdistrict1 IS NULL AND b.zoningdistrict1 IS NOT NULL
+	OR a.zoningdistrict2 IS NULL AND b.zoningdistrict2 IS NOT NULL
+	OR a.zoningdistrict3 IS NULL AND b.zoningdistrict3 IS NOT NULL
+	OR a.zoningdistrict4 IS NULL AND b.zoningdistrict4 IS NOT NULL
+	OR a.commercialoverlay1 IS NULL AND b.commercialoverlay1 IS NOT NULL
+	OR a.commercialoverlay2 IS NULL AND b.commercialoverlay2 IS NOT NULL
+	OR a.specialdistrict1 IS NULL AND b.specialdistrict1 IS NOT NULL
+	OR a.specialdistrict2 IS NULL AND b.specialdistrict2 IS NOT NULL
+	OR a.specialdistrict3 IS NULL AND b.specialdistrict3 IS NOT NULL
+	OR b.zoningmapnumber IS NULL AND a.zoningmapnumber IS NOT NULL
+	OR b.zoningmapcode IS NULL AND a.zoningmapcode IS NOT NULL
+	OR b.zoningdistrict1 IS NULL AND a.zoningdistrict1 IS NOT NULL
+	OR b.zoningdistrict2 IS NULL AND a.zoningdistrict2 IS NOT NULL
+	OR b.zoningdistrict3 IS NULL AND a.zoningdistrict3 IS NOT NULL
+	OR b.zoningdistrict4 IS NULL AND a.zoningdistrict4 IS NOT NULL
+	OR b.commercialoverlay1 IS NULL AND a.commercialoverlay1 IS NOT NULL
+	OR b.commercialoverlay2 IS NULL AND a.commercialoverlay2 IS NOT NULL
+	OR b.specialdistrict1 IS NULL AND a.specialdistrict1 IS NOT NULL
+	OR b.specialdistrict2 IS NULL AND a.specialdistrict2 IS NOT NULL
+	OR b.specialdistrict3 IS NULL AND a.specialdistrict3 IS NOT NULL
+	OR b.zoningmapnumber IS NULL AND a.zoningmapnumber IS NOT NULL
+	OR b.zoningmapcode IS NULL AND a.zoningmapcode IS NOT NULL)
 );
 
 \copy (SELECT * FROM bbldiffs) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_bbldiffs.csv' DELIMITER ',' CSV HEADER;

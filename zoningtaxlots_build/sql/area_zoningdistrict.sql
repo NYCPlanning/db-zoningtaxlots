@@ -270,6 +270,8 @@ WHERE a.bbl=b.bbl
 AND row_number = 4
 AND perbblgeom >= 10;
 
+\copy (SELECT * FROM lotzoneperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_lotzoneperorder.csv' DELIMITER ',' CSV HEADER;
+
 -- drop the area table
 DROP TABLE lotzoneperorder;
 

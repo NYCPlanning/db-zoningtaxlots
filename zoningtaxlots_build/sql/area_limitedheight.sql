@@ -43,4 +43,6 @@ FROM limitedheightperorder b
 WHERE a.bbl=b.bbl 
 AND perbblgeom >= 10;
 
+\copy (SELECT * FROM limitedheightperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_limitedheightperorder.csv' DELIMITER ',' CSV HEADER;
+
 DROP TABLE limitedheightperorder;

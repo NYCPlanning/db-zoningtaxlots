@@ -51,4 +51,6 @@ FROM zoningmapperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 2;
 
+\copy (SELECT * FROM zoningmapperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_zoningmapperorder.csv' DELIMITER ',' CSV HEADER;
+
 DROP TABLE zoningmapperorder;

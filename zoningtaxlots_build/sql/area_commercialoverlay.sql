@@ -52,4 +52,6 @@ AND row_number = 2
 AND (perbblgeom >= 10
   OR perzonegeom >= 50);
 
+\copy (SELECT * FROM commoverlayperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_commoverlayperorder.csv' DELIMITER ',' CSV HEADER;
+
 DROP TABLE commoverlayperorder;

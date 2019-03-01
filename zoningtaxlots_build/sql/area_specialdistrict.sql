@@ -57,6 +57,8 @@ WHERE a.bbl=b.bbl
 AND row_number = 3
 AND perbblgeom >= 10;
 
+\copy (SELECT * FROM specialpurposeperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_specialpurposeperorder.csv' DELIMITER ',' CSV HEADER;
+
 DROP TABLE specialpurposeperorder;
 
 -- set the order of special districts 

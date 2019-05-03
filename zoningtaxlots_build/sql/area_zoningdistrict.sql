@@ -14,11 +14,11 @@ CREATE INDEX dcp_zoningdistricts_gix ON dcp_zoningdistricts USING GIST (geom);
 DROP TABLE IF EXISTS lotzoneperordermn;
 CREATE TABLE lotzoneperordermn AS (
 WITH validdtm AS (
-  SELECT a.bbl, a.geom 
+  SELECT a.bbl, ST_MakeValid(a.geom) as geom 
   FROM dof_dtm a
   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '1%'),
 validzones AS (
-  SELECT a.zonedist, a.geom 
+  SELECT a.zonedist, ST_MakeValid(a.geom) as geom 
   FROM dcp_zoningdistricts a
   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'),
 lotzoneper AS (
@@ -54,11 +54,11 @@ SELECT bbl, zonedist, segbblgeom, allbblgeom, (segbblgeom/allbblgeom)*100 as per
 DROP TABLE IF EXISTS lotzoneperorderbx;
 CREATE TABLE lotzoneperorderbx AS (
 WITH validdtm AS (
-  SELECT a.bbl, a.geom 
+  SELECT a.bbl, ST_MakeValid(a.geom) as geom  
   FROM dof_dtm a
   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '2%'),
 validzones AS (
-  SELECT a.zonedist, a.geom 
+  SELECT a.zonedist, ST_MakeValid(a.geom) as geom 
   FROM dcp_zoningdistricts a
   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'),
 lotzoneper AS (
@@ -94,11 +94,11 @@ SELECT bbl, zonedist, segbblgeom, allbblgeom, (segbblgeom/allbblgeom)*100 as per
 DROP TABLE IF EXISTS lotzoneperorderbk;
 CREATE TABLE lotzoneperorderbk AS (
 WITH validdtm AS (
-  SELECT a.bbl, a.geom 
+  SELECT a.bbl, ST_MakeValid(a.geom) as geom 
   FROM dof_dtm a
   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '3%'),
 validzones AS (
-  SELECT a.zonedist, a.geom 
+  SELECT a.zonedist, ST_MakeValid(a.geom) as geom  
   FROM dcp_zoningdistricts a
   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'),
 lotzoneper AS (
@@ -174,11 +174,11 @@ SELECT bbl, zonedist, segbblgeom, allbblgeom, (segbblgeom/allbblgeom)*100 as per
 DROP TABLE IF EXISTS lotzoneperordersi;
 CREATE TABLE lotzoneperordersi AS (
 WITH validdtm AS (
-  SELECT a.bbl, a.geom 
+  SELECT a.bbl, ST_MakeValid(a.geom) as geom 
   FROM dof_dtm a
   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '5%'),
 validzones AS (
-  SELECT a.zonedist, a.geom 
+  SELECT a.zonedist, ST_MakeValid(a.geom) AS geom 
   FROM dcp_zoningdistricts a
   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'),
 lotzoneper AS (

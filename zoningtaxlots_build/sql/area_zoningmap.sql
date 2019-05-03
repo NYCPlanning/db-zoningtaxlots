@@ -3,10 +3,17 @@
 -- the order zoning maps are assigned is based on which map covers the majority of the lot
 -- a map is only assigned if more than 10% of the map covers the lot
 -- OR more than a specified area of the lot if covered by the map
+DROP INDEX dcp_zoningmapindex_gix;
+CREATE INDEX dcp_zoningmapindex_gix ON dcp_zoningmapindex USING GIST (geom);
 
 DROP TABLE zoningmapperorder;
-CREATE TABLE zoningmapperorder AS (
-WITH 
+CREATE TABLE zoningmapperorder AS ( 
+WITH validdtm AS (
+  SELECT a.bbl, ST_MakeValid(a.geom) as geom 
+  FROM dof_dtm a),
+validindex AS (
+  SELECT a.sectionalm, ST_MakeValid(a.geom) as geom 
+  FROM dcp_zoningmapindex a),
 zoningmapper AS (
 SELECT p.bbl, n.sectionalm,
   (ST_Area(CASE 
@@ -27,14 +34,15 @@ SELECT p.bbl, n.sectionalm,
       ) 
     END)) as segzonegeom,
   ST_Area(n.geom) as allzonegeom
- FROM dof_dtm AS p 
-   INNER JOIN dcp_zoningmapindex AS n 
+ FROM validdtm AS p 
+   INNER JOIN validindex AS n 
     ON ST_Intersects(p.geom, n.geom)
 )
 SELECT bbl, sectionalm, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
     	OVER (PARTITION BY bbl
       	ORDER BY segbblgeom DESC) AS row_number
   		FROM zoningmapper
+      WHERE allbblgeom > 0
 );
 
 UPDATE dcp_zoning_taxlot a

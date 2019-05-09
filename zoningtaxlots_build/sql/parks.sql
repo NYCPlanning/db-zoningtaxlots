@@ -33,4 +33,5 @@ SET zoningdistrict2 = NULL,
 	specialdistrict3 = NULL,
 	limitedheightdistrict = NULL
 WHERE zoningdistrict1 = 'PARK'
-AND zoningdistrict2 IS NULL;
+AND (zoningdistrict2 IS NULL
+	OR zoningdistrict2 = 'PARK');

@@ -53,8 +53,7 @@ WHERE a.bbl = b.bbl AND a.bbl=c.bbl
 	OR b.specialdistrict2 IS NULL AND a.specialdistrict2 IS NOT NULL
 	OR b.specialdistrict3 IS NULL AND a.specialdistrict3 IS NOT NULL
 	OR b.zoningmapnumber IS NULL AND a.zoningmapnumber IS NOT NULL
-	OR b.zoningmapcode IS NULL AND a.zoningmapcode IS NOT NULL
-	OR a.inzonechange = 'Y')
+	OR b.zoningmapcode IS NULL AND a.zoningmapcode IS NOT NULL)
 );
 
 \copy (SELECT * FROM bbldiffs) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_bbldiffs.csv' DELIMITER ',' CSV HEADER;

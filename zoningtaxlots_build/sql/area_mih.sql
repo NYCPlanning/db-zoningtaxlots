@@ -51,7 +51,7 @@ FROM mihperorder b
 WHERE a.bbl=b.bbl;
 
 
- \copy (SELECT * FROM mihperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_mihperorder.csv' DELIMITER ',' CSV HEADER;
+--  \copy (SELECT * FROM mihperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_mihperorder.csv' DELIMITER ',' CSV HEADER;
 
 DROP TABLE mihperorder;
 

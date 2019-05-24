@@ -10,3 +10,16 @@ For example: If tax lot 98 is divided by zoning boundary lines into four section
 The final data table is provided in a comma–separated values (CSV) file format where each record reports information on a tax lot and BBL is the unique ID.
 
 Instructions on how to build the Zoning Tax Lot Database are included in the zoningtaxlots_build folder. 
+
+1. Run docker container if you want to execute files in sql folder individually
+```
+docker run -itd --name=zt\
+            -v `pwd`:/home/db-zoningtaxlots\
+            -w /home/db-zoningtaxlots\
+            -p 5434:5432\
+            mdillon/postgis
+```
+2. Execute the docker container
+```
+docker exec -it zt bash
+```

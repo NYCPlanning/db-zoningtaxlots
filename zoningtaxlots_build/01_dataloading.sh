@@ -1,18 +1,18 @@
 #!/bin/bash
 
-################################################################################################
-### OBTAINING DATA
-################################################################################################
-### NOTE: This script requires you to setup the DATABASE_URL environment variable.
-### Directions are in the README.md.
+####################
+### LOADING DATA ### 
+####################
 
-## Load all datasets from sources using the civic data loader
-## https://github.com/NYCPlanning/data-loading-scripts
+docker run -itd --name=zt\
+            -v `pwd`:/home/zoningtaxlots_build\
+            -w /home/zoningtaxlots_build\
+            -p 5434:5432\
+            mdillon/postgis
 
-cd '/prod/data-loading-scripts'
-
-## Open_datasets - PULLING FROM OPEN DATA
-echo 'Loading open source datasets...'
-node loader.js install dof_dtm
-node loader.js install dcp_zoningfeatures
-node loader.js install dcp_zoningmapindex
+docker run --rm\
+            --network=host\
+            -v `pwd`/python:/home/python\
+            -w /home/python\
+            -e "DATAFLOWS_DB_ENGINE=postgresql://postgres@localhost:5434/postgres"\
+            sptkl/docker-dataloading:latest python dataloading.py

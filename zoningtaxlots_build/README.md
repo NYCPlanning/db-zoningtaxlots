@@ -14,21 +14,14 @@ Your config file should look something like this:
 
 These parameters are passed through the scripts allowing write access to the database.
 
-### Prepare data-loading-scripts
-
-Clone and properly configure the data-loading-scripts repo: https://github.com/NYCPlanning/data-loading-scripts 
-Make sure the database data-loading-scripts uses is the same one you listed in your ztl.config.json file.
-
 ### Build the NYC Zoning Tax Lot Database
 
 Run the scripts in zoningtaxlots_build in order:
 
 #### 01_dataloading.sh
-Runs the data-loading-scripts scripts to import the datasets needed.
-
-The raw datasets need to build the database are:
-* Department of Finance Digital Tax Map (DOF DTM)
-* Department of City Planning NYC GIS Zoning Features
+1. Make sure you have docker installed
+2. do `sh 01_dataloading.sh` if you are in the zoningtaxlots_build directory
+3. this shell command __1.__ spins up a `mdillon/postgis` containe __2.__ loads data into the container through `sptkl/docker-dataloading`
 
 #### 02_build.sh
 Creates the zoning tax lot database by:

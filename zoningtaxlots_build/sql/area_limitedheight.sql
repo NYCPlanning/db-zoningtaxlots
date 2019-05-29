@@ -40,9 +40,9 @@ SELECT bbl, lhlbl, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (segzo
 UPDATE dcp_zoning_taxlot a
 SET limitedheightdistrict = lhlbl
 FROM limitedheightperorder b
-WHERE a.bbl=b.bbl 
+WHERE a.bbl::TEXT=b.bbl::TEXT
 AND perbblgeom >= 10;
 
-\copy (SELECT * FROM limitedheightperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_limitedheightperorder.csv' DELIMITER ',' CSV HEADER;
-
-DROP TABLE limitedheightperorder;
+--\copy (SELECT * FROM limitedheightperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_limitedheightperorder.csv' DELIMITER ',' CSV HEADER;
+--
+--DROP TABLE limitedheightperorder;

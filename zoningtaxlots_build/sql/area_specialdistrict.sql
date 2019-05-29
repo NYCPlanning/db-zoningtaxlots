@@ -39,27 +39,27 @@ SELECT bbl, sdlbl, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (segzo
 UPDATE dcp_zoning_taxlot a
 SET specialdistrict1 = sdlbl
 FROM specialpurposeperorder b
-WHERE a.bbl=b.bbl 
+WHERE a.bbl::TEXT=b.bbl::TEXT
 AND row_number = 1
 AND perbblgeom >= 10;
 
 UPDATE dcp_zoning_taxlot a
 SET specialdistrict2 = sdlbl
 FROM specialpurposeperorder b
-WHERE a.bbl=b.bbl 
+WHERE a.bbl::TEXT=b.bbl::TEXT
 AND row_number = 2
 AND perbblgeom >= 10;
 
 UPDATE dcp_zoning_taxlot a
 SET specialdistrict3 = sdlbl
 FROM specialpurposeperorder b
-WHERE a.bbl=b.bbl 
+WHERE a.bbl::TEXT=b.bbl::TEXT
 AND row_number = 3
 AND perbblgeom >= 10;
-
-\copy (SELECT * FROM specialpurposeperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_specialpurposeperorder.csv' DELIMITER ',' CSV HEADER;
-
-DROP TABLE specialpurposeperorder;
+--
+--\copy (SELECT * FROM specialpurposeperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_specialpurposeperorder.csv' DELIMITER ',' CSV HEADER;
+--
+--DROP TABLE specialpurposeperorder;
 
 -- set the order of special districts 
 UPDATE dcp_zoning_taxlot

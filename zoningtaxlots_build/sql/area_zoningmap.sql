@@ -3,8 +3,8 @@
 -- the order zoning maps are assigned is based on which map covers the majority of the lot
 -- a map is only assigned if more than 10% of the map covers the lot
 -- OR more than a specified area of the lot if covered by the map
-DROP INDEX dcp_zoningmapindex_gix;
-CREATE INDEX dcp_zoningmapindex_gix ON dcp_zoningmapindex USING GIST (geom);
+--DROP INDEX IF EXISTS dcp_zoningmapindex_gix;
+--CREATE INDEX dcp_zoningmapindex_gix ON dcp_zoningmapindex USING GIST (geom);
 
 DROP TABLE zoningmapperorder;
 CREATE TABLE zoningmapperorder AS ( 
@@ -48,7 +48,7 @@ SELECT bbl, sectionalm, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (
 UPDATE dcp_zoning_taxlot a
 SET zoningmapnumber = sectionalm
 FROM zoningmapperorder b
-WHERE a.bbl=b.bbl
+WHERE a.bbl::TEXT=b.bbl::TEXT
 AND row_number = 1
 AND perbblgeom >= 10;
 
@@ -56,9 +56,9 @@ AND perbblgeom >= 10;
 UPDATE dcp_zoning_taxlot a
 SET zoningmapcode = 'Y'
 FROM zoningmapperorder b
-WHERE a.bbl=b.bbl 
+WHERE a.bbl::TEXT=b.bbl::TEXT
 AND row_number = 2;
 
-\copy (SELECT * FROM zoningmapperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_zoningmapperorder.csv' DELIMITER ',' CSV HEADER;
+--\copy (SELECT * FROM zoningmapperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_zoningmapperorder.csv' DELIMITER ',' CSV HEADER;
 
-DROP TABLE zoningmapperorder;
+--DROP TABLE zoningmapperorder;

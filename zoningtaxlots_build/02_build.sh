@@ -63,5 +63,5 @@ psql $DATAFLOWS_DB_ENGINE -c "\copy (SELECT DISTINCT sdname, sdlbl FROM dcp_spec
 
 psql $DATAFLOWS_DB_ENGINE -c "\copy (SELECT DISTINCT lhname, lhlbl FROM dcp_limitedheight ORDER BY lhname) 
                                 TO '/home/zoningtaxlots_build/output/zoningtaxlot_limitedheight.csv' 
-                                DELIMITER ',' CSV HEADER;"    
+                                DELIMITER ',' CSV HEADER;"
 echo "Build is done!"

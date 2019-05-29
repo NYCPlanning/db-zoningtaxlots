@@ -3,8 +3,8 @@
 ####################
 ### LOADING DATA ### 
 ####################
-
-docker run -itd --name=zt\
+DB_CONTAINER_NAME=zt
+[ ! "$(docker ps -a | grep $DB_CONTAINER_NAME)" ] && docker run -itd --name=$DB_CONTAINER_NAME\
             -v `pwd`:/home/zoningtaxlots_build\
             -w /home/zoningtaxlots_build\
             -p 5434:5432\

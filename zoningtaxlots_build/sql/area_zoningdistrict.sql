@@ -1,6 +1,6 @@
 -- create index on DTM and zoning districts
-DROP INDEX dof_dtm_gix;
-DROP INDEX dcp_zoningdistricts_gix;
+DROP INDEX IF EXISTS dof_dtm_gix;
+DROP INDEX IF EXISTS dcp_zoningdistricts_gix;
 CREATE INDEX dof_dtm_gix ON dof_dtm USING GIST (geom);
 CREATE INDEX dcp_zoningdistricts_gix ON dcp_zoningdistricts USING GIST (geom);
 
@@ -16,7 +16,7 @@ CREATE TABLE lotzoneperordermn AS (
 WITH validdtm AS (
   SELECT a.bbl, ST_MakeValid(a.geom) as geom 
   FROM dof_dtm a
-  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '1%'),
+  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl::TEXT LIKE '1%'),
 validzones AS (
   SELECT a.zonedist, ST_MakeValid(a.geom) as geom 
   FROM dcp_zoningdistricts a
@@ -56,7 +56,7 @@ CREATE TABLE lotzoneperorderbx AS (
 WITH validdtm AS (
   SELECT a.bbl, ST_MakeValid(a.geom) as geom  
   FROM dof_dtm a
-  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '2%'),
+  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl::TEXT LIKE '2%'),
 validzones AS (
   SELECT a.zonedist, ST_MakeValid(a.geom) as geom 
   FROM dcp_zoningdistricts a
@@ -96,7 +96,7 @@ CREATE TABLE lotzoneperorderbk AS (
 WITH validdtm AS (
   SELECT a.bbl, ST_MakeValid(a.geom) as geom 
   FROM dof_dtm a
-  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '3%'),
+  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl::TEXT LIKE '3%'),
 validzones AS (
   SELECT a.zonedist, ST_MakeValid(a.geom) as geom  
   FROM dcp_zoningdistricts a
@@ -136,7 +136,7 @@ CREATE TABLE lotzoneperorderqn AS (
 WITH validdtm AS (
   SELECT a.bbl, ST_MakeValid(a.geom) as geom 
   FROM dof_dtm a
-  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '4%'),
+  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl::TEXT LIKE '4%'),
 validzones AS (
   SELECT a.zonedist, ST_MakeValid(a.geom) as geom 
   FROM dcp_zoningdistricts a
@@ -176,7 +176,7 @@ CREATE TABLE lotzoneperordersi AS (
 WITH validdtm AS (
   SELECT a.bbl, ST_MakeValid(a.geom) as geom 
   FROM dof_dtm a
-  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl LIKE '5%'),
+  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' AND a.bbl::TEXT LIKE '5%'),
 validzones AS (
   SELECT a.zonedist, ST_MakeValid(a.geom) AS geom 
   FROM dcp_zoningdistricts a
@@ -270,10 +270,10 @@ WHERE a.bbl=b.bbl
 AND row_number = 4
 AND perbblgeom >= 10;
 
-\copy (SELECT * FROM lotzoneperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_lotzoneperorder.csv' DELIMITER ',' CSV HEADER;
+--\copy (SELECT * FROM lotzoneperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_lotzoneperorder.csv' DELIMITER ',' CSV HEADER;
 
 -- drop the area table
-DROP TABLE lotzoneperorder;
+--DROP TABLE lotzoneperorder;
 
 -- for lots without a zoningdistrict1
 -- assign the zoning district that is 
@@ -300,3 +300,6 @@ DROP TABLE lotzoneperorder;
 -- AND zoningdistrict1 IS NULL;
 
 
+SELECT a.bbl, ST_MakeValid(a.geom), a.bbl::TEXT as geom 
+FROM dof_dtm a
+WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon';

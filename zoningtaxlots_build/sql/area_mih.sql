@@ -48,10 +48,9 @@ mihoption =
 ELSE NULL
 END)
 FROM mihperorder b
-WHERE a.bbl=b.bbl;
-
+WHERE a.bbl::TEXT=b.bbl::TEXT;
 
 --  \copy (SELECT * FROM mihperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_mihperorder.csv' DELIMITER ',' CSV HEADER;
 
-DROP TABLE mihperorder;
+--DROP TABLE mihperorder;
 

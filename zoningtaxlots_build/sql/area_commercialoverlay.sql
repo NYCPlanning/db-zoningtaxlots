@@ -39,7 +39,7 @@ SELECT bbl, overlay, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (seg
 UPDATE dcp_zoning_taxlot a
 SET commercialoverlay1 = overlay
 FROM commoverlayperorder b
-WHERE a.bbl=b.bbl 
+WHERE a.bbl::TEXT=b.bbl::TEXT
 AND row_number = 1
 AND (perbblgeom >= 10
   OR perzonegeom >= 50);
@@ -47,11 +47,11 @@ AND (perbblgeom >= 10
 UPDATE dcp_zoning_taxlot a
 SET commercialoverlay2 = overlay
 FROM commoverlayperorder b
-WHERE a.bbl=b.bbl 
+WHERE a.bbl::TEXT=b.bbl::TEXT
 AND row_number = 2
 AND (perbblgeom >= 10
   OR perzonegeom >= 50);
 
-\copy (SELECT * FROM commoverlayperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_commoverlayperorder.csv' DELIMITER ',' CSV HEADER;
-
-DROP TABLE commoverlayperorder;
+--\copy (SELECT * FROM commoverlayperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_commoverlayperorder.csv' DELIMITER ',' CSV HEADER;
+--
+--DROP TABLE commoverlayperorder;

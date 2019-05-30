@@ -1,4 +1,5 @@
 #!/bin/bash
+## Parsing database connection url
 proto="$(echo $DATAFLOWS_DB_ENGINE | grep :// | sed -e's,^\(.*://\).*,\1,g')"
 url=$(echo $DATAFLOWS_DB_ENGINE | sed -e s,$proto,,g)
 

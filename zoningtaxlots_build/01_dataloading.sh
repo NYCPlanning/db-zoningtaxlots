@@ -15,4 +15,4 @@ docker run --rm\
             -v `pwd`/python:/home/python\
             -w /home/python\
             -e "DATAFLOWS_DB_ENGINE=postgresql://postgres@localhost:5434/postgres"\
-            sptkl/docker-dataloading:latest python dataloading.py
+            sptkl/docker-dataloading:latest python3 dataloading.py

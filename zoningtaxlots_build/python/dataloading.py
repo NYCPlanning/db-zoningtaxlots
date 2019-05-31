@@ -10,7 +10,7 @@ def ETL():
     
     url = 'https://db-data-recipes.sfo2.digitaloceanspaces.com/pipelines/db-zoningtaxlots/2019-05-30/datapackage.json'
     Flow(
-        load(url, resources = 'dcp_commercialoverlay', force_strings=True),
+        load(url, force_strings=True),
         dump_to_postgis()
     ).process()
 

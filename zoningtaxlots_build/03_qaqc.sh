@@ -14,7 +14,7 @@ pgsql2shp -u $DBUSER -f zoningtaxlots_build/output/zoningtaxlot_db $DBNAME 'SELE
 start=$(date +'%T')
 echo "QC the zoning tax lot database"
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/qc_versioncomparisonfields.sql
-#psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/qc_versioncomparisonvalues.sql
+#psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/qc_versioncomparisonarea.sql
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/qc_bblsaddedandremoved.sql
 psql -U $DBUSER -d $DBNAME -f $REPOLOC/zoningtaxlots_build/sql/qc_bbldiffs.sql
 pgsql2shp -u $DBUSER -f zoningtaxlots_build/output/qc_bbldiffs $DBNAME "SELECT * FROM bbldiffs WHERE geom IS NOT NULL"

@@ -6,7 +6,7 @@
 --DROP INDEX IF EXISTS dcp_zoningmapindex_gix;
 --CREATE INDEX dcp_zoningmapindex_gix ON dcp_zoningmapindex USING GIST (geom);
 
-DROP TABLE zoningmapperorder;
+DROP TABLE IF EXISTS zoningmapperorder;
 CREATE TABLE zoningmapperorder AS ( 
 WITH validdtm AS (
   SELECT a.bbl, ST_MakeValid(a.geom) as geom 
@@ -58,7 +58,3 @@ SET zoningmapcode = 'Y'
 FROM zoningmapperorder b
 WHERE a.bbl::TEXT=b.bbl::TEXT
 AND row_number = 2;
-
---\copy (SELECT * FROM zoningmapperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_zoningmapperorder.csv' DELIMITER ',' CSV HEADER;
-
---DROP TABLE zoningmapperorder;

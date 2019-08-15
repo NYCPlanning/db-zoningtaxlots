@@ -12,10 +12,10 @@ WITH validdtm AS (
   SELECT a.bbl, ST_MakeValid(a.geom) as geom 
   FROM dof_dtm a),
 validindex AS (
-  SELECT a.sectionalm, ST_MakeValid(a.geom) as geom 
+  SELECT a.zoning_map, ST_MakeValid(a.geom) as geom 
   FROM dcp_zoningmapindex a),
 zoningmapper AS (
-SELECT p.bbl, n.sectionalm,
+SELECT p.bbl, n.zoning_map,
   (ST_Area(CASE 
     WHEN ST_CoveredBy(ST_MakeValid(p.geom), n.geom) 
     THEN p.geom 
@@ -38,7 +38,7 @@ SELECT p.bbl, n.sectionalm,
    INNER JOIN validindex AS n 
     ON ST_Intersects(p.geom, n.geom)
 )
-SELECT bbl, sectionalm, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
+SELECT bbl, zoning_map, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
     	OVER (PARTITION BY bbl
       	ORDER BY segbblgeom DESC) AS row_number
   		FROM zoningmapper
@@ -46,7 +46,7 @@ SELECT bbl, sectionalm, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (
 );
 
 UPDATE dcp_zoning_taxlot a
-SET zoningmapnumber = sectionalm
+SET zoningmapnumber = zoning_map
 FROM zoningmapperorder b
 WHERE a.bbl::TEXT=b.bbl::TEXT
 AND row_number = 1

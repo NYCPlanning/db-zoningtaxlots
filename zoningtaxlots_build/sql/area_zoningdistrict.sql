@@ -232,11 +232,11 @@ DROP TABLE lotzoneperorderbk;
 DROP TABLE lotzoneperorderqn;
 DROP TABLE lotzoneperordersi;
 -- null out any existing values
-UPDATE dcp_zoning_taxlot
-SET zoningdistrict1 = NULL, 
-  zoningdistrict2 = NULL, 
-  zoningdistrict3 = NULL, 
-  zoningdistrict4 = NULL;
+-- UPDATE dcp_zoning_taxlot
+-- SET zoningdistrict1 = NULL, 
+--   zoningdistrict2 = NULL, 
+--   zoningdistrict3 = NULL, 
+--   zoningdistrict4 = NULL;
 
 -- update each of zoning district fields
 -- only say that a lot is within a zoning district if

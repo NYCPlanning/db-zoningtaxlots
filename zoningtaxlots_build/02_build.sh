@@ -6,10 +6,10 @@ psql -h localhost -U postgres -f sql/archive.sql
 psql -h localhost -U postgres -f sql/create.sql
 psql -h localhost -U postgres -f sql/bbl.sql
 
-# psql -h localhost -U postgres -f sql/area_zoningdistrict.sql
-# psql -h localhost -U postgres -c "\copy (SELECT * FROM lotzoneperorder ORDER BY bbl) 
-#                                 TO '/home/zoningtaxlots_build/output/intermediate_lotzoneperorder.csv' 
-#                                 DELIMITER ',' CSV HEADER;"
+psql -h localhost -U postgres -f sql/area_zoningdistrict.sql
+psql -h localhost -U postgres -c "\copy (SELECT * FROM lotzoneperorder ORDER BY bbl) 
+                                TO '/home/zoningtaxlots_build/output/intermediate_lotzoneperorder.csv' 
+                                DELIMITER ',' CSV HEADER;"
 
 psql -h localhost -U postgres -f sql/area_commercialoverlay.sql
 psql -h localhost -U postgres -c "\copy (SELECT * FROM commoverlayperorder ORDER BY bbl) 

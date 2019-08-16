@@ -1,9 +1,3 @@
--- create index on DTM and zoning districts
-DROP INDEX IF EXISTS dof_dtm_gix;
-DROP INDEX IF EXISTS dcp_zoningdistricts_gix;
-CREATE INDEX dof_dtm_gix ON dof_dtm USING GIST (geom);
-CREATE INDEX dcp_zoningdistricts_gix ON dcp_zoningdistricts USING GIST (geom);
-
 -- calculate how much (total area and percentage) of each lot is covered by a zoning district
 -- assign the zoning district(s) to each tax lot
 -- the order zoning districts are assigned is based on which district covers the majority of the lot
@@ -300,6 +294,6 @@ AND perbblgeom >= 10;
 -- AND zoningdistrict1 IS NULL;
 
 
-SELECT a.bbl, ST_MakeValid(a.geom), a.bbl::TEXT as geom 
-FROM dof_dtm a
-WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon';
+-- SELECT a.bbl, ST_MakeValid(a.geom), a.bbl::TEXT as geom 
+-- FROM dof_dtm a
+-- WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon';

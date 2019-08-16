@@ -19,7 +19,7 @@ SELECT a.*,
 FROM dcp_zoning_taxlot a,
 	dcp_zoning_taxlot_prev b,
 	dof_dtm c
-WHERE a.bbl = b.bbl AND a.bbl=c.bbl
+WHERE a.bbl::text = b.bbl::text AND a.bbl::text=c.bbl::text
 	AND (a.zoningdistrict1<>b.zoningdistrict1
 	OR a.zoningdistrict2<>b.zoningdistrict2
 	OR a.zoningdistrict3<>b.zoningdistrict3
@@ -55,5 +55,3 @@ WHERE a.bbl = b.bbl AND a.bbl=c.bbl
 	OR b.zoningmapnumber IS NULL AND a.zoningmapnumber IS NOT NULL
 	OR b.zoningmapcode IS NULL AND a.zoningmapcode IS NOT NULL)
 );
-
-\copy (SELECT * FROM bbldiffs) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_bbldiffs.csv' DELIMITER ',' CSV HEADER;

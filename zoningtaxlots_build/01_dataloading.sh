@@ -1,14 +1,9 @@
-#!/bin/bash
+sh 01_setup_ztl.sh
 
-####################
-### LOADING DATA ### 
-####################
 DB_CONTAINER_NAME=ztl
-[ ! "$(docker ps -a | grep $DB_CONTAINER_NAME)" ] && docker run -itd --name=$DB_CONTAINER_NAME\
-            -v `pwd`:/home/zoningtaxlots_build\
-            -w /home/zoningtaxlots_build\
-            -p 5435:5432\
-            mdillon/postgis
+docker start $DB_CONTAINER_NAME
+docker inspect -f '{{.State.Running}}' $DB_CONTAINER_NAME
+docker exec ztl psql -U postgres -h localhost -c "SELECT 'DATABSE IS UP';"
 
 docker run --rm\
             --network=host\

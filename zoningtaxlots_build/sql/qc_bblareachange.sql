@@ -5,5 +5,5 @@ FROM dcp_zoning_taxlot a
 INNER JOIN dcp_zoning_taxlot_prev b
 ON a.bbl=b.bbl);
 
-\copy (SELECT * FROM bblareachange) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_bblareachange.csv' DELIMITER ',' CSV HEADER;
-DROP TABLE IF EXISTS bblareachange;
+-- \copy (SELECT * FROM bblareachange) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_bblareachange.csv' DELIMITER ',' CSV HEADER;
+-- DROP TABLE IF EXISTS bblareachange;

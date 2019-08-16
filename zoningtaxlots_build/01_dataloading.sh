@@ -1,18 +1,13 @@
-#!/bin/bash
+sh 01_setup_ztl.sh
 
-####################
-### LOADING DATA ### 
-####################
-DB_CONTAINER_NAME=zt
-[ ! "$(docker ps -a | grep $DB_CONTAINER_NAME)" ] && docker run -itd --name=$DB_CONTAINER_NAME\
-            -v `pwd`:/home/zoningtaxlots_build\
-            -w /home/zoningtaxlots_build\
-            -p 5434:5432\
-            mdillon/postgis
+DB_CONTAINER_NAME=ztl
+docker start $DB_CONTAINER_NAME
+docker inspect -f '{{.State.Running}}' $DB_CONTAINER_NAME
+docker exec ztl psql -U postgres -h localhost -c "SELECT 'DATABSE IS UP';"
 
 docker run --rm\
             --network=host\
             -v `pwd`/python:/home/python\
             -w /home/python\
-            -e "DATAFLOWS_DB_ENGINE=postgresql://postgres@localhost:5434/postgres"\
-            sptkl/docker-dataloading:latest python3 dataloading.py
+            --env-file .env\
+            sptkl/cook:latest python3 dataloading.py

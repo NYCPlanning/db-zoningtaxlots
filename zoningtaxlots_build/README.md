@@ -17,6 +17,12 @@ These parameters are passed through the scripts allowing write access to the dat
 ### Build the NYC Zoning Tax Lot Database
 
 Run the scripts in zoningtaxlots_build in order:
+```
+sh 01_dataloading.sh
+sh 02_run_build.sh
+sh 03_run_qaqc.sh
+sh 04_archive.sh
+```
 
 #### 01_dataloading.sh
 1. Make sure you have docker installed
@@ -33,3 +39,6 @@ Lastly, the final data table and associated lookup tables are outputted into the
 
 #### 03_qaqc.sh
 Executes a series of quality control reports, which are then outputted into the output folder.
+
+#### 04_archive.sh
+Export table to EDM_DATA

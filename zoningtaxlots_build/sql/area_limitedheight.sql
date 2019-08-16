@@ -4,7 +4,7 @@
 -- a district is only assigned if more than 10% of the district covers the lot
 -- OR more than a specified area of the lot if covered by the district
 
-DROP TABLE limitedheightperorder;
+DROP TABLE IF EXISTS limitedheightperorder;
 CREATE TABLE limitedheightperorder AS (
 WITH 
 limitedheightper AS (

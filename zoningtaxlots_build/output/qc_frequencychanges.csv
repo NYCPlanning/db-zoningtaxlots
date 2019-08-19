@@ -1,13 +1,3 @@
-field,countnew,countold
-commercialoverlay1,75002,74998
-specialdistrict3,1,1
-zoningdistrict3,206,206
-commercialoverlay2,165,165
-specialdistrict2,80,80
-zoningdistrict4,14,14
-limitedheightdistrict,3037,3037
-specialdistrict1,101904,101905
-zoningdistrict1,858385,858395
-zoningmapnumber,858543,858554
-zoningdistrict2,19853,19905
-zoningmapcode,15712,15959
+version https://git-lfs.github.com/spec/v1
+oid sha256:0593fe8840a1851dcf0bcb20cb0bce504998b32fcdef38c71b9d79a5ce3d3aa4
+size 349

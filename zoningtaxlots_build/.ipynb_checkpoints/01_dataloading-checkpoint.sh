@@ -7,6 +7,7 @@ DB_CONTAINER_NAME=ztl
             -w /home/zoningtaxlots_build\
             --shm-size=1g\
             --cpus=2\
+            --env-file .env\
             -p 5435:5432\
             mdillon/postgis
 
@@ -20,5 +21,13 @@ done
 docker inspect -f '{{.State.Running}}' $DB_CONTAINER_NAME
 docker exec ztl psql -U postgres -h localhost -c "SELECT 'DATABSE IS UP';"
 
-## To load directly from the backup
-docker exec ztl gunzip < output/zoningtaxlots.gz | psql -d postgres -U postgres -p 5435 -h localhost
+## load data into the ztl container
+docker run --rm\
+            --network=host\
+            -v `pwd`/python:/home/python\
+            -w /home/python\
+            --env-file .env\
+            sptkl/cook:latest python3 dataloading.py
+
+## Do a pg_dump for backup
+docker exec ztl pg_dump -d postgres -U postgres | gzip > output/zoningtaxlots.gz

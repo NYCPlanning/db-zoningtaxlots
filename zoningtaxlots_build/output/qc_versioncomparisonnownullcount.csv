@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7cbcf847be65e623496b0337f0a8bcf8cce29365860469516adec9487e4cb84f
-size 285
+field,newnullcount,oldnullcount
+zoningdistrict4,0,0
+commercialoverlay2,0,0
+limitedheightdistrict,0,0
+zoningdistrict1,0,0
+specialdistrict1,0,0
+zoningdistrict3,0,0
+zoningmapnumber,0,0
+zoningmapcode,0,0
+specialdistrict2,0,0
+specialdistrict3,0,0
+commercialoverlay1,24,24
+zoningdistrict2,38,38

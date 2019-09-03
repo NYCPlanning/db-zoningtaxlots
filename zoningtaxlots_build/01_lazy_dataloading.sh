@@ -21,4 +21,4 @@ docker inspect -f '{{.State.Running}}' $DB_CONTAINER_NAME
 docker exec ztl psql -U postgres -h localhost -c "SELECT 'DATABSE IS UP';"
 
 ## To load directly from the backup
-docker exec ztl gunzip < output/zoningtaxlots.gz | psql -d postgres -U postgres
+docker exec ztl gunzip < output/zoningtaxlots.gz | psql -d postgres -U postgres -p 5435 -h localhost

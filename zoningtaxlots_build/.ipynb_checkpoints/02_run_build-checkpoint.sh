@@ -1,1 +1,0 @@
-docker exec ztl sh 02_build.sh

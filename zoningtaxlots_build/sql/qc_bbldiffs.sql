@@ -55,3 +55,17 @@ WHERE a.bbl::text = b.bbl::text AND a.bbl::text=c.bbl::text
 	OR b.zoningmapnumber IS NULL AND a.zoningmapnumber IS NOT NULL
 	OR b.zoningmapcode IS NULL AND a.zoningmapcode IS NOT NULL)
 );
+
+ALTER TABLE bbldiffs RENAME COLUMN bbl to bblnew;
+ALTER TABLE bbldiffs RENAME COLUMN zoningdistrict1 to zd1new;
+ALTER TABLE bbldiffs RENAME COLUMN zoningdistrict2 to zd2new;
+ALTER TABLE bbldiffs RENAME COLUMN zoningdistrict3 to zd3new;
+ALTER TABLE bbldiffs RENAME COLUMN zoningdistrict4 to zd4new;
+ALTER TABLE bbldiffs RENAME COLUMN commercialoverlay1 to co1new;
+ALTER TABLE bbldiffs RENAME COLUMN commercialoverlay2 to co2new;
+ALTER TABLE bbldiffs RENAME COLUMN specialdistrict1 to sd1new;
+ALTER TABLE bbldiffs RENAME COLUMN specialdistrict2 to sd2new;
+ALTER TABLE bbldiffs RENAME COLUMN specialdistrict3 to sd3new;
+ALTER TABLE bbldiffs RENAME COLUMN limitedheightdistrict to lhdnew;
+ALTER TABLE bbldiffs RENAME COLUMN zoningmapnumber to zmnnew;
+ALTER TABLE bbldiffs RENAME COLUMN zoningmapcode to zmcnew;

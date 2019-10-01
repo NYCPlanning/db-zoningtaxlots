@@ -1,4 +1,9 @@
 */__pycache__/*
 *.DS_Store
 zoningtaxlots_build/.env
+zoningtaxlots_build/output/zoningtaxlot_db/zoningtaxlot_db.cpg
+zoningtaxlots_build/output/zoningtaxlot_db/zoningtaxlot_db.dbf
+zoningtaxlots_build/output/zoningtaxlot_db/zoningtaxlot_db.shp
+zoningtaxlots_build/output/zoningtaxlot_db/zoningtaxlot_db.shx
+zoningtaxlots_build/output/zoningtaxlot_db/zoningtaxlot_db.prj
 *.gz

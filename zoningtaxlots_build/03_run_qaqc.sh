@@ -1,1 +1,0 @@
-docker exec ztl sh 03_qaqc.sh

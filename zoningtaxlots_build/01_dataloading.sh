@@ -5,8 +5,6 @@ DB_CONTAINER_NAME=ztl
      && docker run -itd --name=$DB_CONTAINER_NAME\
             -v `pwd`:/home/zoningtaxlots_build\
             -w /home/zoningtaxlots_build\
-            --shm-size=1g\
-            --cpus=2\
             --env-file .env\
             -p 5435:5432\
             mdillon/postgis

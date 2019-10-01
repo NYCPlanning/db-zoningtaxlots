@@ -6,6 +6,7 @@ DB_CONTAINER_NAME=ztl
             -v `pwd`:/home/zoningtaxlots_build\
             -w /home/zoningtaxlots_build\
             --env-file .env\
+            --shm-size=4g\
             -p 5435:5432\
             mdillon/postgis
 
@@ -26,6 +27,3 @@ docker run --rm\
             -w /home/python\
             --env-file .env\
             sptkl/cook:latest python3 dataloading.py
-
-## Do a pg_dump for backup
-docker exec ztl pg_dump -d postgres -U postgres | gzip > output/zoningtaxlots.gz

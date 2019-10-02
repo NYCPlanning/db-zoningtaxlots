@@ -59,59 +59,25 @@ SET zoningdistrict1 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
-AND perbblgeom >= 10;
+AND ROUND(perbblgeom::numeric,2) >= 10;
 
 UPDATE dcp_zoning_taxlot a
 SET zoningdistrict2 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 2
-AND perbblgeom >= 10;
+AND  ROUND(perbblgeom::numeric,2) >= 10;
 
 UPDATE dcp_zoning_taxlot a
 SET zoningdistrict3 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 3 
-AND perbblgeom >= 10;
+AND  ROUND(perbblgeom::numeric,2) >= 10;
 
 UPDATE dcp_zoning_taxlot a
 SET zoningdistrict4 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 4
-AND perbblgeom >= 10;
-
---\copy (SELECT * FROM lotzoneperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_lotzoneperorder.csv' DELIMITER ',' CSV HEADER;
-
--- drop the area table
---DROP TABLE lotzoneperorder;
-
--- for lots without a zoningdistrict1
--- assign the zoning district that is 
--- within 25 feet or 7 meters
--- DROP TABLE IF EXISTS lotzonedistance;
--- CREATE TABLE lotzonedistance AS (
--- WITH validdtm AS (
---   SELECT a.bbl, a.geom 
---   FROM dof_dtm a
---   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon' 
---   AND a.bbl IN (SELECT bbl FROM dcp_zoning_taxlot WHERE zoningdistrict1 IS NULL)),
--- validzones AS (
---   SELECT a.zonedist, a.geom 
---   FROM dcp_zoningdistricts a
---   WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon')
--- SELECT a.bbl, b.zonedist
--- FROM validdtm a, validzones b
--- WHERE ST_DWithin(a.geom::geography, b.geom::geography, 7));
-
--- UPDATE dcp_zoning_taxlot a
--- SET zoningdistrict1 = zonedist
--- FROM lotzonedistance b
--- WHERE a.bbl=b.bbl 
--- AND zoningdistrict1 IS NULL;
-
-
--- SELECT a.bbl, ST_MakeValid(a.geom), a.bbl::TEXT as geom 
--- FROM dof_dtm a
--- WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon';
+AND  ROUND(perbblgeom::numeric,2) >= 10;

@@ -14,12 +14,12 @@ psql -U postgres -h localhost -f sql/qc_versioncomparisonfields.sql &
 psql -U postgres -h localhost -f sql/qc_bblsaddedandremoved.sql &
 psql -U postgres -h localhost -f sql/qc_bbldiffs.sql 
 
-wait
-QAQC_PATH=/home/zoningtaxlots_build/output/qc_bbldiffs
-mkdir -p $QAQC_PATH && cd $QAQC_PATH {
-    pgsql2shp -u postgres -h localhost -f qc_bbldiffs postgres \
-    "SELECT * FROM bbldiffs WHERE geom IS NOT NULL"
-    cd -;}
+# wait
+# QAQC_PATH=/home/zoningtaxlots_build/output/qc_bbldiffs
+# mkdir -p $QAQC_PATH && cd $QAQC_PATH {
+#     pgsql2shp -u postgres -h localhost -f qc_bbldiffs postgres \
+#     "SELECT * FROM bbldiffs WHERE geom IS NOT NULL"
+#     cd -;}
 
 wait
 psql -U postgres -h localhost -f sql/qc_frequencycomparison.sql &
@@ -45,51 +45,3 @@ psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparisonn
 psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparisoncount) 
                                     TO '/home/zoningtaxlots_build/output/qc_versioncomparison.csv' 
                                     DELIMITER ',' CSV HEADER;"
-
-# psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict1 ORDER BY count DESC)
-#                                     TO '/home/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict1.csv' 
-#                                     DELIMITER ',' CSV HEADER;"
-
-# psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict2 ORDER BY count DESC)
-#                                     TO '/home/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict2.csv' 
-#                                     DELIMITER ',' CSV HEADER;"
-
-# psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict3 ORDER BY count DESC) 
-#                                     TO '/home/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict3.csv' 
-#                                     DELIMITER ',' CSV HEADER;"
-
-# psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparison_zoningdistrict4 ORDER BY count DESC) 
-#                                     TO '/home/zoningtaxlots_build/output/qc_versioncomparison_zoningdistrict4.csv' 
-#                                     DELIMITER ',' CSV HEADER;"
-
-# psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparison_commercialoverlay1 ORDER BY count DESC) 
-#                                     TO '/home/zoningtaxlots_build/output/qc_versioncomparison_commercialoverlay1.csv' 
-#                                     DELIMITER ',' CSV HEADER;"
-
-# psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparison_commercialoverlay2 ORDER BY count DESC) 
-#                                     TO '/home/zoningtaxlots_build/output/qc_versioncomparison_commercialoverlay2.csv' 
-#                                     DELIMITER ',' CSV HEADER;"
-
-# psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict1 ORDER BY count DESC)
-#                                     TO '/home/zoningtaxlots_build/output/qc_versioncomparison_specialdistrict1.csv' 
-#                                     DELIMITER ',' CSV HEADER;"
-
-# psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict2 ORDER BY count DESC) 
-#                                     TO '/home/zoningtaxlots_build/output/qc_versioncomparison_specialdistrict2.csv'
-#                                     DELIMITER ',' CSV HEADER;"
-
-# psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparison_specialdistrict3 ORDER BY count DESC) 
-#                                     TO '/home/zoningtaxlots_build/output/qc_versioncomparison_specialdistrict3.csv' 
-#                                     DELIMITER ',' CSV HEADER;"
-
-# psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparison_limitedheightdistrict ORDER BY count DESC) 
-#                                     TO '/home/zoningtaxlots_build/output/qc_versioncomparison_limitedheightdistrict.csv' 
-#                                     DELIMITER ',' CSV HEADER;"
-
-# psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparison_zoningmapnumber ORDER BY count DESC) 
-#                                     TO '/home/zoningtaxlots_build/output/qc_versioncomparison_zoningmapnumber.csv' 
-#                                     DELIMITER ',' CSV HEADER;"
-
-# psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparison_zoningmapcode ORDER BY count DESC)
-#                                     TO '/home/zoningtaxlots_build/output/qc_versioncomparison_zoningmapcode.csv' 
-#                                     DELIMITER ',' CSV HEADER;"

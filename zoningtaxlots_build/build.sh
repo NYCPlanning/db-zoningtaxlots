@@ -1,10 +1,10 @@
 #!/bin/bash
 start=$(date +'%T')
 echo "Starting to build zoning tax lot database"
-psql -h localhost -U postgres -f sql/create_priority.sql
+psql -h localhost -U postgres -f sql/create_priority.sql &
 psql -h localhost -U postgres -f sql/preprocessing.sql
-psql -h localhost -U postgres -f sql/archive.sql
-psql -h localhost -U postgres -f sql/create.sql
+psql -h localhost -U postgres -f sql/archive.sql 
+psql -h localhost -U postgres -f sql/create.sql 
 psql -h localhost -U postgres -f sql/bbl.sql
 
 wait
@@ -20,7 +20,7 @@ psql -h localhost -U postgres -f sql/area_zoningmap.sql &
 psql -h localhost -U postgres -f sql/area_mih.sql
 
 wait
-psql -h localhost -U postgres -f sql/area_zoningdistrict.sql
+psql -h localhost -U postgres -f sql/area_zoningdistrict.sql 
 
 wait
 psql -h localhost -U postgres -c "\copy (SELECT * FROM zoningmapperorder ORDER BY bbl) 
@@ -59,7 +59,7 @@ echo "export final output"
 psql -h localhost -U postgres -f sql/export.sql
 psql -h localhost -U postgres -c "\copy (SELECT * FROM dcp_zoning_taxlot_export)
                                 TO '/home/zoningtaxlots_build/output/zoningtaxlot_db.csv' 
-                                DELIMITER ',' CSV HEADER;"
+                                DELIMITER ',' CSV HEADER;" &
 
 echo "export unique value lookup tables"
 psql -h localhost -U postgres -c "\copy (SELECT DISTINCT zonedist FROM dcp_zoningdistricts ORDER BY zonedist) 

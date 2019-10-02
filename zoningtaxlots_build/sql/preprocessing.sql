@@ -34,12 +34,12 @@ DROP TABLE IF EXISTS dcp_zoning_taxlot;
 ALTER TABLE dcp_zoningtaxlots
 RENAME TO dcp_zoning_taxlot;
 
--- DROP TABLE IF EXISTS dof_dtm_tmp;
--- CREATE TABLE dof_dtm_tmp as(
--- SELECT bbl, boro, block, lot, ST_Multi(ST_Union(f.geom)) as geom
--- FROM dof_dtm As f
--- GROUP BY bbl, boro, block, lot);
+DROP TABLE IF EXISTS dof_dtm_tmp;
+CREATE TABLE dof_dtm_tmp as(
+SELECT bbl, boro, block, lot, ST_Multi(ST_Union(f.geom)) as geom
+FROM dof_dtm As f
+GROUP BY bbl, boro, block, lot);
 
--- DROP TABLE IF EXISTS dof_dtm;
--- ALTER TABLE dof_dtm_tmp
--- RENAME to dof_dtm;
+DROP TABLE IF EXISTS dof_dtm;
+ALTER TABLE dof_dtm_tmp
+RENAME to dof_dtm;

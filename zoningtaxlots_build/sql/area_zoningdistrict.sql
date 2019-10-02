@@ -36,9 +36,8 @@ DROP TABLE lotzoneperordersi;
 -- more than 10% of the lot is coverd by the zoning district
 -- or more than a specified area is covered by the district
 WITH new_order AS(
-  SELECT bbl, zonedist, ROW_NUMBER()
-  OVER(PARTITION BY bbl
-          ORDER BY priority ASC) AS row_number
+  SELECT bbl, zonedist, ROW_NUMBER()
+  OVER(PARTITION BY bbl ORDER BY priority ASC) AS row_number
     FROM (
       SELECT * FROM lotzoneperorder
       WHERE bbl in(SELECT bbl from(

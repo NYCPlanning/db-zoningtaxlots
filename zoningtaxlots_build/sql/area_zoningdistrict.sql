@@ -35,6 +35,26 @@ DROP TABLE lotzoneperordersi;
 -- only say that a lot is within a zoning district if
 -- more than 10% of the lot is coverd by the zoning district
 -- or more than a specified area is covered by the district
+WITH new_order AS(
+  SELECT bbl, zonedist, ROW_NUMBER()
+  OVER(PARTITION BY bbl
+          ORDER BY priority ASC) AS row_number
+    FROM (
+      SELECT * FROM lotzoneperorder
+      WHERE bbl in(SELECT bbl from(
+        SELECT bbl, MAX(segbblgeom) - MIN(segbblgeom) as diff 
+        FROM lotzoneperorder 
+        WHERE perbblgeom >= 10
+        group by bbl
+      ) a WHERE diff > 0 and diff < 0.01))a 
+      JOIN zonedist_priority 
+      USING (zonedist))
+UPDATE lotzoneperorder
+SET row_number = new_order.row_number
+FROM new_order
+WHERE lotzoneperorder.bbl = new_order.bbl 
+  AND lotzoneperorder.zonedist = new_order.zonedist; 
+
 UPDATE dcp_zoning_taxlot a
 SET zoningdistrict1 = zonedist
 FROM lotzoneperorder b
@@ -53,7 +73,7 @@ UPDATE dcp_zoning_taxlot a
 SET zoningdistrict3 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
-AND row_number = 3
+AND row_number = 3 
 AND perbblgeom >= 10;
 
 UPDATE dcp_zoning_taxlot a

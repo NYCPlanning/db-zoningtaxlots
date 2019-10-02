@@ -1,6 +1,7 @@
 #!/bin/bash
 start=$(date +'%T')
 echo "Starting to build zoning tax lot database"
+psql -h localhost -U postgres -f sql/create_priority.sql
 psql -h localhost -U postgres -f sql/preprocessing.sql
 psql -h localhost -U postgres -f sql/archive.sql
 psql -h localhost -U postgres -f sql/create.sql

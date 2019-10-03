@@ -43,3 +43,5 @@ GROUP BY bbl, boro, block, lot);
 DROP TABLE IF EXISTS dof_dtm;
 ALTER TABLE dof_dtm_tmp
 RENAME to dof_dtm;
+
+CREATE INDEX dof_dtm_wkb_geometry_geom_idx ON dof_dtm USING GIST (geom gist_geometry_ops_2d);

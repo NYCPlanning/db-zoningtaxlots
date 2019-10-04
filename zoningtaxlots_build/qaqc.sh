@@ -14,12 +14,12 @@ psql -U postgres -h localhost -f sql/qc_versioncomparisonfields.sql &
 psql -U postgres -h localhost -f sql/qc_bblsaddedandremoved.sql &
 psql -U postgres -h localhost -f sql/qc_bbldiffs.sql 
 
-# wait
-# QAQC_PATH=/home/zoningtaxlots_build/output/qc_bbldiffs
-# mkdir -p $QAQC_PATH && cd $QAQC_PATH {
-#     pgsql2shp -u postgres -h localhost -f qc_bbldiffs postgres \
-#     "SELECT * FROM bbldiffs WHERE geom IS NOT NULL"
-#     cd -;}
+wait
+QAQC_PATH=/home/zoningtaxlots_build/output/qc_bbldiffs
+mkdir -p $QAQC_PATH && cd $QAQC_PATH {
+    pgsql2shp -u postgres -h localhost -f qc_bbldiffs postgres \
+    "SELECT * FROM bbldiffs WHERE geom IS NOT NULL"
+    cd -;}
 
 wait
 psql -U postgres -h localhost -f sql/qc_frequencycomparison.sql &

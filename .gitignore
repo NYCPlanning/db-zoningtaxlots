@@ -1,13 +1,7 @@
 */__pycache__/*
 *.DS_Store
 */.ipynb_checkpoints/*
-*/.ipynb_checkpoints/*.ipynb
-*/.ipynb_checkpoints/*.sql
-*/.ipynb_checkpoints/*.py
-*/.ipynb_checkpoints/*.sh
-*/.ipynb_checkpoints/*.csv
-*/.ipynb_checkpoints/*.md
-*/.ipynb_checkpoints/*.txt
+.ipynb_checkpoints
 zoningtaxlots_build/.env
 **/zoningtaxlot_db.*
 zoningtaxlots_build/output/intermediate_lotzoneperorder.csv

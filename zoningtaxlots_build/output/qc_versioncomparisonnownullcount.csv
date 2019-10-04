@@ -1,13 +1,13 @@
 field,newnullcount,oldnullcount
-zoningdistrict2,0,0
-specialdistrict2,0,0
-commercialoverlay1,0,0
-limitedheightdistrict,0,0
 zoningdistrict1,0,0
+specialdistrict2,0,0
 zoningmapnumber,0,0
 commercialoverlay2,0,0
+limitedheightdistrict,0,0
 zoningdistrict3,1,1
 zoningdistrict4,1,1
+commercialoverlay1,1,1
 specialdistrict3,1,1
 specialdistrict1,1,1
+zoningdistrict2,2,2
 zoningmapcode,44,44

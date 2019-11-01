@@ -10,3 +10,7 @@ For example: If tax lot 98 is divided by zoning boundary lines into four section
 The final data table is provided in a comma–separated values (CSV) file format where each record reports information on a tax lot and BBL is the unique ID.
 
 Instructions on how to build the Zoning Tax Lot Database are included in the zoningtaxlots_build folder.
+
+## Instructions: 
+1. create zoningtaxlots_build/.env according to example.env
+2. run `./build.sh` at root directory to build zoningtaxlots database

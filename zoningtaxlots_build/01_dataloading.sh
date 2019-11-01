@@ -1,3 +1,4 @@
+#!/bin/bash
 # Create a postgres database container ztl
 DB_CONTAINER_NAME=ztl
 

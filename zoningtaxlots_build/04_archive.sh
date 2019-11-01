@@ -1,3 +1,4 @@
+#!/bin/bash
 docker exec ztl bash -c '
         pg_dump -t dcp_zoning_taxlot --no-owner -U postgres -d postgres | psql $EDM_DATA
         DATE=$(date "+%Y/%m/%d"); 

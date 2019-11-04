@@ -48,3 +48,7 @@ docker exec ztl psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_ve
 docker exec ztl psql -U postgres -h localhost -c "\copy (SELECT * FROM ztl_qc_versioncomparisoncount) 
                                     TO '/home/zoningtaxlots_build/output/qc_versioncomparison.csv' 
                                     DELIMITER ',' CSV HEADER;"
+                                    
+docker exec ztl psql -U postgres -h localhost -c "\copy (SELECT table_name, date FROM source_data_versions) 
+                                    TO '/home/zoningtaxlots_build/output/source_data_versions.csv' 
+                                    DELIMITER ',' CSV HEADER;"

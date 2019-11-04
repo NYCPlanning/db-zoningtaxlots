@@ -12,7 +12,7 @@ cd zoningtaxlots_build {
     echo "\e[1;32m Step 4: ARCHIVE OUTPUT ... \e[0m"
     echo . 
     ./04_archive.sh
-    echo "\e[1;33m Step 5: CLEAN UP ... \e[0m"
-    echo .
-    ./05_cleanup.sh
+#     echo "\e[1;33m Step 5: CLEAN UP ... \e[0m"
+#     echo .
+#     ./05_cleanup.sh
 cd -;}

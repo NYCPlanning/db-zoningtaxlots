@@ -81,6 +81,6 @@ psql $BUILD_ENGINE -c "\copy (SELECT DISTINCT sdname, sdlbl FROM dcp_specialpurp
 psql $BUILD_ENGINE -c "\copy (SELECT DISTINCT lhname, lhlbl FROM dcp_limitedheight ORDER BY lhname) 
                                 TO '$(pwd)/output/zoningtaxlot_limitedheight.csv' 
                                 DELIMITER ',' CSV HEADER;"
-
+                                
 wait
 echo "Build is done!"

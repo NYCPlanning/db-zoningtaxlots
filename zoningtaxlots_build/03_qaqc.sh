@@ -11,6 +11,12 @@ fi
         'SELECT a.*, b.geom 
         FROM dcp_zoning_taxlot_export a, dof_dtm b 
         WHERE a."BBL"=b.bbl AND b.geom IS NOT NULL;'
+        zip zoningtaxlot_db.zip zoningtaxlot_db.*
+        rm zoningtaxlot_db.cpg&
+        rm zoningtaxlot_db.dbf&
+        rm zoningtaxlot_db.prj&
+        rm zoningtaxlot_db.shp&
+        rm zoningtaxlot_db.shx&
         cd -;}
 
 echo "QC the zoning tax lot database"
@@ -23,6 +29,12 @@ mkdir -p $(pwd)/output/qc_bbldiffs &&
         cd $(pwd)/output/qc_bbldiffs {
         pgsql2shp -u $BUILD_USER -P $BUILD_PWD -h $BUILD_HOST -p $BUILD_PORT -f qc_bbldiffs $BUILD_DB \
         "SELECT * FROM bbldiffs WHERE geom IS NOT NULL"
+        zip qc_bbldiffs.zip qc_bbldiffs.*
+        rm qc_bbldiffs.cpg&
+        rm qc_bbldiffs.dbf&
+        rm qc_bbldiffs.prj&
+        rm qc_bbldiffs.shp&
+        rm qc_bbldiffs.shx&
         cd -;}
 
 wait
@@ -48,8 +60,8 @@ psql $BUILD_ENGINE -c "\copy (SELECT * FROM ztl_qc_versioncomparisonnownullcount
 
 psql $BUILD_ENGINE -c "\copy (SELECT * FROM ztl_qc_versioncomparisoncount) 
                                     TO '$(pwd)/output/qc_versioncomparison.csv' 
-                                    DELIMITER ',' CSV HEADER;"
+                                    DELIMITER ',' CSV HEADER;" 
                                     
-psql $BUILD_ENGINE -c "\copy (SELECT table_name, date FROM source_data_versions) 
-                                    TO '$(pwd)/output/source_data_versions.csv' 
-                                    DELIMITER ',' CSV HEADER;"
+# psql $BUILD_ENGINE -c "\copy (SELECT table_name, date FROM source_data_versions) 
+#                                     TO '$(pwd)/output/source_data_versions.csv' 
+#                                     DELIMITER ',' CSV HEADER;"

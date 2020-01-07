@@ -30,6 +30,7 @@ do
     -X POST $GATEWAY/migrate &
 done
 
+wait
 psql $BUILD_ENGINE -c "
   DROP TABLE IF EXISTS source_data_versions;
   CREATE TABLE source_data_versions as 

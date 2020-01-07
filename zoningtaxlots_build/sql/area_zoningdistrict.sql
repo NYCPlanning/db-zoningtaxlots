@@ -19,11 +19,11 @@ CREATE TABLE lotzoneperorder AS (
 );
 
 -- drop each of the boro tables
-DROP TABLE lotzoneperordermn;
-DROP TABLE lotzoneperorderbx;
-DROP TABLE lotzoneperorderbk;
-DROP TABLE lotzoneperorderqn;
-DROP TABLE lotzoneperordersi;
+-- DROP TABLE lotzoneperordermn;
+-- DROP TABLE lotzoneperorderbx;
+-- DROP TABLE lotzoneperorderbk;
+-- DROP TABLE lotzoneperorderqn;
+-- DROP TABLE lotzoneperordersi;
 -- null out any existing values
 -- UPDATE dcp_zoning_taxlot
 -- SET zoningdistrict1 = NULL, 

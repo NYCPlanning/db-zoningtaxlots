@@ -5,19 +5,18 @@ then
 fi
 
 DATE=$(date "+%Y/%m/%d")
-schema_name='dcp_zoningtaxlots'
 
 curl -d "{
     \"src_engine\":\"${BUILD_ENGINE}\",
     \"dst_engine\": \"${EDM_DATA}\",
     \"src_schema_name\": \"public\",
-    \"dst_schema_name\": \"${schema_name}\",
-    \"src_version\": \"${schema_name}\",
+    \"dst_schema_name\": \"dcp_zoningtaxlots\",
+    \"src_version\": \"dcp_zoning_taxlot\",
     \"dst_version\": \"${DATE}\"
     }"\
     -H "Content-Type: application/json"\
     -X POST $GATEWAY/migrate
 
-psql $EDM_DATA -c "DROP VIEW IF EXISTS ${schema_name}.latest"
-psql $EDM_DATA -c "CREATE VIEW ${schema_name}.latest AS 
-                    (SELECT * FROM ${schema_name}.\"${DATE}\")"
+psql $EDM_DATA -c "DROP VIEW IF EXISTS dcp_zoningtaxlots.latest"
+psql $EDM_DATA -c "CREATE VIEW dcp_zoningtaxlots.latest AS 
+                    (SELECT * FROM dcp_zoningtaxlots.\"${DATE}\")"

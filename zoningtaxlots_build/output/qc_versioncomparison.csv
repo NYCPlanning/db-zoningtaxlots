@@ -1,7 +1,6 @@
 field,count,percent
-specialdistrict2,0,0.00
+zoningdistrict1,102,0.01
 limitedheightdistrict,0,0.00
-zoningdistrict1,13,0.00
 commercialoverlay1,2,0.00
 commercialoverlay2,1,0.00
 specialdistrict1,7,0.00
@@ -10,4 +9,5 @@ zoningdistrict4,0,0.00
 zoningmapcode,1,0.00
 zoningdistrict2,53,0.00
 zoningdistrict3,3,0.00
+specialdistrict2,0,0.00
 zoningmapnumber,0,0.00

@@ -62,6 +62,13 @@ AND row_number = 1
 AND ROUND(perbblgeom::numeric,2) >= 10;
 
 UPDATE dcp_zoning_taxlot a
+SET zoningdistrict1 = zonedist
+FROM lotzoneperorder b
+WHERE a.bbl=b.bbl 
+AND row_number = 1
+AND a.zoningdistrict1 is null;
+
+UPDATE dcp_zoning_taxlot a
 SET zoningdistrict2 = zonedist
 FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 

@@ -59,6 +59,9 @@ psql $BUILD_ENGINE -f sql/correct_duplicatevalues.sql
 psql $BUILD_ENGINE -f sql/correct_zoninggaps.sql
 psql $BUILD_ENGINE -f sql/correct_invalidrecords.sql
 
+echo "Inwood rezoning additional column"
+psql $BUILD_ENGINE -f sql/inwoodrezoning.sql
+
 echo "export final output"
 psql $BUILD_ENGINE -f sql/export.sql
 psql $BUILD_ENGINE -c "\copy (SELECT * FROM dcp_zoning_taxlot_export)

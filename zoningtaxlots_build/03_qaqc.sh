@@ -29,13 +29,13 @@ mkdir -p $(pwd)/output/qc_bbldiffs &&
         cd $(pwd)/output/qc_bbldiffs {
         pgsql2shp -u $BUILD_USER -P $BUILD_PWD -h $BUILD_HOST -p $BUILD_PORT -f qc_bbldiffs $BUILD_DB \
         "SELECT * FROM bbldiffs WHERE geom IS NOT NULL"
-        rm qc_bbldiffs.zip
+        rm -f qc_bbldiffs.zip
         zip qc_bbldiffs.zip qc_bbldiffs.*
-        rm qc_bbldiffs.cpg&
-        rm qc_bbldiffs.dbf&
-        rm qc_bbldiffs.prj&
-        rm qc_bbldiffs.shp&
-        rm qc_bbldiffs.shx&
+        rm -f qc_bbldiffs.cpg&
+        rm -f qc_bbldiffs.dbf&
+        rm -f qc_bbldiffs.prj&
+        rm -f qc_bbldiffs.shp&
+        rm -f qc_bbldiffs.shx&
         cd -;}
 
 wait

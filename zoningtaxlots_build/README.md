@@ -6,13 +6,12 @@ Run the scripts in zoningtaxlots_build in order:
 ./02_build.sh
 ./03_qaqc.sh
 ./04_archive.sh
-./05_cleanup.sh
 ```
 
 #### ./01_dataloading.sh
 1. Make sure you have docker installed
 2. do `./01_dataloading.sh` if you are in the zoningtaxlots_build directory
-3. this shell command __1.__ spins up a `mdillon/postgis` containe __2.__ loads data into the container through `sptkl/docker-dataloading`
+3. this shell command loads data into the container through `sptkl/docker-dataloading`
 
 #### ./02_build.sh
 Creates the zoning tax lot database by:

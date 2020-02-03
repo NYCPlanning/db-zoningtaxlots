@@ -29,9 +29,6 @@ RENAME COLUMN wkb_geometry TO geom;
 ALTER TABLE dcp_zoningmapindex 
 RENAME COLUMN wkb_geometry TO geom;
 
-ALTER TABLE doitt_zipcodeboundaries 
-RENAME COLUMN wkb_geometry TO geom;
-
 DROP TABLE IF EXISTS dcp_zoning_taxlot;
 
 ALTER TABLE dcp_zoningtaxlots

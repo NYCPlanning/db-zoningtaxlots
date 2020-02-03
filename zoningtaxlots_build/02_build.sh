@@ -12,11 +12,7 @@ psql $BUILD_ENGINE -f sql/create.sql
 psql $BUILD_ENGINE -f sql/bbl.sql
 
 wait
-psql $BUILD_ENGINE -f sql/area_zoningdistrict_mn.sql &
-psql $BUILD_ENGINE -f sql/area_zoningdistrict_bk.sql &
-psql $BUILD_ENGINE -f sql/area_zoningdistrict_bx.sql &
-psql $BUILD_ENGINE -f sql/area_zoningdistrict_si.sql &
-psql $BUILD_ENGINE -f sql/area_zoningdistrict_qn.sql &
+psql $BUILD_ENGINE -f sql/area_zoningdistrict_create.sql &
 psql $BUILD_ENGINE -f sql/area_commercialoverlay.sql &
 psql $BUILD_ENGINE -f sql/area_specialdistrict.sql &
 psql $BUILD_ENGINE -f sql/area_limitedheight.sql &

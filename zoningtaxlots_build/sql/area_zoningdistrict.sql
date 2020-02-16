@@ -5,25 +5,25 @@
 -- OR the majority of the district is within the lot
 -- split and process by borough to improve processing time
 -- join each of the boro tables into one table
-DROP TABLE IF EXISTS lotzoneperorder;
-CREATE TABLE lotzoneperorder AS (
-  SELECT * FROM lotzoneperordermn
-  UNION
-  SELECT * FROM lotzoneperorderbx
-  UNION
-  SELECT * FROM lotzoneperorderbk
-  UNION
-  SELECT * FROM lotzoneperorderqn
-  UNION
-  SELECT * FROM lotzoneperordersi
-);
+-- DROP TABLE IF EXISTS lotzoneperorder;
+-- CREATE TABLE lotzoneperorder AS (
+--   SELECT * FROM lotzoneperordermn
+--   UNION
+--   SELECT * FROM lotzoneperorderbx
+--   UNION
+--   SELECT * FROM lotzoneperorderbk
+--   UNION
+--   SELECT * FROM lotzoneperorderqn
+--   UNION
+--   SELECT * FROM lotzoneperordersi
+-- );
 
 -- drop each of the boro tables
-DROP TABLE lotzoneperordermn;
-DROP TABLE lotzoneperorderbx;
-DROP TABLE lotzoneperorderbk;
-DROP TABLE lotzoneperorderqn;
-DROP TABLE lotzoneperordersi;
+-- DROP TABLE lotzoneperordermn;
+-- DROP TABLE lotzoneperorderbx;
+-- DROP TABLE lotzoneperorderbk;
+-- DROP TABLE lotzoneperorderqn;
+-- DROP TABLE lotzoneperordersi;
 -- null out any existing values
 -- UPDATE dcp_zoning_taxlot
 -- SET zoningdistrict1 = NULL, 
@@ -60,6 +60,16 @@ FROM lotzoneperorder b
 WHERE a.bbl=b.bbl 
 AND row_number = 1
 AND ROUND(perbblgeom::numeric,2) >= 10;
+
+-- if the largest zoning district is under 10% of entire lot 
+-- (e.g. water front lots) 
+-- then assign the largest zoning district to be zonedist1
+UPDATE dcp_zoning_taxlot a
+SET zoningdistrict1 = zonedist
+FROM lotzoneperorder b
+WHERE a.bbl=b.bbl 
+  AND a.zoningdistrict1 is null
+  AND row_number = 1;
 
 UPDATE dcp_zoning_taxlot a
 SET zoningdistrict2 = zonedist

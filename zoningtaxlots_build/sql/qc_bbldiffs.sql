@@ -19,7 +19,7 @@ SELECT a.*,
 FROM dcp_zoning_taxlot a,
 	dcp_zoning_taxlot_prev b,
 	dof_dtm c
-WHERE a.bbl = b.bbl AND a.bbl=c.bbl
+WHERE a.bbl::text = b.bbl::text AND a.bbl::text=c.bbl::text
 	AND (a.zoningdistrict1<>b.zoningdistrict1
 	OR a.zoningdistrict2<>b.zoningdistrict2
 	OR a.zoningdistrict3<>b.zoningdistrict3
@@ -56,4 +56,16 @@ WHERE a.bbl = b.bbl AND a.bbl=c.bbl
 	OR b.zoningmapcode IS NULL AND a.zoningmapcode IS NOT NULL)
 );
 
-\copy (SELECT * FROM bbldiffs) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_bbldiffs.csv' DELIMITER ',' CSV HEADER;
+ALTER TABLE bbldiffs RENAME COLUMN bbl to bblnew;
+ALTER TABLE bbldiffs RENAME COLUMN zoningdistrict1 to zd1new;
+ALTER TABLE bbldiffs RENAME COLUMN zoningdistrict2 to zd2new;
+ALTER TABLE bbldiffs RENAME COLUMN zoningdistrict3 to zd3new;
+ALTER TABLE bbldiffs RENAME COLUMN zoningdistrict4 to zd4new;
+ALTER TABLE bbldiffs RENAME COLUMN commercialoverlay1 to co1new;
+ALTER TABLE bbldiffs RENAME COLUMN commercialoverlay2 to co2new;
+ALTER TABLE bbldiffs RENAME COLUMN specialdistrict1 to sd1new;
+ALTER TABLE bbldiffs RENAME COLUMN specialdistrict2 to sd2new;
+ALTER TABLE bbldiffs RENAME COLUMN specialdistrict3 to sd3new;
+ALTER TABLE bbldiffs RENAME COLUMN limitedheightdistrict to lhdnew;
+ALTER TABLE bbldiffs RENAME COLUMN zoningmapnumber to zmnnew;
+ALTER TABLE bbldiffs RENAME COLUMN zoningmapcode to zmcnew;

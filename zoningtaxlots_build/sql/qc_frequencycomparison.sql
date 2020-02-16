@@ -105,6 +105,6 @@ ON a.field = b.field
 ORDER BY countnew::numeric - countold::numeric DESC
 );
 
-\copy (SELECT * FROM frequencychanges) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_frequencychanges.csv' DELIMITER ',' CSV HEADER;
-DROP TABLE IF EXISTS frequencychanges;
-DROP TABLE IF EXISTS bbldiffs;
+-- \copy (SELECT * FROM frequencychanges) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_frequencychanges.csv' DELIMITER ',' CSV HEADER;
+-- DROP TABLE IF EXISTS frequencychanges;
+-- DROP TABLE IF EXISTS bbldiffs;

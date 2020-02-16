@@ -3,7 +3,7 @@
 -- the order mandatory inclusionary housing districts are assigned is based on which district covers the majority of the lot
 -- a district is only assigned if more than 10% of the district covers the lot
 
-DROP TABLE mihperorder;
+DROP TABLE IF EXISTS mihperorder;
 CREATE TABLE mihperorder AS (
 WITH 
 mihper AS (
@@ -31,9 +31,9 @@ SELECT p.bbl, n.mih_option,
     ON ST_Intersects(p.geom, n.geom)
 )
 SELECT bbl, mih_option, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
-        OVER (PARTITION BY bbl
-        ORDER BY segbblgeom DESC) AS row_number
-        FROM mihper
+  OVER (PARTITION BY bbl
+  ORDER BY segbblgeom DESC) AS row_number
+  FROM mihper
 );
 
 
@@ -48,10 +48,4 @@ mihoption =
 ELSE NULL
 END)
 FROM mihperorder b
-WHERE a.bbl=b.bbl;
-
-
---  \copy (SELECT * FROM mihperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_mihperorder.csv' DELIMITER ',' CSV HEADER;
-
-DROP TABLE mihperorder;
-
+WHERE a.bbl::TEXT=b.bbl::TEXT;

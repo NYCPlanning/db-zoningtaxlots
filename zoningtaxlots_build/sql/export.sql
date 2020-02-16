@@ -16,13 +16,6 @@ CREATE TABLE dcp_zoning_taxlot_export AS(
 		specialdistrict3 AS "Special District 3",
 		limitedheightdistrict AS "Limited Height District",
 		zoningmapnumber AS "Zoning Map Number",
-		zoningmapcode AS "Zoning Map Code"
+		zoningmapcode AS "Zoning Map Code",
+		notes AS "Notes"
 FROM dcp_zoning_taxlot);
-
-\copy (SELECT * FROM dcp_zoning_taxlot_export) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_db.csv' DELIMITER ',' CSV HEADER;
-
--- export unique value lookup tables
-\copy (SELECT DISTINCT zonedist FROM dcp_zoningdistricts ORDER BY zonedist) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_zonedistricts.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT DISTINCT overlay FROM dcp_commercialoverlay ORDER BY overlay) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_commoverlay.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT DISTINCT sdname, sdlbl FROM dcp_specialpurpose ORDER BY sdname) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_specialdistricts.csv' DELIMITER ',' CSV HEADER;
-\copy (SELECT DISTINCT lhname, lhlbl FROM dcp_limitedheight ORDER BY lhname) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/zoningtaxlot_limitedheight.csv' DELIMITER ',' CSV HEADER;

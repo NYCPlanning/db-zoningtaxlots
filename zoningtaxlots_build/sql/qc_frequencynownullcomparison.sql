@@ -153,7 +153,7 @@ LEFT JOIN oldnull b
 ON a.field=b.field
 ORDER BY newnullcount, oldnullcount DESC);
 
-\copy (SELECT * FROM ztl_qc_versioncomparisonnownullcount) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparisonnownullcount.csv' DELIMITER ',' CSV HEADER;
-DROP TABLE IF EXISTS ztl_qc_versioncomparisonnownullcount;
+-- \copy (SELECT * FROM ztl_qc_versioncomparisonnownullcount) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/qc_versioncomparisonnownullcount.csv' DELIMITER ',' CSV HEADER;
+-- DROP TABLE IF EXISTS ztl_qc_versioncomparisonnownullcount;
 
-DROP TABLE dcp_zoning_taxlot_export;
+-- DROP TABLE dcp_zoning_taxlot_export;

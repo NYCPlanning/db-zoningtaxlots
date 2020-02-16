@@ -4,7 +4,7 @@
 -- a district is only assigned if more than 10% of the district covers the lot
 -- OR more than a specified area of the lot if covered by the district
 
-DROP TABLE limitedheightperorder;
+DROP TABLE IF EXISTS limitedheightperorder;
 CREATE TABLE limitedheightperorder AS (
 WITH 
 limitedheightper AS (
@@ -40,9 +40,9 @@ SELECT bbl, lhlbl, segbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, (segzo
 UPDATE dcp_zoning_taxlot a
 SET limitedheightdistrict = lhlbl
 FROM limitedheightperorder b
-WHERE a.bbl=b.bbl 
+WHERE a.bbl::TEXT=b.bbl::TEXT
 AND perbblgeom >= 10;
 
-\copy (SELECT * FROM limitedheightperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_limitedheightperorder.csv' DELIMITER ',' CSV HEADER;
-
-DROP TABLE limitedheightperorder;
+--\copy (SELECT * FROM limitedheightperorder ORDER BY bbl) TO '/prod/db-zoningtaxlots/zoningtaxlots_build/output/intermediate_limitedheightperorder.csv' DELIMITER ',' CSV HEADER;
+--
+--DROP TABLE limitedheightperorder;

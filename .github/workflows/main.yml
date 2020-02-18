@@ -43,6 +43,7 @@ jobs:
         run: |
           ./04_archive.sh
       - uses: actions/upload-artifact@v1
+        working-directory: zoningtaxlots_build
         with:
           name: output
           path: output
@@ -57,5 +58,11 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     steps:
       - uses: actions/checkout@master
-      - run: |
+      - name: archive to spaces
+        working-directory: zoningtaxlots_build
+        shell: bash
+        run: |
+          DATE=$(date "+%Y-%m-%d")
           mc config host add spaces $AWS_S3_ENDPOINT $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY --api S3v4
+          mc cp -r output spaces/edm-publishing/db-zoningtaxlots/latest
+          mc cp -r output spaces/edm-publishing/db-zoningtaxlots/$DATE

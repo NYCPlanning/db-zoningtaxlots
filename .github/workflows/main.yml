@@ -43,10 +43,9 @@ jobs:
         run: |
           ./04_archive.sh
       - uses: actions/upload-artifact@v1
-        working-directory: zoningtaxlots_build
         with:
           name: output
-          path: output
+          path: zoningtaxlots_build/output
   _03_archive_output:
     needs: _02_build
     container: 

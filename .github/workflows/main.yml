@@ -48,8 +48,9 @@ jobs:
           path: zoningtaxlots_build/output
   _03_archive_output:
     needs: _02_build
-    container: 
+    container:
       image: minio/mc
+      options: --entrypoint=/bin/sh
     runs-on: ubuntu-latest
     env:
       AWS_S3_ENDPOINT: ${{ secrets.AWS_S3_ENDPOINT }}
@@ -59,7 +60,7 @@ jobs:
       - uses: actions/checkout@master
       - name: archive to spaces
         working-directory: zoningtaxlots_build
-        shell: bash
+        shell: sh
         run: |
           DATE=$(date "+%Y-%m-%d")
           mc config host add spaces $AWS_S3_ENDPOINT $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY --api S3v4

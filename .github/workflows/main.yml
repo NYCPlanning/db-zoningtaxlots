@@ -1,0 +1,51 @@
+name: CI
+
+on: [push]
+
+jobs:
+  main:
+    name: Build and test
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+  _01_dataloading:
+    needs: main
+    container:
+      image: sptkl/cook:latest
+    runs-on: ubuntu-latest
+    env:
+      RECIPE_ENGINE: ${{ secrets.RECIPE_ENGINE }}
+      BUILD_ENGINE: ${{ secrets.BUILD_ENGINE }}
+    steps:
+      - uses: actions/checkout@master
+      - name: dataloading ...
+        working-directory: zoningtaxlots_build
+        run: |
+          python3 python/fastloading.py
+  _02_build:
+    needs: _01_dataloading
+    container: 
+      image: mdillon/postgis:latest
+    runs-on: ubuntu-latest
+    env:
+      RECIPE_ENGINE: ${{ secrets.RECIPE_ENGINE }}
+      BUILD_ENGINE: ${{ secrets.BUILD_ENGINE }}
+      EDM_DATA: ${{ secrets.EDM_DATA }}
+    steps:
+      - uses: actions/checkout@master
+      - name: building...
+        working-directory: zoningtaxlots_build
+        run: |
+          apt update && apt install -y zip
+          ./02_build.sh
+      - name: qaqc
+        shell: bash
+        run: | 
+          ./03_qaqc.sh
+      - name: archive
+        shell: bash 
+        run: |
+          ./04_archive.sh
+      - uses: actions/upload-artifact@v1
+        with:
+          name: output
+          path: output

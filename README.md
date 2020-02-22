@@ -14,3 +14,8 @@ Instructions on how to build the Zoning Tax Lot Database are included in the zon
 ## Instructions: 
 1. create zoningtaxlots_build/.env according to example.env
 2. run `./build.sh` at root directory to build zoningtaxlots database
+
+## Output Files: 
++ [qc_bbldiff.zip](https://edm-publishing.nyc3.cdn.digitaloceanspaces.com/db-zoningtaxlots/latest/output/qc_bbldiffs/qc_bbldiffs.zip)
++ [source_data_versions.csv](https://edm-publishing.nyc3.cdn.digitaloceanspaces.com/db-zoningtaxlots/latest/output/source_data_versions.csv)
++ [zoningtaxlots_db.csv](https://edm-publishing.nyc3.cdn.digitaloceanspaces.com/db-zoningtaxlots/latest/output/zoningtaxlot_db.csv)

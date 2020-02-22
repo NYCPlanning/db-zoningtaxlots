@@ -3,7 +3,7 @@ if [ -f .env ]
 then
   export $(cat .env | sed 's/#.*//g' | xargs)
 fi
-
+DATE=$(date "+%Y/%m/%d")
 echo "QC the zoning tax lot database"
 psql $BUILD_ENGINE -f sql/qc_versioncomparisonfields.sql &
 psql $BUILD_ENGINE -f sql/qc_bblsaddedandremoved.sql &
@@ -15,13 +15,12 @@ mkdir -p output/qc_bbldiffs &&
     (cd output/qc_bbldiffs
     pgsql2shp -u $BUILD_USER -P $BUILD_PWD -h $BUILD_HOST -p $BUILD_PORT -f qc_bbldiffs $BUILD_DB \
     "SELECT * FROM bbldiffs WHERE geom IS NOT NULL"
-    zip qc_bbldiffs.zip qc_bbldiffs.*
-    rm -f qc_bbldiffs.cpg&
-    rm -f qc_bbldiffs.dbf&
-    rm -f qc_bbldiffs.prj&
-    rm -f qc_bbldiffs.shp&
-    rm -f qc_bbldiffs.shx&
+    echo "$DATE" > version.txt
+    zip qc_bbldiffs.zip *
+    ls | grep -v qc_bbldiffs.zip | xargs rm
     )
+    
+echo "$DATE" > version.txt
 
 wait
 psql $BUILD_ENGINE -f sql/qc_frequencycomparison.sql &

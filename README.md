@@ -19,3 +19,6 @@ Instructions on how to build the Zoning Tax Lot Database are included in the zon
 + [qc_bbldiff.zip](https://edm-publishing.nyc3.cdn.digitaloceanspaces.com/db-zoningtaxlots/latest/output/qc_bbldiffs/qc_bbldiffs.zip)
 + [source_data_versions.csv](https://edm-publishing.nyc3.cdn.digitaloceanspaces.com/db-zoningtaxlots/latest/output/source_data_versions.csv)
 + [zoningtaxlots_db.csv](https://edm-publishing.nyc3.cdn.digitaloceanspaces.com/db-zoningtaxlots/latest/output/zoningtaxlot_db.csv)
+
+## Last build: 
+2020/03/02 Baiyue built ztl

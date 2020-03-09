@@ -20,6 +20,8 @@ psql $BUILD_ENGINE -c "
     UNION
     (SELECT 'dof_dtm' as schema_name, v from dof_dtm limit 1)
     UNION
+    (SELECT 'dcp_zoningtaxlots' as schema_name, v from dcp_zoningtaxlots limit 1)
+    UNION
     (SELECT 'dcp_zoningdistricts' as schema_name, v from dcp_zoningdistricts limit 1);
 "
 

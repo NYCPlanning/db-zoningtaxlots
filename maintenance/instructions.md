@@ -12,37 +12,45 @@
 
 ## 2. Trigger a build
 + Once step 1 is complete, head over to the front page of the repository and navigate into the `maintenance` folder.
+
 ![landing](images/landingpage.png)
+
 + In `maintenance` you will see the following files: 
     + `instructions.md`
     + `log.md`
+    
     We're going to edit the `log.md` file to trigger the build process.
+
 + To edit `log.md`, click on `log.md`, and then click the pencil button, which is highlighted by the red box in the image below
+
 ![editlog](images/editlog.png)
-+ A file editor will pop open and now you can add a new entry to the end of the build log. 
-Make sure you are following the format highlighted in the screenshot and provided below.
+
++ A file editor will pop open and now you can add a new entry to the end of the build log. Make sure you are following the format highlighted in the screenshot and provided below.
 ![makeedits](images/makeedits.png) 
 
-`## year/month/date -- name
-+ some comments here 
-+ some other comments here`
+`## year/month/date -- name`
+`+ some comments here`
+`+ some other comments here`
 
-+ Once you are done editing `log.md`, you are ready to commit the change to the `master` branch and trigger the build. To do this, scroll to the bottom of the page below the text editor to where it says "Commit changes."  **Give your commit a title and make sure that it included `[build]`** and enter an optional description.
-
-It is important that you include `[build]` in the commit title so that github Actions will be triggered.  Github Actions is smart and will only trigger a build when `[build]` is mentioned in the commit title.
++ Once you are done editing `log.md`, you are ready to commit the change to the `master` branch and trigger the build. To do this, scroll to the bottom of the page below the text editor to where it says "Commit changes."  **Give your commit a title and make sure that it included `[build]`** and enter an optional description.	It is important that you include `[build]` in the commit title so that github Actions will be triggered.  Github Actions is smart and will only trigger a build when `[build]` is mentioned in the commit title.
 
 Select "Commit directly to master branch" and click __commit changes__
+
 ![commit](images/commit.png) 
 
 + Now head to github actions by selecting "Actions" in the main banner.
+
 ![action_tab](images/action_tab.png)
-+ You will see that a new build of zoningtaxlots has been triggered.  It takes zoningtaxlots about 25 minutes to build.
+
++ You will see that a new build of zoningtaxlots has been triggered.
+
 ![action](images/action.png)
+
 + When zoningtaxlots is done building confirm that the build was successful by making sure a green check appears next to the action.  If a red X appears reach out to a team member.
+
 ![symbol](images/symbol.png)
 
 + If the build was successful you're now ready to QAQC and then publish the data
-
 
 ***
 
@@ -62,7 +70,6 @@ Download the output data package by clicking into the build action, and then cli
 
 Or navigate to [QAQC application](https://edm-data-engineering.herokuapp.com/)
 
-
 ### Review reports
 Review the reports and if the values changed for a large number of records and the changes cannot be explained the data needs further review.
 
@@ -79,6 +86,8 @@ Review the reports and if the values changed for a large number of records and t
 	+ Adjustment to boundary
 	+ Change in tax lot 
 + Verify all lots in newly rezoned areas have new values
+
+***
 
 ## 4. Publish
 Copy the **zoningtaxlots_db.csv** file to the publishing location.  The **source_data_versions.csv** lists the versions of the input datasets used to create the latest zoningtaxlots_db and can be used to update the metadata.

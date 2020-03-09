@@ -48,3 +48,5 @@ psql $BUILD_ENGINE -c "\copy (SELECT * FROM ztl_qc_versioncomparisonnownullcount
 
 psql $BUILD_ENGINE -c "\copy (SELECT * FROM ztl_qc_versioncomparisoncount) 
     TO STDOUT DELIMITER ',' CSV HEADER;" > output/qc_versioncomparison.csv
+
+echo "$DATE" > output/version.txt

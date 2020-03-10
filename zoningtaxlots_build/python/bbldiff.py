@@ -21,8 +21,8 @@ prev = max([i for i in versions if i != latest],
 df = pd.read_csv('output/qc_bbldiffs.csv', dtype=str)
 bbls = '|'.join(df.bblnew.to_list())
 
-new = gpd.read_postgis(f'select bbl, wkb_geometry from dof_dtm.{latest} where bbl ~* \'{bbls}\'', con=conn, geom_col='wkb_geometry')
-old = gpd.read_postgis(f'select bbl, wkb_geometry from dof_dtm.{prev} where bbl ~* \'{bbls}\'', con=conn, geom_col='wkb_geometry')
+new = gpd.read_postgis(f'select bbl, wkb_geometry from dof_dtm."{latest}" where bbl ~* \'{bbls}\'', con=conn, geom_col='wkb_geometry')
+old = gpd.read_postgis(f'select bbl, wkb_geometry from dof_dtm."{prev}" where bbl ~* \'{bbls}\'', con=conn, geom_col='wkb_geometry')
 
 new.to_file("output/new_bbl.geojson", driver='GeoJSON')
 old.to_file("output/old_bbl.geojson", driver='GeoJSON')

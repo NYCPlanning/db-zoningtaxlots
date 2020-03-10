@@ -50,3 +50,9 @@ psql $BUILD_ENGINE -c "\copy (SELECT * FROM ztl_qc_versioncomparisoncount)
     TO STDOUT DELIMITER ',' CSV HEADER;" > output/qc_versioncomparison.csv
 
 echo "$DATE" > output/version.txt
+
+apt update && apt install -y python3-dev python3-pip
+
+pip3 install sqlalchemy geopandas psycopg2-binary
+
+python3 python/bbldiff.py

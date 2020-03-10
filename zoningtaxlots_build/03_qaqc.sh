@@ -34,14 +34,13 @@ psql $BUILD_ENGINE -c "\copy (SELECT jsonb_build_object(
         FROM (
         SELECT jsonb_build_object(
             'type',       'Feature',
-            'id',         bblnew,
             'geometry',   ST_AsGeoJSON(geom)::jsonb,
             'properties', to_jsonb(inputs) - 'gid' - 'geom'
         ) AS feature
         FROM (
             SELECT * FROM bbldiffs
         ) inputs
-        ) features) to STDOUT" > output/qc_bbldiffs.geojson &
+        ) features) to STDOUT" > output/qc_bbldiffs.json &
 
 psql $BUILD_ENGINE -c "\copy (SELECT boroughcode, taxblock,taxlot , bblnew ,zd1new , 
                                 zd2new ,zd3new , zd4new ,co1new , co2new ,
@@ -49,7 +48,8 @@ psql $BUILD_ENGINE -c "\copy (SELECT boroughcode, taxblock,taxlot , bblnew ,zd1n
                                 mihoption , zmnnew , zmcnew , area, inzonechange , 
                                 bblprev, zd1prev, zd2prev, zd3prev, zd4prev, 
                                 co1prev, co2prev, sd1prev, sd2prev, sd3prev, 
-                                lhdprev, zmnprev, zmcprev 
+                                lhdprev, zmnprev, zmcprev, st_x(ST_Centroid(geom)) as longitude, 
+                                st_y(ST_Centroid(geom)) as latitude
                                 FROM bbldiffs)
                         TO STDOUT DELIMITER ',' CSV HEADER;" > output/qc_bbldiffs.csv &
                               

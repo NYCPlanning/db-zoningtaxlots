@@ -27,6 +27,22 @@ psql $BUILD_ENGINE -f sql/qc_frequencycomparison.sql &
 psql $BUILD_ENGINE -f sql/qc_frequencynownullcomparison.sql
 
 wait
+psql $BUILD_ENGINE -c "\copy (SELECT jsonb_build_object(
+        'type',     'FeatureCollection',
+        'features', jsonb_agg(feature)
+        )
+        FROM (
+        SELECT jsonb_build_object(
+            'type',       'Feature',
+            'id',         bblnew,
+            'geometry',   ST_AsGeoJSON(geom)::jsonb,
+            'properties', to_jsonb(inputs) - 'gid' - 'geom'
+        ) AS feature
+        FROM (
+            SELECT * FROM bbldiffs
+        ) inputs
+        ) features) to STDOUT" > output/qc_bbldiffs.geojson &
+
 psql $BUILD_ENGINE -c "\copy (SELECT boroughcode, taxblock,taxlot , bblnew ,zd1new , 
                                 zd2new ,zd3new , zd4new ,co1new , co2new ,
                                 sd1new , sd2new ,sd3new , lhdnew ,mihflag ,
@@ -50,9 +66,3 @@ psql $BUILD_ENGINE -c "\copy (SELECT * FROM ztl_qc_versioncomparisoncount)
     TO STDOUT DELIMITER ',' CSV HEADER;" > output/qc_versioncomparison.csv
 
 echo "$DATE" > output/version.txt
-
-apt update && apt install -y python3-dev python3-pip
-
-pip3 install sqlalchemy geopandas psycopg2-binary
-
-python3 python/bbldiff.py

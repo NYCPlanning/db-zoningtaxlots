@@ -3,7 +3,7 @@ if [ -f .env ]
 then
   export $(cat .env | sed 's/#.*//g' | xargs)
 fi
-DATE=$(date "+%Y/%m/%d")
+DATE=$(date "+%Y/%m/01")
 echo "QC the zoning tax lot database"
 psql $BUILD_ENGINE -f sql/qc_versioncomparisonfields.sql &
 psql $BUILD_ENGINE -f sql/qc_bblsaddedandremoved.sql &

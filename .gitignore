@@ -7,3 +7,5 @@ zoningtaxlots_build/.env
 zoningtaxlots_build/output/intermediate_lotzoneperorder.csv
 *.gz
 output.log
+.env
+!version.env

@@ -11,6 +11,8 @@
 + exporting qaqc table to digitalocean spaces for visualization
 + new versioning convention, the version will default to the first day of the month, e.g. this version will be outputed as `2020/03/01`
 
+## 2020/04/01 -- Matt M
+
 ## year/month/date -- name
 + some comments here
 + some other comments here

@@ -3,14 +3,13 @@ if [ -f .env ]
 then
   export $(cat .env | sed 's/#.*//g' | xargs)
 fi
-if [ -f version.env ]
-then
-  export $(cat version.env | sed 's/#.*//g' | xargs)
-fi
 
 pg_dump -t dcp_zoning_taxlot $BUILD_ENGINE | psql $EDM_DATA
+
 DATE=$(date "+%Y/%m/01")
 VERSION=$DATE
+VERSION_PREV=$(date --date="$(date "+%Y/%m/01") - 1 month" "+%Y/%m/01")
+
 psql $EDM_DATA -c "CREATE SCHEMA IF NOT EXISTS dcp_zoningtaxlots;";
 psql $EDM_DATA -c "ALTER TABLE dcp_zoning_taxlot SET SCHEMA dcp_zoningtaxlots;";
 psql $EDM_DATA -c "DROP TABLE IF EXISTS dcp_zoningtaxlots.\"$DATE\";";

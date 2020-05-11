@@ -1,5 +1,8 @@
 # Build Logs
 
+## 2020/05/11 -- Baiyue
++ Rerun with newly updated zoning shapefiles
+
 ## 2020/05/01 -- Matt M
 + triggering new May build
 + update version_prev to correct qaqc comparison

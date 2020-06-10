@@ -1,7 +1,7 @@
 # Build Logs
 
 
-## 2020/06/02 -- Baiyue
+## 2020/06/10 -- Baiyue
 + Rerun with newly updated zoning shapefiles
 
 ## 2020/05/11 -- Baiyue

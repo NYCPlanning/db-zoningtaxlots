@@ -1,10 +1,5 @@
 #!/bin/bash
 source config.sh
-pg_dump -t dcp_zoning_taxlot $BUILD_ENGINE | psql $EDM_DATA
-psql $EDM_DATA -c "CREATE SCHEMA IF NOT EXISTS dcp_zoningtaxlots;";
-psql $EDM_DATA -c "ALTER TABLE dcp_zoning_taxlot SET SCHEMA dcp_zoningtaxlots;";
-psql $EDM_DATA -c "DROP TABLE IF EXISTS dcp_zoningtaxlots.\"$VERSION\";";
-psql $EDM_DATA -c "ALTER TABLE dcp_zoningtaxlots.dcp_zoning_taxlot RENAME TO \"$VERSION\";";
 
 psql $EDM_DATA -v VERSION=$VERSION -f sql/qaqc/frequency.sql
 psql $EDM_DATA -c "\copy (SELECT * FROM dcp_zoningtaxlots.qaqc_frequency order by version::timestamp) 

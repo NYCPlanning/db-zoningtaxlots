@@ -8,7 +8,7 @@ pg_dump -t dcp_zoning_taxlot $BUILD_ENGINE | psql $EDM_DATA
 
 DATE=$(date "+%Y/%m/01")
 VERSION=$DATE
-VERSION_PREV=$(date --date="$(date "+%Y/%m/01") - 1 month" "+%Y/%m/01")'
+VERSION_PREV=$(date --date="$(date "+%Y/%m/01") - 1 month" "+%Y/%m/01")
 
 psql $EDM_DATA -c "CREATE SCHEMA IF NOT EXISTS dcp_zoningtaxlots;";
 psql $EDM_DATA -c "ALTER TABLE dcp_zoning_taxlot SET SCHEMA dcp_zoningtaxlots;";
@@ -26,3 +26,6 @@ psql $EDM_DATA -c "\copy (SELECT * FROM dcp_zoningtaxlots.qaqc_bbl order by vers
 psql $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV -f sql/qaqc/mismatch.sql
 psql $EDM_DATA -c "\copy (SELECT * FROM dcp_zoningtaxlots.qaqc_mismatch order by version::timestamp) 
     TO STDOUT DELIMITER ',' CSV HEADER;" > output/qaqc_mismatch.csv
+
+psql $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV -f sql/qaqc/out_bbldiffs.sql |
+psql $BUILD_ENGINE -f sql/qaqc/in_bbldiffs.sql

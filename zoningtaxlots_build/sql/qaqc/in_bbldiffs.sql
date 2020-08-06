@@ -16,7 +16,7 @@ CREATE TEMP TABLE tmp (
     lhdnew text,
     zmnnew text,
     zmcnew text,
-    area double precision,
+    area numeric,
     inzonechange text,
     bblprev text,
     zd1prev text,

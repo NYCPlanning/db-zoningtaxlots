@@ -1,16 +1,12 @@
 #!/bin/bash
-if [ -f .env ]
-then
-  export $(cat .env | sed 's/#.*//g' | xargs)
-fi
-DATE=$(date "+%Y/%m/01")
+source config.sh
+
 echo "QC the zoning tax lot database"
 psql $BUILD_ENGINE -f sql/qc_versioncomparisonfields.sql &
 psql $BUILD_ENGINE -f sql/qc_bblsaddedandremoved.sql &
 psql $BUILD_ENGINE -f sql/qc_bbldiffs.sql 
 
 wait
-source ./url_parse.sh $BUILD_ENGINE
 mkdir -p output/qc_bbldiffs && 
     (cd output/qc_bbldiffs
     pgsql2shp -u $BUILD_USER -P $BUILD_PWD -h $BUILD_HOST -p $BUILD_PORT -f qc_bbldiffs $BUILD_DB \
@@ -27,21 +23,6 @@ psql $BUILD_ENGINE -f sql/qc_frequencycomparison.sql &
 psql $BUILD_ENGINE -f sql/qc_frequencynownullcomparison.sql
 
 wait
-psql $BUILD_ENGINE -c "\copy (SELECT jsonb_build_object(
-        'type',     'FeatureCollection',
-        'features', jsonb_agg(feature)
-        )
-        FROM (
-        SELECT jsonb_build_object(
-            'type',       'Feature',
-            'geometry',   ST_AsGeoJSON(geom)::jsonb,
-            'properties', to_jsonb(inputs) - 'gid' - 'geom'
-        ) AS feature
-        FROM (
-            SELECT * FROM bbldiffs
-        ) inputs
-        ) features) to STDOUT" > output/qc_bbldiffs.json &
-
 psql $BUILD_ENGINE -c "\copy (SELECT boroughcode, taxblock,taxlot , bblnew ,zd1new , 
                                 zd2new ,zd3new , zd4new ,co1new , co2new ,
                                 sd1new , sd2new ,sd3new , lhdnew ,mihflag ,

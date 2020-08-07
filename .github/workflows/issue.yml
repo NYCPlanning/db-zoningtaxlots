@@ -8,7 +8,7 @@ jobs:
   build:
     if: contains(github.event.issue.title, '[build]')
     name: Building ...
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     env:
       RECIPE_ENGINE: ${{ secrets.RECIPE_ENGINE }}
       BUILD_ENGINE: ${{ secrets.BUILD_ENGINE }}

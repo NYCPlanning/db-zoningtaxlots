@@ -22,6 +22,25 @@ function urlparse {
     BUILD_DB="$(echo $url | grep / | cut -d/ -f2-)"
 }
 
+function SHP_export {
+  urlparse $BUILD_ENGINE
+  mkdir -p $@ &&
+    (
+      cd $@
+      ogr2ogr -progress -f "ESRI Shapefile" $@.shp \
+          PG:"host=$BUILD_HOST user=$BUILD_USER port=$BUILD_PORT dbname=$BUILD_DB password=$BUILD_PWD" \
+          -nlt POINT $@
+        rm -f $@.zip
+        zip $@.zip *
+        ls | grep -v $@.zip | xargs rm
+      )
+}
+
+function Upload {
+  mc rm -r --force spaces/edm-publishing/db-zoningtaxlots/$@
+  mc cp -r output spaces/edm-publishing/db-zoningtaxlots/$@
+}
+
 # Set Environmental variables
 set_env .env version.env
 

@@ -74,8 +74,8 @@ CREATE TEMP TABLE qaqc_new_nulls(
 	),
 	oldnull AS (
 		SELECT 'zoningdistrict1' AS field, COUNT(*)
-		FROM dcp_zoning_taxlot_prev a
-		INNER JOIN dcp_zoning_taxlot b
+		FROM dcp_zoningtaxlots.:"VERSION" a
+		INNER JOIN dcp_zoningtaxlots.:"VERSION_PREV" b
 		ON a.bbl=b.bbl
 		WHERE a.zoningdistrict1 IS NULL AND b.zoningdistrict1 IS NOT NULL
 		UNION

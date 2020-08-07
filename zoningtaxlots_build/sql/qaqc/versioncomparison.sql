@@ -102,7 +102,7 @@ CREATE TEMP TABLE qaqc_field_change AS (
         INNER JOIN dcp_zoningtaxlots.:"VERSION_PREV" b
         ON b.bbl=a.bbl
     )
-    SELECT a.field, a.count as count, ROUND((a.count/b.countall)*100),2) as percent
+    SELECT a.field, a.count as count, ROUND((a.count/b.countall)*100,2) as percent
     FROM pivot_mismatch a, countall b
     ORDER BY percent DESC
 );

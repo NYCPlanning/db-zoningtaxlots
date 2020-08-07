@@ -78,5 +78,11 @@ mkdir -p output
 psql -q $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV \
     -f sql/qaqc/frequencychanges.sql > output/qc_frequencychanges.csv
 
+psql -q $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV \
+    -f sql/qaqc/versioncomparison.sql > output/qc_versioncomparison.csv
+
+psql -q $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV \
+    -f sql/qaqc/versioncomparisonnownullcount.sql > output/qc_versioncomparisonnownullcount.csv
+
 Upload $DATE
 Upload latest

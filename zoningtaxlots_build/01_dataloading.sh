@@ -1,15 +1,12 @@
 #!/bin/bash
-if [ -f .env ]
-then
-  export $(cat .env | sed 's/#.*//g' | xargs)
-fi
+source config.sh
 
 docker run --rm\
-            --network=host\
-            -v `pwd`/python:/home/python\
-            -w /home/python\
-            --env-file .env\
-            sptkl/cook:latest python3 dataloading.py
+    -v $(pwd)/python:/home/python\
+    -w /home/python\
+    -e BUILD_ENGINE=$BUILD_ENGINE\
+    -e RECIPE_ENGINE=$RECIPE_ENGINE\
+    nycplanning/cook:latest python3 fastloading.py
 
 psql $BUILD_ENGINE -c "
   DROP TABLE IF EXISTS source_data_versions;

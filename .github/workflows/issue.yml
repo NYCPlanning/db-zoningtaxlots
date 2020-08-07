@@ -1,115 +1,53 @@
-name: CI - Issue Triggered
+name: CI
 
 on:
   issues:
     types: [opened, edited]
 
 jobs:
-  skip:
-    name: Build and test
-    runs-on: ubuntu-latest
+  build:
     if: contains(github.event.issue.title, '[build]')
-    steps:
-      - run: echo "${{ github.event.issue.title }}"
-        
-  _01_dataloading:
-    needs: skip
-    container:
-      image: sptkl/cook:latest
-    runs-on: self-hosted
-    env:
-      RECIPE_ENGINE: ${{ secrets.RECIPE_ENGINE }}
-      BUILD_ENGINE: ${{ secrets.BUILD_ENGINE }}
-    steps:
-      - uses: actions/checkout@master
-      - name: dataloading ...
-        working-directory: zoningtaxlots_build
-        run: |
-          python3 python/fastloading.py
-          
-  _02_build:
-    needs: _01_dataloading
-    outputs:
-      report: ${{ steps.step1.outputs.report }}
-    container: 
-      image: mdillon/postgis:latest
-    runs-on: self-hosted
+    name: Building ...
+    runs-on: ubuntu-latest
     env:
       RECIPE_ENGINE: ${{ secrets.RECIPE_ENGINE }}
       BUILD_ENGINE: ${{ secrets.BUILD_ENGINE }}
       EDM_DATA: ${{ secrets.EDM_DATA }}
-    steps:
-      - uses: actions/checkout@master
-      - name: building...
-        id: step1
-        working-directory: zoningtaxlots_build
-        run: |
-          apt update && apt install -y zip
-          ./02_build.sh
-          report=$(psql $BUILD_ENGINE -H -c "select * from source_data_versions")
-          report="${report//'%'/'%25'}"
-          report="${report//$'\n'/'%0A'}"
-          report="${report//$'\r'/'%0D'}"
-          echo ::set-output name=report::$report
-          
-      - name: qaqc
-        shell: bash
-        working-directory: zoningtaxlots_build
-        run: | 
-          ./03_qaqc.sh
-          
-      - name: archive
-        shell: bash 
-        working-directory: zoningtaxlots_build
-        run: |
-          ./04_archive.sh
-      - uses: actions/upload-artifact@v1
-        with:
-          name: output
-          path: zoningtaxlots_build/output
-
-  _03_archive_output:
-    needs: _02_build
-    container:
-      image: minio/mc
-      options: --entrypoint=/bin/sh
-    runs-on: self-hosted
-    env:
       AWS_S3_ENDPOINT: ${{ secrets.AWS_S3_ENDPOINT }}
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     steps:
-      - uses: actions/download-artifact@v1
-        with:
-          name: output
-          path: output
-      - name: archive to spaces
-        shell: sh
+      - uses: actions/checkout@v2
+      - name: install dependencies ...
         run: |
-          DATE=$(date "+%Y-%m-01")
-          mc config host add spaces $AWS_S3_ENDPOINT $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY --api S3v4
-          mc rm -r --force spaces/edm-publishing/db-zoningtaxlots/latest
-          mc rm -r --force spaces/edm-publishing/db-zoningtaxlots/$DATE
-          mc cp -r output spaces/edm-publishing/db-zoningtaxlots/latest
-          mc cp -r output spaces/edm-publishing/db-zoningtaxlots/$DATE
+          sudo apt update
+          sudo apt install -y curl zip
 
-  report:
-    if: success()
-    runs-on: self-hosted
-    needs: [_03_archive_output,_02_build]
-    steps:
-      - name: Comment on Issue
-        uses: peter-evans/create-or-update-comment@v1
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            ## ${{ github.event.issue.title }} Is Successfully Updated! 🎉
-            ### Source Info
-            
-            ${{ needs._02_build.outputs.report }}
-            
-            ### More Info
-            for more details, check https://github.com/NYCPlanning/db-zoningtaxlots/actions/runs/${{ github.run_id }}
-          
-          reactions: laugh, rocket, hooray
-    
+          sudo tee /etc/apt/sources.list.d/pgdg.list <<END
+          deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
+          END
+
+          # get the signing key and import it
+          curl -O https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          sudo apt-key add ACCC4CF8.asc
+
+          sudo apt update
+          sudo apt install -y postgresql-client-11 gdal-bin
+          sudo apt autoremove
+
+          curl -O https://dl.min.io/client/mc/release/linux-amd64/mc
+          chmod +x mc
+          sudo mv ./mc /usr/bin
+          mc config host add spaces $AWS_S3_ENDPOINT $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY --api S3v4
+
+      - name: 1. dataloading ..
+        working-directory: zoningtaxlots_build
+        run: ./01_dataloading.sh
+
+      - name: 2. build ...
+        working-directory: zoningtaxlots_build
+        run: ./02_build.sh
+
+      - name: 3. qaqc ...
+        working-directory: zoningtaxlots_build
+        run: ./03_qaqc.sh

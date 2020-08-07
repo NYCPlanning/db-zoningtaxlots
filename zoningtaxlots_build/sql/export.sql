@@ -16,6 +16,5 @@ CREATE TABLE dcp_zoning_taxlot_export AS(
 		specialdistrict3 AS "Special District 3",
 		limitedheightdistrict AS "Limited Height District",
 		zoningmapnumber AS "Zoning Map Number",
-		zoningmapcode AS "Zoning Map Code",
-		notes AS "Notes"
+		zoningmapcode AS "Zoning Map Code"
 FROM dcp_zoning_taxlot);

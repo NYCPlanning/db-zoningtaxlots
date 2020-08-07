@@ -1,4 +1,4 @@
-CREATE TEMP TABLE qaqc_frequency_change (
+CREATE TEMP TABLE qaqc_frequency_change AS (
     WITH
     count_old as (
         SELECT b.key as field, b.value::numeric as count

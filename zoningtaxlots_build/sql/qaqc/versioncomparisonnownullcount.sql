@@ -1,4 +1,4 @@
-CREATE TEMP TABLE qaqc_new_nulls(
+CREATE TEMP TABLE qaqc_new_nulls AS (
     WITH newnull AS (
 		SELECT 'zoningdistrict1' AS field, COUNT(*)
 			FROM dcp_zoningtaxlots.:"VERSION" a

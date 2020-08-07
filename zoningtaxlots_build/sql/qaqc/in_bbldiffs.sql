@@ -16,7 +16,7 @@ CREATE TEMP TABLE tmp (
     lhdnew text,
     zmnnew text,
     zmcnew text,
-    area numeric,
+    area text,
     inzonechange text,
     bblprev text,
     zd1prev text,
@@ -35,9 +35,9 @@ CREATE TEMP TABLE tmp (
 
 \COPY tmp FROM PSTDIN DELIMITER ',' CSV HEADER;
 
-DROP TABLE IF EXISTS bbldiffs;
+DROP TABLE IF EXISTS qc_bbldiffs;
 SELECT a.*, b.geom
-INTO bbldiffs
+INTO qc_bbldiffs
 FROM tmp a
 JOIN dof_dtm b
 on a.bblnew::text = b.bbl::text;

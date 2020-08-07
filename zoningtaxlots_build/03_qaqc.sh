@@ -1,49 +1,82 @@
 #!/bin/bash
 source config.sh
 
-echo "QC the zoning tax lot database"
-psql $BUILD_ENGINE -f sql/qc_versioncomparisonfields.sql &
-psql $BUILD_ENGINE -f sql/qc_bblsaddedandremoved.sql &
-psql $BUILD_ENGINE -f sql/qc_bbldiffs.sql 
+psql $EDM_DATA -v VERSION=$VERSION -f sql/qaqc/frequency.sql
+psql $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV -f sql/qaqc/bbl.sql
+psql $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV -f sql/qaqc/mismatch.sql
+psql $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV -f sql/qaqc/out_bbldiffs.sql | 
+    psql $BUILD_ENGINE -f sql/qaqc/in_bbldiffs.sql
 
-wait
-mkdir -p output/qc_bbldiffs && 
-    (cd output/qc_bbldiffs
-    pgsql2shp -u $BUILD_USER -P $BUILD_PWD -h $BUILD_HOST -p $BUILD_PORT -f qc_bbldiffs $BUILD_DB \
-    "SELECT * FROM bbldiffs WHERE geom IS NOT NULL"
-    echo "$DATE" > version.txt
-    zip qc_bbldiffs.zip *
-    ls | grep -v qc_bbldiffs.zip | xargs rm
-    )
+mkdir -p output
+(
+    cd output
+
+    psql $BUILD_ENGINE -c "\COPY (
+        SELECT * FROM source_data_versions
+    ) TO STDOUT DELIMITER ',' CSV HEADER;" > source_data_versions.csv &
     
-echo "$DATE" > version.txt
+    psql $BUILD_ENGINE -c "\copy (
+        SELECT * FROM dcp_zoning_taxlot_export
+    )TO STDOUT DELIMITER ',' CSV HEADER;" > zoningtaxlot_db.csv &
 
-wait
-psql $BUILD_ENGINE -f sql/qc_frequencycomparison.sql &
-psql $BUILD_ENGINE -f sql/qc_frequencynownullcomparison.sql
+    psql $BUILD_ENGINE -c "\copy (
+        SELECT DISTINCT zonedist 
+        FROM dcp_zoningdistricts 
+        ORDER BY zonedist
+    ) TO STDOUT DELIMITER ',' CSV HEADER;" > zoningtaxlot_zonedistricts.csv &
+    
+    psql $BUILD_ENGINE -c "\copy (
+        SELECT DISTINCT overlay 
+        FROM dcp_commercialoverlay 
+        ORDER BY overlay
+    ) TO STDOUT DELIMITER ',' CSV HEADER;" > zoningtaxlot_commoverlay.csv &
+    
+    psql $BUILD_ENGINE -c "\copy (
+        SELECT DISTINCT sdname, sdlbl 
+        FROM dcp_specialpurpose 
+        ORDER BY sdname
+    ) TO STDOUT DELIMITER ',' CSV HEADER;" > zoningtaxlot_specialdistricts.csv &
+    
+    psql $BUILD_ENGINE -c "\copy (
+        SELECT DISTINCT lhname, lhlbl
+        FROM dcp_limitedheight 
+        ORDER BY lhname
+    ) TO STDOUT DELIMITER ',' CSV HEADER;" > zoningtaxlot_limitedheight.csv &
 
-wait
-psql $BUILD_ENGINE -c "\copy (SELECT boroughcode, taxblock,taxlot , bblnew ,zd1new , 
-                                zd2new ,zd3new , zd4new ,co1new , co2new ,
-                                sd1new , sd2new ,sd3new , lhdnew ,mihflag ,
-                                mihoption , zmnnew , zmcnew , area, inzonechange , 
-                                bblprev, zd1prev, zd2prev, zd3prev, zd4prev, 
-                                co1prev, co2prev, sd1prev, sd2prev, sd3prev, 
-                                lhdprev, zmnprev, zmcprev, st_x(ST_Centroid(geom)) as longitude, 
-                                st_y(ST_Centroid(geom)) as latitude
-                                FROM bbldiffs)
-                        TO STDOUT DELIMITER ',' CSV HEADER;" > output/qc_bbldiffs.csv &
-                              
-psql $BUILD_ENGINE -c "\copy (SELECT * FROM bblcountchange) 
-    TO STDOUT DELIMITER ',' CSV HEADER;" > output/qc_bbls_count_added_removed.csv &
+    psql $EDM_DATA -c "\copy (
+    SELECT * FROM dcp_zoningtaxlots.qaqc_frequency 
+    order by version::timestamp
+    ) TO STDOUT DELIMITER ',' CSV HEADER;" > qaqc_frequency.csv &
 
-psql $BUILD_ENGINE -c "\copy (SELECT * FROM frequencychanges) 
-    TO STDOUT DELIMITER ',' CSV HEADER;" > output/qc_frequencychanges.csv &
+    psql $EDM_DATA -c "\copy (
+    SELECT * FROM dcp_zoningtaxlots.qaqc_bbl 
+    order by version::timestamp
+    ) TO STDOUT DELIMITER ',' CSV HEADER;" > qaqc_bbl.csv &
 
-psql $BUILD_ENGINE -c "\copy (SELECT * FROM ztl_qc_versioncomparisonnownullcount) 
-    TO STDOUT DELIMITER ',' CSV HEADER;" > output/qc_versioncomparisonnownullcount.csv &
+    psql $EDM_DATA -c "\copy (
+    SELECT * FROM dcp_zoningtaxlots.qaqc_mismatch 
+    order by version::timestamp
+    ) TO STDOUT DELIMITER ',' CSV HEADER;" > qaqc_mismatch.csv &
 
-psql $BUILD_ENGINE -c "\copy (SELECT * FROM ztl_qc_versioncomparisoncount) 
-    TO STDOUT DELIMITER ',' CSV HEADER;" > output/qc_versioncomparison.csv
+    psql $BUILD_ENGINE -c "\copy (
+    SELECT boroughcode, taxblock,taxlot , bblnew ,zd1new , 
+        zd2new ,zd3new , zd4new ,co1new , co2new ,
+        sd1new , sd2new ,sd3new , lhdnew zmnnew , 
+        zmcnew , area, inzonechange , 
+        bblprev, zd1prev, zd2prev, zd3prev, zd4prev, 
+        co1prev, co2prev, sd1prev, sd2prev, sd3prev, 
+        lhdprev, zmnprev, zmcprev
+    FROM qc_bbldiffs
+    ) TO STDOUT DELIMITER ',' CSV HEADER;" > qc_bbldiffs.csv &
 
-echo "$DATE" > output/version.txt
+    SHP_export qc_bbldiffs
+
+    echo "$DATE" > version.txt
+    wait
+)
+
+psql -q $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV \
+    -f sql/qaqc/frequencychanges.sql > output/qc_frequencychanges.csv
+
+Upload $DATE
+Upload latest

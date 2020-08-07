@@ -49,7 +49,3 @@ jobs:
       - name: 3. qaqc ...
         working-directory: zoningtaxlots_build
         run: ./03_qaqc.sh
-
-      - name: 4. export and upload ...
-        working-directory: zoningtaxlots_build
-        run: ./04_archive.sh

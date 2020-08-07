@@ -22,12 +22,6 @@ psql $BUILD_ENGINE -f sql/correct_duplicatevalues.sql
 psql $BUILD_ENGINE -f sql/correct_zoninggaps.sql
 psql $BUILD_ENGINE -f sql/correct_invalidrecords.sql
 
-echo "Inwood rezoning additional column"
-psql $BUILD_ENGINE -f sql/inwoodrezoning.sql
-
-echo "export final output"
-psql $BUILD_ENGINE -f sql/export.sql
-
 echo "archive final output"
 pg_dump -t dcp_zoning_taxlot $BUILD_ENGINE | psql $EDM_DATA
 

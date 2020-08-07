@@ -1,6 +1,7 @@
 #!/bin/bash
 source config.sh
 
+psql $BUILD_ENGINE -f sql/export.sql
 psql $EDM_DATA -v VERSION=$VERSION -f sql/qaqc/frequency.sql
 psql $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV -f sql/qaqc/bbl.sql
 psql $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV -f sql/qaqc/mismatch.sql

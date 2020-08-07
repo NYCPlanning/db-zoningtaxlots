@@ -1,7 +1,4 @@
-DELETE FROM dcp_zoningtaxlots.qaqc_frequency_change
-WHERE version = :'VERSION'; 
-
-INSERT INTO dcp_zoningtaxlots.qaqc_frequency_change (
+CREATE TEMP TABLE qaqc_frequency_change (
     WITH newfrequency AS (
         SELECT 'zoningdistrict1' as field, COUNT(*) as countnew
         FROM dcp_zoningtaxlots.:"VERSION" 
@@ -108,3 +105,5 @@ INSERT INTO dcp_zoningtaxlots.qaqc_frequency_change (
     ON a.field = b.field
     ORDER BY countnew::numeric - countold::numeric DESC        
 );
+
+\COPY qaqc_frequency_change TO PSTDOUT DELIMITER ',' CSV HEADER;

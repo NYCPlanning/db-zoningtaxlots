@@ -1,7 +1,4 @@
-DELETE FROM dcp_zoningtaxlots.qaqc_bblareachange
-WHERE version = :'VERSION'; 
-
-INSERT INTO dcp_zoningtaxlots.qaqc_bblareachange (
+CREATE TEMP TABLE qaqc_bblareachange (
 SELECT 
     bbl,
     newarea,
@@ -15,3 +12,5 @@ FROM (
     INNER JOIN dcp_zoningtaxlots.:"VERSION_PREV" b
     ON a.bbl=b.bbl) c
 );
+
+\COPY qaqc_bblareachange TO PSTDOUT DELIMITER ',' CSV HEADER;

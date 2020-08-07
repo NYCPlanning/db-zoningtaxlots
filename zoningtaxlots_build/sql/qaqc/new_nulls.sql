@@ -1,7 +1,4 @@
-DELETE FROM dcp_zoningtaxlots.qaqc_new_nulls
-WHERE version = :'VERSION'; 
-
-INSERT INTO dcp_zoningtaxlots.qaqc_new_nulls(
+CREATE TEMP TABLE qaqc_new_nulls(
     WITH newnull AS (
 		SELECT 'zoningdistrict1' AS field, COUNT(*)
 		FROM dcp_zoningtaxlots.:"VERSION" a
@@ -157,4 +154,6 @@ FROM newnull a
 LEFT JOIN oldnull b
 ON a.field=b.field
 ORDER BY newnullcount, oldnullcount DESC)
-)
+);
+
+\COPY qaqc_new_nulls TO PSTDOUT DELIMITER ',' CSV HEADER;

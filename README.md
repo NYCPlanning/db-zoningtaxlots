@@ -11,11 +11,20 @@ The final data table is provided in a comma–separated values (CSV) file format
 
 Instructions on how to build the Zoning Tax Lot Database are included in the zoningtaxlots_build folder.
 
-## Instructions: 
-1. create zoningtaxlots_build/.env according to example.env
-2. run `./build.sh` at root directory to build zoningtaxlots database
-
 ## Output Files: 
 + [qc_bbldiff.zip](https://edm-publishing.nyc3.digitaloceanspaces.com/db-zoningtaxlots/latest/output/qc_bbldiffs/qc_bbldiffs.zip)
 + [source_data_versions.csv](https://edm-publishing.nyc3.digitaloceanspaces.com/db-zoningtaxlots/latest/output/source_data_versions.csv)
 + [zoningtaxlots_db.csv](https://edm-publishing.nyc3.digitaloceanspaces.com/db-zoningtaxlots/latest/output/zoningtaxlot_db.csv)
+
+## QAQC
+QAQC metrics comparing versions of ZTL can be found on the [Data Engineering QAQC Portal](https://edm-data-engineering.nycplanningdigital.com/?page=Zoning+Tax+Lots).
+
+## Instructions 
+### Run through GitHub Actions
+Open a [new issue](https://github.com/NYCPlanning/db-zoningtaxlots/issues/new/choose) using the **build** issue template to kick off a build of Zoning Tax Lots using GitHub Actions. You can see the progress of the build [here](https://github.com/NYCPlanning/db-zoningtaxlots/actions?query=workflow%3ACI).
+
+### Run through local command line
+1. create zoningtaxlots_build/.env according to example.env
+2. run `./build.sh` at root directory to build zoningtaxlots database
+
+

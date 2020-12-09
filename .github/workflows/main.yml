@@ -49,7 +49,3 @@ jobs:
       - name: 3. qaqc ...
         working-directory: zoningtaxlots_build
         run: ./03_qaqc.sh
-
-      - name: Clean up ...
-        if: ${{ always() }}
-        run: sudo rm -rf /home/self-hosted/actions-runner/_work/db-zoningtaxlots

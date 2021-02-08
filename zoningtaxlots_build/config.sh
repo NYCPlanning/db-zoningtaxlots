@@ -1,4 +1,6 @@
 #!/bin/bash
+s3_endpoint=https://nyc3.digitaloceanspaces.com
+s3_bucket=edm-recipes
 
 function set_env {
   for envfile in $@
@@ -43,13 +45,13 @@ function Upload {
 
 function get_latest_version {
   name=$1
-  latest_version=$(mc cat spaces/edm-recipes/datasets/$1/latest/config.json |  jq -r '.dataset.version')
+  latest_version=$(curl $s3_endpoint/$s3_bucket/datasets/$1/latest/config.json |  jq -r '.dataset.version')
 }
 
 function import {
   name=$1
   get_latest_version $name
-  url=" https://nyc3.digitaloceanspaces.com/edm-recipes/datasets/$name/$latest_version/$name.sql"
+  url="$s3_endpoint/$s3_bucket/datasets/$name/$latest_version/$name.sql"
   curl -O $url
   psql --quiet $BUILD_ENGINE -f $name.sql
   psql $BUILD_ENGINE -c "ALTER TABLE $name ADD COLUMN v text; UPDATE $name SET v = '$latest_version';"

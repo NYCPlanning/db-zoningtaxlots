@@ -37,3 +37,15 @@ jobs:
           s3: true
           compress: true
           output_format: pgdump shapefile
+
+  close_issue:
+    runs-on: ubuntu-20.04
+    needs: dataloading
+    steps:
+      - name: Close Issue
+        uses: peter-evans/close-issue@v1
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          comment: |
+            # Success! 🎉
+            for more details, check https://github.com/NYCPlanning/db-zoningtaxlots/actions/runs/${{ github.run_id }}

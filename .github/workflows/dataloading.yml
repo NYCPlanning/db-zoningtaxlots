@@ -1,0 +1,39 @@
+name: Data Loading
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  dataloading:
+    if: contains(github.event.issue.title, '[dataloading]')
+    runs-on: ubuntu-20.04
+    env:
+      AWS_S3_ENDPOINT: ${{ secrets.DO_S3_ENDPOINT }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.DO_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.DO_SECRET_ACCESS_KEY }}
+      AWS_S3_BUCKET: edm-recipes
+    strategy:
+      matrix:
+        dataset:
+          - dcp_mih
+          - dcp_edesignation
+          - dcp_commercialoverlay
+          - dcp_limitedheight
+          - dcp_zoningdistricts
+          - dcp_specialpurpose
+          - dcp_specialpurposesubdistricts
+          - dcp_zoningtaxlots
+          - dcp_zoningmapamendments
+          - dof_dtm
+          - dof_shoreline
+          - dof_condo
+    steps:
+      - uses: NYCPlanning/action-library-archive@v1.1
+        id: ${{ matrix.dataset }}
+        with:
+          name: ${{ matrix.dataset }}
+          latest: true
+          s3: true
+          compress: true
+          output_format: pgdump shapefile

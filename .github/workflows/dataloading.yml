@@ -23,7 +23,6 @@ jobs:
           - dcp_zoningdistricts
           - dcp_specialpurpose
           - dcp_specialpurposesubdistricts
-          - dcp_zoningtaxlots
           - dcp_zoningmapamendments
           - dof_dtm
           - dof_shoreline

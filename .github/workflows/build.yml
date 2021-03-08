@@ -1,19 +1,24 @@
 name: Build
 
 on:
+  push:
+    branches: 
+      - main
   issues:
-    types: [opened, edited]
+    types: 
+      - opened
+      - edited
   workflow_dispatch:
 
 jobs:
   build:
     if: >- 
+      contains(github.event.head_commit.message, '[build]') ||
       contains(github.event.issue.title, '[build]') ||
       github.event_name == 'workflow_dispatch'
     name: Building ...
     runs-on: ubuntu-20.04
     env:
-      RECIPE_ENGINE: ${{ secrets.RECIPE_ENGINE }}
       BUILD_ENGINE: ${{ secrets.BUILD_ENGINE }}
       EDM_DATA: ${{ secrets.EDM_DATA }}
       AWS_S3_ENDPOINT: ${{ secrets.DO_S3_ENDPOINT }}
@@ -60,7 +65,9 @@ jobs:
         run: ./03_qaqc.sh
         
       - name: Comment on Issue
-        if: success()
+        if: >- 
+          success() &&
+          github.event_name == 'issues'
         uses: peter-evans/create-or-update-comment@v1
         with:
           issue-number: ${{ github.event.issue.number }}

@@ -13,8 +13,7 @@ SELECT a.zonedist, ST_MakeValid(a.geom) as geom
 FROM dcp_zoningdistricts a
 WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'); 
 
-ALTER TABLE validzones
-SET (parallel_workers=10);
+VACUUM ANALYZE;
 
 DROP TABLE IF EXISTS lotzoneper; 
 CREATE TABLE lotzoneper AS (
@@ -40,9 +39,7 @@ SELECT p.bbl, n.zonedist
     ON ST_Intersects(p.geom, n.geom)
 );
 
-ALTER TABLE lotzoneper
-SET (parallel_workers=10);
-
+VACUUM ANALYZE;
 
 DROP TABLE IF EXISTS lotzoneperorder; 
 CREATE TABLE lotzoneperorder AS (

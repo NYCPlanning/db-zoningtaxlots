@@ -8,7 +8,7 @@ jobs:
   build:
     if: contains(github.event.issue.title, '[build]')
     name: Building ...
-    runs-on: self-hosted
+    runs-on: ubuntu-20.04
     env:
       RECIPE_ENGINE: ${{ secrets.RECIPE_ENGINE }}
       BUILD_ENGINE: ${{ secrets.BUILD_ENGINE }}
@@ -17,23 +17,27 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     steps:
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_PAT }}
+
+      - name: Compute info and add to firewall
+        id: firewall
+        run: |
+          IP=$(curl https://api.ipify.org)
+          FIREWALL=$(doctl compute firewall ls -o json | jq -r '.[] | select(.name == "edm-firewall") | .id')
+          RULE="protocol:tcp,ports:all,address:$IP"
+          doctl compute firewall add-rules $FIREWALL --inbound-rules $RULE
+          
+          echo "FIREWALL=$FIREWALL">> $GITHUB_ENV          
+          echo "RULE=$RULE">> $GITHUB_ENV
+          
       - uses: actions/checkout@v2
       - name: install dependencies ...
         run: |
           sudo apt update
-          sudo apt install -y curl zip
-
-          sudo tee /etc/apt/sources.list.d/pgdg.list <<END
-          deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
-          END
-
-          # get the signing key and import it
-          curl -O https://www.postgresql.org/media/keys/ACCC4CF8.asc
-          sudo apt-key add ACCC4CF8.asc
-
-          sudo apt update
-          sudo apt install -y postgresql-client-11 gdal-bin
-          sudo apt autoremove
+          sudo apt install -y gdal-bin
 
           curl -O https://dl.min.io/client/mc/release/linux-amd64/mc
           chmod +x mc
@@ -65,3 +69,6 @@ jobs:
             for more details, check https://github.com/NYCPlanning/db-zoningtaxlots/actions/runs/${{ github.run_id }}
           reactions: laugh, rocket, hooray
 
+      - name: Remove IP from firewall
+        if: always()
+        run: doctl compute firewall remove-rules $FIREWALL --inbound-rules $RULE

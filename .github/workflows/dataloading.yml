@@ -3,10 +3,13 @@ name: Data Loading
 on:
   issues:
     types: [opened, edited]
+  workflow_dispatch:
 
 jobs:
   dataloading:
-    if: contains(github.event.issue.title, '[dataloading]')
+    if: >- 
+      contains(github.event.issue.title, '[dataloading]') ||
+      github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-20.04
     env:
       AWS_S3_ENDPOINT: ${{ secrets.DO_S3_ENDPOINT }}
@@ -38,6 +41,7 @@ jobs:
           output_format: pgdump shapefile
 
   close_issue:
+    if: github.event_name == 'issues'
     runs-on: ubuntu-20.04
     needs: dataloading
     steps:

@@ -1,14 +1,19 @@
 #!/bin/bash
 source config.sh
 
-docker run --rm\
-    -v $(pwd)/python:/home/python\
-    -w /home/python\
-    -e BUILD_ENGINE=$BUILD_ENGINE\
-    -e RECIPE_ENGINE=$RECIPE_ENGINE\
-    nycplanning/cook:latest python3 fastloading.py
+# Import Data
+import dcp_commercialoverlay &
+import dcp_limitedheight &
+import dcp_specialpurpose &
+import dcp_specialpurposesubdistricts &
+import dcp_zoningmapamendments &
+import dof_dtm &
+import dcp_zoningdistricts &
+import dcp_zoningmapindex &
+wait
 
-psql $BUILD_ENGINE -c "
+# Generate source_data_versions table
+psql $BUILD_ENGINE -1 -c "
   DROP TABLE IF EXISTS source_data_versions;
   CREATE TABLE source_data_versions as
     (SELECT 'dcp_commercialoverlay' as schema_name, v from dcp_commercialoverlay limit 1)

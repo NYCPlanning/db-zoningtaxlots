@@ -1,4 +1,6 @@
 #!/bin/bash
+s3_endpoint=https://nyc3.digitaloceanspaces.com
+s3_bucket=edm-recipes
 
 function set_env {
   for envfile in $@
@@ -39,6 +41,21 @@ function SHP_export {
 function Upload {
   mc rm -r --force spaces/edm-publishing/db-zoningtaxlots/$@
   mc cp -r output spaces/edm-publishing/db-zoningtaxlots/$@
+}
+
+function get_latest_version {
+  name=$1
+  latest_version=$(curl $s3_endpoint/$s3_bucket/datasets/$1/latest/config.json |  jq -r '.dataset.version')
+}
+
+function import {
+  name=$1
+  get_latest_version $name
+  url="$s3_endpoint/$s3_bucket/datasets/$name/$latest_version/$name.sql"
+  curl -O $url
+  psql --quiet $BUILD_ENGINE -f $name.sql
+  psql $BUILD_ENGINE -c "ALTER TABLE $name ADD COLUMN v text; UPDATE $name SET v = '$latest_version';"
+  rm $name.sql
 }
 
 # Set Environmental variables

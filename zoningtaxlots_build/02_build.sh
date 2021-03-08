@@ -3,7 +3,6 @@ source config.sh
 
 psql $BUILD_ENGINE -f sql/create_priority.sql &
 psql $BUILD_ENGINE -f sql/preprocessing.sql
-psql $BUILD_ENGINE -f sql/archive.sql 
 psql $BUILD_ENGINE -f sql/create.sql 
 psql $BUILD_ENGINE -f sql/bbl.sql
 

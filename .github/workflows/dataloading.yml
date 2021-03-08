@@ -32,7 +32,6 @@ jobs:
           - dof_condo
     steps:
       - uses: NYCPlanning/action-library-archive@v1.1
-        id: ${{ matrix.dataset }}
         with:
           name: ${{ matrix.dataset }}
           latest: true

@@ -45,7 +45,7 @@ jobs:
       - name: install dependencies ...
         run: |
           sudo apt update
-          sudo apt install -y gdal-bin
+          sudo apt install -y postgresql-client-common gdal-bin
 
           curl -O https://dl.min.io/client/mc/release/linux-amd64/mc
           chmod +x mc

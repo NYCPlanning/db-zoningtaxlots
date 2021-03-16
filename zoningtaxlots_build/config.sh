@@ -23,9 +23,9 @@ function urlparse {
     BUILD_PORT="$(echo $hostport | sed -e 's,^.*:,:,g' -e 's,.*:\([0-9]*\).*,\1,g' -e 's,[^0-9],,g')"
     BUILD_DB="$(echo $url | grep / | cut -d/ -f2-)"
 }
+urlparse $BUILD_ENGINE
 
 function SHP_export {
-  urlparse $BUILD_ENGINE
   mkdir -p $@ &&
     (
       cd $@

@@ -33,7 +33,6 @@ jobs:
     steps:
       - uses: NYCPlanning/action-library-archive@v1.1
         with:
-          name: ${{ matrix.dataset }}
           path: templates/${{ matrix.dataset }}.yml 
           latest: true
           s3: true

@@ -1,10 +1,10 @@
 dataset:
-  name: &name dcp_edesignation
+  name: &name dof_shoreline
   version: "{{ version }}"
   acl: public-read
   source:
     url:
-      path: https://nyc3.digitaloceanspaces.com/edm-publishing/datasets/e_designations/staging/gis_e_designations.zip
+      path: https://nyc3.digitaloceanspaces.com/edm-publishing/datasets/shoreline_polygon/staging/gis_shoreline_polygon.zip
       subpath: ""
     options:
       - "AUTODETECT_TYPE=NO"
@@ -16,7 +16,7 @@ dataset:
   destination:
     name: *name
     geometry:
-      SRS: EPSG:4326
+      SRS: EPSG:2263
       type: MULTIPOLYGON
     options:
       - "OVERWRITE=YES"
@@ -26,6 +26,7 @@ dataset:
 
   info:
     description: |
-      ### DCP NYC E Designations
-    url: "https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-gis-zoning.page#metadata"
+      ## DOF Shoreline
+      uploaded by GIS
+    url: null
     dependents: []

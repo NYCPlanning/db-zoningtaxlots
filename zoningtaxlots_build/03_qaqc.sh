@@ -8,7 +8,7 @@ psql $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV -f sql/qaqc/mis
 psql $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV -f sql/qaqc/out_bbldiffs.sql | 
     psql $BUILD_ENGINE -f sql/qaqc/in_bbldiffs.sql
 
-mkdir -p output
+rm -rf output && mkdir -p output
 (
     cd output
 
@@ -77,13 +77,10 @@ mkdir -p output
 )
 
 psql -q $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV \
-    -f sql/qaqc/frequencychanges.sql > output/qc_frequencychanges.csv
-
-psql -q $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV \
     -f sql/qaqc/versioncomparison.sql > output/qc_versioncomparison.csv
 
 psql -q $EDM_DATA -v VERSION=$VERSION -v VERSION_PREV=$VERSION_PREV \
-    -f sql/qaqc/versioncomparisonnownullcount.sql > output/qc_versioncomparisonnownullcount.csv
+    -f sql/qaqc/null.sql > output/qaqc_null.csv
 
 Upload $DATE
 Upload latest

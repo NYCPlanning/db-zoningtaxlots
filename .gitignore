@@ -9,3 +9,4 @@ zoningtaxlots_build/output/intermediate_lotzoneperorder.csv
 output.log
 .env
 !version.env
+output

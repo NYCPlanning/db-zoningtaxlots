@@ -55,8 +55,8 @@ CREATE TEMP TABLE bbldiffs AS(
 		OR a.specialdistrict1 IS NULL AND b.specialdistrict1 IS NOT NULL
 		OR a.specialdistrict2 IS NULL AND b.specialdistrict2 IS NOT NULL
 		OR a.specialdistrict3 IS NULL AND b.specialdistrict3 IS NOT NULL
-		OR b.zoningmapnumber IS NULL AND a.zoningmapnumber IS NOT NULL
-		OR b.zoningmapcode IS NULL AND a.zoningmapcode IS NOT NULL
+		OR a.zoningmapnumber IS NULL AND b.zoningmapnumber IS NOT NULL
+		OR a.zoningmapcode IS NULL AND b.zoningmapcode IS NOT NULL
 		OR b.zoningdistrict1 IS NULL AND a.zoningdistrict1 IS NOT NULL
 		OR b.zoningdistrict2 IS NULL AND a.zoningdistrict2 IS NOT NULL
 		OR b.zoningdistrict3 IS NULL AND a.zoningdistrict3 IS NOT NULL

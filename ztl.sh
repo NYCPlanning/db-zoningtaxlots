@@ -15,5 +15,5 @@ function qaqc {
 
 case $1 in
     dataloading | build | qaqc ) $1 ;;
-    *) echo "$1 not found" ;;
+    *) echo "$1 not found!" ;;
 esac

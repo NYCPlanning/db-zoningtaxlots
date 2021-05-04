@@ -10,6 +10,7 @@ jobs:
       contains(github.event.head_commit.message, '[test]') ||
       github.event_name == 'workflow_dispatch'
     name: Building ...
+    runs-on: ubuntu-20.04
     services:
       db:
         image: postgis/postgis:11-3.0-alpine

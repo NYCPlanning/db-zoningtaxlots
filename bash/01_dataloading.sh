@@ -1,15 +1,16 @@
 #!/bin/bash
-source config.sh
+CURRENT_DIR=$(dirname "$(readlink -f "$0")")
+source $CURRENT_DIR/config.sh
 
 # Import Data
-import dcp_commercialoverlay &
-import dcp_limitedheight &
-import dcp_specialpurpose &
-import dcp_specialpurposesubdistricts &
-import dcp_zoningmapamendments &
-import dof_dtm &
-import dcp_zoningdistricts &
-import dcp_zoningmapindex &
+import_public dcp_commercialoverlay &
+import_public dcp_limitedheight &
+import_public dcp_specialpurpose &
+import_public dcp_specialpurposesubdistricts &
+import_public dcp_zoningmapamendments &
+import_public dof_dtm &
+import_public dcp_zoningdistricts &
+import_public dcp_zoningmapindex &
 wait
 
 # Generate source_data_versions table

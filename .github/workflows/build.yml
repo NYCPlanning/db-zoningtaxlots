@@ -17,35 +17,31 @@ jobs:
       contains(github.event.issue.title, '[build]') ||
       github.event_name == 'workflow_dispatch'
     name: Building ...
-    runs-on: self-hosted
+    runs-on: ubuntu-20.04
+    services:
+      db:
+        image: postgis/postgis:11-3.0-alpine
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
     env:
-      BUILD_ENGINE: ${{ secrets.BUILD_ENGINE }}
+      BUILD_ENGINE: postgresql://postgres:postgres@localhost:5432/postgres
       EDM_DATA: ${{ secrets.EDM_DATA }}
       AWS_S3_ENDPOINT: ${{ secrets.DO_S3_ENDPOINT }}
       AWS_ACCESS_KEY_ID: ${{ secrets.DO_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.DO_SECRET_ACCESS_KEY }}
     steps:
-      - name: Install doctl
-        uses: digitalocean/action-doctl@v2
-        with:
-          token: ${{ secrets.DO_PAT }}
-
-      - name: Compute info and add to firewall
-        id: firewall
-        run: |
-          IP=$(curl https://api.ipify.org)
-          FIREWALL=$(doctl compute firewall ls -o json | jq -r '.[] | select(.name == "edm-firewall") | .id')
-          RULE="protocol:tcp,ports:all,address:$IP"
-          doctl compute firewall add-rules $FIREWALL --inbound-rules $RULE
-          
-          echo "FIREWALL=$FIREWALL">> $GITHUB_ENV          
-          echo "RULE=$RULE">> $GITHUB_ENV
-          
       - uses: actions/checkout@v2
       - name: install dependencies ...
         run: |
           sudo apt update
-          sudo apt install -y postgresql-client-common gdal-bin
+          sudo apt install -y gdal-bin
 
           curl -O https://dl.min.io/client/mc/release/linux-amd64/mc
           chmod +x mc
@@ -53,16 +49,13 @@ jobs:
           mc config host add spaces $AWS_S3_ENDPOINT $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY --api S3v4
 
       - name: 1. dataloading ..
-        working-directory: zoningtaxlots_build
-        run: ./01_dataloading.sh
+        run: ./ztl.sh dataloading
 
       - name: 2. build ...
-        working-directory: zoningtaxlots_build
-        run: ./02_build.sh
+        run: ./ztl.sh build
 
       - name: 3. qaqc ...
-        working-directory: zoningtaxlots_build
-        run: ./03_qaqc.sh
+        run: ./ztl.sh qaqc
         
       - name: Comment on Issue
         if: >- 
@@ -78,7 +71,3 @@ jobs:
             ### More Info
             for more details, check https://github.com/NYCPlanning/db-zoningtaxlots/actions/runs/${{ github.run_id }}
           reactions: laugh, rocket, hooray
-
-      - name: Remove IP from firewall
-        if: always()
-        run: doctl compute firewall remove-rules $FIREWALL --inbound-rules $RULE

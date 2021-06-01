@@ -30,8 +30,13 @@ RENAME TO dcp_zoning_taxlot;
 
 DROP TABLE IF EXISTS dof_dtm_tmp;
 CREATE TABLE dof_dtm_tmp as(
-SELECT bbl, boro, block, lot, ST_Multi(ST_Union(f.geom)) as geom
-FROM dof_dtm As f
+    SELECT 
+        bbl, 
+        COALESCE(boro::text,LEFT(bbl::text, 1)) as boro, 
+        COALESCE(block::text, SUBSTRING(bbl::text, 2, 5)) as block,
+        COALESCE(lot::text, SUBSTRING(bbl::text, 7, 4)) as lot
+        ST_Multi(ST_Union(f.geom)) as geom
+    FROM dof_dtm As f
 GROUP BY bbl, boro, block, lot);
 
 DROP TABLE IF EXISTS dof_dtm;

@@ -1,6 +1,5 @@
 #!/bin/bash
-CURRENT_DIR=$(dirname "$(readlink -f "$0")")
-source $CURRENT_DIR/config.sh
+source bash/config.sh
 
 psql $BUILD_ENGINE -f sql/create_priority.sql &
 psql $BUILD_ENGINE -f sql/preprocessing.sql

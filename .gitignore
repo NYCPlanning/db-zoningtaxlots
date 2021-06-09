@@ -10,3 +10,4 @@ output.log
 .env
 !version.env
 output
+/.library

@@ -12,13 +12,9 @@ rm -rf output && mkdir -p output
 (
     cd output
 
-    psql $BUILD_ENGINE -c "\COPY (
-        SELECT * FROM source_data_versions
-    ) TO STDOUT DELIMITER ',' CSV HEADER;" > source_data_versions.csv &
+    CSV_export source_data_versions &
     
-    psql $BUILD_ENGINE -c "\copy (
-        SELECT * FROM dcp_zoning_taxlot_export
-    )TO STDOUT DELIMITER ',' CSV HEADER;" > zoningtaxlot_db.csv &
+    CSV_export dcp_zoning_taxlot_export zoningtaxlot_db &
 
     psql $BUILD_ENGINE -c "\copy (
         SELECT DISTINCT zonedist 

@@ -3,12 +3,7 @@ name: Build
 on:
   push:
     branches: 
-      - main
-  issues:
-    types: 
-      - opened
-      - edited
-  workflow_dispatch:
+      - fix-source-version
 
 jobs:
   build:

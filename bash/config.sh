@@ -35,25 +35,78 @@ function SHP_export {
       )
 }
 
+function CSV_export {
+  psql $BUILD_ENGINE  -c "\COPY (
+    SELECT * FROM $@
+  ) TO STDOUT DELIMITER ',' CSV HEADER;" > $@.csv
+}
+
 function Upload {
   mc rm -r --force spaces/edm-publishing/db-zoningtaxlots/$@
   mc cp -r output spaces/edm-publishing/db-zoningtaxlots/$@
 }
 
-function get_version {
-  name=$1
-  version=${2:-latest}
-  url=https://nyc3.digitaloceanspaces.com/edm-recipes
-  version=$(curl -s $url/datasets/$name/$version/config.json | jq -r '.dataset.version')
-  echo -e "🔵 $name version: \e[92m\e[1m$version\e[21m\e[0m"
+
+function get_acl {
+  local name=$1
+  local version=${2:-latest} #default version to latest
+  local config_curl=$URL/datasets/$name/$version/config.json
+  local statuscode=$(curl --write-out '%{http_code}' --silent --output /dev/null $config_curl)
+  if [[ "$statuscode" -ne 200 ]] ; then
+    echo "private"
+  else
+    echo "public-read"
+  fi
 }
 
-function import_public {
-  name=$1
-  version=${2:-latest}
-  get_version $1 $2
-  target_dir=$(pwd)/.library/datasets/$name/$version
 
+function get_version {
+  local name=$1
+  local version=${2:-latest} #default version to latest
+  local acl=${3:-public-read}
+  local config_curl=$URL/datasets/$name/$version/config.json
+  local config_mc=spaces/edm-recipes/datasets/$name/$version/config.json
+  if [ "$acl" != "public-read" ] ; then
+    local version=$(mc cat $config_mc | jq -r '.dataset.version')
+  else
+    local version=$(curl -sS $config_curl | jq -r '.dataset.version')
+  fi
+  echo "$version"
+}
+
+function record_version {
+  local datasource="$1"
+  local version="$2"
+  psql $BUILD_ENGINE -q -c "
+  DELETE FROM versions WHERE datasource = '$datasource';
+  INSERT INTO versions VALUES ('$datasource', '$version');
+  "
+}
+
+function get_existence {
+  local name=$1
+  local version=${2:-latest} #default version to latest
+  existence=$(psql $BUILD_ENGINE -t -c "
+    SELECT EXISTS (
+      SELECT FROM information_schema.tables 
+      WHERE  table_schema = 'public'
+      AND    table_name   = '$name'
+    ) and EXISTS (
+      SELECT FROM versions
+      WHERE  datasource = '$name'
+      AND    version   = '$version'
+    );
+  ")
+  echo $existence
+}
+
+function import {
+  local name=$1
+  local version=${2:-latest} #default version to latest
+  local acl=$(get_acl $name $version)
+  local version=$(get_version $name $version $acl)
+  local existence=$(get_existence $name $version)
+  local target_dir=$(pwd)/.library/datasets/$name/$version
   # Download sql dump for the datasets from data library
   if [ -f $target_dir/$name.sql ]; then
     echo "✅ $name.sql exists in cache"
@@ -61,13 +114,20 @@ function import_public {
     echo "🛠 $name.sql doesn't exists in cache, downloading ..."
     mkdir -p $target_dir && (
       cd $target_dir
-      curl -ss -O $url/datasets/$name/$version/$name.sql
+      if [ "$acl" != "public-read" ] ; then
+        mc cp spaces/edm-recipes/datasets/$name/$version/$name.sql $name.sql
+      else
+        curl -O $URL/datasets/$name/$version/$name.sql $name.sql
+      fi
     )
   fi
-
   # Loading into Database
-  psql $BUILD_ENGINE -v ON_ERROR_STOP=1 -q -f $target_dir/$name.sql
-  psql $BUILD_ENGINE -c "ALTER TABLE $name ADD COLUMN v text; UPDATE $name SET v = '$latest_version';"
+  if [ "$existence" == "t" ]; then 
+    echo "NAME: $name VERSION: $version is already loaded in postgres!"
+  else 
+    psql $BUILD_ENGINE -f $target_dir/$name.sql 
+  fi
+  record_version "$name" "$version"
 }
 
 # Set Environmental variables
@@ -80,3 +140,18 @@ urlparse $BUILD_ENGINE
 DATE=$(date "+%Y/%m/01")
 VERSION=$DATE
 VERSION_PREV=$(date --date="$(date "+%Y/%m/01") - 1 month" "+%Y/%m/01")
+
+function archive {
+    local src=$1
+    local dst=${2-$src}
+    local src_schema="$(cut -d'.' -f1 <<< "$src")"
+    local src_table="$(cut -d'.' -f2 <<< "$src")"
+    local dst_schema="$(cut -d'.' -f1 <<< "$dst")"
+    local dst_table="$(cut -d'.' -f2 <<< "$dst")"
+    local commit="$(git log -1 --oneline)"
+    local DATE=$(date "+%Y-%m-%d")
+    echo "Dumping $src_schema.$src_table to $dst_schema.$dst_table"
+    psql $EDM_DATA -c "CREATE SCHEMA IF NOT EXISTS $dst_schema;"
+    pg_dump $BUILD_ENGINE -t $src -O -c | sed "s/$src/$dst/g" | psql $EDM_DATA
+    psql $EDM_DATA -c "COMMENT ON TABLE $dst IS '$DATE $commit'"
+}

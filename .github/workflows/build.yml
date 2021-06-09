@@ -49,7 +49,9 @@ jobs:
           mc config host add spaces $AWS_S3_ENDPOINT $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY --api S3v4
 
       - name: 1. dataloading ..
-        run: ./ztl.sh dataloading
+        run: |
+          ./ztl.sh dataloading
+          rm -rf .library
 
       - name: 2. build ...
         run: ./ztl.sh build

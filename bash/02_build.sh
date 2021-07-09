@@ -25,5 +25,5 @@ echo "archive final output"
 archive public.dcp_zoning_taxlot dcp_zoningtaxlots.tmp
 psql $EDM_DATA -c "
     ALTER TABLE dcp_zoningtaxlots.tmp 
-    RENAME TO dcp_zoningtaxlots.\"$VERSION\";
+    RENAME TO \"$VERSION\";
 "

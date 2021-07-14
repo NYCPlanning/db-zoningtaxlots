@@ -22,8 +22,12 @@ psql $BUILD_ENGINE -f sql/correct_zoninggaps.sql
 psql $BUILD_ENGINE -f sql/correct_invalidrecords.sql
 
 echo "archive final output"
-archive public.dcp_zoning_taxlot dcp_zoningtaxlots.tmp
+
+echo "archive final output"
+pg_dump -t dcp_zoning_taxlot $BUILD_ENGINE | psql $EDM_DATA
 psql $EDM_DATA -c "
-    ALTER TABLE dcp_zoningtaxlots.tmp 
-    RENAME TO \"$VERSION\";
+  CREATE SCHEMA IF NOT EXISTS dcp_zoningtaxlots;
+  ALTER TABLE dcp_zoning_taxlot SET SCHEMA dcp_zoningtaxlots;
+  DROP TABLE IF EXISTS dcp_zoningtaxlots.\"$VERSION\";
+  ALTER TABLE dcp_zoningtaxlots.dcp_zoning_taxlot RENAME TO \"$VERSION\";
 "

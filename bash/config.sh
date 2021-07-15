@@ -36,9 +36,11 @@ function SHP_export {
 }
 
 function CSV_export {
+  local table_name=$1
+  local output_name=${2:-$1}
   psql $BUILD_ENGINE  -c "\COPY (
-    SELECT * FROM $@
-  ) TO STDOUT DELIMITER ',' CSV HEADER;" > $@.csv
+    SELECT * FROM $table_name
+  ) TO STDOUT DELIMITER ',' CSV HEADER;" > $output_name.csv
 }
 
 function Upload {

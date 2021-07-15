@@ -20,6 +20,8 @@ import dcp_zoningdistricts &
 import dcp_zoningmapindex &
 wait
 
+rm -rf .library
+
 # Generate source_data_versions table
 psql $BUILD_ENGINE -1 -c "
   DROP TABLE IF EXISTS source_data_versions;

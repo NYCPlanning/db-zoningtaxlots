@@ -16,29 +16,29 @@ rm -rf output && mkdir -p output
     
     CSV_export dcp_zoning_taxlot_export zoningtaxlot_db &
 
-    psql $BUILD_ENGINE -c "\copy (
-        SELECT DISTINCT zonedist 
-        FROM dcp_zoningdistricts 
-        ORDER BY zonedist
-    ) TO STDOUT DELIMITER ',' CSV HEADER;" > zoningtaxlot_zonedistricts.csv &
+    # psql $BUILD_ENGINE -c "\copy (
+    #     SELECT DISTINCT zonedist 
+    #     FROM dcp_zoningdistricts 
+    #     ORDER BY zonedist
+    # ) TO STDOUT DELIMITER ',' CSV HEADER;" > zoningtaxlot_zonedistricts.csv &
     
-    psql $BUILD_ENGINE -c "\copy (
-        SELECT DISTINCT overlay 
-        FROM dcp_commercialoverlay 
-        ORDER BY overlay
-    ) TO STDOUT DELIMITER ',' CSV HEADER;" > zoningtaxlot_commoverlay.csv &
+    # psql $BUILD_ENGINE -c "\copy (
+    #     SELECT DISTINCT overlay 
+    #     FROM dcp_commercialoverlay 
+    #     ORDER BY overlay
+    # ) TO STDOUT DELIMITER ',' CSV HEADER;" > zoningtaxlot_commoverlay.csv &
     
-    psql $BUILD_ENGINE -c "\copy (
-        SELECT DISTINCT sdname, sdlbl 
-        FROM dcp_specialpurpose 
-        ORDER BY sdname
-    ) TO STDOUT DELIMITER ',' CSV HEADER;" > zoningtaxlot_specialdistricts.csv &
+    # psql $BUILD_ENGINE -c "\copy (
+    #     SELECT DISTINCT sdname, sdlbl 
+    #     FROM dcp_specialpurpose 
+    #     ORDER BY sdname
+    # ) TO STDOUT DELIMITER ',' CSV HEADER;" > zoningtaxlot_specialdistricts.csv &
     
-    psql $BUILD_ENGINE -c "\copy (
-        SELECT DISTINCT lhname, lhlbl
-        FROM dcp_limitedheight 
-        ORDER BY lhname
-    ) TO STDOUT DELIMITER ',' CSV HEADER;" > zoningtaxlot_limitedheight.csv &
+    # psql $BUILD_ENGINE -c "\copy (
+    #     SELECT DISTINCT lhname, lhlbl
+    #     FROM dcp_limitedheight 
+    #     ORDER BY lhname
+    # ) TO STDOUT DELIMITER ',' CSV HEADER;" > zoningtaxlot_limitedheight.csv &
 
     psql $EDM_DATA -c "\copy (
     SELECT * FROM dcp_zoningtaxlots.qaqc_frequency 

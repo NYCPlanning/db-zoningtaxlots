@@ -17,7 +17,7 @@ jobs:
       contains(github.event.issue.title, '[build]') ||
       github.event_name == 'workflow_dispatch'
     name: Building ...
-    runs-on: ubuntu-20.04
+    runs-on: self-hosted
     services:
       db:
         image: postgis/postgis:11-3.0-alpine
@@ -30,9 +30,9 @@ jobs:
           --health-timeout 5s
           --health-retries 5
         ports:
-          - 5432:5432
+          - 5435:5432
     env:
-      BUILD_ENGINE: postgresql://postgres:postgres@localhost:5432/postgres
+      BUILD_ENGINE: postgresql://postgres:postgres@localhost:5435/postgres
       EDM_DATA: ${{ secrets.EDM_DATA }}
       AWS_S3_ENDPOINT: ${{ secrets.DO_S3_ENDPOINT }}
       AWS_ACCESS_KEY_ID: ${{ secrets.DO_ACCESS_KEY_ID }}

@@ -59,6 +59,12 @@ jobs:
 
       - name: 3. qaqc ...
         run: ./ztl.sh qaqc
+      
+      - name: 4. dump to review database ztl
+        env:
+          EDM_DATA_BUILD_ENGINE: ${{ secrets.BUILD_ENGINE }}
+        if: always()
+        run: pg_dump $BUILD_ENGINE -O -c | psql ${{ secrets.BUILD_ENGINE }}
         
       - name: Comment on Issue
         if: >- 

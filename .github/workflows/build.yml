@@ -2,19 +2,14 @@ name: 🏗️ Build
 
 on:
   push:
-    branches: 
+    branches:
       - main
-  issues:
-    types: 
-      - opened
-      - edited
   workflow_dispatch:
 
 jobs:
   build:
-    if: >- 
+    if: >-
       contains(github.event.head_commit.message, '[build]') ||
-      contains(github.event.issue.title, '[build]') ||
       github.event_name == 'workflow_dispatch'
     name: Building ...
     runs-on: self-hosted
@@ -59,24 +54,3 @@ jobs:
 
       - name: 3. qaqc ...
         run: ./ztl.sh qaqc
-      
-      - name: 4. dump to review database ztl
-        env:
-          EDM_DATA_BUILD_ENGINE: ${{ secrets.BUILD_ENGINE }}
-        if: always()
-        run: pg_dump $BUILD_ENGINE -O -c | psql ${{ secrets.BUILD_ENGINE }}
-        
-      - name: Comment on Issue
-        if: >- 
-          success() &&
-          github.event_name == 'issues'
-        uses: peter-evans/create-or-update-comment@v1
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            ## ${{ github.event.issue.title }} Is Successfully Updated! 🎉
-            ### Source Info
-            ${{ steps.report.outputs.report }}
-            ### More Info
-            for more details, check https://github.com/NYCPlanning/db-zoningtaxlots/actions/runs/${{ github.run_id }}
-          reactions: laugh, rocket, hooray

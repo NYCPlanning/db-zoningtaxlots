@@ -1,17 +1,22 @@
 DROP TABLE IF EXISTS validdtm; 
 CREATE TABLE validdtm AS (
-SELECT a.bbl, ST_MakeValid(a.geom) as geom 
-FROM dof_dtm a
-WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon');
-
-ALTER TABLE validdtm
-SET (parallel_workers=10);
+  SELECT 
+    a.bbl, 
+    ST_MakeValid(a.geom) as geom 
+  FROM dof_dtm a
+  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'
+);
+CREATE INDEX validdtm_geom_idx ON validdtm USING GIST (geom gist_geometry_ops_2d);
 
 DROP TABLE IF EXISTS validzones; 
 CREATE TABLE validzones AS (
-SELECT a.zonedist, ST_MakeValid(a.geom) as geom  
-FROM dcp_zoningdistricts a
-WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'); 
+  SELECT 
+    a.zonedist, 
+    ST_MakeValid(a.geom) as geom  
+  FROM dcp_zoningdistricts a
+  WHERE ST_GeometryType(ST_MakeValid(a.geom)) = 'ST_MultiPolygon'
+); 
+CREATE INDEX validzones_geom_idx ON validzones USING GIST (geom gist_geometry_ops_2d);
 
 VACUUM ANALYZE;
 
@@ -23,22 +28,20 @@ CREATE TABLE lotzoneper AS (
     (
       ST_Area(
         CASE 
-          WHEN p.geom && n.geom AND ST_CoveredBy(p.geom, n.geom) THEN p.geom::geography
-          ELSE ST_Multi(ST_Intersection(p.geom,n.geom))::geography
+          WHEN ST_CoveredBy(p.geom, n.geom) THEN p.geom::geography
+          ELSE ST_Multi(ST_Intersection(p.geom, n.geom))::geography
         END)
     ) AS segbblgeom,
 
     (
       ST_Area(
         CASE 
-          WHEN p.geom && n.geom AND ST_CoveredBy(n.geom, p.geom) THEN n.geom::geography 
-          ELSE ST_Multi(ST_Intersection(n.geom,p.geom))::geography
+          WHEN ST_CoveredBy(n.geom, p.geom) THEN n.geom::geography 
+          ELSE ST_Multi(ST_Intersection(n.geom, p.geom))::geography
         END
       )
     ) AS segzonegeom,
-
     ST_Area(p.geom::geography) AS allbblgeom,
-
     ST_Area(n.geom::geography) AS allzonegeom
   FROM validdtm AS p INNER JOIN validzones AS n 
   ON ST_Intersects(p.geom, n.geom)

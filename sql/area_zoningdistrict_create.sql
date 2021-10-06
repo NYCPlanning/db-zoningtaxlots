@@ -17,35 +17,49 @@ VACUUM ANALYZE;
 
 DROP TABLE IF EXISTS lotzoneper; 
 CREATE TABLE lotzoneper AS (
-SELECT p.bbl, n.zonedist
- , (ST_Area(
-    CASE 
-        WHEN ST_CoveredBy(p.geom, n.geom) THEN p.geom::geography
-        ELSE ST_Multi(ST_Intersection(p.geom,n.geom))::geography
-    END)) AS segbblgeom,
+  SELECT 
+    p.bbl, 
+    n.zonedist, 
+    (
+      ST_Area(
+        CASE 
+          WHEN p.geom && n.geom AND ST_CoveredBy(p.geom, n.geom) THEN p.geom::geography
+          ELSE ST_Multi(ST_Intersection(p.geom,n.geom))::geography
+        END)
+    ) AS segbblgeom,
 
-    (ST_Area(
-    CASE 
-        WHEN ST_CoveredBy(n.geom, p.geom) THEN n.geom::geography 
-        ELSE ST_Multi(ST_Intersection(n.geom,p.geom))::geography
-    END)) AS segzonegeom,
+    (
+      ST_Area(
+        CASE 
+          WHEN p.geom && n.geom AND ST_CoveredBy(n.geom, p.geom) THEN n.geom::geography 
+          ELSE ST_Multi(ST_Intersection(n.geom,p.geom))::geography
+        END
+      )
+    ) AS segzonegeom,
 
     ST_Area(p.geom::geography) AS allbblgeom,
 
     ST_Area(n.geom::geography) AS allzonegeom
-
- FROM validdtm AS p 
-  INNER JOIN validzones AS n 
-    ON ST_Intersects(p.geom, n.geom)
+  FROM validdtm AS p INNER JOIN validzones AS n 
+  ON ST_Intersects(p.geom, n.geom)
 );
 
 VACUUM ANALYZE;
 
 DROP TABLE IF EXISTS lotzoneperorder; 
 CREATE TABLE lotzoneperorder AS (
-SELECT bbl, zonedist, segbblgeom, allbblgeom, (segbblgeom/allbblgeom)*100 as perbblgeom, 
-        segzonegeom, allzonegeom, (segzonegeom/allzonegeom)*100 as perzonegeom, ROW_NUMBER()
-      OVER (PARTITION BY bbl
-        ORDER BY segbblgeom DESC) AS row_number
-      FROM lotzoneper
+  SELECT 
+    bbl, 
+    zonedist, 
+    segbblgeom, 
+    allbblgeom, 
+    (segbblgeom/allbblgeom)*100 as perbblgeom, 
+    segzonegeom, 
+    allzonegeom, 
+    (segzonegeom/allzonegeom)*100 as perzonegeom, 
+    ROW_NUMBER() OVER (
+        PARTITION BY bbl
+        ORDER BY segbblgeom DESC
+    ) AS row_number
+  FROM lotzoneper
 );

@@ -5,32 +5,6 @@
 -- OR the majority of the district is within the lot
 -- split and process by borough to improve processing time
 -- join each of the boro tables into one table
--- DROP TABLE IF EXISTS lotzoneperorder;
--- CREATE TABLE lotzoneperorder AS (
---   SELECT * FROM lotzoneperordermn
---   UNION
---   SELECT * FROM lotzoneperorderbx
---   UNION
---   SELECT * FROM lotzoneperorderbk
---   UNION
---   SELECT * FROM lotzoneperorderqn
---   UNION
---   SELECT * FROM lotzoneperordersi
--- );
-
--- drop each of the boro tables
--- DROP TABLE lotzoneperordermn;
--- DROP TABLE lotzoneperorderbx;
--- DROP TABLE lotzoneperorderbk;
--- DROP TABLE lotzoneperorderqn;
--- DROP TABLE lotzoneperordersi;
--- null out any existing values
--- UPDATE dcp_zoning_taxlot
--- SET zoningdistrict1 = NULL, 
---   zoningdistrict2 = NULL, 
---   zoningdistrict3 = NULL, 
---   zoningdistrict4 = NULL;
-
 -- update each of zoning district fields
 -- only say that a lot is within a zoning district if
 -- more than 10% of the lot is coverd by the zoning district
@@ -51,7 +25,7 @@ WITH new_order AS(
 UPDATE lotzoneperorder
 SET row_number = new_order.row_number
 FROM new_order
-WHERE lotzoneperorder.bbl = new_order.bbl 
+WHERE lotzoneperorder.bbl = new_order.bbl
   AND lotzoneperorder.zonedist = new_order.zonedist; 
 
 UPDATE dcp_zoning_taxlot a

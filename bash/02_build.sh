@@ -3,8 +3,8 @@ set -e
 source bash/config.sh
 
 run_sql_file sql/create_priority.sql &
-run_sql_file sql/preprocessing.sql
 run_sql_file sql/create.sql
+run_sql_file sql/preprocessing.sql
 run_sql_file sql/bbl.sql
 
 wait

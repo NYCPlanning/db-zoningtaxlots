@@ -132,6 +132,12 @@ function import {
   record_version "$name" "$version"
 }
 
+# Function to run a sql file
+function run_sql_file {
+  psql $BUILD_ENGINE --set ON_ERROR_STOP=1 --file $1
+}
+
+
 # Set Environmental variables
 set_env .env version.env
 

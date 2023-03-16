@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+
 function set_env {
   for envfile in $@
   do
@@ -128,7 +129,7 @@ function import {
   if [ "$existence" == "t" ]; then 
     echo "NAME: $name VERSION: $version is already loaded in postgres!"
   else 
-    psql $BUILD_ENGINE --set ON_ERROR_STOP=1 -f $target_dir/$name.sql 
+    psql $BUILD_ENGINE ON_ERROR_STOP=1 -f $target_dir/$name.sql 
   fi
   record_version "$name" "$version"
 }

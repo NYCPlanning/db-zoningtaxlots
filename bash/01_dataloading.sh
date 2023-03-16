@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 source bash/config.sh
 
 psql $BUILD_ENGINE --set ON_ERROR_STOP=1 -q -c "

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 source bash/config.sh
 
 run_sql_file sql/create_priority.sql &

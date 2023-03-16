@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 function set_env {
   for envfile in $@
   do

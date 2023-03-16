@@ -134,7 +134,7 @@ function import {
 
 # Function to run a sql file
 function run_sql_file {
-  psql $BUILD_ENGINE --set ON_ERROR_STOP=1 --file $1
+  psql $BUILD_ENGINE ON_ERROR_STOP=1 --file $1
 }
 
 

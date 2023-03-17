@@ -35,7 +35,7 @@ CREATE TABLE dof_dtm_tmp as(
         COALESCE(boro::text,LEFT(bbl::text, 1)) as boro, 
         COALESCE(block::text, SUBSTRING(bbl::text, 2, 5)) as block,
         COALESCE(lot::text, SUBSTRING(bbl::text, 7, 4)) as lot,
-        ST_Multi(ST_Union(f.geom)) as geom
+        ST_Multi(ST_Union(ST_MakeValid(f.geom))) as geom
     FROM dof_dtm As f
 GROUP BY bbl, boro, block, lot);
 

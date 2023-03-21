@@ -101,7 +101,6 @@ function get_existence {
 }
 
 function import {
-  set -e
   local name=$1
   local version=${2:-latest} #default version to latest
   local acl=$(get_acl $name $version)

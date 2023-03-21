@@ -23,11 +23,6 @@ RENAME COLUMN wkb_geometry TO geom;
 ALTER TABLE dcp_zoningmapindex 
 RENAME COLUMN wkb_geometry TO geom;
 
--- DROP TABLE IF EXISTS dcp_zoning_taxlot;
-
--- ALTER TABLE dcp_zoningtaxlots
--- RENAME TO dcp_zoning_taxlot;
-
 DROP TABLE IF EXISTS dof_dtm_tmp;
 CREATE TABLE dof_dtm_tmp as(
     SELECT 

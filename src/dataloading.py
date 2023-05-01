@@ -5,7 +5,7 @@ from prefect import task, flow
 from prefect.task_runners import SequentialTaskRunner
 
 from constants import input_datasets, sql_engine
-from utils import get_acl, get_version, get_sql_file, run_sql_file, library_sql_folder
+from utils import get_version, get_sql_file, run_sql_file, library_sql_folder
 
 @task
 def import_dataset(dataset:str, version:str="latest", ready=True):

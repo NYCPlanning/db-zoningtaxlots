@@ -5,7 +5,10 @@ from sqlalchemy import text
 import boto3
 import os
 import json
+from dotenv import load_dotenv
+import subprocess
 
+load_dotenv()
 
 s3_client = boto3.client(
     "s3",
@@ -18,7 +21,9 @@ library_sql_folder = ".library"
 
 
 def get_version(dataset:str, version:str="latest"):
-    obj = s3_client.get_object(aws_s3_bucket, f"datasets/{dataset}/{version}/config.json")
+    key = f"datasets/{dataset}/{version}/config.json"
+    print(key)
+    obj = s3_client.get_object(Bucket=aws_s3_bucket, Key=f"datasets/{dataset}/{version}/config.json")
     return json.load(obj["Body"])["dataset"]["version"]
 
 
@@ -28,10 +33,18 @@ def get_sql_file(dataset:str, version:str="latest", overwrite=False):
         print(f"✅ {dataset}.sql exists in cache")
     else:
         print(f"🛠 Downloading {dataset}.sql...")
-        s3_client.download_file(aws_s3_bucket, f"datasets/{dataset}/{version}/{dataset}.sql", )
+        s3_client.download_file(aws_s3_bucket, f"datasets/{dataset}/{version}/{dataset}.sql", filepath)
     return True
     
     
 def run_sql_file(folder, filename):
-    with sql_engine.connect() as conn, open(f"{folder}/{filename}.sql") as file:
-        conn.execute(statement=text(file.read()))
+    # Has issues becuase dump is really meant for psql
+    #with sql_engine.connect() as conn, open(f"{folder}/{filename}.sql") as file:
+    #    conn.execute(statement=text(file.read()))
+    subprocess.run(
+        [
+            f"psql {os.environ['BUILD_ENGINE']} --set ON_ERROR_STOP=1 --file {filename}"
+        ],
+        shell=True,
+        check=True,
+    )

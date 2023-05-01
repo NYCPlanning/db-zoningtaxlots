@@ -2,9 +2,6 @@ from prefect import flow
 from prefect.task_runners import SequentialTaskRunner
 from dataloading import dataloading
 from build import build
-from dotenv import load_dotenv
-
-load_dotenv()
 
 @flow(task_runner=SequentialTaskRunner())
 def db_zoningtaxlots():
@@ -14,4 +11,5 @@ def db_zoningtaxlots():
     #qaqc
     return True
 
-db_zoningtaxlots()
+if __name__ == "__main__":
+    db_zoningtaxlots()

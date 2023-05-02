@@ -2,7 +2,8 @@ from prefect import task, flow
 from utils import run_sql_file
 
 
-@task
+@task(name="Execute sql file",
+      task_run_name="Execute {file}.sql")
 def run_sql_build_file(file):
     run_sql_file("sql", file)
     return True

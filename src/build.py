@@ -18,7 +18,7 @@ def build_1():
 
 
 @flow
-def build_2(ready=True):
+def build_2():
     run_sql_build_file.submit("area_zoningdistrict_create")
     run_sql_build_file.submit("area_commercialoverlay")
     run_sql_build_file.submit("area_specialdistrict")
@@ -28,7 +28,7 @@ def build_2(ready=True):
 
 
 @flow
-def build_3(ready=True):
+def build_3():
     run_sql_build_file("area_zoningdistrict")
     run_sql_build_file("parks")
     run_sql_build_file("inzonechange")

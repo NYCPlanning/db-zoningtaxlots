@@ -43,8 +43,9 @@ def run_sql_file(folder, filename):
     #    conn.execute(statement=text(file.read()))
     subprocess.run(
         [
-            f"psql {os.environ['BUILD_ENGINE']} --set ON_ERROR_STOP=1 --file {filename}"
+            f"psql {os.environ['BUILD_ENGINE']} --set ON_ERROR_STOP=1 --file {folder}/{filename}.sql"
         ],
         shell=True,
         check=True,
     )
+    return True

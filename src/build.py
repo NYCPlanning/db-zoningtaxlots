@@ -11,7 +11,7 @@ def run_sql_build_file(file):
 
 @flow
 def build_1():
-    run_sql_build_file("create_priority")
+    run_sql_build_file.submit("create_priority")
     run_sql_build_file("create")
     run_sql_build_file("preprocessing")
     run_sql_build_file("bbl")
@@ -19,11 +19,11 @@ def build_1():
 
 @flow
 def build_2(ready=True):
-    run_sql_build_file("area_zoningdistrict_create")
-    run_sql_build_file("area_commercialoverlay")
-    run_sql_build_file("area_specialdistrict")
-    run_sql_build_file("area_limitedheight")
-    run_sql_build_file("area_zoningmap")
+    run_sql_build_file.submit("area_zoningdistrict_create")
+    run_sql_build_file.submit("area_commercialoverlay")
+    run_sql_build_file.submit("area_specialdistrict")
+    run_sql_build_file.submit("area_limitedheight")
+    run_sql_build_file.submit("area_zoningmap")
     return True
     
     

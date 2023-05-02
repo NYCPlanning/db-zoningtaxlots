@@ -26,7 +26,7 @@ def create_versions_table():
             );""")
     return True
 
-flow()
+@flow
 def dataloading():
     ready = create_versions_table()
     import_dataset.map(input_datasets, wait_for=ready)

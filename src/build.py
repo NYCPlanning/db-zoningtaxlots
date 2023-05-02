@@ -2,7 +2,6 @@ from prefect import task, flow
 from utils import run_sql_file
 
 
-
 @task
 def run_sql_build_file(file):
     run_sql_file("sql", file)
@@ -15,7 +14,7 @@ def build_1():
     run_sql_build_file("create")
     run_sql_build_file("preprocessing")
     run_sql_build_file("bbl")
-    
+
 
 @flow
 def build_2(ready=True):
@@ -25,8 +24,8 @@ def build_2(ready=True):
     run_sql_build_file.submit("area_limitedheight")
     run_sql_build_file.submit("area_zoningmap")
     return True
-    
-    
+
+
 @flow
 def build_3(ready=True):
     run_sql_build_file("area_zoningdistrict")
@@ -37,13 +36,14 @@ def build_3(ready=True):
     run_sql_build_file("correct_invalidrecords")
     return True
 
+
 @flow
 def build():
     res_1 = build_1()
     res_2 = build_2(wait_for=res_1)
     res_3 = build_3(wait_for=res_2)
     return True
-    
+
     """todo
 echo "archive final output"
 pg_dump -t dcp_zoning_taxlot $BUILD_ENGINE | psql $EDM_DATA
@@ -54,4 +54,3 @@ psql $EDM_DATA -c "
   ALTER TABLE dcp_zoningtaxlots.dcp_zoning_taxlot RENAME TO \"$VERSION\";
 "
     """
-    return 0

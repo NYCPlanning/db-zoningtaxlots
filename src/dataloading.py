@@ -6,25 +6,30 @@ from prefect import task, flow
 from constants import input_datasets, sql_engine
 from utils import get_version, get_sql_file, run_sql_file, library_sql_folder
 
+
 @task
-def import_dataset(dataset:str, version:str="latest"):
-    version=get_version(dataset, version=version)
+def import_dataset(dataset: str, version: str = "latest"):
+    version = get_version(dataset, version=version)
     # Download sql dump for the datasets from data library
     get_sql_file(dataset, version)
     print(f"Download complete. Running {dataset}.sql")
     run_sql_file(library_sql_folder, dataset)
     return True
 
+
 @task
 def create_versions_table():
     with sql_engine.begin() as conn:
-        conn.execute("""
+        conn.execute(
+            """
             DROP TABLE IF EXISTS versions;
             CREATE TABLE versions ( 
                 datasource text, 
                 version text 
-            );""")
+            );"""
+        )
     return True
+
 
 @flow
 def dataloading():

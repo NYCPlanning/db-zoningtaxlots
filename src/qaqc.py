@@ -22,7 +22,7 @@ def edm_qaqc_build():
     edm_qaqc_sql_step("bbl")
     edm_qaqc_sql_step("mismatch")
     edm_qaqc_sql_step("out_bbldiffs")
-    run_sql_file("sql/qaqc", "in_bbldiffs")
+    run_sql_file("sql/qaqc", "in_bbldiffs") # runs locally, not on edm_data TODO not currently a task
     return True
 
 

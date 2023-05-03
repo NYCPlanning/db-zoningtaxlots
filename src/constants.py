@@ -4,7 +4,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-sql_engine = create_engine(os.environ["BUILD_ENGINE"])
+build_engine = create_engine(os.environ["BUILD_ENGINE"])
+edm_data_engine = create_engine(os.environ["EDM_DATA"])
 
 input_datasets = [
     "dcp_commercialoverlay",

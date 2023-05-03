@@ -3,7 +3,7 @@ from utils import run_sql_file
 
 
 @task(name="Execute sql file", task_run_name="Execute {file}.sql")
-def run_sql_build_file(file):
+def run_sql_build_file(file:str):
     run_sql_file("sql", file)
     return True
 

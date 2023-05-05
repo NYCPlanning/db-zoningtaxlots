@@ -1,9 +1,9 @@
 from prefect import task, flow
-from utils import run_sql_file
+from utils import run_sql_file, load_to_edm
 
 
 @task(name="Execute sql file", task_run_name="Execute {file}.sql")
-def run_sql_build_file(file:str):
+def run_sql_build_file(file: str):
     run_sql_file("sql", file)
     return True
 
@@ -42,15 +42,14 @@ def build():
     res_1 = build_1()
     res_2 = build_2(wait_for=res_1)
     res_3 = build_3(wait_for=res_2)
+    load_to_edm(wait_for=res_3)
     return True
 
-    """todo
-echo "archive final output"
-pg_dump -t dcp_zoning_taxlot $BUILD_ENGINE | psql $EDM_DATA
-psql $EDM_DATA -c "
-  CREATE SCHEMA IF NOT EXISTS dcp_zoningtaxlots;
-  ALTER TABLE dcp_zoning_taxlot SET SCHEMA dcp_zoningtaxlots;
-  DROP TABLE IF EXISTS dcp_zoningtaxlots.\"$VERSION\";
-  ALTER TABLE dcp_zoningtaxlots.dcp_zoning_taxlot RENAME TO \"$VERSION\";
-"
-    """
+
+@flow
+def edm():
+    load_to_edm()
+
+
+if __name__ == "__main__":
+    edm()

@@ -12,5 +12,3 @@ FROM (
     INNER JOIN dcp_zoningtaxlots.:"VERSION_PREV" b
     ON a.bbl=b.bbl) c
 );
-
-\COPY qaqc_bblareachange TO PSTDOUT DELIMITER ',' CSV HEADER;

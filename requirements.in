@@ -1,4 +1,5 @@
 boto3==1.24.*
+gdal==3.6.4
 numpy==1.*
 pandas==1.*
 prefect==2.10.*

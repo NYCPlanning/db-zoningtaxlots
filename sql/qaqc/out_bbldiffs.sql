@@ -70,4 +70,4 @@ CREATE TEMP TABLE bbldiffs AS(
 		OR b.zoningmapcode IS NULL AND a.zoningmapcode IS NOT NULL)
 );
 
-\COPY bbldiffs TO PSTDOUT DELIMITER ',' CSV HEADER;
+\COPY bbldiffs TO '.library/bbldiffs.csv' DELIMITER ',' CSV HEADER;

@@ -7,7 +7,9 @@ import pandas as pd
 from dotenv import load_dotenv
 import subprocess
 import boto3
+import zipfile
 from prefect import task
+from osgeo import gdal
 
 from constants import build_engine, edm_data_engine
 
@@ -41,26 +43,27 @@ def get_sql_file(dataset: str, version: str = "latest", overwrite=False):
         s3_client.download_file(
             aws_s3_bucket, f"datasets/{dataset}/{version}/{dataset}.sql", filepath
         )
-        
+
+
 # adapted from https://stackoverflow.com/questions/56426471/upload-folder-with-sub-folders-and-files-on-s3-using-python
-def export_folder(local_folder, target_folder):
+def upload_folder(local_folder, target_folder):
     cwd = str(Path.cwd())
     p = Path(os.path.join(Path.cwd(), local_folder))
-    folders = list(p.glob('**'))
+    folders = list(p.glob("**"))
     for folder in folders:
         file_names = glob.glob(folder)
         file_names = [f for f in file_names if not Path(f).is_dir()]
         for _, file_name in enumerate(file_names):
-            file_name = str(file_name).replace(cwd, '')
+            file_name = str(file_name).replace(cwd, "")
             print(f"fileName {file_name}")
 
             s3_path = os.path.join(f"db-zoningtaxlots{target_folder}", str(file_name))
             s3_client.upload_file(file_name, aws_s3_bucket, s3_path)
 
 
-def run_sql_file(folder:str, filename:str, engine:str='BUILD_ENGINE', **kwargs):
+def run_sql_file(folder: str, filename: str, engine: str = "BUILD_ENGINE", **kwargs):
     # Has issues becuase dump is really meant for psql
-    # with sql_engine.connect() as conn, open(f"{folder}/{filename}.sql") as file:
+    # with build_engine.connect() as conn, open(f"{folder}/{filename}.sql") as file:
     #    conn.execute(statement=text(file.read()))
     args = " ".join([f"-v {key}={kwargs[key]}" for key in kwargs])
     subprocess.run(
@@ -72,27 +75,70 @@ def run_sql_file(folder:str, filename:str, engine:str='BUILD_ENGINE', **kwargs):
     )
 
 
-@task(name="CSV Export", task_run_name="Export {source} to csv")
-def csv_export(source:dict, output:str=None, edm_data=False, **kwargs):
+def run_sql_query(query: str, edm_data=False):
     if edm_data:
         engine = edm_data_engine
     else:
         engine = build_engine
-        
-    if output is None: output = source.split(".")[-1]
-        
+
+    with engine.begin() as conn:
+        conn.execute(query)
+
+
+@task
+def load_to_edm():
+    subprocess.run(
+        [
+            f'psql $EDM_DATA -c "DROP TABLE IF EXISTS dcp_zoningtaxlots.dcp_zoning_taxlot;"'
+        ],
+        shell=True,
+        check=True,
+    )
+    subprocess.run(
+        [
+            f"pg_dump -t dcp_zoning_taxlot {os.environ['BUILD_ENGINE']} | sed -e 's/public\./dcp_zoningtaxlots./g' -e ' | psql {os.environ['EDM_DATA']}"
+        ],
+        shell=True,
+        check=True,
+    )
+    statement = f"""
+        DROP TABLE IF EXISTS dcp_zoningtaxlots.\"{os.environ['VERSION']}\";
+        ALTER TABLE dcp_zoningtaxlots.dcp_zoning_taxlot RENAME TO \"{os.environ['VERSION']}\";
+    """
+    subprocess.run(
+        [f'psql $EDM_DATA -c "{statement}"'],
+        shell=True,
+        check=True,
+    )
+
+
+@task(name="CSV Export", task_run_name="Export {source} to csv")
+def csv_export(source: str, output: str = None, edm_data=False, **kwargs):
+    if edm_data:
+        engine = edm_data_engine
+    else:
+        engine = build_engine
+
+    if output is None:
+        output = source.split(".")[-1]
+
     # assume source to be file or table
     if ".sql" not in source:
         source = f"SELECT * FROM {source['table']} ORDER BY version::timestamp"
-        
+
     with engine.begin() as conn:
         df = pd.read_sql(source, conn, params=kwargs)
         df.to_csv(f"output/{output}.csv")
 
 
-@task(name="SHP Export", task_run_name="Export {table} to zipped shapefile")
-def shp_export(table):
-    user, pw, host, port, db = re.match("^.+://(.+):(.*)@(.*):(.*)/(.*)", os.environ["BUILD_ENGINE"]).groups()
+@task(
+    name="SHP export using subprocess",
+    task_run_name="Export {table} to zipped shapefile",
+)
+def shp_export_subprocess(table: str):
+    user, pw, host, port, db = re.match(
+        "^.+://(.+):(.*)@(.*):(.*)/(.*)", os.environ["BUILD_ENGINE"]
+    ).groups()
     filepath = f"output/{table}/{table}"
     cmd = f"""
         ogr2ogr -progress -f "ESRI Shapefile" {filepath}.shp \
@@ -103,4 +149,29 @@ def shp_export(table):
         ls | grep -v output/{table}.zip | xargs rm
     """
     subprocess.run(cmd, shell=True, check=True)
-    
+
+
+@task(name="SHP Export", task_run_name="Export {table} to zipped shapefile")
+def shp_export(table: str):
+    user, pw, host, port, db = re.match(
+        "^.+://(.+):(.*)@(.*):(.*)/(.*)", os.environ["BUILD_ENGINE"]
+    ).groups()
+    conn_string = f"PG:host={host} dbname={db} user={user} password={pw} port={port}"
+    data_source = gdal.OpenEx(conn_string, gdal.OF_VECTOR)
+    filepath = f"output/{table}"
+
+    gdal.VectorTranslate(
+        filepath,
+        data_source,
+        format="ESRI Shapefile",
+        geometryType="MULTIPOLYGON",
+        sql=f"SELECT * FROM {table}",
+        layerName=table,
+    )
+
+    with zipfile.ZipFile(
+        f"output/{table}.zip", "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9
+    ) as _zip:
+        for f in os.listdir(filepath):
+            _zip.write(f, os.path.basename(f))
+            os.remove(f)

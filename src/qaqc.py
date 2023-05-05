@@ -37,34 +37,34 @@ def qaqc():
 
 @flow(name="Generate outputs")
 def generate_outputs():
-    csv_export("source_data_versions").submit()
-    csv_export("dcp_zoning_taxlot_export", output="zoningtaxlot_db").submit()
+    os.makedirs("output", exist_ok=True)
+    csv_export.submit("source_data_versions")
+    csv_export.submit("dcp_zoning_taxlot_export", output="zoningtaxlot_db")
 
-    csv_export("dcp_zoningtaxlots.qaqc_frequency", edm_data=True).submit()
-    csv_export("dcp_zoningtaxlots.qaqc_bbl", edm_data=True).submit()
-    csv_export("dcp_zoningtaxlots.qaqc_mismatch", edm_data=True).submit()
-    csv_export("dcp_zoningtaxlots.qaqc_frequency", edm_data=True).submit()
+    csv_export.submit("dcp_zoningtaxlots.qaqc_frequency", edm_data=True, order_by_timestamp=True)
+    csv_export.submit("dcp_zoningtaxlots.qaqc_bbl", edm_data=True, order_by_timestamp=True)
+    csv_export.submit("dcp_zoningtaxlots.qaqc_mismatch", edm_data=True, order_by_timestamp=True)
 
-    csv_export("qc_bbldiffs").submit()
-    shp_export("qc_bbldiffs").submit()
+    csv_export.submit("qc_bbldiffs")
+    shp_export.submit("qc_bbldiffs")
 
-    with open("output/version.txt") as file:
+    with open("output/version.txt", "w") as file:
         file.write(datetime.date.today().strftime("%Y/%m/01"))
 
-    csv_export(
+    csv_export.submit(
         "sql/qaqc/versioncomparison.sql",
         output="qc_versioncomparison",
         edm_data=True,
         VERSION=os.environ["VERSION"],
         VERSION_PREV=os.environ["VERSION_PREV"],
-    ).submit()
-    csv_export(
+    )
+    csv_export.submit(
         "sql/qaqc/null.sql",
         output="qaqc_null",
         edm_data=True,
         VERSION=os.environ["VERSION"],
         VERSION_PREV=os.environ["VERSION_PREV"],
-    ).submit()
+    )
 
 
 @task(name="Upload")
@@ -73,4 +73,5 @@ def upload():
 
 
 if __name__ == "__main__":
+    # qaqc()
     generate_outputs()

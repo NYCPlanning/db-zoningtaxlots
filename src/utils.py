@@ -45,6 +45,14 @@ def get_sql_file(dataset: str, version: str = "latest", overwrite=False):
         )
 
 
+def record_version(dataset, version):
+    with build_engine.begin() as conn:
+        conn.execute(f"""
+        DELETE FROM versions WHERE datasource = '{dataset}';
+        INSERT INTO versions VALUES ('{dataset}', '{version}');
+        """)
+
+
 # adapted from https://stackoverflow.com/questions/56426471/upload-folder-with-sub-folders-and-files-on-s3-using-python
 def upload_folder(local_folder, target_folder):
     cwd = str(Path.cwd())
@@ -59,6 +67,12 @@ def upload_folder(local_folder, target_folder):
 
             s3_path = os.path.join(f"db-zoningtaxlots{target_folder}", str(file_name))
             s3_client.upload_file(file_name, aws_s3_bucket, s3_path)
+
+
+def read_sql_file_as_text(path:str):
+    with open(path, 'r') as file:
+        query = file.read()
+        return re.sub(":[\"']([^\"']*)[\"']", "%(\g<1>)", query)
 
 
 def run_sql_file(folder: str, filename: str, engine: str = "BUILD_ENGINE", **kwargs):
@@ -113,7 +127,7 @@ def load_to_edm():
 
 
 @task(name="CSV Export", task_run_name="Export {source} to csv")
-def csv_export(source: str, output: str = None, edm_data=False, **kwargs):
+def csv_export(source: str, output: str = None, edm_data=False, order_by_timestamp=False, **kwargs):
     if edm_data:
         engine = edm_data_engine
     else:
@@ -124,10 +138,16 @@ def csv_export(source: str, output: str = None, edm_data=False, **kwargs):
 
     # assume source to be file or table
     if ".sql" not in source:
-        source = f"SELECT * FROM {source['table']} ORDER BY version::timestamp"
+        if order_by_timestamp:
+            query = f"SELECT * FROM {source} ORDER BY version"#::timestamp;"
+        else:
+            query = f"SELECT * FROM {source};"
+    else:
+        query = read_sql_file_as_text(source)
+        
 
     with engine.begin() as conn:
-        df = pd.read_sql(source, conn, params=kwargs)
+        df = pd.read_sql_query(query, conn, params=kwargs)
         df.to_csv(f"output/{output}.csv")
 
 

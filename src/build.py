@@ -5,7 +5,6 @@ from utils import run_sql_file, load_to_edm
 @task(name="Execute sql file", task_run_name="Execute {file}.sql")
 def run_sql_build_file(file: str):
     run_sql_file("sql", file)
-    return True
 
 
 @flow
@@ -52,4 +51,4 @@ def edm():
 
 
 if __name__ == "__main__":
-    edm()
+    build()

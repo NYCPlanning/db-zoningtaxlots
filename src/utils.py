@@ -69,10 +69,12 @@ def upload_folder(local_folder, target_folder):
             s3_client.upload_file(file_name, aws_s3_bucket, s3_path)
 
 
-def read_sql_file_as_text(path:str):
+def read_sql_file_as_text(path:str, **kwargs):
     with open(path, 'r') as file:
         query = file.read()
-        return re.sub(":[\"']([^\"']*)[\"']", "%(\g<1>)", query)
+    for key in kwargs:
+        query =re.sub(f":([\"']){key}([\"'])", f"\g<1>{kwargs[key]}\g<2>", query)
+    return query
 
 
 def run_sql_file(folder: str, filename: str, engine: str = "BUILD_ENGINE", **kwargs):
@@ -110,7 +112,7 @@ def load_to_edm():
     )
     subprocess.run(
         [
-            f"pg_dump -t dcp_zoning_taxlot {os.environ['BUILD_ENGINE']} | sed -e 's/public\./dcp_zoningtaxlots./g' -e ' | psql {os.environ['EDM_DATA']}"
+            f"pg_dump -t dcp_zoning_taxlot {os.environ['BUILD_ENGINE']} | sed -e 's/public\./dcp_zoningtaxlots./g' | psql {os.environ['EDM_DATA']}"
         ],
         shell=True,
         check=True,
@@ -143,8 +145,7 @@ def csv_export(source: str, output: str = None, edm_data=False, order_by_timesta
         else:
             query = f"SELECT * FROM {source};"
     else:
-        query = read_sql_file_as_text(source)
-        
+        query = read_sql_file_as_text(source, **kwargs)
 
     with engine.begin() as conn:
         df = pd.read_sql_query(query, conn, params=kwargs)
@@ -178,20 +179,21 @@ def shp_export(table: str):
     ).groups()
     conn_string = f"PG:host={host} dbname={db} user={user} password={pw} port={port}"
     data_source = gdal.OpenEx(conn_string, gdal.OF_VECTOR)
-    filepath = f"output/{table}"
+    folder_path = f"output/{table}"
 
     gdal.VectorTranslate(
-        filepath,
+        folder_path,
         data_source,
         format="ESRI Shapefile",
         geometryType="MULTIPOLYGON",
-        sql=f"SELECT * FROM {table}",
+        SQLStatement=f"SELECT * FROM {table}",
         layerName=table,
     )
 
     with zipfile.ZipFile(
         f"output/{table}.zip", "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9
     ) as _zip:
-        for f in os.listdir(filepath):
-            _zip.write(f, os.path.basename(f))
-            os.remove(f)
+        for file in os.listdir(folder_path):
+            fullpath = os.path.join(folder_path, file)
+            _zip.write(fullpath, file)
+            os.remove(fullpath)

@@ -42,5 +42,3 @@ CREATE TEMP TABLE qaqc_frequency_change AS (
     FROM count_old a JOIN count_new b on a.field=b.field
     ORDER BY b.count - a.count DESC       
 );
-
-\COPY qaqc_frequency_change TO PSTDOUT DELIMITER ',' CSV HEADER;

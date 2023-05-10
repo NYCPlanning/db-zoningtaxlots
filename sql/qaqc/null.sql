@@ -146,16 +146,13 @@ CREATE TEMP TABLE newvalue AS (
 		WHERE a.zoningmapcode IS NOT NULL AND b.zoningmapcode IS NULL
 );
 
-CREATE TEMP TABLE qaqc_new_nulls AS (
-	SELECT 
-		newnull.field, 
-		newnull.count as value_to_null, 
-		newvalue.count as null_to_value,
-		:'VERSION' as version,
-		:'VERSION_PREV' as version_prev
-	FROM newnull LEFT JOIN newvalue
-	ON newnull.field = newvalue.field
-	ORDER BY value_to_null, null_to_value DESC
-);
 
-\COPY qaqc_new_nulls TO PSTDOUT DELIMITER ',' CSV HEADER;
+SELECT 
+	newnull.field, 
+	newnull.count as value_to_null, 
+	newvalue.count as null_to_value,
+	:'VERSION' as version,
+	:'VERSION_PREV' as version_prev
+FROM newnull LEFT JOIN newvalue
+ON newnull.field = newvalue.field
+ORDER BY value_to_null, null_to_value DESC;

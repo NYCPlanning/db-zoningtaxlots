@@ -33,7 +33,7 @@ CREATE TEMP TABLE tmp (
     zmcprev text
 );
 
-\COPY tmp FROM PSTDIN DELIMITER ',' CSV HEADER;
+\COPY tmp FROM '.library/bbldiffs.csv' DELIMITER ',' CSV HEADER;
 
 DROP TABLE IF EXISTS qc_bbldiffs;
 SELECT a.*, b.geom

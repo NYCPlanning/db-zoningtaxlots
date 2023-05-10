@@ -73,5 +73,5 @@ def upload():
 
 
 if __name__ == "__main__":
-    # qaqc()
+    qaqc()
     generate_outputs()
